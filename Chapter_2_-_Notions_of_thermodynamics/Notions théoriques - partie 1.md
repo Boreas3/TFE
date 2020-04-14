@@ -7,15 +7,15 @@
 - ~~Variables et fonction d'état~~
 > ~~~1 page pour ces notions~~
 
-### Energie et puissance
+### ~~Energie et puissance~~
 - ~~Energie~~ 
 	- ~~Type d'énergies~~
 	- ~~Transfert d'énergies~~
 		- ~~Sous forme de chaleur	--> système adiabatique~~
 		- ~~Sous forme de travail~~
-		- = "path functions"
-- Puissance (travail par unité de temps)
-> ~2 pages pour ces notions
+		- ~~= "path functions"~~
+- ~~Puissance (travail par unité de temps)~~
+> ~1 page pour ces notions
 
 ### Premier principe de la thermodynamique
 - Variation de l'énergie totale d'un système
@@ -81,6 +81,7 @@
 ## Tuyauteries
 ### Calcul des pertes de charge
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc0OTkwNzM1NSw5Nzk5NjUxNTcsLTEzMj
-M5MjU3ODcsLTE5MDMwNjUxNzksMTgzNDEwMDAwNV19
+eyJoaXN0b3J5IjpbLTE0NDYzNTQ1NjMsLTc0OTkwNzM1NSw5Nz
+k5NjUxNTcsLTEzMjM5MjU3ODcsLTE5MDMwNjUxNzksMTgzNDEw
+MDAwNV19
 -->
