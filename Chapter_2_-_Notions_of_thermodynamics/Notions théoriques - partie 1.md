@@ -8,8 +8,8 @@
 > ~~~1 page pour ces notions~~
 
 ### Energie et puissance
-- Energie 
-	- Type d'énergies
+- ~~Energie~~ 
+	- ~~Type d'énergies~~
 	- Transfert d'énergies
 		- Sous forme de chaleur	--> système adiabatique
 		- Sous forme de travail
@@ -81,6 +81,6 @@
 ## Tuyauteries
 ### Calcul des pertes de charge
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjM5MjU3ODcsLTE5MDMwNjUxNzksMT
-gzNDEwMDAwNV19
+eyJoaXN0b3J5IjpbOTc5OTY1MTU3LC0xMzIzOTI1Nzg3LC0xOT
+AzMDY1MTc5LDE4MzQxMDAwMDVdfQ==
 -->
