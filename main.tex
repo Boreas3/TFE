@@ -1,0 +1,291 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\title{Interpolation of component characteristic maps for thermodynamic cycle assessment}
+\author{Martin Heylen}
+
+\linespread{1.5}
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%
+%% Chapter 1:   %%
+%% Introduction %%
+%%%%%%%%%%%%%%%%%%
+%\input{Chapter1_introduction}
+\chapter{Introduction}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Chapter 2:                  %%
+%% Notion of thermodynamics    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Notions of thermodynamics}
+\quad\; In the introduction, it has been introduced many times the concept and the used of the Brayton cycle. As explained, this concept has been applied for many usages, including electricity production and aircraft propulsion which are the most common and known applications.
+
+It has been exposed that from the invention proposed by George Brayton in the end of the 19th century, the technology did really evolve.
+
+Indeed, while the Brayton cycle engine first appears as a  piston engine where the compression, combustion and expansion occurs in the same enclosure, Nowadays 
+the process is shared between at least three components (namely the compressor, the turbine and the combustion chamber).\\
+
+However, what the previous did not cover were the keys notions to understand how theses components behave. Those notions, which will be used during this work, need to be defined and explained to allows to the common person to understand this writing without possessing those knowledge a priory. 
+
+This problematic will be covered by this chapter, which will introduce step-by-step those notions.
+
+\section{Fundamental notions}
+\quad\; As mention in the lead-in of this chapter, the first sections of this report will entirely be devoted to the bringing in of the required knowledge for the understanding of the full report.
+
+Starting from very fundamental notions, those will allow to explain more complex concept that will be applied in this work.
+
+\subsection{Open/closed system}
+The thermodynamic is a science that "studies the exchange of energy between a system and its environment" \cite{thermoApp_1}.
+
+The system is usually 
+
+
+
+% \section{Notion about Thermodynamics}
+
+
+% % Introduire les différentes notions de base qui seront utiles pour la suites.
+% % - Enthalpy
+% % - Entropy
+% % - H-s diagram
+% % - Heat transfer
+% \section{Description of the Brayton cycle}
+% % "A thermodynamic cycle consists of a linked sequence of thermodynamic processes that involve transfer of heat and work into and out of the system, while varying pressure, temperature, and other state variables within the system, and that eventually returns the system to its initial state. In the process of passing through a cycle, the working fluid (system) may convert heat from a warm source into useful work, and dispose of the remaining heat to a cold sink, thereby acting as a heat engine. Conversely, the cycle may be reversed and use work to move heat from a cold source and transfer it to a warm sink thereby acting as a heat pump. At every point in the cycle, the system is in thermodynamic equilibrium, so the cycle is reversible (its entropy change is zero, as entropy is a state function)."
+% % 
+% \section{What is the Brayton cycle?}
+% \subsection{presentation of the cycle}
+% \subsection{Why is it called thermodynamic cycle?}
+% \section{Theoretical notions about thermodynamic}
+% \subsection{What is the enthalpy?}
+% \subsection{Why using the enthalpy for thermodynamic state assessment?}
+% \subsection{What is the entropy?}
+% \section{Description of the compressor}
+% \subsection{What is a compressor?}
+% \subsection{Modelling - outlet enthalpy calculation}
+% \section{Description of the turbine}
+% \subsection{What is a turbine?}
+% \subsection{Modelling - outlet enthalpy calculation}
+% \section{Description of the combustion chamber}
+% \subsection{What is a combustion chamber?}
+% \subsection{Modelling - Combustion equation using mass conservation} 
+% \section{Description of the heat-exchanger}
+% \subsection{What is a heat-exchanger?}
+% \subsection{Modelling - Pinch temperature method}
+% \subsection{Modelling - epsilon-NTU method}
+% \section{Description of the piping}
+% \subsection{Modelling of the pressure drop (correlation)}	
+% \section{Analysis of the possible configuration for the Brayton cycle}
+% \chapter{Brayton cycle – Python implementation}
+% \section{What is Python and why using it as programming language?}
+% \section{Structure of the Python code}
+% \subsection{Module description}
+% \subsection{Improvement of the Python code}
+% \chapter{Component performance map integration}
+% \section{What is a performance map?}
+% \section{What is the interest of using performance maps?} 	
+% \subsection{For the turbomachines}
+% \subsection{For the heat-exchangers}
+% \subsection{For the piping}
+% \subsection{For the combustion chamber}
+% \section{Build of the map using least squares fitting}
+% \subsection{Data used}
+% \subsection{Interpolation scheme}
+% \section{Quality of the interpolation}
+% \subsection{Error on the sample values}
+% \subsection{Cost function}
+% \chapter{Gas composition integration}
+% \section{Why considering the gas composition?}
+% \section{Fumes composition computation}
+% \section{Thermodynamic state evaluation}
+% \subsection{Use of the NASA table}
+% \subsection{Comparison for fumes state computation (old vs new method)}
+% \chapter{Experimental test bench}
+% \section{Presentation of the different parts}
+% \section{Analysis of the results}
+
+
+
+
+% \quad\, In the introduction, the ideal Brayton cycle has been presented and analysed. Some improvements have been proposed to increase the efficiency of the system.\\
+% 
+% This chapter will be focused on the development of a deterministic model of the cycle using Python as the programming language. First will be given a overview of the structure of the program. Then, from a model already developed, some modifications will be provided to gain slightly
+
+% \section{Overview of the cycle}
+% \quad\, The cycle modelled will be composed of non ideal components and will include a regenerator followed by a recuperator for heated water production. A schematic is presented on Figure \ref{fig:schema_cycle}.
+
+% % \begin{figure}[h!]
+% %     \centering
+% %     \includegraphics[width=0.8\textwidth]{Deterministic_modelling/schema_BC.png}
+% %     \caption{Brayton cycle schematic. values are for nominal conditions}
+% %     \label{fig:schema_cycle}
+% % \end{figure}
+
+% On the graph are emphasised the main steps of the cycle:
+% \begin{itemize}
+%     \item Compressor ($\mathbf{1} \Rightarrow\mathbf{2}$): The ambient air is compressed by the compressor to rise its pressure. 
+%     \item Recuperator - \textit{cold side} ($\mathbf{2} \Rightarrow\mathbf{3}$): The air from the compressor is heated up by the hot gas from the turbine.
+%     \item Combustion Chamber ($\mathbf{3} \Rightarrow\mathbf{4}$): Fuel is injected to create a combustion to increase the enthalpy of the gas. The mass flow of fuel injected is calculated based on the wished TIT. 
+%     \item Turbine ($\mathbf{4} \Rightarrow\mathbf{5}$): The gas from the combustion chamber is expanded through the turbine. The produced power will be partly consumed by the compressor. The leftover is absorbed by the generator.
+%     \item Regenerator - \textit{hot side} ($\mathbf{5} \Rightarrow\mathbf{6}$): The hot gas from the turbine are cooled down when going through the regenerator. 
+%     \item Recuperator ($\mathbf{6} \Rightarrow\mathbf{7}$): The remaining heat is used to heat up water. The target temperature for the water depend on the need. The gas is then released to the atmosphere.
+% \end{itemize}
+
+% This segmentation of the cycle is useful to properly pose the problem and to verify if every elements are well included in the program. 
+
+% Moreover, it allows to identify what are the different components that play a role in the cycle. This identification is useful to isolate a specific element to work on. 
+
+% \section{Description of the deterministic model}
+% \quad\, This part of the chapter is dedicated to the analysis of the Brayton cycle deterministic model. The analysis will be segmented into several section. 
+
+% First, the structure of the program will be given. Then, the description of the specific parts of the code will be provided. This analysis will allow to identify the possible modifications that will improve the performance and accuracy of the model. 
+% \subsection{Structure of the program}
+% % \begin{figure}[h]
+% %     \centering
+% %     \input{Deterministic_modelling/schema1}
+% %     \caption{Caption}
+% %     \label{fig:my_label}
+% % \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%
+% %% Map interpolation %%
+% %%%%%%%%%%%%%%%%%%%%%%%
+% \section{Interpolation map}
+% \subsection{Definition}
+% \subsection{Description of the components that will be modelled using maps}
+% \subsection{Interpolation scheme}
+% \subsubsection{Polynomial used}
+% \subsubsection{Optimisation program}
+% \textsc{P}: subset of $\mathbb{R}^{n\times 3}$. \textit{n} is the number of operational points.\\
+% \textsc{A}: subset of $\mathbb{N}^{m\times 2}$. \textit{m} is the number of term in the polynomial and its value is
+% \begin{equation}
+%     m = \frac{(d+1)(d+2)}{2}
+% \end{equation}
+% with \textit{d} the maximum degree of the polynomial.
+% \begin{equation*}
+% \begin{aligned}
+% & \underset{a\in\mathbb{R}}{\text{minimize}}
+% & &  \textbf{F} = \sum_{k\in\textsc{P}}\left[z_k - f(x_k, y_k) \right]^2 \\
+% & \text{with}
+% & & f(x, y) = \sum_{i=0}^{d}\sum_{j=0}^{d-i} a[i,j]\cdot x^i\cdot y^j \; \forall x, y\in\mathbb{R}
+% \end{aligned}
+% \end{equation*}
+% minimising $\textbf{F}$ is similar to forcing all the partial derivatives with respect to the a[i,j] to be equal to zeros. thus, the condition
+% \begin{equation}
+%     2 \cdot \sum_{k\in\textsc{P}}\left[z_k - f(x_k, y_k)\right] \cdot x_k^i \cdot y_k^j = 0
+% \end{equation}
+% has to be satisfied for all $\{i,j\}\in\textsc{A}$.
+% \subsection{extrapolation of the compressor map to the small rotational speed}
+% at low rotational speed, the approximation of a incompressible fluid can be done --> used of the similarity
+% \begin{align}
+%     \dot{m}_2 &= \dot{m}_1 \cdot \frac{N_2}{N_1}\\
+%     \Delta H_2 &= \Delta H_1 \cdot \left(\frac{\Omega_2}{\Omega_1}\right)^2 \label{Delta H}\\
+%     \eta_2 &= \eta_1
+% \end{align}
+% where $\Delta H = H_{ex} - H_{su}$\\
+% Let consider the following references:
+% \begin{align}
+%     T_{\textbf{0}} & = 293.15K\\
+%     H_{\textbf{0}} & = Cp\cdot T_{\textbf{}} \text{ with $Cp = 1005$  J/(kg$\cdot$ K)}\\
+%     R & = 287 \text{ J/(kg$\cdot$ K)}\\
+%     \gamma &= \frac{Cp -R}{Cp}
+% \end{align}
+% To go from the operational point \textbf{1} to the similar operational point \textbf{2}, the following relations are used.\\
+% First the computation of $\Delta H_1$ is done.
+% \begin{align*}
+%     \frac{T_{\textbf{1},ex,s}}{T_{\textbf{1},su}} &= \left(\frac{P_{\textbf{1},ex}}{P_{\textbf{1},su}}\right)^{\frac{\gamma-1}{\gamma}} = \Pi_{\textbf{1}}^{\frac{\gamma-1}{\gamma}}\\
+%     T_{\textbf{1},ex} &= T_{\textbf{1},su} + \frac{T_{\textbf{1},ex,s} - T_{\textbf{1},su}}{\eta_1}\\
+%     H_{\textbf{1}, ex} &= H_{\textbf{0}} + Cp\cdot (T_{\textbf{1},ex} - T_{\textbf{0}})\\
+%     \Rightarrow \Delta H_1 &= H_{\textbf{1}, ex} - H_{\textbf{1}, su}
+% \end{align*}
+% Then, using the equality \ref{Delta H}, the $\Delta H_2$. Then, going backward the pressure ratio $\Pi_{\textbf{2}}$ can be computed.
+% \subsection{delimitation of the compressor map}
+% Compressor --> surge line and chock line.\\
+% surge line: level set using the left extreme points from the data (for each rotational speed N)\\
+% chock line: approximation by using the maximal flow rate from the data as the maximal admissible flow rate.\\
+% bottom limit: Pratio = 1\\
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%
+% %% Fluid Properties %%
+% %%%%%%%%%%%%%%%%%%%%%%
+% \section{Computation of the fluid's composition}
+% CoolProp --> NASA table
+% \subsection{Combustion's equations}
+% \begin{align*}
+%     \dot{m}_{ex}\cdot y_{ex,O2} &= \dot{m}_a\cdot y_{a,O2} - 2\cdot\dot{w}_{CH4}\cdot MM_{O2}\\
+%     \dot{m}_{ex}\cdot y_{ex,Ar} &= \dot{m}_a\cdot y_{a,Ar}\\
+%     \dot{m}_{ex}\cdot y_{ex,H2O} &= \dot{m}_a\cdot  y_{a,H2O} + 2\cdot\dot{w}_{CH4}\cdot MM_{H2O}\\
+%     \dot{m}_{ex}\cdot y_{CO2} &= \dot{m}_{a}\cdot y_{a,CO2} + \dot{m}_{f}\cdot y_{f, CO2}
+%     + \dot{w}_{CH4}\cdot MM_{CO2}\\
+%     \dot{m}_{ex}\cdot y_{N2} &= \dot{m}_{a}\cdot y_{a, N2} + \dot{m}_{f} \cdot y_{f,N2}
+% \end{align*}
+% where $\dot{w}_{CH4} = \dot{m}_{f}\cdot \frac{y_{f,CH4}}{MM_{CH4}}$
+% \subsection{Thermodynamic property computation}
+% Let's considered a fluid labelled \textit{X}. The set \textsc{E} is composed of the list of the different species present in the fluid.
+% \subsubsection{Enthalpy}
+% The enthalpy of \textit{X} is equal to 
+% \begin{equation}
+%     h_{x} = \sum_{i\in\textsc{E}}y_{x,i}\cdot h_{x,i} 
+% \end{equation}
+% where the $h_{x,E}$ are the individual enthalpy of each component $i\in\textsc{E}$ computed using CoolProp. 
+% \subsubsection{Heat capacity}
+% \begin{align}
+%     cp_{x} &= \sum_{i\in\textsc{E}}y_{x,i}\cdot cp_{x,i}\\
+%     cv_{x} &= \sum_{i\in\textsc{E}}y_{x,i}\cdot cv_{x,i}
+% \end{align}
+% \subsubsection{Density}
+% \begin{equation}
+% \rho_{x} = \left(\sum_{i\in\textsc{E}} \frac{y_{x,i}}{\rho_{x,i}}\right)^{-1}
+% \end{equation}
+% \subsubsection{Dynamic viscosity}
+% Wike's method
+% \begin{equation}
+%     \mu_{x} = \sum_{i\in\textsc{E}} y_{x,i}\cdot \frac{\mu_{x,i}}{A_{x,i}}
+% \end{equation}
+% where the $A_{x,i}$ are given by the following formula
+% \begin{equation}
+%     A_{x,i} = \sum_{j\in\textsc{E}} y_{x,j}\cdot \phi_{x,[i,j]}
+% \end{equation}
+% The $\phi_{x,[i,j]}$ being
+% \begin{equation}
+%     \phi_{x,[i,j]} = \frac{\left(1+\sqrt{\frac{\mu_{x,i}}{\mu_{x,j}}}\cdot\left(\frac{MM_{x,j}}{MM_{x,i}}\right)^ {0.25}\right)^2}{\sqrt{8\cdot\left(1+\frac{MM_{x,i}}{MM_{x,j}}\right)}}
+% \end{equation}
+% \section{Pressure drops computation}
+% \subsection{friction coefficient in pipe}
+% \begin{equation}
+%     \mathit{Re} = \frac{V\cdot D\cdot \rho}{\mu}
+% \end{equation}
+% \begin{equation}
+%     \frac{1}{\sqrt{f}} =  - 2\cdot \log\left(\frac{\varepsilon}{D\cdot 3.7} + \frac{2.51}{\mathit{Re}\cdot \sqrt{f}}\right)
+% \end{equation}
+% \subsection{Pressure outlet computation in pipe}
+% \begin{equation}
+% P_{su}^2 - P_{ex}^2 = \frac{\dot{m}^2 \cdot R\cdot T_{su}}{A^2}\cdot \left(2\cdot \ln{\frac{P_{su}}{P_{ex}}} + f\cdot \frac{L}{D}\right)
+% \end{equation}
+% \section{Validation and correction of the model}
+% \subsection{Validation through an experimental campaign}
+% \subsubsection{Results and comparison}
+% \subsection{Tuned of the model to match the reality}
+% \subsubsection{Results and comparison}
+% \section{Conclusion}
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,bibli}
+\end{document}
