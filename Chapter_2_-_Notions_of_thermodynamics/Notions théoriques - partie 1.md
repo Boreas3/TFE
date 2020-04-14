@@ -1,11 +1,11 @@
 
 # Notions théoriques
 ## Notions de base
-### Quelques définitions
-- Système ouvert/fermé
-- Temperature/Pression
-- Variables et fonction d'état
-> ~1 page pour ces notions
+### ~~Quelques définitions~~
+- ~~Système ouvert/fermé~~
+- ~~Temperature/Pression~~
+- ~~Variables et fonction d'état~~
+> ~~~1 page pour ces notions~~
 
 ### Energie et puissance
 - Energie 
@@ -81,5 +81,6 @@
 ## Tuyauteries
 ### Calcul des pertes de charge
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDMwNjUxNzksMTgzNDEwMDAwNV19
+eyJoaXN0b3J5IjpbLTEzMjM5MjU3ODcsLTE5MDMwNjUxNzksMT
+gzNDEwMDAwNV19
 -->
