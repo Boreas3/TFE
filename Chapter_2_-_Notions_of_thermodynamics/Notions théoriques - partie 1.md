@@ -10,9 +10,9 @@
 ### Energie et puissance
 - ~~Energie~~ 
 	- ~~Type d'énergies~~
-	- Transfert d'énergies
-		- Sous forme de chaleur	--> système adiabatique
-		- Sous forme de travail
+	- ~~Transfert d'énergies~~
+		- ~~Sous forme de chaleur	--> système adiabatique~~
+		- ~~Sous forme de travail~~
 		- = "path functions"
 - Puissance (travail par unité de temps)
 > ~2 pages pour ces notions
@@ -81,6 +81,6 @@
 ## Tuyauteries
 ### Calcul des pertes de charge
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTc5OTY1MTU3LC0xMzIzOTI1Nzg3LC0xOT
-AzMDY1MTc5LDE4MzQxMDAwMDVdfQ==
+eyJoaXN0b3J5IjpbLTc0OTkwNzM1NSw5Nzk5NjUxNTcsLTEzMj
+M5MjU3ODcsLTE5MDMwNjUxNzksMTgzNDEwMDAwNV19
 -->
