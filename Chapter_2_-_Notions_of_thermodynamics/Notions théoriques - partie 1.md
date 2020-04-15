@@ -18,9 +18,8 @@
 > ~~~1 page pour ces notions~~
 
 ### Premier principe de la thermodynamique
-- Variation de l'énergie totale d'un système
-- Mecanisme de transfert d'énergie
-	- Bilan énergétique (*statique* et *temporelle*)
+- ~~Mecanisme de transfert d'énergie~~
+	- ~~Bilan énergétique (*statique* et *temporelle*)~~
 - Rendement de conversion énergétique
 > ~2 pages pour ces notions
 
@@ -81,7 +80,7 @@
 ## Tuyauteries
 ### Calcul des pertes de charge
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQ5MjQyNDI5LC0xNDQ2MzU0NTYzLC03ND
-k5MDczNTUsOTc5OTY1MTU3LC0xMzIzOTI1Nzg3LC0xOTAzMDY1
-MTc5LDE4MzQxMDAwMDVdfQ==
+eyJoaXN0b3J5IjpbMTUxNDUzMjQxNiw5NDkyNDI0MjksLTE0ND
+YzNTQ1NjMsLTc0OTkwNzM1NSw5Nzk5NjUxNTcsLTEzMjM5MjU3
+ODcsLTE5MDMwNjUxNzksMTgzNDEwMDAwNV19
 -->
