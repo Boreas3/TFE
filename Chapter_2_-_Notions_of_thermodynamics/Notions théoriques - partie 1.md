@@ -17,12 +17,12 @@
 - ~~Puissance (travail par unité de temps)~~
 > ~~~1 page pour ces notions~~
 
-### Premier principe de la thermodynamique
-- Variation de l'énergie totale d'un système
-- Mecanisme de transfert d'énergie
-	- Bilan énergétique (*statique* et *temporelle*)
-- Rendement de conversion énergétique
-> ~2 pages pour ces notions
+### ~~Premier principe de la thermodynamique~~
+- ~~Variation de l'énergie totale d'un système~~
+- ~~Mecanisme de transfert d'énergie~~
+	- ~~Bilan énergétique (*statique* et *temporelle*)~~
+- ~~Rendement de conversion énergétique~~
+> ~~~1 page pour ces notions~~
 
 ## Définitions de variables d'états utiles
 ### Chaleur spécifique
@@ -81,7 +81,7 @@
 ## Tuyauteries
 ### Calcul des pertes de charge
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQ5MjQyNDI5LC03NDk5MDczNTUsOTc5OT
-Y1MTU3LC0xMzIzOTI1Nzg3LC0xOTAzMDY1MTc5LDE4MzQxMDAw
-MDVdfQ==
+eyJoaXN0b3J5IjpbLTU0OTU3NDU3MSw5NDkyNDI0MjksLTc0OT
+kwNzM1NSw5Nzk5NjUxNTcsLTEzMjM5MjU3ODcsLTE5MDMwNjUx
+NzksMTgzNDEwMDAwNV19
 -->
