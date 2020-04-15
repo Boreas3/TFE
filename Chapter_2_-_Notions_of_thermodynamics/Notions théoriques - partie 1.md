@@ -20,8 +20,8 @@
 ### Premier principe de la thermodynamique
 - ~~Mecanisme de transfert d'énergie~~
 	- ~~Bilan énergétique (*statique* et *temporelle*)~~
-- Rendement de conversion énergétique
-> ~2 pages pour ces notions
+- ~~Rendement de conversion énergétique~~
+> ~~~1 page our ces notions~~
 
 ## Définitions de variables d'états utiles
 ### Chaleur spécifique
@@ -80,7 +80,8 @@
 ## Tuyauteries
 ### Calcul des pertes de charge
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxNDUzMjQxNiw5NDkyNDI0MjksLTE0ND
-YzNTQ1NjMsLTc0OTkwNzM1NSw5Nzk5NjUxNTcsLTEzMjM5MjU3
-ODcsLTE5MDMwNjUxNzksMTgzNDEwMDAwNV19
+eyJoaXN0b3J5IjpbLTE3NDc1MjI4LDE1MTQ1MzI0MTYsOTQ5Mj
+QyNDI5LC0xNDQ2MzU0NTYzLC03NDk5MDczNTUsOTc5OTY1MTU3
+LC0xMzIzOTI1Nzg3LC0xOTAzMDY1MTc5LDE4MzQxMDAwMDVdfQ
+==
 -->
