@@ -15,7 +15,7 @@
 		- ~~Sous forme de travail~~
 		- ~~= "path functions"~~
 - ~~Puissance (travail par unité de temps)~~
-> ~1 page pour ces notions
+> ~~~1 page pour ces notions~~
 
 ### Premier principe de la thermodynamique
 - Variation de l'énergie totale d'un système
@@ -81,7 +81,7 @@
 ## Tuyauteries
 ### Calcul des pertes de charge
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDYzNTQ1NjMsLTc0OTkwNzM1NSw5Nz
-k5NjUxNTcsLTEzMjM5MjU3ODcsLTE5MDMwNjUxNzksMTgzNDEw
-MDAwNV19
+eyJoaXN0b3J5IjpbOTQ5MjQyNDI5LC03NDk5MDczNTUsOTc5OT
+Y1MTU3LC0xMzIzOTI1Nzg3LC0xOTAzMDY1MTc5LDE4MzQxMDAw
+MDVdfQ==
 -->
