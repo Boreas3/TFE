@@ -17,7 +17,7 @@ Starting from very fundamental notions, those will allow to explain more complex
 
 The system is defined as being the area of the space selected for the study. Between the system and the environment lies the boundary. This boundary can either be real or fictitious and, can be static or mobile.
 
-When the system is characterised, it has to be established if it is an open or a closed system.
+When the system is characterized, it has to be established if it is an open or a closed system.
 The open systems are ones where an arbitrary control volume well demarcated in the space is studied. For these systems, matter and energy is exchanged with the surrounding as heat or work. Typical examples are combustion chamber, heat-exchanger, turbomachines, piping,...
 
 On the other hand, the closed systems does not exchange matter with the environment. Indeed, 
@@ -34,33 +34,43 @@ For the ideal gas, this relation is
 \begin{equation}
 P\cdot V = m\frac{R}{MM}\cdot T\label{eq:C2_GP}    
 \end{equation}
-where \textit{m} is the quantity of matter (in kg), $R$ is the universal gas constant (8.314 J/mole/K\footnote{K is degree Kelvin and is scaled as follows: 273.15\degree K = 0\degree C}) and $MM$ is the molar mass (in kg/mole) of the system.
+where \textit{m} is the quantity of matter (in kg), $R$ is the universal gas constant (8.314 J/mole/K\footnote{Where K is the degree Kelvin and is scaled as 273.15\degree K = 0\degree C}) and $MM$ is the molar mass (in kg/mole\footnote{Where 1 mole correspond to $\sim 6\cdot 10^{23}$ elementary entities (atoms, molecules,...)}) of the system.
 \newpage
 \subsection{Energy}\label{sect:C2_Ener}
-\quad\, In the section \ref{sect:C2_Sys}, the notion of energy has been mentioned without characterising it before hand. From the first law of thermodynamic, it is stated that the energy cannot be created nor destroyed. Therefore, it can only be converted an can exist into multiple forms (thermal, mechanical, electrical,...)\cite{thermoApp_2}. The unit of the energy is the Joule (J), and the sum of all the energies in a system is called the total energy.
+\quad\, In the subsection \ref{sect:C2_Sys}, the notion of energy has been mentioned without characterizing it before hand. From the first law of thermodynamic, it is stated that the energy cannot be created nor destroyed. Therefore, it can only be converted an can exist into multiple forms (thermal, mechanical, electrical,...)\cite{thermoApp_2}. The unit of the energy is the Joule (J), and the sum of all the energies in a system is called the total energy $E$.
 
-This total energy always depends on a reference point because an absolute value for the energy is not defined. Usually, the reference point is set to 0.
+The energy is a state variable. This means that this quantity allows to characterize the state of the system. When considering the energy, its absolute value is not something that is defined. Instead, the energy is always computed as compared with a reference point.
 
-As said in the section \ref{sect:C2_Sys}, any system will exchange energy with the surrounding as heat and/or work. The heat is defined as "the form of energy which is exchanged between the system and its environment when there is a gradient of temperature between these two entities". As the heat is always referred as a flux between two bodies, the phenomena is called heat transfer. The heat transfer can be realised by
+Thus, considering the variation of the total energy from a state \textbf{1} to a state \textbf{2}, it is obtained
+\begin{align}
+    \Delta E &= \Delta U + \Delta KE + \Delta PE \label{eq:C2_E}\\
+    \text{with } \Delta U  &= m\cdot(u_2 - u1) \text{: Variation of the internal energy}\nonumber\\
+                 \Delta KE &= \frac{1}{2}m\cdot(V^2_2 - V^2_1)\text{: Variation of the kinetic energy}\nonumber\\
+                 \Delta PE &= m\cdot g\cdot(z_2 - z_1)\text{: Variation of the potential energy}\nonumber
+\end{align} 
+ where the internal energy is the sum of all the "microscopic" energy within the system.
+
+As said in the subsection \ref{sect:C2_Sys}, any system will exchange energy with the surrounding as heat and/or work. The heat is defined as "the form of energy which is exchanged between the system and its environment when there is a gradient of temperature between these two entities". As the heat is always referred as a flux between two bodies, the phenomena is called heat transfer. The heat transfer can be realized by
 \begin{itemize}
     \item Conduction: Heat transfer through a non flowing material due to the interaction of "molecular scale energy carriers within the material"\cite{GregoryNellis2015}
     \item Convection: More complex conduction when considering a flowing fluid.
     \item Radiation: The heat is transferred as electromagnetic waves.
 \end{itemize}
-
-By definition, a system that does not exchange heat with the surrounding is called \textbf{adiabatic}.
+The heat transfer is denoted $Q$. A system that does not exchange heat with the surrounding is called \textbf{adiabatic}.
 
 Aside the heat transfer, the system also can exchange energy by producing a work. The Work $W$ is "the form of energy exchanged associated to a force applied over a certain distance". The work is exchanged if the force applied on the system creates a displacement of its boundary. The power is defined as the work per unit of time (in Watt or W).
 
 Both the heat and the work are called "path functions" because they are associated to the evolution of a system and not to the state of this system. Thus, these are not thermodynamic variables (like the temperature or the pressure).
 
 \subsubsection{Energy balance}
-It has been previously introduced several mechanisms to exchange energy from the system to its environment. Aside from the heat transfer and the work transfer, the energy can also be exchange using mass transfer. Indeed, if the considered system is open, the mass entering and exiting the system will convey energy.
+\quad\, It has been previously mentioned several mechanisms to exchange energy from the system to its environment. Aside from the heat transfer and the work transfer, the energy can also be exchange using mass transfer. Indeed, if the considered system is open, the mass entering and exiting the system will convey energy.
 
 To recall the first principle of thermodynamic, the energy cannot be created or destroyed. Based on the statement, the energy balance of the system is given by the following generic formulation (\ref{eq:C2_EB}).
 \begin{equation}
     E_{in} - E_{out} = (Q_{in} - Q_{out}) + (W_{in} - W_{out}) + (E_{mass,in} - E_{mass,out}) = \Delta E_{system} \label{eq:C2_EB}
 \end{equation}
+with $E_{mass}$ the energy convey by the mass entering/exiting the system.
+
 It is possible to write a temporal formulation (\ref{eq:C2_PB}) of the energy balance named \textbf{power balance}.  
 \begin{equation}
     \dot{E}_{in} - \dot{E}_{out} = (\dot{Q}_{in} - \dot{Q}_{out}) + (\dot{W}_{in} - \dot{W}_{out}) + (\dot{E}_{mass,in} - \dot{E}_{mass,out}) = \frac{dE_{system}}{dt} \label{eq:C2_PB}
@@ -68,10 +78,11 @@ It is possible to write a temporal formulation (\ref{eq:C2_PB}) of the energy ba
 where $\frac{dE_{system}}{dt}=0$ when considering a system for which the variation of energy does not vary in the time.
 
 \subsubsection{Energy conservation efficiency}
-When the system is transferring or converting energy, it is often interesting to quantified the quality of this transfer/conversion. the efficiency is defined to provide this quantification and its definition is the
+\quad\, When the system is transferring or converting energy, it is often interesting to quantified the quality of this transfer/conversion. the efficiency is defined to provide this quantification and its definition is the
 $\frac{\text{useful product}}{\text{paid consumption}}$. For example, a water electric heater with a efficiency of 90\% is a system such that 90\% of the electrical energy consumed is converted in thermal energy.  
 
 Considering the combustion of a fuel, the combustion efficiency is defined as the ratio
 $$ \frac{\dot{Q}}{\dot{m}_{fuel}\cdot HV_{fuel}}$$
 where $\dot{m}$  and $HV_{fuel}$ is the mass flow and the heating value of the fuel injected into the combustion chamber.
-\section{Frequently used state variables}
+\section{Useful state variables}
+\quad\, The previous section did introduce many concepts to start analyzing a thermodynamic system submitted to diverse transformations. Among those, the notion of state variables defining the equilibrium state of such system has been defined.   
