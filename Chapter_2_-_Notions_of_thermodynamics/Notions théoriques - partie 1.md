@@ -25,12 +25,12 @@
 > ~~~1 page pour ces notions~~
 
 ## Définitions de variables d'états utiles
-### Chaleur spécifique
-- Pour un gaz idéal
+### ~~Chaleur spécifique~~
+- ~~Pour un gaz idéal~~
 - Pour un liquide
 
-### Enthalpie
-- Pour un gaz idéal
+### ~~Enthalpie~~
+- ~~Pour un gaz idéal~~
 - Pour un liquide
 
 ###  Entropie
@@ -81,7 +81,7 @@
 ## Tuyauteries
 ### Calcul des pertes de charge
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0OTU3NDU3MSw5NDkyNDI0MjksLTc0OT
-kwNzM1NSw5Nzk5NjUxNTcsLTEzMjM5MjU3ODcsLTE5MDMwNjUx
-NzksMTgzNDEwMDAwNV19
+eyJoaXN0b3J5IjpbLTkwNTQ2MDkxLC01NDk1NzQ1NzEsOTQ5Mj
+QyNDI5LC03NDk5MDczNTUsOTc5OTY1MTU3LC0xMzIzOTI1Nzg3
+LC0xOTAzMDY1MTc5LDE4MzQxMDAwMDVdfQ==
 -->
