@@ -1,3 +1,4 @@
+\graphicspath{{Chapter_2_-_Notions_of_thermodynamics/Images/}}
 \chapter{Notions of thermodynamics}
 \quad\, In the introduction, it has been introduced many times the concept and the used of the Brayton cycle. As explained, this concept has been applied for many usages, including electricity production and aircraft propulsion which are the most common and known applications. It has been exposed that from the invention proposed by George Brayton in the end of the 19th century, the technology did really evolve.
 
@@ -44,11 +45,11 @@ The energy is a state variable. This means that this quantity allows to characte
 Thus, considering the variation of the total energy from a state \textbf{1} to a state \textbf{2}, it is obtained
 \begin{align}
     \Delta E &= \Delta U + \Delta KE + \Delta PE \label{eq:C2_E}\\
-    \text{with } \Delta U  &= m\cdot(u_2 - u1) \text{: Variation of the internal energy}\nonumber\\
+    \text{with } \Delta U  &= U_2 - U_1 =  m\cdot(u_2 - u1) \text{: Variation of the internal energy}\nonumber\\
                  \Delta KE &= \frac{1}{2}m\cdot(V^2_2 - V^2_1)\text{: Variation of the kinetic energy}\nonumber\\
                  \Delta PE &= m\cdot g\cdot(z_2 - z_1)\text{: Variation of the potential energy}\nonumber
 \end{align} 
- where the internal energy is the sum of all the "microscopic" energy within the system.
+where z is the altitude of the system position and U, the internal energy, is the sum of all the "microscopic" energy within the system.
 
 As said in the subsection \ref{sect:C2_Sys}, any system will exchange energy with the surrounding as heat and/or work. The heat is defined as "the form of energy which is exchanged between the system and its environment when there is a gradient of temperature between these two entities". As the heat is always referred as a flux between two bodies, the phenomena is called heat transfer. The heat transfer can be realized by
 \begin{itemize}
@@ -86,3 +87,38 @@ $$ \frac{\dot{Q}}{\dot{m}_{fuel}\cdot HV_{fuel}}$$
 where $\dot{m}$  and $HV_{fuel}$ is the mass flow and the heating value of the fuel injected into the combustion chamber.
 \section{Useful state variables}
 \quad\, The previous section did introduce many concepts to start analyzing a thermodynamic system submitted to diverse transformations. Among those, the notion of state variables defining the equilibrium state of such system has been defined.   
+\subsection{Enthalpy}
+Considering a closed system, the third term of the energy balance given in the relation(\ref{eq:C2_EB}) is nullified. Thus, the variation of the total energy from a state \textbf{1} to a state \textbf{2} is equal to
+\begin{equation}
+E_{2} - E_{1} = Q_{1-2} - W_{1-2} = (U_2 - U_1) + \frac{1}{2}m\cdot(V^2_2 - V^2_1) + m\cdot g(z_2 - z1)\cite{cogen_1} \label{eq:C2_EBC}
+\end{equation}
+Let's note that the terms of kinetic and potential energy are often negligible compared to the internal energy.  
+
+The relation \ref{eq:C2_EBC} can be adapted to be applied for the open system by introducing an accumulation term $\Delta E_{cv}$. This correction allows the following reformulation (\ref{eq:C2_EBO}) of the energy balance.
+\begin{equation}
+Q_{1-2} - W_{1-2} - E_{2} - E_{1} = \Delta E_{cv}\label{eq:C2_EBO}
+\end{equation}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{control_volume.png}
+\caption{System control volume}
+\label{fig:C2_VC}
+\end{figure}
+
+The Figure \ref{fig:C2_VC} depicts a open system with an entry and exit area $A_1$ and $A_2$ respectively. Posing that the work $W$ is equal to 
+\begin{equation}
+W = P_2\cdot A_2\cdot V_2\Delta t - P_1\cdot A_1\cdot V_1\Delta t + W_s
+\end{equation}      
+where $P_1$ (resp. $P_2$) and $V_1$ (resp. $V_2$) are the pressure and the velocity at \textbf{1} (resp. \textbf{2}).
+
+By neglecting the variation of the kinetic and potential energy, the energy balance is after some mathematical operations as given in the relation \ref{eq:C2_EBH}
+\begin{equation}
+q - w_s = u_2 +P_2\cdot v_2 - u_1 - P_1\cdot v_1 = h_2 - h_1
+\end{equation}
+where $q$, $w_s$ and $h$ are the specific work, heat and \textbf{enthalpy} (in J/kg).  
+
+\subsection{Specific heat}
+The previous subsection was meant to define the enthalpy. This state variable is used in place of the internal energy when dealing with open system.
+
+  
