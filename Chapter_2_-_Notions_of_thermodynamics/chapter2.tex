@@ -32,9 +32,10 @@ When the state functions can be measured (directly or indirectly), these are cal
 It can be shown that the equilibrium state of a system can be described by those three variables. Also, among $P$, $T$ and $V$, only two of them are independent. This means that a state relation defined as \textbf{F}($P$, $T$, $V$) = 0.
 
 For the ideal gas, this relation is
-\begin{equation}
-P\cdot V = m\frac{R}{MM}\cdot T\label{eq:C2_GP}    
-\end{equation}
+\begin{align}
+P\cdot V &= m\frac{R}{MM}\cdot T\nonumber\\
+P\cdot v &= r\cdot T\label{eq:C2_GP}    
+\end{align}
 where \textit{m} is the quantity of matter (in kg), $R$ is the universal gas constant (8.314 J/mole/K\footnote{Where K is the degree Kelvin and is scaled as 273.15\degree K = 0\degree C}) and $MM$ is the molar mass (in kg/mole\footnote{Where 1 mole correspond to $\sim 6\cdot 10^{23}$ elementary entities (atoms, molecules,...)}) of the system.
 \newpage
 \subsection{Energy}\label{sect:C2_Ener}
@@ -85,10 +86,11 @@ $\frac{\text{useful product}}{\text{paid consumption}}$. For example, a water el
 Considering the combustion of a fuel, the combustion efficiency is defined as the ratio
 $$ \frac{\dot{Q}}{\dot{m}_{fuel}\cdot HV_{fuel}}$$
 where $\dot{m}$  and $HV_{fuel}$ is the mass flow and the heating value of the fuel injected into the combustion chamber.
-\section{Useful state variables}
-\quad\, The previous section did introduce many concepts to start analyzing a thermodynamic system submitted to diverse transformations. Among those, the notion of state variables defining the equilibrium state of such system has been defined.   
+\section{First principle of thermodynamic}
+\quad\, The previous section did introduce many concepts to start analyzing a thermodynamic system submitted to diverse transformations. Among those, the notion of state variables defining the equilibrium state of such system has been defined. this section will introduce the enthalpy and the specific heat based on the first principal of the thermodynamic.
+
 \subsection{Enthalpy}
-Considering a closed system, the third term of the energy balance given in the relation(\ref{eq:C2_EB}) is nullified. Thus, the variation of the total energy from a state \textbf{1} to a state \textbf{2} is equal to
+\quad\, Considering a closed system, the third term of the energy balance given in the relation(\ref{eq:C2_EB}) is nullified. Thus, the variation of the total energy from a state \textbf{1} to a state \textbf{2} is equal to
 \begin{equation}
 E_{2} - E_{1} = Q_{1-2} - W_{1-2} = (U_2 - U_1) + \frac{1}{2}m\cdot(V^2_2 - V^2_1) + m\cdot g(z_2 - z1)\cite{cogen_1} \label{eq:C2_EBC}
 \end{equation}
@@ -114,11 +116,40 @@ where $P_1$ (resp. $P_2$) and $V_1$ (resp. $V_2$) are the pressure and the veloc
 
 By neglecting the variation of the kinetic and potential energy, the energy balance is after some mathematical operations as given in the relation \ref{eq:C2_EBH}
 \begin{equation}
-q - w_s = u_2 +P_2\cdot v_2 - u_1 - P_1\cdot v_1 = h_2 - h_1
+q - w_s = u_2 +P_2\cdot v_2 - u_1 - P_1\cdot v_1 = h_2 - h_1\label{eq:C2_EBH}
 \end{equation}
 where $q$, $w_s$ and $h$ are the specific work, heat and \textbf{enthalpy} (in J/kg).  
-
+For the case of an ideal gas, the enthalpy and the internal energy only depend on the temperature $T$. Indeed, taking the equation (\ref{eq:C2_GP}), the relation (\ref{eq:C2_h}) can easily be deduced.
+\begin{equation}
+h = u(T) + Pv = u(T) + rT \label{eq:C2_h}
+\end{equation}
 \subsection{Specific heat}
-The previous subsection was meant to define the enthalpy. This state variable is used in place of the internal energy when dealing with open system.
+\quad\, The previous subsection was meant to define the enthalpy. This state variable is used in place of the internal energy when dealing with open system.\\
 
-  
+An other quantity that is useful for system study is the \textbf{specific heat}. This state variable is defined as the required energy to increase of 1\degree C the temperature of 1kg of a substance. 
+ 
+The required heat to produce this effect depends on the ways the transformation takes place. 
+If it is done under constant volume constraint, it is called specific heat at constant volume and denoted $c_v$. 
+
+If the transformation is performed at constant pressure, the symbol associated to the specific heat is $c_p$.
+It is worth to note that the specific heat at constant pressure is always higher than the $c_v$. When performing the transformation a constant pressure, the gas "expands against the external pressure. This means that the gas does work"\cite{Ashutoshvashisht202017}. This is the reason why the supplied heat has to be greater than for the transformation at constant volume. 
+
+It had been shown that for an ideal gas, the variation of the internal energy can be linked to the specific heat at constant volume as written in the relation (\ref{eq:C2_UC}).
+\begin{equation}
+du = c_vdT \rightarrow u_2 - u_1 = \int_{T_1}^{T_2} c_vdT\label{eq:C2_UC}
+\end{equation} 
+Similarly, the variation of the enthalpy can be expressed using the specific at constant pressure.
+
+\begin{equation}
+dh = c_pdT \rightarrow h_2 - h_1 = \int_{T_1}^{T_2} c_pdT\label{eq:C2_UP}
+\end{equation} 
+
+These two relations, with the equality (\ref{eq:C2_h}), provide the required tools to express the gas constant $r$ as a function of the temperature only. 
+\begin{equation}
+r = c_p - c_v \label{eq:C2_r}
+\end{equation}
+
+Aside the gas constant, the ratio of the specific heat $\lambda$ (\ref{eq:C2_lbd}) is also a useful variable to be computed.
+\begin{equation}
+\lambda = \frac{c_p}{c_v} \label{eq:C2_lbd}
+\end{equation}
