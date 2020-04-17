@@ -242,6 +242,14 @@ In the case of the Carnot cycle, both variations are equal. This is illustrated 
 \caption{Carnot cycle - TS diagram \cite{2015}}
 \label{fig:C2_CarnotTS}
 \end{figure}
+
+%\subsection{Exergy}
+%\quad\, From now, it has not been clearly established a tool to establish the waste of energy when performing a transformation. It has been stated earlier that the "work done during a process depends on the initial state, the final state, and the process path. In the exergy analysis, the \textit{initial state} is specified [...], the process between the two states is executed in a \textit{reversible manner} [...], and the system must be in the \textit{dead state} at the end of the process"\cite{2015}. 
+%
+%The dead state is defined as being the state where the system is thermodynamic equilibrium with its immediate surrounding. This means that both will be at the same pressure and temperature and there is no unbalance (of any types) between the system and its surrounding. At this state, the system has zero exergy\citep{2015}.
+%When the system arrived to such state, it cannot deliver any extra Joule of work. Indeed, supposing that there is a temperature gradient between the system and the immediate surrounding, it's possible to produce a work by "running a heat engine between these two temperature levels\citep{2015}.
+
+
 \subsection{Computation of the thermodynamic properties}
 \quad\, From now, the hypothesis of an ideal gas has been used for the computation of the previously established state variables. However, while this hypothesis remains quite valid when dealing with gas, it cannot be used for a real fluid (e.g. liquid water).
 
@@ -264,6 +272,7 @@ Those relations can be derived from the four Gibbs relations expressed in (\ref{
   dg = dh - Tds - sdT = vdP - sdT \label{eq:C2_Gibbs4}
 \end{equation} \label{eq:C2_Gibbs}
 \end{subequations}
+
 where the state variables $a$ and $g$ are the Helmholtz and Gibbs function (respectively).
 
 Analyzing the relations allows to notice that each of them are of the form
@@ -294,4 +303,10 @@ The relations (\ref{eq:C2_Max}) are called Maxwell equations are helpful in ther
 
 However, this method for calculating the thermodynamic variables is limited to simple compressible system and cannot be used when the system involves "electrical, magnetic, and other effects"\cite{2015}.
 
-These are the relations used when using a digital library for the thermodynamic assessment of the state of a pure fluid with real properties. The open-source library named \textbf{CoolProp}\cite{Bell2014} will be used during this work. This library use the Helmholtz function $a=u - Ts$ to calculate the others state variables.
+These are the relations used when using a digital library for the thermodynamic assessment of the state of a pure fluid with real properties. The open-source library named \textbf{CoolProp}\cite{Bell2014} is one of the best known and. In this work, the library will be called many time when the ideal gas approximation is not relevant.\\
+
+%To summarize what have been done in this chapter, it has first been introduced the concept of open and closed system. Then, the notion of state variables has been defined. It has been exposed that these variables allows to assess the state of any closed or open system.
+%
+%Then, based on the two principles of the thermodynamic, it has been defined the notions of energy, enthalpy, specific heat and entropy. Those really valuable tools offer the means to fully determined the state of any systems. The energy conservation efficiency has been defined, providing a method to establish the quality of a transformation.
+%
+%The next chapter will be focused on the description of the different components constituting the Brayton cycle. The notions that have already been discussed in those lines will be supposed to be integrated by the reader. Therefore, those will not be repeated.
