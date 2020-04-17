@@ -24,20 +24,20 @@
 - ~~Rendement de conversion énergétique~~
 > ~~~1 page pour ces notions~~
 
-## Définitions de variables d'états utiles
+## ~~Définitions de variables d'états utiles~~
 ### ~~Chaleur spécifique~~
 - ~~Pour un gaz idéal~~
-- Pour un liquide
+- ~~Pour un liquide~~
 
 ### ~~Enthalpie~~
 - ~~Pour un gaz idéal~~
-- Pour un liquide
+- ~~Pour un liquide~~
 
-###  Entropie
-- Second principe de la thermodynamique
-	- Rendement de Carnot
-	- Définition entropie et rendement isentropique
-	> Cours 1 centrale thermique et cogénération
+###  ~~Entropie~~
+- ~~Second principe de la thermodynamique~~
+	- ~~Rendement de Carnot~~
+	- ~~Définition entropie et rendement isentropique~~
+	> ~~Cours 1 centrale thermique et cogénération~~
 
 ## Compresseur/Turbine
 ### Etat de l'art 
@@ -81,7 +81,7 @@
 ## Tuyauteries
 ### Calcul des pertes de charge
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwNTQ2MDkxLC01NDk1NzQ1NzEsOTQ5Mj
-QyNDI5LC03NDk5MDczNTUsOTc5OTY1MTU3LC0xMzIzOTI1Nzg3
-LC0xOTAzMDY1MTc5LDE4MzQxMDAwMDVdfQ==
+eyJoaXN0b3J5IjpbNjg4MTkwODA1LC05MDU0NjA5MSwtNTQ5NT
+c0NTcxLDk0OTI0MjQyOSwtNzQ5OTA3MzU1LDk3OTk2NTE1Nywt
+MTMyMzkyNTc4NywtMTkwMzA2NTE3OSwxODM0MTAwMDA1XX0=
 -->
