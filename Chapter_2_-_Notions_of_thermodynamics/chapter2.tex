@@ -1,5 +1,5 @@
 \graphicspath{{Chapter_2_-_Notions_of_thermodynamics/Images/}}
-\chapter{Notions of thermodynamics}
+\chapter{Notions of the thermodynamics}
 \quad\, In the introduction, it has been introduced many times the concept and the used of the Brayton cycle. As explained, this concept has been applied for many usages, including electricity production and aircraft propulsion which are the most common and known applications. It has been exposed that from the invention proposed by George Brayton in the end of the 19th century, the technology did really evolve.
 
 Indeed, while the Brayton cycle engine first appears as a  piston engine where the compression, combustion and expansion occurs in the same enclosure, Nowadays 
@@ -33,18 +33,20 @@ It can be shown that the equilibrium state of a system can be described by those
 
 For the ideal gas, this relation is
 \begin{align}
+\setstretch{1}
 P\cdot V &= m\frac{R}{MM}\cdot T\nonumber\\
 P\cdot v &= r\cdot T\label{eq:C2_GP}    
 \end{align}
 where \textit{m} is the quantity of matter (in kg), $R$ is the universal gas constant (8.314 J/mole/K\footnote{Where K is the degree Kelvin and is scaled as 273.15\degree K = 0\degree C}) and $MM$ is the molar mass (in kg/mole\footnote{Where 1 mole correspond to $\sim 6\cdot 10^{23}$ elementary entities (atoms, molecules,...)}) of the system.
 \newpage
 \subsection{Energy}\label{sect:C2_Ener}
-\quad\, In the subsection \ref{sect:C2_Sys}, the notion of energy has been mentioned without characterizing it before hand. From the first law of thermodynamic, it is stated that the energy cannot be created nor destroyed. Therefore, it can only be converted an can exist into multiple forms (thermal, mechanical, electrical,...)\cite{thermoApp_2}. The unit of the energy is the Joule (J), and the sum of all the energies in a system is called the total energy $E$.
+\quad\, In the subsection \ref{sect:C2_Sys}, the notion of energy has been mentioned without characterizing it before hand. From the first principle of the thermodynamic, it is stated that the energy cannot be created nor destroyed. Therefore, it can only be converted an can exist into multiple forms (thermal, mechanical, electrical,...)\cite{thermoApp_2}. The unit of the energy is the Joule (J), and the sum of all the energies in a system is called the total energy $E$.
 
 The energy is a state variable. This means that this quantity allows to characterize the state of the system. When considering the energy, its absolute value is not something that is defined. Instead, the energy is always computed as compared with a reference point.
 
 Thus, considering the variation of the total energy from a state \textbf{1} to a state \textbf{2}, it is obtained
 \begin{align}
+\setstretch{1}
     \Delta E &= \Delta U + \Delta KE + \Delta PE \label{eq:C2_E}\\
     \text{with } \Delta U  &= U_2 - U_1 =  m\cdot(u_2 - u1) \text{: Variation of the internal energy}\nonumber\\
                  \Delta KE &= \frac{1}{2}m\cdot(V^2_2 - V^2_1)\text{: Variation of the kinetic energy}\nonumber\\
@@ -54,6 +56,7 @@ where z is the altitude of the system position and U, the internal energy, is th
 
 As said in the subsection \ref{sect:C2_Sys}, any system will exchange energy with the surrounding as heat and/or work. The heat is defined as "the form of energy which is exchanged between the system and its environment when there is a gradient of temperature between these two entities". As the heat is always referred as a flux between two bodies, the phenomena is called heat transfer. The heat transfer can be realized by
 \begin{itemize}
+\setstretch{1}
     \item Conduction: Heat transfer through a non flowing material due to the interaction of "molecular scale energy carriers within the material"\cite{GregoryNellis2015}
     \item Convection: More complex conduction when considering a flowing fluid.
     \item Radiation: The heat is transferred as electromagnetic waves.
@@ -67,60 +70,67 @@ Both the heat and the work are called "path functions" because they are associat
 \subsubsection{Energy balance}
 \quad\, It has been previously mentioned several mechanisms to exchange energy from the system to its environment. Aside from the heat transfer and the work transfer, the energy can also be exchange using mass transfer. Indeed, if the considered system is open, the mass entering and exiting the system will convey energy.
 
-To recall the first principle of thermodynamic, the energy cannot be created or destroyed. Based on the statement, the energy balance of the system is given by the following generic formulation (\ref{eq:C2_EB}).
+To recall the first principle of the thermodynamic, the energy cannot be created or destroyed. Based on the statement, the energy balance of the system is given by the following generic formulation (\ref{eq:C2_EB}).
 \begin{equation}
+\setstretch{1}
     E_{in} - E_{out} = (Q_{in} - Q_{out}) + (W_{in} - W_{out}) + (E_{mass,in} - E_{mass,out}) = \Delta E_{system} \label{eq:C2_EB}
 \end{equation}
 with $E_{mass}$ the energy convey by the mass entering/exiting the system.
 
 It is possible to write a temporal formulation (\ref{eq:C2_PB}) of the energy balance named \textbf{power balance}.  
 \begin{equation}
+\setstretch{1}
     \dot{E}_{in} - \dot{E}_{out} = (\dot{Q}_{in} - \dot{Q}_{out}) + (\dot{W}_{in} - \dot{W}_{out}) + (\dot{E}_{mass,in} - \dot{E}_{mass,out}) = \frac{dE_{system}}{dt} \label{eq:C2_PB}
 \end{equation}
 where $\frac{dE_{system}}{dt}=0$ when considering a system for which the variation of energy does not vary in the time.
 
 \subsubsection{Energy conservation efficiency}
 \quad\, When the system is transferring or converting energy, it is often interesting to quantified the quality of this transfer/conversion. the efficiency is defined to provide this quantification and its definition is the
-$\frac{\text{useful product}}{\text{paid consumption}}$. For example, a water electric heater with a efficiency of 90\% is a system such that 90\% of the electrical energy consumed is converted in thermal energy.  
+$\frac{\text{Desired ouptut}}{\text{Required input}}$. For example, a water electric heater with a efficiency of 90\% is a system such that 90\% of the electrical energy consumed is converted in thermal energy.  
 
 Considering the combustion of a fuel, the combustion efficiency is defined as the ratio
 $$ \frac{\dot{Q}}{\dot{m}_{fuel}\cdot HV_{fuel}}$$
 where $\dot{m}$  and $HV_{fuel}$ is the mass flow and the heating value of the fuel injected into the combustion chamber.
-\section{First principle of thermodynamic}
-\quad\, The previous section did introduce many concepts to start analyzing a thermodynamic system submitted to diverse transformations. Among those, the notion of state variables defining the equilibrium state of such system has been defined. this section will introduce the enthalpy and the specific heat based on the first principal of the thermodynamic.
+\section{Principles of the thermodynamic}
+\quad\, The previous section did introduce many concepts to start analyzing a thermodynamic system submitted to diverse transformations. Among those, the notion of state variables defining the equilibrium state of such system has been defined. This section will used the first and second principles of the thermodynamic to introduce some state variables that are used when studying a thermodynamic cycle.
 
 \subsection{Enthalpy}
 \quad\, Considering a closed system, the third term of the energy balance given in the relation(\ref{eq:C2_EB}) is nullified. Thus, the variation of the total energy from a state \textbf{1} to a state \textbf{2} is equal to
 \begin{equation}
+\setstretch{1}
 E_{2} - E_{1} = Q_{1-2} - W_{1-2} = (U_2 - U_1) + \frac{1}{2}m\cdot(V^2_2 - V^2_1) + m\cdot g(z_2 - z1)\cite{cogen_1} \label{eq:C2_EBC}
 \end{equation}
 Let's note that the terms of kinetic and potential energy are often negligible compared to the internal energy.  
 
 The relation \ref{eq:C2_EBC} can be adapted to be applied for the open system by introducing an accumulation term $\Delta E_{cv}$. This correction allows the following reformulation (\ref{eq:C2_EBO}) of the energy balance.
 \begin{equation}
+\setstretch{1}
 Q_{1-2} - W_{1-2} - E_{2} - E_{1} = \Delta E_{cv}\label{eq:C2_EBO}
 \end{equation}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{control_volume.png}
-\caption{System control volume}
+\includegraphics[width=0.7\textwidth]{control_volume.png}
+\caption{System control volume \cite{Dewallef2019}}
 \label{fig:C2_VC}
 \end{figure}
 
 The Figure \ref{fig:C2_VC} depicts a open system with an entry and exit area $A_1$ and $A_2$ respectively. Posing that the work $W$ is equal to 
 \begin{equation}
+\setstretch{1}
 W = P_2\cdot A_2\cdot V_2\Delta t - P_1\cdot A_1\cdot V_1\Delta t + W_s
 \end{equation}      
 where $P_1$ (resp. $P_2$) and $V_1$ (resp. $V_2$) are the pressure and the velocity at \textbf{1} (resp. \textbf{2}).
 
 By neglecting the variation of the kinetic and potential energy, the energy balance is after some mathematical operations as given in the relation \ref{eq:C2_EBH}
 \begin{equation}
+\setstretch{1}
 q - w_s = u_2 +P_2\cdot v_2 - u_1 - P_1\cdot v_1 = h_2 - h_1\label{eq:C2_EBH}
 \end{equation}
 where $q$, $w_s$ and $h$ are the specific work, heat and \textbf{enthalpy} (in J/kg).  
 For the case of an ideal gas, the enthalpy and the internal energy only depend on the temperature $T$. Indeed, taking the equation (\ref{eq:C2_GP}), the relation (\ref{eq:C2_h}) can easily be deduced.
 \begin{equation}
+\setstretch{1}
 h = u(T) + Pv = u(T) + rT \label{eq:C2_h}
 \end{equation}
 \subsection{Specific heat}
@@ -132,26 +142,156 @@ The required heat to produce this effect depends on the ways the transformation 
 If it is done under constant volume constraint, it is called specific heat at constant volume and denoted $c_v$. 
 
 If the transformation is performed at constant pressure, the symbol associated to the specific heat is $c_p$.
-It is worth to note that the specific heat at constant pressure is always higher than the $c_v$. When performing the transformation a constant pressure, the gas "expands against the external pressure. This means that the gas does work"\cite{Ashutoshvashisht202017}. This is the reason why the supplied heat has to be greater than for the transformation at constant volume. 
+It is worth to note that the specific heat at constant pressure is always higher than the $c_v$. When performing the transformation a constant pressure, the gas expands against the external pressure. This means that the gas does work and, this is the reason behind the greater value of the supplied heat when dealing with a transformation at constant pressure. 
 
 It had been shown that for an ideal gas, the variation of the internal energy can be linked to the specific heat at constant volume as written in the relation (\ref{eq:C2_UC}).
 \begin{equation}
+\setstretch{1}
 du = c_vdT \rightarrow u_2 - u_1 = \int_{T_1}^{T_2} c_vdT\label{eq:C2_UC}
 \end{equation} 
 Similarly, the variation of the enthalpy can be expressed using the specific at constant pressure.
 
 \begin{equation}
+\setstretch{1}
 dh = c_pdT \rightarrow h_2 - h_1 = \int_{T_1}^{T_2} c_pdT\label{eq:C2_UP}
 \end{equation} 
 
 These two relations, with the equality (\ref{eq:C2_h}), provide the required tools to express the gas constant $r$ as a function of the temperature only. 
 \begin{equation}
+\setstretch{1}
 r = c_p - c_v \label{eq:C2_r}
 \end{equation}
 
-Aside the gas constant, the ratio of the specific heat $\lambda$ (\ref{eq:C2_lbd}) is also a useful variable to be computed.
+Aside the gas constant, the specific heat ratio $k$ (\ref{eq:C2_k}) is also a useful variable to be computed.
 \begin{equation}
-\lambda = \frac{c_p}{c_v} \label{eq:C2_lbd}
+\setstretch{1}
+k = \frac{c_p}{c_v} \label{eq:C2_k}
 \end{equation}
 
-As shown in this section, the first principle of termodynamic provid
+\subsection{Carnot cycle}
+\quad\, The previous subsections used the first principle of the thermodynamic to deduce two useful state variables, namely the enthalpy and the specific heat.
+
+Now, let's move aside those notions and let consider the case where the transformation applied to a system is reversible. A necessary condition for the reversibility is that the transformation has to be done in quasi-equilibrium. This implies that if the transformation is reversed, the system goes back to its initial state.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{Carnot_schema.png}
+\caption{Carnot cycle - Schematic \cite{2015}}
+\label{fig:C2_Carnot}
+\end{figure}
+The Carnot cycle is a thermodynamic cycle composed of 4 reversible transformations illustrated on Figure \ref{fig:C2_Carnot}. Those transformations are as follow.
+
+\begin{itemize}
+\setstretch{1}
+\item \textbf{1} to \textbf{2} (Figure \ref{fig:C2_Carnot}a): Reversible isotherm expansion with a heat transfer $Q_H$ from the environment to the system
+\item \textbf{2} to \textbf{3} (Figure \ref{fig:C2_Carnot}b): Reversible  adiabatic expansion
+\item \textbf{3} to \textbf{4} (Figure \ref{fig:C2_Carnot}c): Reversible isotherm compression with a heat transfer $Q_L$ from the system to the environment
+\item \textbf{4} to \textbf{1} (Figure \ref{fig:C2_Carnot}d): Reversible adiabatic compression
+\end{itemize}
+For visual representation, this cycle has been represented in the PV diagram \ref{fig:C2_CarnotPV} where the different transformations are well exposed.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{Carnot_PV.png}
+\caption{Carnot cycle - PV diagram \cite{2015}}
+\label{fig:C2_CarnotPV}
+\end{figure}
+
+Using the first principle, the net work output is equal to $W_{net,out}=Q_H-Q_L$. This means that the efficiency of the cycle is given by
+\begin{equation}
+\setstretch{1}
+\eta_{carnot} = \frac{W_{net,out}}{Q_H} = 1 - \frac{Q_H}{Q_L}
+\end{equation} 
+Considering that the working fluid is an ideal gas, it can be demonstrated that the heats $Q_H$ and $Q_L$ can be replaced by the corresponding temperature $T_H$ of the hot source and $T_C$ of the cold sink.
+\begin{equation}
+\setstretch{1}
+\eta_{carnot}=1-\frac{T_H}{T_L}\label{eq:C2_eff_carnot}
+\end{equation} 
+The efficiency of the Carnot cycle is optimal. This implies that for any system playing with a hot source $T_H$ and a cold sink $T_C$, its efficiency cannot be greater than the Carnot efficiency with the \textbf{same} hot source and cold sink temperatures.
+\subsection{Entropy}
+\quad\, The last lines explained that a system with a hot source $T_H$ and a cold sink $T_C$ will never have a efficiency greater than the Carnot efficiency (for the same source and sink).
+
+For such cycle, it has been demonstrated in 1865 by the German physician R. J. E. Clausius that "the cyclic integral $\oint\frac{\delta Q}{T}$ is always less than or equal to zero"\cite{2015}.
+\begin{equation}
+\setstretch{1}
+\oint\frac{\delta Q}{T} = \frac{Q_H}{T_H} - \frac{Q_L}{T_L}\leq 0\label{eq:C2_cyc}
+\end{equation}
+
+For the Carnot cycle, the integral is equal to zeros because the two ratios $\frac{Q_H}{Q_L}$ and $\frac{T_H}{T_L}$ are equal.
+
+From the definition \ref{eq:C2_cyc} can be defined a new state variable named \textbf{entropy}. The entropy S is always measured based on a reference point and, its expression is given in the relation (\ref{eq:C2_S}).
+\begin{equation}
+\setstretch{1}
+dS \triangleq \frac{\delta Q_{rev}}{T}\label{eq:C2_S}
+\end{equation}
+where $\delta Q_{rev}$ is the "infinitesimal quantity of heat exchanged in a reversible way between the system and the environment at the temperature T"\cite{Dewallef2019}. 
+
+For a reversible adiabatic transformation, the $\delta Q_{rev}=0$. This implies that the entropy remains constant. Such transformations are called \textbf{isentropic} transformation.
+
+\subsection{Second principle definition}
+\quad\, Defining the entropy gives a great tool to measure the "quality" of the transformation compared to a similar but reversible transformation.
+
+Based on this definition, one formulation of the second principle of the thermodynamic is that for every transformation, the entropy of the final state of any isolated system is greater or equal to the one of the initial state.
+
+Considering the system defined in the previous lines, it can be said that the increase of entropy $\Delta S_L$ of the cold sink have to be at least greater than the diminution of entropy $\Delta S_H$ of the hot source.
+
+In the case of the Carnot cycle, both variations are equal. This is illustrated on the TS diagram \ref{fig:C2_CarnotTS} where the entropy of state \textbf{1} (resp. state \textbf{2}) is the same as the one of state \textbf{4} (resp. state \textbf{3}).
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{Carnot_TS.png}
+\caption{Carnot cycle - TS diagram \cite{2015}}
+\label{fig:C2_CarnotTS}
+\end{figure}
+\subsection{Computation of the thermodynamic properties}
+\quad\, From now, the hypothesis of an ideal gas has been used for the computation of the previously established state variables. However, while this hypothesis remains quite valid when dealing with gas, it cannot be used for a real fluid (e.g. liquid water).
+
+This problem can be solved using the Maxwell relations which provides a linked between the partial derivatives\footnote{For further information about partial derivative, see the annex \ref{annex_PD}} of the properties $P$, $v$, $T$ and $s$ for a simple compressible system \cite{2015}. 
+
+Those relations can be derived from the four Gibbs relations expressed in (\ref{eq:C2_Gibbs}).
+
+\begin{subequations}
+\setstretch{1}
+\begin{equation}
+  du = Tds - Pdv \label{eq:C2_Gibbs1} 
+\end{equation}    
+\begin{equation}
+  dh = Tds + vdP \label{eq:C2_Gibbs2} 
+\end{equation}
+\begin{equation}
+  da = du - Tds - sdT = - Pdv - sdT \label{eq:C2_Gibbs3} 
+\end{equation}    
+\begin{equation}
+  dg = dh - Tds - sdT = vdP - sdT \label{eq:C2_Gibbs4}
+\end{equation} \label{eq:C2_Gibbs}
+\end{subequations}
+where the state variables $a$ and $g$ are the Helmholtz and Gibbs function (respectively).
+
+Analyzing the relations allows to notice that each of them are of the form
+\begin{align}
+\setstretch{1}
+dz &= Mdx + Ndy\label{eq:C2_Max}\\
+\text{with } \left.\frac{\partial M}{\partial y}\right|_x &= \left.\frac{\partial N}{\partial x}\right|_y\label{eq:C2_partMax}
+\end{align}
+
+Using this property, the links between the different state variables are easily obtained by applying the relation (\ref{eq:C2_partMax}) to the equations (\ref{eq:C2_Gibbs1}) to (\ref{eq:C2_Gibbs4}).
+\begin{subequations}
+\setstretch{1}
+\begin{equation}
+  \left.\frac{\partial T}{\partial v}\right|_s =  - \left.\frac{\partial P}{\partial s}\right|_v \label{eq:C2_Max1} 
+\end{equation}    
+\begin{equation}
+  \left.\frac{\partial T}{\partial P}\right|_s = \left.\frac{\partial v}{\partial s}\right|_P \label{eq:C2_Max2}  
+\end{equation}
+\begin{equation}
+  \left.\frac{\partial s}{\partial v}\right|_T = \left.\frac{\partial P}{\partial T}\right|_v \label{eq:C2_Max3} 
+\end{equation}    
+\begin{equation}
+  \left.\frac{\partial s}{\partial P}\right|_T =  - \left.\frac{\partial v}{\partial T}\right|_P \label{eq:C2_Max4} 
+\end{equation} \label{eq:C2_Max}
+\end{subequations}
+
+The relations (\ref{eq:C2_Max}) are called Maxwell equations are helpful in thermodynamics. They provide a method to calculate the variation of the entropy of a system based on the measurement of the variation of the pressure, volume and temperature.
+
+However, this method for calculating the thermodynamic variables is limited to simple compressible system and cannot be used when the system involves "electrical, magnetic, and other effects"\cite{2015}.
+
+These are the relations used when using a digital library for the thermodynamic assessment of the state of a pure fluid with real properties. The open-source library named \textbf{CoolProp}\cite{Bell2014} will be used during this work. This library use the Helmholtz function $a=u - Ts$ to calculate the others state variables.
