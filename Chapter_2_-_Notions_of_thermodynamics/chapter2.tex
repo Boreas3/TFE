@@ -303,8 +303,30 @@ The relations (\ref{eq:C2_Max}) are called Maxwell equations are helpful in ther
 
 However, this method for calculating the thermodynamic variables is limited to simple compressible system and cannot be used when the system involves "electrical, magnetic, and other effects"\cite{2015}.
 
-These are the relations used when using a digital library for the thermodynamic assessment of the state of a pure fluid with real properties. The open-source library named \textbf{CoolProp}\cite{Bell2014} is one of the best known and. In this work, the library will be called many time when the ideal gas approximation is not relevant.\\
+These are the relations used when using a digital library for the thermodynamic assessment of the state of a pure fluid with real properties. The open-source library named \textbf{CoolProp}\cite{Bell2014} is one of the best known and. In this work, the library will be called many time when the ideal gas approximation is not relevant.
 
+\subsection{Computation of the entropy variation}
+\quad\, The previous subsection did introduce the four equations of state (\ref{eq:C2_Gibbs1}) to (\ref{eq:C2_Gibbs4}). Among those, the second equation allows to write the relation (\ref{eq:C2_ds})
+\begin{equation}
+ds = c_p\frac{dT}{T} - r\frac{dP}{P}\label{eq:C2_ds}
+\end{equation}
+using the definition (\ref{eq:C2_UP}) of the enthalpy variation and the relation of ideal gas (\ref{eq:C2_GP}).
+
+Performing the integration over the path of a transformation going from state \textbf{1} to state \textbf{2}, it can be obtained 
+\begin{equation}
+s_2 - s_1  = \int_1^2\frac{c_p}{T}dT - r\cdot ln\frac{P_2}{P_1}
+\end{equation}
+If it is supposed that the variation of the specific heat with respect to temperature are negligible, it can be written
+\begin{equation}
+s_2 - s_1= r\cdot \left(\frac{k}{k-1}ln\frac{T_2}{P_1} - ln\frac{P_2}{P_1}\right) = r\cdot ln\left[\frac{P_1}{P_2}\cdot\left(\frac{T_2}{T_1}\right)^\frac{k}{k-1}\right] \label{eq:C2_Deltas}
+\end{equation}
+where the $c_p=\frac{r\cdot k}{k-1}$ by using the two relations (\ref{eq:C2_r}) and (\ref{eq:C2_k}).
+
+For isentropic process, it has been stated that $s_2=s_1$. Thus, the following relationships can be derived.
+\begin{align}
+\frac{P_2}{P_1} = \left(\frac{T_2}{T_1}\right)^\frac{k}{k-1}\qquad
+\frac{\rho_2}{\rho_1} = \left(\frac{T_2}{T_1}\right)^\frac{1}{k-1}\label{eq:C2_isrel}
+\end{align}
 %To summarize what have been done in this chapter, it has first been introduced the concept of open and closed system. Then, the notion of state variables has been defined. It has been exposed that these variables allows to assess the state of any closed or open system.
 %
 %Then, based on the two principles of the thermodynamic, it has been defined the notions of energy, enthalpy, specific heat and entropy. Those really valuable tools offer the means to fully determined the state of any systems. The energy conservation efficiency has been defined, providing a method to establish the quality of a transformation.

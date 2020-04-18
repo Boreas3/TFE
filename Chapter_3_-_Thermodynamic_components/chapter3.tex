@@ -9,7 +9,9 @@ fluid traversing it and mechanical energy supplied to or extracted from the mach
 This subsection will swept the two categories but will mainly focused on the machines exchanging energy with \textbf{compressible} flow.
 
 \subsection{Incompressible flow - pumps}
-\quad\, The first category of flow to be considered is the incompressible flow. Among the machine exchanging energy with such type of fluid, there are pumps which are designed to raise the height or total hydraulic energy $H$ of the fluid. The variation of the height of the fluid is similar to its enthalpy variation. Thus, the power output  $\dot{W}_p$ developed by the pump can be expressed as given in relation (\ref{eq:C3_Ppump})
+\quad\, The first category of flow to be considered is the incompressible flow. This type of flow is characterized by a constant density over the distance. An example of incompressible fluid is the water.
+
+Among the machine exchanging energy with such type of fluid, there are pumps which are designed to raise the height or total hydraulic energy $H$ of the fluid. The variation of the height of the fluid is similar to its enthalpy variation. Thus, the power output  $\dot{W}_p$ developed by the pump can be expressed as given in relation (\ref{eq:C3_Ppump})
 \begin{equation}
 \dot{W}_{p,a-b} = \dot{m}\cdot (H_a - H_b)=\dot{m}\cdot\Delta H_p \label{eq:C3_Ppump}
 \end{equation}
@@ -42,6 +44,8 @@ Q_2 &= Q_1\cdot\frac{\Omega_2}{\Omega_1} \label{eq:C3_Qsim}\\
 \Delta H_2 &= \Delta H_1\cdot\left(\frac{\Omega_2}{\Omega_1}\right)^2 \label{eq:C3_DHsim}
 \end{align} 
 These relations are really useful to extrapolate the performance maps of a pump. Similar relations can be deduced considering the variation of the radius of the pump.
+
+One important property to notice is that all the dimensionless variables (e.g. the efficiency) are kept constant for all the different similar operational points. This is a valuable property which will be very useful for the future developments of the thesis.
 \subsubsection{Types of pumps}
 \quad\, Now that the exterior characteristics of the pumps have been defined, it is interesting to have at least a brief idea about how the pump is constructed. Without entering into detailed\footnote{see the section 4.3 and 4.4 of the course \citep{Hillewaert2019}}, there are two types of pumps.
 
@@ -52,6 +56,7 @@ The first type to be considered is the centrifugal pumps designed to provide a h
 \caption{Centrifugal pump \citep{Hillewaert2019}}
 \label{fig:C3_centri_pump}
 \end{figure}
+
 Basically, the centrifugal pump can be decomposed into two parts (for the most simple device). The first  part is the rotating impeller that will convert and transfer the mechanical energy to the fluid. Behind the impeller will be placed the volute (right picture of Figure \ref{fig:C3_centri_pump}) that collects the flow to bring it to the outlet of the pump.\newpage
 
 The second type of pump are the axial pumps which are, in opposition with the centrifugal pumps, designed to deliver low head for high flow rates. Such pumps is illustrated on Figure \ref{fig:C3_axial_pump}. 
@@ -63,5 +68,19 @@ The second type of pump are the axial pumps which are, in opposition with the ce
 \end{figure}
 
 The main two parts of an axial pumps are the rotor (the rotating part) that will increase the height of the fluid followed by a diffusor which "recuperates the kinetic energy at the exit of the rotor"\citep{Hillewaert2019}.
+
 \subsection{Compressible flow}
-azaz
+\quad\, The previous subsection introduced the pump which is a turbomachine design to increase the energy of the incompressible fluid passing through it. However, this type of machine cannot deals with compressible flow for which the density can vary over the distance. For instance, the air is a compressible fluid. 
+
+The behavior of the compressible flow is more complex to describe compared to incompressible flow. Indeed, "compressible flow is characterized by the propagation of acoustic waves"\citep{Hillewaert2019}.   This part of the section about turbomachines will only focused on the very main principles required for the good understanding of this work.
+
+\subsubsection{Static and total quantities}
+\quad\, As it has be partly reveal in the previous lines, the flow characteristics are dependent on its velocity. The study of compressible flow did lead to the distinction between the static and total quantities. 
+
+The static quantities are state variables (e.g. temperature, pressure,...) that are independent of the flow velocity. These quantities are the pne
+\subsubsection{Mach number}
+The Mach number $M$ is defined as being the ratio between the velocity $V$ and the sound speed $a$.
+\begin{equation}
+M = \frac{V}{a} \label{eq:C3_Mach}
+\end{equation}
+The Mach number $M$ is a dimensionless variable that gives an image of the compressible effects of the flow. Thus, one criteria for the determination of similar operational points is to keep constant the Mach number.
