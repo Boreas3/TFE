@@ -40,6 +40,7 @@ Those relations will be called characteristic or performance Map and are determi
 \subsubsection{Similarity}
 \quad\, When considering incompressible flow, it is possible to extrapolate from a known operating point a infinity of similar operating points. Indeed, There exist relationships which provides with enough accuracy the change of flow rate $Q$ and height variation $\Delta H$ when the rotational speed goes from $\Omega_1$ to $\Omega_2$. It can be demonstrate that the flow rate evolves linearly with the rotation speed, and that the height variation is a quadratic function of $\Omega$.
 \begin{align}
+\setstretch{1}
 Q_2 &= Q_1\cdot\frac{\Omega_2}{\Omega_1} \label{eq:C3_Qsim}\\
 \Delta H_2 &= \Delta H_1\cdot\left(\frac{\Omega_2}{\Omega_1}\right)^2 \label{eq:C3_DHsim}
 \end{align} 
@@ -77,10 +78,45 @@ The behavior of the compressible flow is more complex to describe compared to in
 \subsubsection{Static and total quantities}
 \quad\, As it has be partly reveal in the previous lines, the flow characteristics are dependent on its velocity. The study of compressible flow did lead to the distinction between the static and total quantities. 
 
-The static quantities are state variables (e.g. temperature, pressure,...) that are independent of the flow velocity. These quantities are the pne
+The static quantities are state variables (e.g. temperature, pressure,...) that are independent of the flow velocity. As for the total quantities, these are dependent of the flow velocity $V$. The total state variables can be deduced from the static ones. The relationships will be given in the following lines.
+
+For the notation, the symbolic representation of the total quantities will be the one of the static quantities with a superscript 0.
+ 
 \subsubsection{Mach number}
 The Mach number $M$ is defined as being the ratio between the velocity $V$ and the sound speed $a$.
 \begin{equation}
 M = \frac{V}{a} \label{eq:C3_Mach}
 \end{equation}
 The Mach number $M$ is a dimensionless variable that gives an image of the compressible effects of the flow. Thus, one criteria for the determination of similar operational points is to keep constant the Mach number.
+
+Using the Mach number allows to obtain formulas to compute the total quantities base the static ones. By considering first the total temperature, it can be found
+\begin{equation}
+T^0 = T + \frac{V^2}{2\cdot c_p} = T\cdot\left(1 + \frac{V^2}{2\cdot c_p\cdot T}\right)\label{eq:C3_TT0_1}
+\end{equation}
+For an isentropic process, it can be demonstrate that the speed of sound $a=k\cdot r\dot T$. Thus, the equation (\ref{eq:C3_TT0_1}) becomes
+\begin{equation}
+T^0 = T\cdot\left(1 + \frac{k-1}{2}\cdot M^2\right) = T\cdot f(M) \label{eq:C3_TT0}
+\end{equation}
+Using the equations \ref{eq:C2_isrel}) and the definition of the function $f(M)$, the relations linking the static to the total pressure, density and speed of sound can be obtained as well.
+\begin{align}
+\setstretch{1}
+P^0 &= P\cdot f(M)^\frac{k}{k-1}\label{eq:C3_PP0}\\
+\rho^0 &= \rho\cdot f(M)^\frac{1}{k-1}\label{eq:C3_rhorho0}\\
+a^0 &= a\sqrt{f(M)} \label{eq:C3_aa0}
+\end{align}
+\subsubsection{Performance maps}
+\quad\, As for the turbomachines exchanging energy with incompressible flows, the one studied here can be fully characterized knowing two independents operating parameters. Usually, the four parameters used for the drawing of the maps are
+\begin{itemize}
+\setstretch{1}
+\item $\dot{m}_c$ (kg/s): It is the corrected mass flow, it is defined as follows
+\begin{equation}
+\dot{m}_c = \dot{m}\cdot \sqrt{\frac{T}{T_{ref}}}\cdot\left(\frac{P_{ref}}{P}\right)
+\end{equation}
+with $T_{ref}$ and $P_{ref}$ being the reference temperature and pressure (all quantities being static).
+
+\item $\Omega$ (rpm): It is the rotational speed of the turbomachine shaft. 
+
+\item $\Pi$ (-): It is the pressure ratio between the inlet and the outlet of the turbomachines. If the turbomachines is compressing the flow, the ratio is reverse to keep it greater than one.
+
+\item $\eta$ (-): It is the isentropic efficiency of the machine.
+\end{itemize} 
