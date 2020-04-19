@@ -27,17 +27,17 @@ for those systems a control mass well delimited in the space is studied. Therefo
 \subsection{State functions and variables}\label{sect:C2_State}
 \quad\, Let considered a system as defined in the previous section. The state functions are defined as "a property of the system that only depend on its current state". These functions are independent of the past of the system and describe the equilibrium state of the system.
 
-When the state functions can be measured (directly or indirectly), these are called state variables. For example, the pressure $P$, the temperature $T$ or the volume $V$ are state variables.
+When the state functions can be measured (directly or indirectly), these are called state variables. For example, the pressure $P$, the temperature $T$ or the volume $Vol$ are state variables.
 
-It can be shown that the equilibrium state of a system can be described by those three variables. Also, among $P$, $T$ and $V$, only two of them are independent. This means that a state relation defined as \textbf{F}($P$, $T$, $V$) = 0.
+It can be shown that the equilibrium state of a system can be described by those three variables. Also, among $P$, $T$ and $Vol$, only two of them are independent. This means that a state relation defined as \textbf{F}($P$, $T$, $Vol$) = 0.
 
 For the ideal gas, this relation is
 \begin{align}
 \setstretch{1}
-P\cdot V &= m\cdot\frac{R}{MM}\cdot T\nonumber\\
-P\cdot v &= r\cdot T\label{eq:C2_GP}    
+P\cdot Vol &= m\cdot\frac{R}{MM}\cdot T\nonumber\\
+P\cdot vol &= r\cdot T\label{eq:C2_GP}    
 \end{align}
-where \textit{m} is the quantity of matter (in kg), $R$ is the universal gas constant (8.314 J/mole/K\footnote{Where K is the degree Kelvin and is scaled as 273.15\degree K = 0\degree C}) and $MM$ is the molar mass (in kg/mole\footnote{Where 1 mole correspond to $\sim 6\cdot 10^{23}$ elementary entities (atoms, molecules,...)}) of the system.
+where \textit{m} is the quantity of matter (in kg), $R$ is the universal gas constant (8.314 J/mole/K\footnote{Where K is the degree Kelvin and is scaled as 273.15\degree K = 0\degree C}), $vol$ the specific volume (in m$^3$/kg) and $MM$ is the molar mass (in kg/mole\footnote{Where 1 mole correspond to $\sim 6\cdot 10^{23}$ elementary entities (atoms, molecules,...)}) of the system.
 \newpage
 \subsection{Energy}\label{sect:C2_Ener}
 \quad\, In the subsection \ref{sect:C2_Sys}, the notion of energy has been mentioned without characterizing it before hand. From the first principle of the thermodynamic, it is stated that the energy cannot be created nor destroyed. Therefore, it can only be converted an can exist into multiple forms (thermal, mechanical, electrical,...)\cite{thermoApp_2}. The unit of the energy is the Joule (J), and the sum of all the energies in a system is called the total energy $E$.
@@ -48,11 +48,11 @@ Thus, considering the variation of the total energy from a state \textbf{1} to a
 \begin{align}
 \setstretch{1}
     \Delta E &= \Delta U + \Delta KE + \Delta PE \label{eq:C2_E}\\
-    \text{with } \Delta U  &= U_2 - U_1 =  m\cdot(u_2 - u1) \text{: Variation of the internal energy}\nonumber\\
-                 \Delta KE &= \frac{1}{2}m\cdot(V^2_2 - V^2_1)\text{: Variation of the kinetic energy}\nonumber\\
+    \text{with } \Delta U  &= U_2 - U_1 =  m\cdot(u_2 - u_1) \text{: Variation of the internal energy}\nonumber\\
+                 \Delta KE &= \frac{1}{2}m\cdot(v^2_2 - v^2_1)\text{: Variation of the kinetic energy}\nonumber\\
                  \Delta PE &= m\cdot g\cdot(z_2 - z_1)\text{: Variation of the potential energy}\nonumber
 \end{align} 
-where z is the altitude of the system position and U, the internal energy, is the sum of all the "microscopic" energy within the system.
+where $z$ is the altitude of the system position, $v$ is the velocity of the fluid and $U$, the internal energy, is the sum of all the "microscopic" energy within the system. The $u$ in lowercase corresponds to the specific internal energy and its unit is in J/kg.
 
 As said in the subsection \ref{sect:C2_Sys}, any system will exchange energy with the surrounding as heat and/or work. The heat is defined as "the form of energy which is exchanged between the system and its environment when there is a gradient of temperature between these two entities". As the heat is always referred as a flux between two bodies, the phenomena is called heat transfer. The heat transfer can be realized by
 \begin{itemize}
@@ -98,7 +98,7 @@ where $\dot{m}$  and $HV_{fuel}$ is the mass flow and the heating value of the f
 \quad\, Considering a closed system, the third term of the energy balance given in the relation(\ref{eq:C2_EB}) is nullified. Thus, the variation of the total energy from a state \textbf{1} to a state \textbf{2} is equal to
 \begin{equation}
 \setstretch{1}
-E_{2} - E_{1} = Q_{1-2} - W_{1-2} = (U_2 - U_1) + \frac{1}{2}m\cdot(V^2_2 - V^2_1) + m\cdot g(z_2 - z1)\citep{Dewallef2019} \label{eq:C2_EBC}
+E_{2} - E_{1} = Q_{1-2} - W_{1-2} = m\cdot\left(u_2 - u_1\right) + \frac{1}{2}m\cdot\left(v^2_2 - v^2_1\right) + m\cdot g\cdot\left(z_2 - z1\right)\citep{Dewallef2019} \label{eq:C2_EBC}
 \end{equation}
 Let's note that the terms of kinetic and potential energy are often negligible compared to the internal energy.  
 
@@ -115,23 +115,23 @@ Q_{1-2} - W_{1-2} - E_{2} - E_{1} = \Delta E_{cv}\label{eq:C2_EBO}
 \label{fig:C2_VC}
 \end{figure}
 
-The Figure \ref{fig:C2_VC} depicts a open system with an entry and exit area $A_1$ and $A_2$ respectively. Posing that the work $W$ is equal to 
+The Figure \ref{fig:C2_VC} depicts an open system with an entry and exit area $A_1$ and $A_2$ respectively. Posing that the work $W$ is equal to 
 \begin{equation}
 \setstretch{1}
-W = P_2\cdot A_2\cdot V_2\Delta t - P_1\cdot A_1\cdot V_1\Delta t + W_s
+W = P_2\cdot A_2\cdot v_2\cdot \Delta t - P_1\cdot A_1\cdot v_1\cdot \Delta t + W_s
 \end{equation}      
 where $P_1$ (resp. $P_2$) and $V_1$ (resp. $V_2$) are the pressure and the velocity at \textbf{1} (resp. \textbf{2}).
 
 By neglecting the variation of the kinetic and potential energy, the energy balance is after some mathematical operations as given in the relation \ref{eq:C2_EBH}
 \begin{equation}
 \setstretch{1}
-q - w_s = u_2 +P_2\cdot v_2 - u_1 - P_1\cdot v_1 = h_2 - h_1\label{eq:C2_EBH}
+q - w_s = u_2 +P_2\cdot vol_2 - u_1 - P_1\cdot vol_1 = h_2 - h_1\label{eq:C2_EBH}
 \end{equation}
-where $q$, $w_s$,$v$ and $h$ are the specific work, heat, volume and \textbf{enthalpy} (in J/kg).  
+where $q$, $w_s$, and $h$ are respectively the specific work, heat and \textbf{enthalpy} (in J/kg).  
 For the case of an ideal gas, the enthalpy and the internal energy only depend on the temperature $T$. Indeed, taking the equation (\ref{eq:C2_GP}), the relation (\ref{eq:C2_h}) can easily be deduced.
 \begin{equation}
 \setstretch{1}
-h = u(T) + Pv = u(T) + rT \label{eq:C2_h}
+h = u(T) + Pvol = u(T) + rT \label{eq:C2_h}
 \end{equation}
 \subsection{Specific heat}
 \quad\, The previous subsection was meant to define the enthalpy. This state variable is used in place of the internal energy when dealing with open system.\\

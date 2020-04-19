@@ -8,12 +8,12 @@ This chapter will be focused on the description of those components. For each of
 fluid traversing it and mechanical energy supplied to or extracted from the machine" \cite{Hillewaert2019}. Those machines are \textbf{rotating} machines and, based on the compressible nature of the fluid, two categories can be created.
 This subsection will swept the two categories but will mainly focused on the machines exchanging energy with \textbf{compressible} flow.
 
-\subsection{Incompressible flow - pumps}
+\subsection{Incompressible flow}
 \quad\, The first category of flow to be considered is the incompressible flow. This type of flow is characterized by a constant density over the distance. An example of incompressible fluid is the water.
 
-Among the machine exchanging energy with such type of fluid, there are pumps which are designed to raise the height or total hydraulic energy $H$ of the fluid. The variation of the height of the fluid is similar to its enthalpy variation. Thus, the power output  $\dot{W}_p$ developed by the pump can be expressed as given in relation (\ref{eq:C3_Ppump})
+Among the machine exchanging energy with such type of fluid, there are pumps which are designed to raise the height or total hydraulic energy $h$ of the fluid. The variation of the height of the fluid is similar to its enthalpy variation. Thus, the power output  $\dot{W}_p$ developed by the pump can be expressed as given in relation (\ref{eq:C3_Ppump})
 \begin{equation}
-\dot{W}_{p,a-b} = \dot{m}\cdot (H_a - H_b)=\dot{m}\cdot\Delta H_p \label{eq:C3_Ppump}
+\dot{W}_{p,a-b} = \dot{m}\cdot (h_a - h_b)=\dot{m}\cdot\Delta h_p \label{eq:C3_Ppump}
 \end{equation}
 considering that the transformation makes the system going from state \textbf{a} to state \textbf{b}.
 
@@ -27,7 +27,7 @@ If the consumed power of the pump is $\dot{W}_{e,a-b}$, its global efficiency $\
 Considering the volumetric flow rate $Q_p$ (m$^3$/s) and the rotational speed $\Omega$, the two following relations (\ref{eq:C3_DHp}) and (\ref{eq:C3_Pe}) can be derived.
 \begin{align}
 \setstretch{1}
-\Delta H_p &= f(Q_p, \Omega)\label{eq:C3_DHp}\\
+\Delta h_p &= f(Q_p, \Omega)\label{eq:C3_DHp}\\
 \dot{W}_e &= f(Q_p, \Omega)\label{eq:C3_Pe}
 \end{align}
 Those relations will be called characteristic or performance Map and are determined \textbf{experimentally}. An example of such map is given on Figure \ref{fig:C3_MapPump}.
@@ -42,7 +42,7 @@ Those relations will be called characteristic or performance Map and are determi
 \begin{align}
 \setstretch{1}
 Q_2 &= Q_1\cdot\frac{\Omega_2}{\Omega_1} \label{eq:C3_Qsim}\\
-\Delta H_2 &= \Delta H_1\cdot\left(\frac{\Omega_2}{\Omega_1}\right)^2 \label{eq:C3_DHsim}
+\Delta h_2 &= \Delta h_1\cdot\left(\frac{\Omega_2}{\Omega_1}\right)^2 \label{eq:C3_DHsim}
 \end{align} 
 These relations are really useful to extrapolate the performance maps of a pump. Similar relations can be deduced considering the variation of the radius of the pump.
 
@@ -53,7 +53,7 @@ One important property to notice is that all the dimensionless variables (e.g. t
 The first type to be considered is the centrifugal pumps designed to provide a high heat for a low flow rate. Those pumps are characterized by an axial inflow and a radial outflow. The Figure \ref{fig:C3_centri_pump} shows a schematic of a centrifugal pumps.
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{centri_pump.png}
+\includegraphics[width=0.4\textwidth]{centri_pump.png}
 \caption{Centrifugal pump \citep{Hillewaert2019}}
 \label{fig:C3_centri_pump}
 \end{figure}
@@ -63,7 +63,7 @@ Basically, the centrifugal pump can be decomposed into two parts (for the most s
 The second type of pump are the axial pumps which are, in opposition with the centrifugal pumps, designed to deliver low head for high flow rates. Such pumps is illustrated on Figure \ref{fig:C3_axial_pump}. 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.3\textwidth]{axial_pump.png}
+\includegraphics[width=0.25\textwidth]{axial_pump.png}
 \caption{Axial pump \citep{Hillewaert2019}}
 \label{fig:C3_axial_pump}
 \end{figure}
@@ -78,10 +78,34 @@ The behavior of the compressible flow is more complex to describe compared to in
 \subsubsection{Static and total quantities}
 \quad\, As it has be partly reveal in the previous lines, the flow characteristics are dependent on its velocity. The study of compressible flow did lead to the distinction between the static and total quantities. 
 
-The static quantities are state variables (e.g. temperature, pressure,...) that are independent of the flow velocity. As for the total quantities, these are dependent of the flow velocity $V$. The total state variables can be deduced from the static ones. The relationships will be given in the following lines.
+The static quantities are state variables (e.g. temperature, pressure,...) that are independent of the flow velocity. As for the total quantities, these are dependent of the flow velocity $V$. For instance, the total enthalpy is given by
+$$
+h^0 = h + \frac{1}{2}\cdot v^2.
+$$
+where the total quantity is identified by the superscript "0".
 
-For the notation, the symbolic representation of the total quantities will be the one of the static quantities with a superscript 0.
- 
+The total enthalpy can be defined as "the static enthalpy obtained when the gas is brought adiabatically to a halt"\citep{Hillewaert2019}.
+
+
+\subsubsection{Conservation of the total enthalpy and rothalpy}
+\quad\, For an adiabatic transformation without viscous work, the total enthalpy is conserved between the initial state and the final state.
+\begin{equation}
+\dot{m}\cdot h_1^0 = \dot{m} h_2^0 \label{eq:C3_hcons}
+\end{equation}
+which can be reduced to $h_1^0 = h_2^0$ if we supposed that the transformation is performed without any leakages. The states $1$ and $2$ are associated to the orthogonal boundaries to the flow of the selected control volume delimiting the studied system. 
+
+Now, considering a rotating system (e.g. a rotor), the variation of the total enthalpy can be obtained by considering the modified Euler equation of turbomachinery
+\begin{equation}
+h_2^0 - h_1^0 = \frac{1}{2}\cdot \left(v_2^2 - v_1^2\right) - \frac{1}{2}\cdot \left(wr_2^2 - wr_1^2\right) + \frac{1}{2}\cdot \left(ur_2^2 - ur_1^2\right)\label{eq:C3_Euler}
+\end{equation}
+where $v$ is the average flow velocity through a surface, $wr$ is the velocity of the flow relative to the rotor and $ur$ is the velocity of the rotor. Defined the total rothalpy as being 
+\begin{equation}
+i^0 = h^0 + \frac{1}{2}\cdot wr^2 - \frac{1}{2}\cdot ur^2 
+\end{equation}
+It is obtained from the Euler equation (\ref{eq:C3_Euler}) that the total rothalpy is conserved through the transformation.
+\begin{equation}
+i_1^0 = i_2^0 \label{eq:C3_icons}
+\end{equation}
 \subsubsection{Mach number}
 The Mach number $M$ is defined as being the ratio between the velocity $V$ and the sound speed $a$.
 \begin{equation}
@@ -108,7 +132,7 @@ a^0 &= a\sqrt{f(M)} \label{eq:C3_aa0}
 \quad\, As for the turbomachines exchanging energy with incompressible flows, the one studied here can be fully characterized knowing two independents operating parameters. Usually, the four parameters used for the drawing of the maps are
 \begin{itemize}
 \setstretch{1}
-\item $\dot{m}_c$ (kg/s): It is the corrected mass flow, it is defined as follows
+\item $\dot{m}_c$ (kg/s or lbs/min): It is the corrected mass flow, it is defined as follows
 \begin{equation}
 \dot{m}_c = \dot{m}\cdot \sqrt{\frac{T}{T_{ref}}}\cdot\left(\frac{P_{ref}}{P}\right)
 \end{equation}
@@ -120,3 +144,5 @@ with $T_{ref}$ and $P_{ref}$ being the reference temperature and pressure (all q
 
 \item $\eta$ (-): It is the isentropic efficiency of the machine.
 \end{itemize} 
+\subsection{Gas compressor}
+\quad\, The gas compressor is designed to raise the pressure of a compressible gas. 
