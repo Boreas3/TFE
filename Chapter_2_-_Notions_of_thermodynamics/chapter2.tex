@@ -253,7 +253,7 @@ In the case of the Carnot cycle, both variations are equal. This is illustrated 
 \subsection{Computation of the thermodynamic properties}
 \quad\, From now, the hypothesis of an ideal gas has been used for the computation of the previously established state variables. However, while this hypothesis remains quite valid when dealing with gas, it cannot be used for a real fluid (e.g. liquid water).
 
-This problem can be solved using the Maxwell relations which provides a linked between the partial derivatives\footnote{For further information about partial derivative, see the annex \ref{annex_PD}} of the properties $P$, $v$, $T$ and $s$ for a simple compressible system \cite{2015}. 
+This problem can be solved using the Maxwell relations which provides a linked between the partial derivatives\footnote{For further information about partial derivative, see the annex \ref{annex_PD}} of the properties $p$, $v$, $T$ and $s$ for a simple compressible system \cite{2015}. 
 
 Those relations can be derived from the four Gibbs relations expressed in (\ref{eq:C2_Gibbs}).
 
@@ -286,16 +286,16 @@ Using this property, the links between the different state variables are easily 
 \begin{subequations}
 \setstretch{1}
 \begin{equation}
-  \left.\frac{\partial T}{\partial v}\right|_s =  - \left.\frac{\partial P}{\partial s}\right|_v \label{eq:C2_Max1} 
+  \left.\frac{\partial T}{\partial v}\right|_s =  - \left.\frac{\partial p}{\partial s}\right|_v \label{eq:C2_Max1} 
 \end{equation}    
 \begin{equation}
-  \left.\frac{\partial T}{\partial P}\right|_s = \left.\frac{\partial v}{\partial s}\right|_P \label{eq:C2_Max2}  
+  \left.\frac{\partial T}{\partial p}\right|_s = \left.\frac{\partial v}{\partial s}\right|_p \label{eq:C2_Max2}  
 \end{equation}
 \begin{equation}
-  \left.\frac{\partial s}{\partial v}\right|_T = \left.\frac{\partial P}{\partial T}\right|_v \label{eq:C2_Max3} 
+  \left.\frac{\partial s}{\partial v}\right|_T = \left.\frac{\partial p}{\partial T}\right|_v \label{eq:C2_Max3} 
 \end{equation}    
 \begin{equation}
-  \left.\frac{\partial s}{\partial P}\right|_T =  - \left.\frac{\partial v}{\partial T}\right|_P \label{eq:C2_Max4} 
+  \left.\frac{\partial s}{\partial p}\right|_T =  - \left.\frac{\partial v}{\partial T}\right|_p \label{eq:C2_Max4} 
 \end{equation} \label{eq:C2_Max}
 \end{subequations}
 
@@ -308,32 +308,39 @@ These are the relations used when using a digital library for the thermodynamic 
 \subsection{Entropy variation}
 \quad\, The previous subsection did introduce the four equations of state (\ref{eq:C2_Gibbs1}) to (\ref{eq:C2_Gibbs4}). Among those, the second equation allows to write the relation (\ref{eq:C2_ds})
 \begin{equation}
-ds = c_p\frac{dT}{T} - r\frac{dP}{P}\label{eq:C2_ds}
+ds = c_p\frac{dT}{T} - r\frac{dp}{p}\label{eq:C2_ds}
 \end{equation}
 using the definition (\ref{eq:C2_UP}) of the enthalpy variation and the \textbf{ideal gas equation} (\ref{eq:C2_GP}).
 
 Performing the integration over the path of a transformation going from state \textbf{1} to state \textbf{2}, it can be obtained 
 \begin{equation}
-s_2 - s_1  = \int_1^2\frac{c_p}{T}dT - r\cdot ln\frac{P_2}{P_1}
+s_2 - s_1  = \int_1^2\frac{c_p}{T}dT - r\cdot ln\frac{p_2}{p_1}
 \end{equation}
 If it is supposed that the variation of the specific heat with respect to temperature are negligible, it can be written
 \begin{equation}
-s_2 - s_1= r\cdot \left(\frac{k}{k-1}\cdot ln\frac{T_2}{P_1} - ln\frac{P_2}{P_1}\right) = r\cdot ln\left[\frac{P_1}{P_2}\cdot\left(\frac{T_2}{T_1}\right)^\frac{k}{k-1}\right] \label{eq:C2_Deltas}
+s_2 - s_1= r\cdot \left(\frac{k}{k-1}\cdot ln\frac{T_2}{p_1} - ln\frac{p_2}{p_1}\right) = r\cdot ln\left[\frac{p_1}{p_2}\cdot\left(\frac{T_2}{T_1}\right)^\frac{k}{k-1}\right] \label{eq:C2_Deltas}
 \end{equation}
 where the $c_p=\frac{r\cdot k}{k-1}$ by using the two relations (\ref{eq:C2_r}) and (\ref{eq:C2_k}).
 
 For an isentropic process, the equality $s_2=s_1$ is enforced. Thus, the following relationships can be derived.
-\begin{align}
-\frac{P_2}{P_1} = \left(\frac{T_2}{T_1}\right)^\frac{k}{k-1}\qquad
-\frac{\rho_2}{\rho_1} = \left(\frac{T_2}{T_1}\right)^\frac{1}{k-1}\label{eq:C2_isrel}
-\end{align}
+\begin{subequations}
+\setstretch{1}
+\begin{equation}
+\frac{p_2}{p_1} = \left(\frac{T_2}{T_1}\right)^\frac{k}{k-1}\label{eq:C2_isrelPT}
+\end{equation}
+\begin{equation}
+\frac{\rho_2}{\rho_1} = \left(\frac{T_2}{T_1}\right)^\frac{1}{k-1}
+\label{eq:C2_isrelrhoT}
+\end{equation}
+\label{eq:C2_isrel}
+\end{subequations}
 
-\subsection{Isentropic efficiency}
+\subsection{Isentropic efficiency} \label{C2:Isen_eff}
 \quad\, For any real transformations, the entropy \textbf{at the end state} is for the major number of cases greater that the one \textbf{at the beginning}. This means that the difference $s_2 - s_1$ is greater than zero.
 
 This can be characterized by defining the isentropic efficiency as being the image of the irreversibilities induced by the transformation. this type of efficiency is very frequently used when studying the compression or the expansion of a fluid.
 
-For a compression or an expansion, the isentropic efficiency is defined by stating that the pressure ratio $\frac{P_1}{P_2}$ is the identical for both the isentropic and non isentropic transformation. Let's substituting this ratio by the constant $\Pi$. 
+For a compression or an expansion, the isentropic efficiency is defined by stating that the pressure ratio $\frac{p_1}{p_2}$ is the identical for both the isentropic and non isentropic transformation. Let's substituting this ratio by the constant $\Pi$. 
 
 Considering first the ideal case, the left equality in (\ref{eq:C2_isrel}) gives
 \begin{equation}
