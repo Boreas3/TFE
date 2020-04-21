@@ -52,7 +52,7 @@ Q_2 = Q_1\cdot\frac{N_2}{N_1} \label{eq:C3_Qsim}
 \end{equation}
 \begin{equation}
 \Delta h_2 = \Delta h_1\cdot\left(\frac{N_2}{N_1}\right)^2 \label{eq:C3_DHsim}
-\end{equation}
+\end{equation}\label{eq:C3_sim}
 \end{subequations} 
 
 These relations are really useful to extrapolate the performance maps of a pump. Similar relations can be deduced considering the variation of the radius of the pump.
@@ -242,11 +242,13 @@ A illustration of a compressor performance map is given on Figure \ref{fig:C3_co
 
 On the map, the solid and the dash curves represent respectively the iso-rotational speed and the iso-efficiency.
 
-To remarkable lines are emphasized on the plot. For each rotational speed, these lines provides minimal and maximal bound for the pressure ratio $\Pi_c$. 
+To remarkable lines are emphasized on the plot. For each rotational speed $N_c$, these lines provides minimal and maximal bound for the compressor pressure ratio $\Pi_c$. 
 
 The lower limit is given by the choke line. "When the flow reaches the velocity at some cross-section"\citep{Ghorbanian2009}, an increase of the gas mass flow rate is not possible. Thus, the slope of the associated iso-rotational speed becomes equal to the infinity at this point. 
 
 The upper bound is given by the "aerodynamic stability limit line" or surge line. At this minimal flow rate, the flow start to stall in the machine. Going beyond this limit would lead to a backward flow in the compressor, causing irreversible damages to the compressor. Thus when operating the machine, a certain margin is taken with respect to the surge line\footnote{For more information about the stall and surge events, sees section 9.5 of the course "Turbomachines" \citep{Hillewaert2019}}.
+
+The compressor map, for the low rotational speeds, can be extrapolated by considering similar operational points. Indeed, for these low speed the approximation of considering an incompressible flow instead of a compressible is accurate enough. Though, the compressor can be assimilated to a pump and, using the relations of similarity \label{eq:C3_sim}, the extrapolation is possible. 
 
 \subsection{Gas turbine}
 \quad\, From now, only compressors have been introduced. However, in a gas cycle, the compressor are combined with a turbine that will expand the gas. Only for some exception, the turbine is always placed after the combustion chamber. This choice allows to provide to the turbine a flow with very high enthalpy.
@@ -310,4 +312,12 @@ Then the two families are
 \label{fig:C3_turbmap}
 \end{figure}  
 
-It can be noticed on the left performance plot that for any rotational speed, the turbine will start to choke for the same value of the corrected flow rate (ECMF). 
+The two plots on the Figure \ref{fig:C3_turbmap} illustrates for each iso-rotational speed $N_t$ the relationships $\Pi_t(\dot{m}_c,N_t)$ and $\eta_t(\dot{m}_c,N_t$. As it can be noticed on the left diagram, all the curves tends to reach the same asymptotic values as the mass flow rate increases. This is due to the choking phenomena that limits at some point the flow rate through the compressor.\\
+
+In this section about turbomachines, the most important notions for the good understanding of the future development have been given. Particularly, the concept of performance maps has been introduced, and a method of extrapolation using the similarity have been provided. 
+
+Also, the descriptions of the compression and the expansion have been explained using the hs Mollier diagrams. Those diagrams, along with the schematic of the compressor and turbine stages, allows to describes with a decent accuracy the two previously mentioned transformation. 
+
+The next section will be dedicated to the description of the combustion chamber and the main chemical equations will be defined.
+
+ 
