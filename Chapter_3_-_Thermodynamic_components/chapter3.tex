@@ -536,7 +536,7 @@ It can be shown that the convective heat transfer coefficient $h$ is proportiona
 &Re = \frac{\rho\cdot v\cdot D_h}{\mu}\\
 \text{ with $D_h = \frac{4\cdot A_c}{P_c}$}& \text{ and $u=\frac{\dot{m}}{\rho\cdot\pi\cdot\frac{D_h^2}{4}}$}
 \end{align}
-where $\mu$ is the static viscosity of the fluid, $A_c$ and $P_c$ are the area and the perimeter of the surface crossed by the flow, $D_h$ is the hydraulic diameter and $v$ is the velocity in the pipe.\\
+where $\mu$ is the static viscosity of the fluid, $A_c$ and $P_c$ are the area and the perimeter of the surface crossed by the flow, $D_h$ is the hydraulic diameter and $v$ is the velocity in the pipe.
 
 In the present work, the heat exchanger that will be used are plate heat exchangers. For this specific category, the surface $A$ for the cold and the hot side are very closed from each others. Also, if the flow considered is only composed of one phase (i.e. only liquid or gaseous), the wall resistance $R_w$ can be neglected. 
 
@@ -567,7 +567,43 @@ This method requires the knowledge of the inlet and outlet temperatures of both 
 with $\dot{C}_{min}=min(\dot{C}_h,\dot{C}_c)$
 Then the heat transfer rate is equal to 
 \begin{equation}
-\dot{Q} = \varepsilon\dot{Q}_{max}
+\dot{Q} = \varepsilon\cdot\dot{Q}_{max}
+\end{equation}
+where $\varepsilon$ is the efficiency of the heat exchanger. This efficiency is a function of the ratio $C_r = \frac{\dot{C}_{min}}{\dot{C}_{max}}$, the flow arrangement, and the number of transfer unit NTU defined as being the ratio
+\begin{equation}
+\text{NTU} = \frac{A\cdot U}{\dot{C}_{min}}\label{eq:C3_NTU}
+\end{equation}
+
+As said, the relations $\varepsilon(\text{NTU},C_r)$ and $\text{NTU}(\varepsilon,C_r)$ depend on the heat exchanger configurations. An non exhaustive list is written in the annex \ref{annex_epsNTU}\citep{GregoryNellis2015} 
+%%%%%%%%%%%%%%%
+%ECRIRE ANNEXE%
+%%%%%%%%%%%%%%%
+
+Once the coefficient $\varepsilon$ computed, the outlet temperatures of the fluids can be obtained using the relations (\ref{eq:C3_ThQ}) and (\ref{eq:C3_TcQ}).
+
+\subsubsection{Rating and sizing problem}
+\quad\, The $\varepsilon$-NTU method is really useful for solving rating and sizing problems.
+
+On one hand, rating problem are problem that, based on the knowledge of the geometry of the heat exchanger, evaluates its performance for given inlet temperature for both fluids. For this kind of problem, the NTU is first computed. Then, the efficiency $\varepsilon$ is derived to allow the calculation of the heat transfer rate.
+
+On the other hand, sizing problems are used for the design of heat exchanger to provide the wished outlet temperatures. There, the efficiency is first calculated and then the NTU is deduced. Finally, from the equation (\ref{eq:C3_NTU}) the heat transfer area $A$ can be obtained\citep{Ngendakumana2018}.
+
+A mix of these two types of problems will be used during this work. Indeed, the efficiency $\varepsilon$ of the heat exchangers in the system are known for a certain nominal flow rate.    The knowledge of the nominal efficiency provides the required tools to compute the product $A\cdot U_{nom}$ using the sizing problem methodology. 
+
+Then, based on the approximation (\ref{eq:C3_AU_prop}), the $U$ for the given condition can be obtained since the heat transfer area $A$ remains unchanged. Finally, the non nominal $U$ can be used to compute the non nominal efficiency $\varepsilon$ using rating problem.
+
+\section{Piping and pressure drop}
+\quad\, From now, the loss of pressure inside the different elements has not be considered. However, for a system like a gas turbine, the pressure drops have to be as minimal as possible to guaranty that the expanded gas in the turbine is at a pressure as high as possible. 
+
+In this work, simple formula will be applied for the pressure drops computation. These one will be computed based on a pressure drop factor $Dp$ varying from 0 to 1. Then the pressure at the outlet of the component is given by
+\begin{equation}
+p_{o} = p_{i}\cdot (1 - Dp)
+\end{equation}
+where the factor $Dp$ is different for each component of the system. 
+
+Before the present work, the pressure drop factors have been evaluated using computational fluid dynamics (CFD) for a nominal point of operation. Then, it can be demonstrated that the pressure difference $\Delta p = p_{i} - p_{o}$ is a quadratic function of the mass flow rate $\dot{m}$. Thus, the pressure losses for any non nominal points of operation are given by
+\begin{equation}
+\Delta p \simeq \Delta p_{nom}\cdot \frac{\dot{m}^2}{\dot{m}^2_{nom}}
 \end{equation}
  %The following subsection will provide qualitative information about heat exchangers. The different families of HX based on the stream configurations or the geometries will be defined.
 %
