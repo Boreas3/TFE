@@ -1,0 +1,13 @@
+\section{Piping and pressure drop}
+\quad\, From now, the loss of pressure inside the different elements has not be considered. However, for a system like a gas turbine, the pressure drops have to be as minimal as possible to guaranty that the expanded gas in the turbine is at a pressure as high as possible. 
+
+In this work, simple formula will be applied for the pressure drops computation. These one will be computed based on a pressure drop factor $Dp$ varying from 0 to 1. Then the pressure at the outlet of the component is given by
+\begin{equation}
+p_{o} = p_{i}\cdot (1 - Dp)
+\end{equation}
+where the factor $Dp$ is different for each component of the system. 
+
+Before the present work, the pressure drop factors have been evaluated using computational fluid dynamics (CFD) for a nominal point of operation. Then, it can be demonstrated that the pressure difference $\Delta p = p_{i} - p_{o}$ is a quadratic function of the mass flow rate $\dot{m}$. Thus, the pressure losses for any non nominal points of operation are given by
+\begin{equation}
+\Delta p \simeq \Delta p_{nom}\cdot \frac{\dot{m}^2}{\dot{m}^2_{nom}}
+\end{equation}

@@ -1,0 +1,129 @@
+\section{Combustion chamber}
+\quad\, The previous section introduced the turbomachines and described those using schematic and hs diagram. The notion of compressible has been defined, and some important concepts have been emphasized. 
+
+The present section is dedicated to the description of the combustion mechanism. Since the study of the fluid mechanic inside the combustion chamber is out of the scope of this work, only combustion equations without dynamic and non steady effects will be considered.
+
+\subsection{Basis about Chemistry}
+\quad\, As it has been mentioned, some combustion reactions will be introduced in this section. Thus, the basic knowledge about chemistry has to be provided.\\
+
+\subsubsection{Conservation of mass}
+During a chemical reaction, the law of conservation of mass (also called the Lavoisier law) has to be satisfy. This implies that the mass of all the reagents combined has to be equal to the mass of the products. An example of chemical reaction is given in (\ref{eq:C3_chem}).
+\begin{equation}
+\underset{\mathrm{16g}}{\ce{1CH4}} \ce{+} \underset{\mathrm{64g}}{\ce{2O2}} \ce{->} \underset{\mathrm{44g}}{\ce{1CO2}} \ce{+} \underset{\mathrm{36g}}{\ce{2H2O}} \ce{+}\text{Heat}\label{eq:C3_chem}
+\end{equation}
+It will be seen later that this reaction corresponds to the combustion of \textbf{1} mole of methane (\ce{CH4}) using \textbf{2} mole of oxygen (\ce{O2}). The products of the reaction are \textbf{1} mole of \ce{CO2}, \textbf{2} mole of \ce{H2O} and a certain amount of heat transfer to the surrouding. This heat transfer is the wanted product of the combustion. 
+
+\subsubsection{Conservation of the atomic species}
+The second law of conservation states that, during the transformation of the reagent X into the product Y, all the atomic elements from X have to be recovered in Y. For instance, for the equation (\ref{eq:C3_chem}), there is one mole of carbon (\ce{C}) in the reagents. Thus, one mole of \ce{C} has to be present in the products of the reaction.
+\newpage
+\subsubsection{Proust law}
+The third law to be considered is the Proust law which states that for each chemical reactions, "the ratio between the mass of each reagents is a constant". Considering the above example (\ref{eq:C3_chem}), this implies that the ratio
+\begin{equation}
+\frac{\text{mass of \ce{O2} consumed}}{\text{mass of \ce{CH4} consumed}} = 4 
+\end{equation}
+Let's remark that the law is also valid considering the consumed quantities in mole. This would leads to the following relation
+\begin{equation}
+\frac{\text{mole of \ce{O2} consumed}}{\text{mole of \ce{CH4} consumed}} = 2  \label{eq:C3_molratio}
+\end{equation}
+These ratio depends on the type of fuel used. For instance, if the fuel was propane (\ce{C3H8}), the ratio would be equal to 5.
+ 
+\subsection{Combustion equation}
+\quad\, The equation \ref{eq:C3_chem} was illustrating the combustion of the methane \ce{CH4}. The reaction, as written there, supposed that the provided amount of oxygen provided for the reaction is just enough to consume all the methane injected. 
+
+This situation, which is the reference, is characterized by an air factor $\lambda = 1$ (or an excess of air $e=\lambda-1=0$). It is said that such combustion is at the stoichiometry.
+
+\subsubsection{Air factor}
+The air factor is then defined as being the ratio between
+\begin{equation}
+\lambda = \frac{\frac{\text{mole of \ce{O2} consumed}}{\text{mole of fuel consumed}}}{\frac{\text{mole of \ce{O2} consumed at stoichiometry}}{\text{mole of fuel consumed at stochiometry}}} \label{eq:C3_lbd}
+\end{equation}
+
+Let's note that every other combustive can replaced the oxygen in the relation. However, \ce{O2} is the most common one. Thus, the following development will not consider this possibility.
+For the following, the notation $w_{\ce{\text{<molecule>}}}$ will be used in replacement for "mole of <molecule> consumed". 
+
+For the case of the \ce{CH4} being the fuel, it has been shown in the previous section that the value of the denominator of relation (\ref{eq:C3_lbd}) is equal to 2. Therefore, for this particular combustion, the air factor relation is 
+\begin{equation}
+\lambda = \frac{w_{\ce{O2}}}{2\cdot w_{\ce{CH4}}}\label{eq:C3_lbdCH4}
+\end{equation}
+
+\subsubsection{Generalized combustion equation}
+\quad\, As explained, the chemical reaction (\ref{eq:C3_chem}) represents the ideal case with an air factor of 1. Also, it is considered that the used combustive is pure \ce{O2}. In reality, the used reagent for the combustion is ambient air which is composed of 21\% of \ce{O2} and 79\% of \ce{N2} (nitrogen). 
+
+Thus, the generalized combustion equation (for the \ce{CH4}) is
+\begin{equation}
+\ce{CH4 +}2\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> CO2 + 2(\lambda-1)O2 + 2H2O + 2\lambda\frac{79}{21}N2 + \text{Heat}}\label{eq:C3_chemgeng0}
+\end{equation}
+
+This equation, while being correct for any values of $\lambda$ greater or equal than 1, has to be modified to take into account the event for which the excess of air $e$ is lower than zero (with $e=\lambda -1$). For such values, the combustion equation becomes 
+\begin{equation}
+\ce{CH4 +}2\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> aCO2 + bCO + 2H2O + 2\lambda\frac{79}{21}N2 + \text{Heat}}\label{eq:C3_chemgeng1}
+\end{equation}
+where coefficients "a" and "b" satisfies the system (\ref{eq:C3_sysab})
+\begin{equation}
+\begin{cases}
+\text{a} + \text{b} = 1\\
+2\text{a} + \text{b} = 4\lambda - 2
+\end{cases}\label{eq:C3_sysab}
+\end{equation}
+where both equations have been obtained based on the conservation of the atomic species. It can be calculated that there exists a lower bound for the air factor below which the combustion will be impossible. The condition is that the coefficient "a" cannot be smaller than zero. For this case, the minimal air factor $\lambda_{min} =-\frac{3}{4}$.
+
+To provide some definitions, the mixture oxygen-fuel is said poor when $\lambda>0$, rich when $\lambda<0$ and at the stoichiometry for ab air factor $\lambda=1$. Typically in a gas turbine, the mixture is very poor.
+\newpage
+\subsection{Fuel characteristic}
+\quad\, From now, the amount of heat provided during the combustion has not been quantified. This quantification is really important because this amount of heat is linked to quality and the nature of the used fuel.
+
+\subsubsection{Heating calorific value}
+\quad\, First, let's define the heating calorific value $HCV$ of a fuel (J/kg). By definition, it is " the amount of thermal energy released during the total combustion of one physical unit of fuel"\citep{Leonard2018}. 
+\begin{equation}
+HCV = -\Delta H^o_{combustion} \label{eq:C3_HCV1}
+\end{equation}
+with $-\Delta H^o_{combustion}$ being the heat released during the reaction.
+
+The $HCV$ is determined at a given reference temperature $T_0$. Considering this reference temperature, the $HCV$ can be evaluated by computing the enthalpy difference between the reagents and the products. 
+\begin{equation}
+HCV = \left.h_{reagent}\right|_{T=T_0} - \left.h_{product}\right|_{T=T_0}\label{eq:C3_HCV2}
+\end{equation}
+The $HCV$ value depends on the type of fuel that is used. For example, the heating calorific value of the \ce{CH4} is around 50 MJ/kg.
+
+\subsubsection{Adiabatic flame temperature}
+\quad\, The second notion that can be defined is the adiabatic flame temperature $T_f$. If the combustion chamber is supposed to be adiabatic (no heat transfer to the outside), the heat generated will be fully retained within the exhaust gas of the combustor. Thus, the temperature reached by the gas is considered to maximal and is called the adiabatic flame temperature.
+
+The evaluation of $T_f$ is quite similar to the one of the $HCV$. There, starting from the reference temperature, the $T_f$ is calculate such that the enthalpy of the products is equal to the enthalpy of the reagents.
+\begin{equation}
+\left.h_{reagent}\right|_{T=T_0} = \left.h_{product}\right|_{T=T_f}\label{eq:C3_T_f}
+\end{equation}
+\newpage
+\subsection{Fumes composition}
+\quad\, Previously has been presented in the equations (\ref{eq:C3_chemgeng0}) and (\ref{eq:C3_chemgeng1}) the generalized chemical reaction for the combustion of the methane. 
+In a more general case, if the fuel is essentially composed of carbon \ce{C}, hydrogen \ce{H}, oxygen \ce{O} and nitrogen \ce{N}, the reactions (\ref{eq:C3_chemgeng0}) and (\ref{eq:C3_chemgeng1}) are then
+\begin{equation}
+\begin{cases}
+\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}} +}\kappa\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> mCO2 +} \kappa(\lambda-1)\ce{O2 + \frac{n}{2}H2O +} (\kappa\lambda\frac{79}{21} + \frac{\text{y}}{2})\ce{N2}&\text{ for $\lambda\geq 1$}\\
+\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}} +}\kappa\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> aCO2 + bCO + \frac{n}{2}H2O} + (\kappa\lambda\frac{79}{21} + \frac{\text{y}}{2})\ce{N2}&\text{ for $\lambda< 1$}
+\end{cases}
+\end{equation}
+where coefficients "a" and "b" satisfies the system (\ref{eq:C3_sysab})
+\begin{equation}
+\begin{cases}
+\text{a} + \text{b} = \text{m}\\
+2\text{a} + \text{b} = 2\kappa\lambda + \frac{\text{x}}{2} - \frac{\text{n}}{2}
+\end{cases}\label{eq:C3_sysab}
+\end{equation}
+with the factor $\kappa = (\text{m}+\frac{\text{n}}{4}-\frac{\text{x}}{2})$. The coefficients "m" and "n" correspond to the number of mole of atoms of carbon and hydrogen within 1 mole of fuel.
+
+From theses equations, it is possible to obtain the molar fraction $x_i$ of each fume components. By definition, the molar fraction of the component $i$ is given by
+\begin{equation}
+x_i = \frac{n_i}{n_{tot}}
+\end{equation}
+with $n_i$ the number of mole of the component $i$ and $n_{tot}$ the total number of mole.
+
+Alternatively, the mass fraction can be determined applying the following transformation
+\begin{equation}
+y_i = x_i\frac{MM_{tot}}{MM_i}
+\end{equation}
+where $MM_i$ is the molar mass (in g/mol) of the component $i$ and $MM_{tot}$ is the total molar mass of the fumes.
+\begin{equation}
+MM_{tot} = \sum_i x_i\cdot MM_i
+\end{equation}
+
+This method will be called the "weight factor" method. 
