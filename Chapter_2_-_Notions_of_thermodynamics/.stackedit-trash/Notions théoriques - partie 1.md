@@ -81,7 +81,5 @@
 ## Tuyauteries
 ### Calcul des pertes de charge
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjg4MTkwODA1LC05MDU0NjA5MSwtNTQ5NT
-c0NTcxLDk0OTI0MjQyOSwtNzQ5OTA3MzU1LDk3OTk2NTE1Nywt
-MTMyMzkyNTc4NywtMTkwMzA2NTE3OSwxODM0MTAwMDA1XX0=
+eyJoaXN0b3J5IjpbNjg4MTkwODA1XX0=
 -->
