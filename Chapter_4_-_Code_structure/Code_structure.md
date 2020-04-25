@@ -13,11 +13,11 @@
 ## Spécificités
 ### Calcul de la composition des fumées 
 ### Utilisation des tables NASA
-- Pol 
+- Polynomes 
 ### Implémentation des maps de performances
 - interpolation moindre carré
 - évaluation de la précision (à faire par code)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjc4NzY2MjA4XX0=
+eyJoaXN0b3J5IjpbLTE1Mjk0NDgxMjldfQ==
 -->
