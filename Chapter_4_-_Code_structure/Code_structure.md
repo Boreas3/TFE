@@ -12,7 +12,8 @@
 --> Lien avec la théorie
 ### Implémentation des maps de performances
 - interpolation moindre carré
-	- 
+- évaluation de la précision (à faire par code)
+### Calcul de la composition des fumées 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDQyNTkwNzNdfQ==
+eyJoaXN0b3J5IjpbMTM4OTA0MjA4M119
 -->
