@@ -10,10 +10,13 @@
 ### Schéma bloc
 - Description de chaque bloc (assez conceptuelle)
 --> Lien avec la théorie
+## Spécificités
+### Calcul de la composition des fumées 
+### Utilisation des tables NASA
 ### Implémentation des maps de performances
 - interpolation moindre carré
 - évaluation de la précision (à faire par code)
-### Calcul de la composition des fumées 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4OTA0MjA4M119
+eyJoaXN0b3J5IjpbMTA3MTY1OTk3Nl19
 -->
