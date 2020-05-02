@@ -19,7 +19,21 @@ for those systems a control mass well delimited in the space is studied. Therefo
 
 When the state functions can be measured (directly or indirectly), these are called state variables. For example, the pressure $P$, the temperature $T$ or the volume $Vol$ are state variables.
 
-It can be shown that the equilibrium state of a system can be described by those three variables. Also, among $P$, $T$ and $Vol$, only two of them are independent. This means that a state relation defined as \textbf{F}($P$, $T$, $Vol$) = 0.
+
+In this work, the units used for the state and function variables follows the international system (SI) of units \cite{Nist}. 
+\subsubsection{Pressure}
+\quad\, The pressure unit is the Pascal (Pa). 1 Pa corresponds to 1 N/m$^2$, where 1 N (kg$\cdot$m/s$^2$) is the required force to increase each second by 1m/s the velocity of a body weighting 1kg.
+
+The pressure is also often expressed in bar, unit corresponding to 1e5 Pa.
+
+\subsubsection{Temperature}
+\quad\, The temperature unit is the degree Kelvin (K). 273.15\degree K corresponds to 0\degree C, temperature at which pure water starts freezing.
+
+\subsubsection{Volume}
+\quad\, The volume unit is the meter cube (m$^3$).
+
+\subsection{Ideal gas equation}
+\quad\, It can be shown that the equilibrium state of a system can be described by those three variables. Also, among $P$, $T$ and $Vol$, only two of them are independent. This means that a state relation defined as \textbf{F}($P$, $T$, $Vol$) = 0.
 
 For the ideal gas, this relation is
 \begin{align}
@@ -27,22 +41,31 @@ For the ideal gas, this relation is
 P\cdot Vol &= m\cdot\frac{R}{MM}\cdot T\nonumber\\
 P\cdot vol &= r\cdot T\label{eq:C2_GP}    
 \end{align}
-where \textit{m} is the quantity of matter (in kg), $R$ is the universal gas constant (8.314 J/mole/K\footnote{Where K is the degree Kelvin and is scaled as 273.15\degree K = 0\degree C}), $vol$ the specific volume (in m$^3$/kg) and $MM$ is the molar mass (in kg/mole\footnote{Where 1 mole correspond to $\sim 6\cdot 10^{23}$ elementary entities (atoms, molecules,...)}) of the system.
-\newpage
+where \textit{m} is the quantity of matter (in kg), $R$ is the universal gas constant (8.314 J/mole/K), $vol$ the specific volume (in m$^3$/kg) and $MM$ is the molar mass (in kg/mole\footnote{Where 1 mole correspond to $\sim 6\cdot 10^{23}$ elementary entities (atoms, molecules,...)}) of the system. The density $\rho$ of the gas is given as being one o
+
 \subsection{Energy}\label{sect:C2_Ener}
-\quad\, In the subsection \ref{sect:C2_Sys}, the notion of energy has been mentioned without characterizing it before hand. From the first principle of the thermodynamic, it is stated that the energy cannot be created nor destroyed. Therefore, it can only be converted an can exist into multiple forms (thermal, mechanical, electrical,...)\cite{thermoApp_2}. The unit of the energy is the Joule (J), and the sum of all the energies in a system is called the total energy $E$.
+\quad\, In the subsection \ref{sect:C2_Sys}, the notion of energy has been mentioned without characterizing it before hand. From the first principle of the thermodynamic, it is stated that the energy cannot be created nor destroyed. Therefore, it can only be converted an can exist into multiple forms (thermal, mechanical, electrical,...)\cite{thermoApp_2}. 
+
+The unit of the energy is the Joule (J), and the sum of all the energies in a system is called the total energy $E$. 1J is the work to move a body of 1 meter using a force of 1N.\\
+
 
 The energy is a state variable. This means that this quantity allows to characterize the state of the system. When considering the energy, its absolute value is not something that is defined. Instead, the energy is always computed as compared with a reference point.
 
 Thus, considering the variation of the total energy from a state \textbf{1} to a state \textbf{2}, it is obtained
-\begin{align}
+
+\begin{equation}
 \setstretch{1}
-    \Delta E &= \Delta U + \Delta KE + \Delta PE \label{eq:C2_E}\\
-    \text{with } \Delta U  &= U_2 - U_1 =  m\cdot(u_2 - u_1) \text{: Variation of the internal energy}\nonumber\\
-                 \Delta KE &= \frac{1}{2}m\cdot(v^2_2 - v^2_1)\text{: Variation of the kinetic energy}\nonumber\\
-                 \Delta PE &= m\cdot g\cdot(z_2 - z_1)\text{: Variation of the potential energy}\nonumber
-\end{align} 
-where $z$ is the altitude of the system position, $v$ is the velocity of the fluid and $U$, the internal energy, is the sum of all the "microscopic" energy within the system. The $u$ in lowercase corresponds to the specific internal energy and its unit is in J/kg.
+    \Delta E = \Delta U + \Delta KE + \Delta PE \label{eq:C2_E}
+\end{equation}
+
+\begin{align*}
+\setstretch{1}
+    \text{with } \Delta U  &= U_2 - U_1 =  m\cdot(u_2 - u_1) \text{: Variation of the internal energy}\\
+                 \Delta KE &= \frac{1}{2}m\cdot(v^2_2 - v^2_1)\text{: Variation of the kinetic energy}\\
+                 \Delta PE &= m\cdot g\cdot(z_2 - z_1)\text{: Variation of the potential energy}
+\end{align*} 
+
+where $z$ is the altitude of the system position (m), $v$ is the velocity of the fluid (m/s) and $U$, the internal energy, is the sum of all the "microscopic" energy within the system (J). $u$ corresponds to the specific internal energy, and its unit is in J/kg.
 
 As said in the subsection \ref{sect:C2_Sys}, any system will exchange energy with the surrounding as heat and/or work. The heat is defined as "the form of energy which is exchanged between the system and its environment when there is a gradient of temperature between these two entities". As the heat is always referred as a flux between two bodies, the phenomena is called heat transfer. The heat transfer can be realized by
 \begin{itemize}
