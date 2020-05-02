@@ -1,9 +1,9 @@
 \graphicspath{{Chapter_4_-_Brayton_cycle/Images/}}
-\chapter{Brayton cycle}
+\chapter{Brayton cycle}\label{Brayton cycle}
 \quad\, In the previous chapter, the different parts constituting the Brayton cycle have been well defined. This chapter will be devoted to the description and the performance analysis of the Brayton cycle considering various configurations.
 
 \section{Gas turbine (GT)}
-\quad\, The gas turbine (GT) is the most basic configuration of the Brayton where only four main elements are integrated within the cycle. First, there is the compressor (COMP) that will compress the ambient air. Then, the compressed air goes through the combustion chamber (CC) to increase its temperature. Finally, the exhaust gas from the combustion chamber are expanded through the turbine (TURB) to produce mechanical power. Part of this power is consumed by the compressor. The remaining is converted into electricity using an electrical generator. The gas cycle have been drawn on the following Figure \ref{fig:C4_BraytonGT}.
+\quad\, The gas turbine (GT) is the most basic configuration of the Brayton where only four main elements are integrated within the cycle. First, there is the compressor (COMP) that will compress the ambient air. Then, the compressed air goes through the combustion chamber (CC) to increase its temperature. Finally, the exhaust gas from the combustion chamber are expanded through the turbine (TURB) to produce mechanical power. Part of this power is consumed by the compressor. The remaining is converted into electricity using an electrical generator (G). The gas cycle have been drawn on the following Figure \ref{fig:C4_BraytonGT}.
 
 \begin{figure}[h]
 \centering
@@ -68,7 +68,7 @@ A graphical representation of these states can be performed by drawing some ther
 
 As it can be noticed on the two diagrams, the cycle is not closed. Indeed, the state \textbf{1} of the cycle does not correspond to to the final state. For this configuration, the exhaust gas temperature is a little bit higher than 600\degree C. Thus, there is still compared to the ambient condition 580\degree C of "thermal energy" that could be used.
 
-The efficiency of the cycle (or thermal efficiency), based on the definition given in the chapter \ref{C2}, is equal to $\sim 24$\%. Considering the loss of energy in the exhaust gas, this efficiency can be improved.
+The efficiency of the cycle (or thermal efficiency), based on the definition given in the chapter \ref{Notions of thermo}, is equal to $\sim 24$\%. Considering the loss of energy in the exhaust gas, this efficiency can be improved.
 
 \section{Regenerative gas turbine (RGT)}
 \quad\, As seen in the previous section, the gas cycle does not have a really high efficiency. However, this efficiency can be nearly tripled by adding a regenerator to the cycle. The purpose of this heat-exchanger is to transfer part of the thermal energy from the hot gas exiting the turbine to the cold flow exiting the compressor. A schematic of the regenerative gas turbine (RGT) and the associated Ts and hp diagrams are given on Figures \ref{fig:C4_RGT} and \ref{fig:C4_thermo_diagram_GT}. 
@@ -96,6 +96,14 @@ The efficiency of the cycle (or thermal efficiency), based on the definition giv
         \caption{Thermodynamic diagrams of a regenerative gas turbine}
         \label{fig:C4_thermo_diagram_GT}
 \end{figure}
-
+\newpage
 This has 2 majors advantages. The first one is to reduce the temperature of the gas at the exit of the cycle. The second is to reduce the fuel consumption of the system. Indeed, for an identical combustor outlet temperature (here, 950\degree C), the amount of energy that the combustion chamber has to provide to the air is lower than for the GT since the inlet temperature of the air is higher. Considering a mass flow rate of air of 180g/s, the fuel consumption goes from 3.41g/s to 1.18g/s for the RGT.
 
+After computation, the thermal efficiency of the RGT is evaluated at $\sim$ 63\%, which is more than twice the efficiency of the GT.
+
+Aside the regerator, a water heat exchanger (WHX) can be used to absorb the remaining from the exhaust gas to utilize it for water heating. Considering the fact that components does not have an efficiency of 100\%, the temperature at the outlet of the regenerator (state \textbf{11}) is around 200\degree C. This temperature is enough to heat up water to a target temperature of 70-80\degree C.
+
+Even if it is beyond the scope of this master thesis, the integration of an organic rankine cycle (ORC) in place of the WHX to convert the remaining heat into electricity can also be considered\citep{Quoilin2008}.
+
+\section{Brayton cycle - variants}
+The GT and RGT are not the only configurations of the Brayton cycle. There exists many other involving multiple compressors, turbines, combustion chamber,etc... These configurations are illustrated in the annex \ref{annex:Brayton_variant}.

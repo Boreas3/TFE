@@ -34,7 +34,7 @@
 %%%%%%%%%%%%%%%%%%
 %\input{Chapter1_introduction}
 \setstretch{1.5}
-%\chapter{Introduction}
+\chapter{Introduction}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -48,7 +48,7 @@
 %% Chapter 3:                  %%
 %% Thermodynamics components   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{Chapter_3_-_Thermodynamic_components/chapter3}
+%\input{Chapter_3_-_Thermodynamic_components/chapter3}
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Chapter 4:                  %%
@@ -58,71 +58,13 @@
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Chapter 4:                  %%
+%% Chapter 5:                  %%
 %% Code structure   		   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{Chapter_4_-_Code_structure/chapter4}
-
-
-% \section{Analysis of the possible configuration for the Brayton cycle}
-% \chapter{Brayton cycle – Python implementation}
-% \section{What is Python and why using it as programming language?}
-% \section{Structure of the Python code}
-% \subsection{Module description}
-% \subsection{Improvement of the Python code}
-% \chapter{Component performance map integration}
-% \section{What is a performance map?}
-% \section{What is the interest of using performance maps?} 	
-% \subsection{For the turbomachines}
-% \subsection{For the heat-exchangers}
-% \subsection{For the piping}
-% \subsection{For the combustion chamber}
-% \section{Build of the map using least squares fitting}
-% \subsection{Data used}
-% \subsection{Interpolation scheme}
-% \section{Quality of the interpolation}
-% \subsection{Error on the sample values}
-% \subsection{Cost function}
-% \chapter{Gas composition integration}
-% \section{Why considering the gas composition?}
-% \section{Fumes composition computation}
-% \section{Thermodynamic state evaluation}
-% \subsection{Use of the NASA table}
-% \subsection{Comparison for fumes state computation (old vs new method)}
-% \chapter{Experimental test bench}
-% \section{Presentation of the different parts}
-% \section{Analysis of the results}
+\input{Chapter_5_-_Code_structure/chapter5}
 
 
 
-
-% \quad\, In the introduction, the ideal Brayton cycle has been presented and analysed. Some improvements have been proposed to increase the efficiency of the system.\\
-% 
-% This chapter will be focused on the development of a deterministic model of the cycle using Python as the programming language. First will be given a overview of the structure of the program. Then, from a model already developed, some modifications will be provided to gain slightly
-
-% \section{Overview of the cycle}
-% \quad\, The cycle modelled will be composed of non ideal components and will include a regenerator followed by a recuperator for heated water production. A schematic is presented on Figure \ref{fig:schema_cycle}.
-
-% % \begin{figure}[h!]
-% %     \centering
-% %     \includegraphics[width=0.8\textwidth]{Deterministic_modelling/schema_BC.png}
-% %     \caption{Brayton cycle schematic. values are for nominal conditions}
-% %     \label{fig:schema_cycle}
-% % \end{figure}
-
-% On the graph are emphasised the main steps of the cycle:
-% \begin{itemize}
-%     \item Compressor ($\mathbf{1} \Rightarrow\mathbf{2}$): The ambient air is compressed by the compressor to rise its pressure. 
-%     \item Recuperator - \textit{cold side} ($\mathbf{2} \Rightarrow\mathbf{3}$): The air from the compressor is heated up by the hot gas from the turbine.
-%     \item Combustion Chamber ($\mathbf{3} \Rightarrow\mathbf{4}$): Fuel is injected to create a combustion to increase the enthalpy of the gas. The mass flow of fuel injected is calculated based on the wished TIT. 
-%     \item Turbine ($\mathbf{4} \Rightarrow\mathbf{5}$): The gas from the combustion chamber is expanded through the turbine. The produced power will be partly consumed by the compressor. The leftover is absorbed by the generator.
-%     \item Regenerator - \textit{hot side} ($\mathbf{5} \Rightarrow\mathbf{6}$): The hot gas from the turbine are cooled down when going through the regenerator. 
-%     \item Recuperator ($\mathbf{6} \Rightarrow\mathbf{7}$): The remaining heat is used to heat up water. The target temperature for the water depend on the need. The gas is then released to the atmosphere.
-% \end{itemize}
-
-% This segmentation of the cycle is useful to properly pose the problem and to verify if every elements are well included in the program. 
-
-% Moreover, it allows to identify what are the different components that play a role in the cycle. This identification is useful to isolate a specific element to work on. 
 
 % \section{Description of the deterministic model}
 % \quad\, This part of the chapter is dedicated to the analysis of the Brayton cycle deterministic model. The analysis will be segmented into several section. 

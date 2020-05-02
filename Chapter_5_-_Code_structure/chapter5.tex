@@ -1,0 +1,29 @@
+\graphicspath{{Chapter_5_-_Code_structure/Images/}}
+\chapter{Code structure}
+\quad\, In the chapter \ref{Brayton cycle}, the Brayton cycle has been introduced by presenting two possible configurations 
+
+This chapter will start from these notions to build a computer code simulating the performance of the Brayton cycle. The analysis will be performed in steady state operations and will not take into account transient effects. For instance, transient effects include the acceleration or deceleration analysis of the turbomachines, the modulation of the mass flow of fuel in the time, etc.
+
+The computer code that will be presented during this chapter will be based on the Python language\citep{van1995python}. The motivations of the usage of this particular computing language, will be given in the beginning of this chapter. Then, the structure of the code itself will be established, followed by the method of implementation of the theoretical aspects from chapter \ref{C3}.
+
+\input{Chapter_5_-_Code_structure/Python_language}
+
+\section{Code structure}
+\quad\, the previous section explained the motivations behind the choice of Python as programming language for the realization of this work.
+
+In this work, a program aiming to simulate the steady state performance of a Brayton cycle considering various configurations. As a reminder, the base Brayton cycle is composed of the following transformations illustrated on Figure \ref{fig:C4_Brayton}:
+
+\begin{itemize}
+\setstretch{1}
+\item Compression through a compressor (COMP)
+\item Combustion within a combustion chamber (CC)
+\item Expansion through a turbine (TURB)
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{GT}
+\caption{Brayton gas turbine (GT)}
+\label{fig:C4_Brayton}
+\end{figure}
+
