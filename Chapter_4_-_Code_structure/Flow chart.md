@@ -1,10 +1,10 @@
 ````mermaid
 graph TD
-A-->B
-A-->C
+Start-->**Read** Input
+Start-->C
 B-->D
 C-->D
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjM3NzY4NzI3XX0=
+eyJoaXN0b3J5IjpbNzEzNjcwNTExLDYzNzc2ODcyN119
 -->
