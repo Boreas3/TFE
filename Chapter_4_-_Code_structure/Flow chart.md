@@ -1,10 +1,12 @@
 ````mermaid
 graph TD
-A[Start] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
+A(Start) --> B(**Read** 
+
+A2(Start) -- Link text --> B((Circle))
+B --> C(Round Rect)
+C --> D{Rhombus}
 C --> D
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3NjU5NjAwMyw2Mzc3Njg3MjddfQ==
+eyJoaXN0b3J5IjpbLTIyNTAyOTgwOCw2Mzc3Njg3MjddfQ==
 -->
