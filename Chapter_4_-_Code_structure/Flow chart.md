@@ -1,12 +1,5 @@
-````mermaid
-graph TD
-A(Start) --> B(Read data)
-B --> C(Round Rect)
-C --> D{Rhombus}
-C --> D
-
-A2(Start) -- Link text --> B2((Circle))
+```mermaid graph TB SubGraph1 --> SubGraph1Flow subgraph "SubGraph 1 Flow" SubGraph1Flow(SubNode 1) SubGraph1Flow -- Choice1 --> DoChoice1 SubGraph1Flow -- Choice2 --> DoChoice2 end subgraph "Main Graph" Node1[Node 1] --> Node2[Node 2] Node2 --> SubGraph1[Jump to SubGraph1] SubGraph1 --> FinalThing[Final Thing] end  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTg0ODA0NTEsOTEyOTE0MzkzLC0xMT
+eyJoaXN0b3J5IjpbLTE4NTg5NjE1OTgsOTEyOTE0MzkzLC0xMT
 IxNjQxMTA1LDYzNzc2ODcyN119
 -->
