@@ -1,5 +1,5 @@
 \graphicspath{{Chapter_4_-_Brayton_cycle/Images/}}
-\chapter{Brayton cycle}\label{Brayton cycle}
+\chapter{Brayton cycle}\label{C4}
 \quad\, In the previous chapter, the different parts constituting the Brayton cycle have been well defined. This chapter will be devoted to the description and the performance analysis of the Brayton cycle considering various configurations.
 
 \section{Gas turbine (GT)}
@@ -7,7 +7,7 @@
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{GT}
+\includegraphics[width=0.5\textwidth] {GT}
 \caption{Gas turbine(GT)}
 \label{fig:C4_BraytonGT}
 \end{figure}
@@ -19,31 +19,32 @@ As illustrated on Figure \ref{fig:C4_BraytonGT}, the cycle can be decomposed int
 Table \ref{tab:C4_thermo_state_GT} contains a summary of the gas cycle states emphasized on Figure \ref{fig:C4_BraytonGT}.
 
 \begin{center}
-\begin{longtable}{l|ll}
-\caption{Thermodynamic states - gas cycle (GT)}\\
-\label{tab:C4_thermo_state_GT}
-& T                   & P                 \\ \hline
+\begin{longtable}[c]{lll}
+\caption{Thermodynamic states - gas cycle (GT)}
+\label{tab:C4_thermo_state_GT}\\
+\hline
+State n\degree & T                   & P                 \\ \hline
 \endfirsthead
 \multicolumn{3}{c}%
-{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
-& T                   & P                 \\ \hline
+{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\ \hline
+State number & T                   & P                 \\ \hline
 \endhead
 \multicolumn{3}{r}{\textit{Continued on next page}} \\
 \endfoot
 \endlastfoot
-State \textbf{0}: Reference state                                                            & $T_0$ = 20\degree C & $P_0$ = 101325 Pa \\
-State \textbf{1}: Ambient condition                                                          & $T_1$ = $T_{amb}$   & $P_1$ = $P_{amb}$ \\
-\begin{tabular}[c]{@{}l@{}}State \textbf{2}: Inlet of the \\ compressor\end{tabular}         & $T_2=T_1$           & $P_2\leq P_1$     \\
-\begin{tabular}[c]{@{}l@{}}State \textbf{3}: Outlet of the \\ compressor\end{tabular}        & $T_3>T_2$           & $P_3>P_2$         \\
-\begin{tabular}[c]{@{}l@{}}State \textbf{4}: Inlet of the \\ combustion chamber\end{tabular} & $T_4=T_3$           & $P_4\leq P_3$     \\
-\begin{tabular}[c]{@{}l@{}}State \textbf{5}: Outlet of the\\ combustion chamber\end{tabular} & $T_5>>T_4$          & $P_5\leq P_4$     \\
-\begin{tabular}[c]{@{}l@{}}State \textbf{6}: Inlet of the\\ turbine\end{tabular}             & $T_6=T_5$           & $P_6\leq P_5$     \\
-\begin{tabular}[c]{@{}l@{}}State \textbf{7}: Outlet of the \\ turbine\end{tabular}           & $T_7<T_6$           & $P_7<P_6$         \\
-State \textbf{8}: Exhaust                                                                    & $T_8=T_7$           & $P_8=P_1<P_7$    
+State \textbf{0}: Reference state                                                            & $T_0$ = $T_{ref}$ & $p_0$ = $p_{ref}$ \\
+State \textbf{1}: Ambient condition                                                          & $T_1$ = $T_{amb}$   & $p_1$ = $p_{amb}$ \\
+\begin{tabular}[c]{@{}l@{}}State \textbf{2}: Inlet of the \\ compressor\end{tabular}         & $T_2=T_1$           & $p_2\leq p_1$     \\
+\begin{tabular}[c]{@{}l@{}}State \textbf{3}: Outlet of the \\ compressor\end{tabular}        & $T_3>T_2$           & $p_3>p_2$         \\
+\begin{tabular}[c]{@{}l@{}}State \textbf{4}: Inlet of the \\ combustion chamber\end{tabular} & $T_4=T_3$           & $p_4\leq p_3$     \\
+\begin{tabular}[c]{@{}l@{}}State \textbf{5}: Outlet of the\\ combustion chamber\end{tabular} & $T_5>>T_4$          & $p_5\leq p_4$     \\
+\begin{tabular}[c]{@{}l@{}}State \textbf{6}: Inlet of the\\ turbine\end{tabular}             & $T_6=T_5$           & $p_6\leq p_5$     \\
+\begin{tabular}[c]{@{}l@{}}State \textbf{7}: Outlet of the \\ turbine\end{tabular}           & $T_7<T_6$           & $p_7<p_6$         \\
+State \textbf{8}: Exhaust                                                                    & $T_8=T_7$           & $p_8=p_1<p_7$    
 \end{longtable}
 \end{center}
 
-For each of the mentioned states, 5 thermodynamic properties are evaluated. Namely the temperature, pressure, enthalpy, entropy and density. For the last variable, the ideal gas equation (\ref{eq:C2_GP}) from the chapter \ref{Notions of thermo} is used. 
+For each of the mentioned states, 5 thermodynamic properties are evaluated. Namely the temperature, pressure, enthalpy, entropy and density. For the last variable, the ideal gas equation (\ref{eq:C2_GP}) from the chapter \ref{C2} is used. 
 
 A graphical representation of these states can be performed by drawing some thermodynamic diagrams. Here, the Ts and hp diagram have been drawn on Figures \ref{fig:C4_Ts_GT} and \ref{fig:C4_hp_GT}. In this chapter, all the components are supposed ideals, meaning that their corresponding efficiency are equal to 100\%.
 
@@ -68,10 +69,10 @@ A graphical representation of these states can be performed by drawing some ther
 
 As it can be noticed on the two diagrams, the cycle is not closed. Indeed, the state \textbf{1} of the cycle does not correspond to to the final state. For this configuration, the exhaust gas temperature is a little bit higher than 600\degree C. Thus, there is still compared to the ambient condition 580\degree C of "thermal energy" that could be used.
 
-The efficiency of the cycle (or thermal efficiency), based on the definition given in the chapter \ref{Notions of thermo}, is equal to $\sim 24$\%. Considering the loss of energy in the exhaust gas, this efficiency can be improved.
+The efficiency of the cycle (or thermal efficiency), based on the definition given in the chapter \ref{C2}, is equal to $\sim 24$\%. Considering the loss of energy in the exhaust gas, this efficiency can be improved.
 
 \section{Regenerative gas turbine (RGT)}
-\quad\, As seen in the previous section, the gas cycle does not have a really high efficiency. However, this efficiency can be nearly tripled by adding a regenerator to the cycle. The purpose of this heat-exchanger is to transfer part of the thermal energy from the hot gas exiting the turbine to the cold flow exiting the compressor. A schematic of the regenerative gas turbine (RGT) and the associated Ts and hp diagrams are given on Figures \ref{fig:C4_RGT} and \ref{fig:C4_thermo_diagram_GT}. 
+\quad\, As seen in the previous section, the gas cycle does not have a really high efficiency. However, this efficiency can be nearly tripled by adding a regenerator to the cycle. The purpose of this heat-exchanger is to transfer part of the thermal energy from the hot gas exiting the turbine to the cold flow exiting the compressor. A schematic of the regenerative gas turbine (RGT) and the associated Ts and hp diagrams are given on Figures \ref{fig:C4_RGT} and \ref{fig:C4_thermo_diagram_RGT}. 
 
 \begin{figure}[h]
 \centering
@@ -94,10 +95,10 @@ The efficiency of the cycle (or thermal efficiency), based on the definition giv
          \label{fig:C4_hp_RGT}
      \end{subfigure}
         \caption{Thermodynamic diagrams of a regenerative gas turbine}
-        \label{fig:C4_thermo_diagram_GT}
+        \label{fig:C4_thermo_diagram_RGT}
 \end{figure}
 \newpage
-This has 2 majors advantages. The first one is to reduce the temperature of the gas at the exit of the cycle. The second is to reduce the fuel consumption of the system. Indeed, for an identical combustor outlet temperature (here, 950\degree C), the amount of energy that the combustion chamber has to provide to the air is lower than for the GT since the inlet temperature of the air is higher. Considering a mass flow rate of air of 180g/s, the fuel consumption goes from 3.41g/s to 1.18g/s for the RGT.
+This has two advantages. The first one is to reduce the temperature of the gas at the exit of the cycle. The second is to reduce the fuel consumption of the system. Indeed, for an identical combustor outlet temperature (here, 950\degree C), the amount of energy that the combustion chamber has to provide to the air is lower than for the GT since the inlet temperature of the air is higher. Considering a mass flow rate of air of 180g/s, the fuel consumption goes from 3.41g/s to 1.18g/s for the RGT.
 
 After computation, the thermal efficiency of the RGT is evaluated at $\sim$ 63\%, which is more than twice the efficiency of the GT.
 

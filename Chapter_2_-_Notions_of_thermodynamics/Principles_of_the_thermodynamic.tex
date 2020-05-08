@@ -25,20 +25,20 @@ Q_{1-2} - W_{1-2} - E_{2} - E_{1} = \Delta E_{cv}\label{eq:C2_EBO}
 The Figure \ref{fig:C2_VC} depicts an open system with an entry and exit area $A_1$ and $A_2$ respectively. Posing that the work $W$ is equal to 
 \begin{equation}
 \setstretch{1}
-W = P_2\cdot A_2\cdot v_2\cdot \Delta t - P_1\cdot A_1\cdot v_1\cdot \Delta t + W_s
+W = p_2\cdot A_2\cdot v_2\cdot \Delta t - p_1\cdot A_1\cdot v_1\cdot \Delta t + W_s
 \end{equation}      
 where $P_1$ (resp. $P_2$) and $V_1$ (resp. $V_2$) are the pressure and the velocity at \textbf{1} (resp. \textbf{2}).
 
 By neglecting the variation of the kinetic and potential energy, the energy balance is after some mathematical operations as given in the relation \ref{eq:C2_EBH}
 \begin{equation}
 \setstretch{1}
-q - w_s = u_2 +P_2\cdot vol_2 - u_1 - P_1\cdot vol_1 = h_2 - h_1\label{eq:C2_EBH}
+q - w_s = u_2 +p_2\cdot vol_2 - u_1 - p_1\cdot vol_1 = h_2 - h_1\label{eq:C2_EBH}
 \end{equation}
 where $q$, $w_s$, and $h$ are respectively the specific work, heat and \textbf{enthalpy} (in J/kg).  
 For the case of an ideal gas, the enthalpy and the internal energy only depend on the temperature $T$. Indeed, taking the equation (\ref{eq:C2_GP}), the relation (\ref{eq:C2_h}) can easily be deduced.
 \begin{equation}
 \setstretch{1}
-h = u(T) + Pvol = u(T) + rT \label{eq:C2_h}
+h = u(T) + p\cdot vol = u(T) + r\cdot T \label{eq:C2_h}
 \end{equation}
 \subsection{Specific heat}
 \quad\, The previous subsection was meant to define the enthalpy. This state variable is used in place of the internal energy when dealing with open system.\\
@@ -154,23 +154,23 @@ In the case of the Carnot cycle, both variations are equal. This is illustrated 
 \subsection{Computation of the thermodynamic properties}
 \quad\, From now, the hypothesis of an ideal gas has been used for the computation of the previously established state variables. However, while this hypothesis remains quite valid when dealing with gas, it cannot be used for a real fluid (e.g. liquid water).
 
-This problem can be solved using the Maxwell relations which provides a linked between the partial derivatives of the properties $p$, $v$, $T$ and $s$ for a simple compressible system \cite{2015}. 
+This problem can be solved using the Maxwell relations which provides a linked between the partial derivatives of the state variables $p$, $v$, $T$ and $s$ for a simple compressible system \cite{2015}. 
 
 Those relations can be derived from the four Gibbs relations expressed in (\ref{eq:C2_Gibbs}).
 
 \begin{subequations}
 \setstretch{1}
 \begin{equation}
-  du = Tds - Pdv \label{eq:C2_Gibbs1} 
+  du = Tds - pdv \label{eq:C2_Gibbs1} 
 \end{equation}    
 \begin{equation}
-  dh = Tds + vdP \label{eq:C2_Gibbs2} 
+  dh = Tds + vdp \label{eq:C2_Gibbs2} 
 \end{equation}
 \begin{equation}
-  da = du - Tds - sdT = - Pdv - sdT \label{eq:C2_Gibbs3} 
+  da = du - Tds - sdT = - pdv - sdT \label{eq:C2_Gibbs3} 
 \end{equation}    
 \begin{equation}
-  dg = dh - Tds - sdT = vdP - sdT \label{eq:C2_Gibbs4}
+  dg = dh - Tds - sdT = vdp - sdT \label{eq:C2_Gibbs4}
 \end{equation} \label{eq:C2_Gibbs}
 \end{subequations}
 
