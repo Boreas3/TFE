@@ -1,0 +1,72 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Notions of thermodynamics}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Fundamental notions}{6}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Open/closed system}{6}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}State functions and variables}{7}{subsection.2.1.2}%
+\contentsline {subsubsection}{Pressure}{7}{section*.4}%
+\contentsline {subsubsection}{Temperature}{7}{section*.5}%
+\contentsline {subsubsection}{Volume}{7}{section*.6}%
+\contentsline {subsection}{\numberline {2.1.3}Ideal gas equation}{7}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Energy}{8}{subsection.2.1.4}%
+\contentsline {subsubsection}{Energy balance}{9}{section*.7}%
+\contentsline {subsubsection}{Energy conservation efficiency}{10}{section*.8}%
+\contentsline {section}{\numberline {2.2}Principles of thermodynamic}{10}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Enthalpy}{10}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Specific heat}{11}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Carnot cycle}{12}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Entropy}{14}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Second principle definition}{14}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Computation of the thermodynamic properties}{14}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Entropy variation}{16}{subsection.2.2.7}%
+\contentsline {subsection}{\numberline {2.2.8}Type of transformations}{17}{subsection.2.2.8}%
+\contentsline {subsection}{\numberline {2.2.9}Isentropic efficiency}{17}{subsection.2.2.9}%
+\contentsline {chapter}{\numberline {3}Thermodynamic components}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Turbomachines}{19}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Incompressible flow}{19}{subsection.3.1.1}%
+\contentsline {subsubsection}{Characteristic maps}{20}{section*.13}%
+\contentsline {subsubsection}{Similarity}{20}{section*.15}%
+\contentsline {subsubsection}{Types of pumps}{21}{section*.16}%
+\contentsline {subsection}{\numberline {3.1.2}Compressible flow}{22}{subsection.3.1.2}%
+\contentsline {subsubsection}{Static and total quantities}{22}{section*.19}%
+\contentsline {subsubsection}{Conservation of the total enthalpy and rothalpy}{23}{section*.20}%
+\contentsline {subsubsection}{Velocity triangle}{23}{section*.21}%
+\contentsline {subsubsection}{Mach number}{24}{section*.23}%
+\contentsline {subsubsection}{Characteristic maps}{24}{section*.24}%
+\contentsline {subsection}{\numberline {3.1.3}Gas compressor}{25}{subsection.3.1.3}%
+\contentsline {subsubsection}{Mollier diagram}{26}{section*.26}%
+\contentsline {subsubsection}{Performance maps}{27}{section*.28}%
+\contentsline {subsection}{\numberline {3.1.4}Gas turbine}{28}{subsection.3.1.4}%
+\contentsline {subsubsection}{Mollier diagram}{28}{section*.31}%
+\contentsline {subsubsection}{Axial turbine design and degree of reaction}{29}{section*.33}%
+\contentsline {subsubsection}{Performance maps}{30}{section*.34}%
+\contentsline {section}{\numberline {3.2}Combustion chamber}{31}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Basis about Chemistry}{31}{subsection.3.2.1}%
+\contentsline {subsubsection}{Conservation of mass}{31}{section*.36}%
+\contentsline {subsubsection}{Conservation of the atomic species}{31}{section*.37}%
+\contentsline {subsubsection}{Proust law}{32}{section*.38}%
+\contentsline {subsection}{\numberline {3.2.2}Combustion equation}{32}{subsection.3.2.2}%
+\contentsline {subsubsection}{Air factor}{32}{section*.39}%
+\contentsline {subsubsection}{Generalized combustion equation}{33}{section*.40}%
+\contentsline {subsection}{\numberline {3.2.3}Fuel characteristic}{34}{subsection.3.2.3}%
+\contentsline {subsubsection}{Heating calorific value}{34}{section*.41}%
+\contentsline {subsubsection}{Adiabatic flame temperature}{34}{section*.42}%
+\contentsline {subsection}{\numberline {3.2.4}Fumes composition}{35}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Heat-exchangers}{35}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Stream configurations}{37}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Heat transfer within a heat-exchanger}{39}{subsection.3.3.2}%
+\contentsline {subsubsection}{Transfer coefficient}{39}{section*.49}%
+\contentsline {subsubsection}{LMTD method}{40}{section*.50}%
+\contentsline {subsubsection}{$\varepsilon $-NTU method}{41}{section*.51}%
+\contentsline {subsubsection}{Rating and sizing problem}{41}{section*.52}%
+\contentsline {section}{\numberline {3.4}Piping and pressure drop}{43}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Brayton cycle}{44}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Gas turbine (GT)}{44}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Regenerative gas turbine (RGT)}{46}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Brayton cycle - variants}{47}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Brayton cycle modeling - Overview}{48}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Python language}{48}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Structure of the model}{49}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Inputs}{49}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Flow chart of the model}{52}{subsection.5.2.2}%
+\contentsline {chapter}{\numberline {6}Brayton cycle modeling}{54}{chapter.6}%
