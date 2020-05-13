@@ -1,14 +1,37 @@
-\graphicspath{{Chapter_5_-_Code_structure/Images/}}
+\graphicspath{{Chapitre_5/Images/}}
 \chapter{Brayton cycle modeling - Overview}\label{C5}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                         %%%%%
+%%%%% Introduction chapitre 5 %%%%%
+%%%%%                         %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \quad\, In the chapter \ref{C4}, the Brayton cycle has been introduced by presenting two configurations. Also, it has been mentioned that many other configurations (illustrated in the annex \ref{annex:Brayton_variant}) exists to cover a large panel of applications. 
 
 This chapter will be devoted to the description of the  Brayton cycle model. This model, will only consider steady state operations. Thus, transient effects like acceleration of the turbomachines or the heating up of the heat-exchangers will not be taken into consideration.
 
 The computer code that will be presented is based on the Python language\citep{van1995python}. The motivations of the usage of this particular computing language, will be given in the beginning of this chapter. Then, the structure of the model itself will be established, followed by the explanation of the implementation of the theoretical aspects saw in chapter \ref{C3}.
 
-\input{Chapter_5_-_Code_structure/Python_language}
+\section{Python language}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                         %%%%%
+%%%%%  <<Python language>>    %%%%%
+%%%%%                         %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\quad\, Python is a computing language that was created by Guido van Rossum at the Centrum Wiskunde \& Informatica (CWI - \url{https://www.cwi.nl}) in the early 1990s. Starting 1995, G. van Rossum continued to work on Python at the Corporation for National Research Initiatives (CNRI - \url{https://www.cnri.reston.va.us/}). Since the very first release, the language was open source. This means that the source code was accessible to anyone. 
+
+From this time, Python progressively gained in popularity, and the community participating to the development of the software didn't stop to grow. Today, this language is used by many companies and for many types of applications. Indeed, this programming language is used for website creation, machine learning, automation, etc. 
+
+Since Python is an open source language, it lives thanks to its community which creates and shares libraries. Indeed, what have already been implemented in the past can be freely used by the other users. Moreover, new users can easily start developing under Python thanks to huge amount of guide and documentation to starting learning about the Python language.
+
+Also, Python is a programming language that allows the object oriented programming. This paradigm consists in the definition of blocks of code (called objects) which are able to interact together through relations, defined in order to solve a given problem. This allows to create computer code that can evolve through the times. 
 
 \section{Structure of the model}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                         %%%%%
+%%%%% <<Structure of the>>    %%%%%
+%%%%%      <<model>>          %%%%%
+%%%%%                         %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \quad\, the previous section shows that Python was a great language due to its huge community and the ability to do oriented object programming. Combined with the fact that Python is free and open source, it has been chosen to program the model developed during this master thesis under the Python language.
 
 The focus of this section is the description of the structure of the computer code itself. As it can be expect from what have been previously said, the program will be composed of multiple blocks that will interact together.

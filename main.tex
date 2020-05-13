@@ -24,7 +24,9 @@
 \newcommand{\vect}[1]{\boldsymbol{#1}}
 
 \begin{document}
-
+\makeatletter
+\newenvironment{folding}{\endgroup}{\begingroup \def \@currenvir{folding}\edef \@currenvline{\on@line}}
+\makeatother
 \maketitle
 
 \tableofcontents
@@ -40,27 +42,27 @@
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Chapter 2:                  %%
+%% Chapitre 2:                 %%
 %% Notion of thermodynamics    %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{Chapter_2_-_Notions_of_thermodynamics/chapter2}
+\input{Chapitre_2/chapitre_2}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Chapter 3:                  %%
+%% Chapitre 3:                 %%
 %% Thermodynamics components   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{Chapter_3_-_Thermodynamic_components/chapter3}
+\input{Chapitre_3/chapitre_3}
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Chapter 4:                  %%
-%% Brayton_cycle   %%
+%% Chapitre 4:                 %%
+%% Brayton_cycle               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{Chapter_4_-_Brayton_cycle/chapter4}
+\input{Chapitre_4/chapitre_4}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Chapter 5:                  %%
+%% Chapitre 5:                 %%
 %% Code structure   		   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{Chapter_5_-_Code_structure/chapter5}
