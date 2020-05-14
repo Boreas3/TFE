@@ -20,27 +20,30 @@ can be categorized into two families.
 
 The first family of turbomachines are turbomachines which inject or extract energy from an incompressible flow. These transformations on the fluid  are respectively performed by pumps and hydraulic turbines.
 
-The second family are turbomachines dealing with compressible flow. Here, some extract effects are taken into account. For instance, the velocity of the flow can be at some points limited due to choking effects. These effects will be described in a future part of this section.
+The second family are turbomachines dealing with compressible flow. Here, some extract effects are taken into account. For instance, the velocity of the flow can be at some points limited due to choking effects. Also, since the flow is compressible its density can vary along the path, the velocity will varies along the path as well. These effects will be rediscussed in a future part of this section.
 
 Turbomachines that are encompassed in this second category are compressors and gas turbines. As for the pumps and hydraulic turbines, compressors and turbines aim to inject and extract energy into/from the flow.
 
 \subsection{General principles}
-\quad\ Some principles used when designing incompressible and compressible flow based machines are common for both of these families. Among these principles, it can be emphasized the velocity triangle and the similarity analysis. The first provides tools to well design the blades of the turbomachines, while the last principles is used to derive the performance of a given machines based on non-dimensional quantities. 
+\quad\ Some principles used when designing incompressible and compressible flow based machines are common for both of these families. Among these principles, it can be emphasized the velocity triangle, the enthalpy and rhotalpy conservation, and the similarity analysis. The two first provides tools to well design the blades of the turbomachines, while the other principle is used to derive the performance of a given machines based on non-dimensional quantities. The following lines will explain the basis about these different principles. 
 
 \subsubsection{Velocity triangle}
 \quad\ When considering the rotating part of the turbomachine (named rotor), there is, in addition to the absolute frame of reference, a rotating frame which is attached to the rotor. This leads to definition of three components for the velocity of the fluid: 
+
 \begin{itemize}
     \item Absolute velocity \(\mathbf{v}\): velocity of the fluid in the absolute frame (\(\mathbf{x},\mathbf{y}\)).
     \item Rotating speed of the rotor \(\mathbf{u_r}\): rotating speed of the rotor in the absolute frame (\(\mathbf{x},\mathbf{y}\)).
     \item Relative velocity \(\mathbf{w_r}\): velocity of the fluid in the relative frame  (\(\mathbf{x'},\mathbf{y'}\)).
 \end{itemize}
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{Frames.png}
     \caption{Absolute and rotating frames}
     \label{fig:C3_frames}
 \end{figure}
-Figure \ref{fig:C3_frames} shows the representations in the space of these different definitions of the velocity. Considering a point at $P$ in the time t=0, this point is moving to \(P\)'' in the time t=dt.  
+
+Figure \ref{fig:C3_frames} shows the representations in the space of these different definitions of the velocity. Considering a point at $P$ in the time t=0, this point is moving to \(P''\) in the time t=dt.  
 The drawing shows that the following equality (\ref{eq:C3_velocity}) is enforced at any time.
 
 \begin{equation}
@@ -56,26 +59,81 @@ Another way of representations of these velocities is to draw the velocity trian
     \caption{Velocity triangle}
     \label{fig:C3_vtriang}
 \end{figure}
+where $v_m$ is the projection of the vector $\mathbf{v}$ on the meridional axis.
 
 Here, two angles $\alpha$ and $\beta$, respectively the absolute and relative flow angles, can be defined. Those angles will allow to design the shape of the rotating blade based on the desired applications. 
 
+\subsubsection{Enthalpy and rhothalpy conservation}
+\quad\ It has been mentioned before that, for a compressible flow, the velocity can vary along the path. The notion of static and total (or stagnation) quantities have been established to take into account this variation of velocity. Stagnation quantities will be identified by the superscript ''0''.
 
-\subsubsection{Similarity}
-\quad\ When the study of turbomachine is considered, experimental testing are required to accurately design it. However, due to the high cost of creating a new test bench for each designed machines, the principle of similarity have been developed. 
-
-The similarity analysis allows to extrapolate the performance of a given turbomachine based on non-dimensional quantities. Indeed, when moving from on turbomachine to a similar one, the value of the non-dimensional quantities are conserved. Similarly, operating points can be extrapolated using similarity.
-
-This is a really powerful tool which allows to significantly decrease the time and the cost related to the design of a new turbomachines.
-
-
-\subsection{Incompressible flow}
-\quad\ The first category of flow to be considered is the incompressible flow. This type of flow is characterized by a constant density over the distance. An example of incompressible fluid is the water.
-
-Among the machine exchanging energy with such type of fluid, there are pumps which are designed to raise the height or total hydraulic energy \(h\) of the fluid. The variation of the height of the fluid is similar to its enthalpy variation. Thus, the power output  \(\dot{W}_p\) developed by the pump can be expressed as given in relation (\ref{eq:C3_Ppump})
+For instance, the total enthalpy is given by
 \begin{equation}
-    \dot{W}_{p,a-b} = \dot{m}\cdot (h_a - h_b)=\dot{m}\cdot\Delta h_p \label{eq:C3_Ppump}
+    \setstretch{1}
+    h^0 = h + \frac{1}{2}\cdot v^2\label{eq:C3_h0}
 \end{equation}
-considering that the transformation makes the system going from state \textbf{a} to state \textbf{b}.
+
+Now, considering an adiabatic transformation without viscous work, the total enthalpy is conserved between the initial state and the final state.
+\begin{equation}
+    \dot{m}_1\cdot h_1^0 = \dot{m}_2 h_2^0 \label{eq:C3_hcons}
+\end{equation}
+which can be reduced to \(h_1^0 = h_2^0\) if we supposed that the transformation is performed without any leakages (\(\dot{m}_1=\dot{m}_2\)). The states \(1\) and \(2\) are associated to the orthogonal boundaries to the flow of the selected control volume delimiting the studied system.
+
+\begin{equation}
+    \setstretch{1}
+    i^0 = h + \frac{1}{2}\cdot w_r^2 - \frac{1}{2}\cdot u_r^2 \label{eq:C3_i0}
+\end{equation}
+
+Similarly, using the definition (\ref{eq:C3_i0}) of the stagnation rhotalpy, it is obtained from the Euler equation (\ref{eq:C3_Euler}) that, within a rotor, the total rothalpy is conserved through the transformation process.
+
+\begin{align}
+    \setstretch{1}
+    h_2^0 - h_1^0 = \frac{1}{2}\cdot & \left(v_2^2 - v_1^2\right) - \frac{1}{2}\cdot \left(w_{r,2}^2 - wr_{r,1}^2\right) + \frac{1}{2}\cdot \left(u_{r,2}^2 - u_{r,1}^2\right)\label{eq:C3_Euler} \\
+    \text{with }                     & v = \left|\vect{v}\right|\quad\text{;}\quad  w_r = \left|\vect{w_r}\right|\quad\text{;}\quad u_r= \left|\vect{u_r}\right|\nonumber
+\end{align}
+
+The rhotalpy conservation is then expressed as stated in the equality (\ref{eq:C3_icons}).
+
+\begin{equation}
+    \setstretch{1}
+    \dot{m}_1\cdot i_1^0 = \dot{m}_2\cdot i_2^0 \label{eq:C3_icons}
+\end{equation} 
+
+It can be noticed that if the flow considered is incompressible, the equalities (\ref{eq:C3_vinc}) and (\ref{eq:C3_winc}) are enforced:
+\begin{subequations}
+    \setstretch{1}
+    \begin{equation}
+        v_2 = v_1 \label{eq:C3_vinc}
+    \end{equation}
+    \begin{equation}
+        u_{r,2} = u_{r,1} \label{eq:C3_uinc}
+    \end{equation}
+    \begin{equation}
+        w_{r,2} = w_{r,1} \label{eq:C3_winc}
+    \end{equation}
+\end{subequations}
+Therefore, there is not distinction between the variation of the total quantities and static quantities.
+\subsubsection{Similarity}
+\quad\ The design of the turbomachines often required validations through experimental testing.  
+
+However, because the design of the turbomachines really depends on the application in view, creating a new test bench for each machine is time consuming and has a high cost. 
+
+Thus, the analysis by similarity have been established to 
+minimize the number of experimental campaign that has to be conducted. By defining some non-dimensional quantities describing the operating point of a given turbomachine, it is possible to extrapolate similar operating points of the same machine or, operating point of a similar machine of another size. 
+
+This is a really powerful tool which allows to significantly decrease the time and the cost related to the design of a new turbomachines. Indeed, it allows to do the testing on smaller turbomachines, and then the performance of the desired machine are extrapolated. Since the machines and the associated test benches are smaller, the cost of the experimental campaign are significantly smaller, and the experimental results can be reused for future designed machines.
+
+This concludes the introductory section about the basis notions to study the turbomachines. 
+\newpage
+\subsection{Pumps and hydraulic turbines}
+\quad\, Now that the base principles have been introduced, those can be specified for the analysis of turbomachines performing transformation on incompressible flow. 
+
+Among the machine exchanging energy with such type of fluid, it can be distinguish the pumps, which are designed to raise the height (or total hydraulic energy) \(h\) of the fluid, and the hydraulic turbines which do the opposite transformation. 
+
+The variation of the height of the fluid is similar to its enthalpy variation. Thus, the power consumed (resp. produced) \(\dot{W}_p\) by the pump (resp. the hydraulic turbine) can be expressed as given in relation (\ref{eq:C3_Pinc}), considering that the transformation makes the system going from state \textbf{a} to state \textbf{b}.
+\begin{equation}
+    \dot{W}_{p,a-b} = \dot{m}\cdot (h_a - h_b)=\dot{m}\cdot\Delta h_p \label{eq:C3_Pinc}
+\end{equation}
+
 
 If the consumed power of the pump is \(\dot{W}_{e,a-b}\), its global efficiency \(\eta_p\) is equal to the ratio
 \begin{equation}
@@ -95,13 +153,16 @@ Considering the volumetric flow rate \(Q_p\) (m$^3$/s) and the rotational speed 
         \dot{W}_e = \dot{W}_ef(Q_p, N)\label{eq:C3_Pe}
     \end{equation}
 \end{subequations}
-Those relations will be called characteristic or performance Map and are determined \textbf{experimentally}. An example of such map is given on Figure \ref{fig:C3_MapPump}.
+Those relations will be called characteristic or performance map and has to be determined \textbf{experimentally}. An example of such map is given on Figure \ref{fig:C3_MapPump}.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{char_map_pump.png}
     \caption{Characteristic maps of a pump \cite{Hillewaert2019}}
     \label{fig:C3_MapPump}
 \end{figure}
+
+However, not all the operating points constituting the performance map have to be computed through an experimental campaign. Indeed, using the similarity analysis described during the previous section, determining the operating points for one rotational speed is sufficient to deduce the rest of the characteristic map.
+
 \subsubsection{Similarity}
 \quad\ When considering incompressible flow, it is possible to extrapolate from a known operating point a infinity of similar operating points. Indeed, There exist relationships which provides with enough accuracy the change of flow rate \(Q\) and height variation \(\Delta H\) when the rotational speed goes from \(N_1\) to \(N_2\). It can be demonstrated that the flow rate evolves linearly with the rotation speed, and that the height variation is a quadratic function of \(N\).
 
@@ -145,39 +206,7 @@ The main two parts of an axial pump are the rotor (the rotating part) that will 
 
 The behavior of the compressible flow is more complex to describe compared to incompressible flow. Indeed, “compressible flow is characterized by the propagation of acoustic waves” \cite{Hillewaert2019}.   This part of the section about turbomachines will only focused on the very main principles required for the good understanding of this work.
 
-\subsubsection{Static and total quantities}
-\quad\ As it has been partly revealed in the previous lines, the flow characteristics are dependent on its velocity. The study of compressible flow did lead to the distinction between the static and total quantities.
 
-The static quantities are state variables (e.g. temperature, pressure,...) that are independent of the flow velocity. As for the total quantities, these are dependent of the flow velocity \(V\). For instance, the total enthalpy is given by
-\begin{equation}
-    h^0 = h + \frac{1}{2}\cdot v^2\label{eq:C3_h0}
-\end{equation}
-where the total quantity is identified by the superscript ''0''.
-
-The total enthalpy can be defined as “the static enthalpy obtained when the gas is brought adiabatically to a halt” \cite{Hillewaert2019}.
-
-
-\subsubsection{Conservation of the total enthalpy and rothalpy}
-\quad\ For an adiabatic transformation without viscous work, the total enthalpy is conserved between the initial state and the final state.
-\begin{equation}
-    \dot{m}\cdot h_1^0 = \dot{m} h_2^0 \label{eq:C3_hcons}
-\end{equation}
-which can be reduced to \(h_1^0 = h_2^0\) if we supposed that the transformation is performed without any leakages. The states \(1\) and \(2\) are associated to the orthogonal boundaries to the flow of the selected control volume delimiting the studied system.
-
-Now, considering a rotating system (e.g. a rotor), the variation of the total enthalpy can be obtained by considering the modified Euler equation of turbomachinery
-\begin{align}
-    \setstretch{1}
-    h_2^0 - h_1^0 = \frac{1}{2}\cdot & \left(v_2^2 - v_1^2\right) - \frac{1}{2}\cdot \left(wr_2^2 - wr_1^2\right) + \frac{1}{2}\cdot \left(ur_2^2 - ur_1^2\right)\label{eq:C3_Euler} \\
-    \text{with }                     & v = \left|\vect{v}\right|\quad\text{;}\quad  wr = \left|\vect{wr}\right|\quad\text{;}\quad ur= \left|\vect{ur}\right|\nonumber
-\end{align}
-where \(\vect{ur}\), \(\vect{v}\) and \(\vect{wr}\) are respectively the local velocity of the rotor, and the absolute and relative velocity (with respect to the rotor) of the flow. Defining the total rothalpy as being
-\begin{equation}
-    i^0 = h + \frac{1}{2}\cdot wr^2 - \frac{1}{2}\cdot ur^2 \label{eq:C3_i0}
-\end{equation}
-It is obtained from the Euler equation (\ref{eq:C3_Euler}) that the total rothalpy is conserved through the transformation.
-\begin{equation}
-    i_1^0 = i_2^0 \label{eq:C3_icons}
-\end{equation}
 \subsubsection{Velocity triangle}
 \quad\ With the relation (\ref{eq:C3_Euler}), the notion of absolute and relative velocity of the flow has been introduced. A graphic representation of these three vector can be done using the \textbf{velocity triangle}. This triangle is drawn on Figure \ref{fig:C3_vtriang}.
 
