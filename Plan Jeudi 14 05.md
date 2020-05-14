@@ -7,8 +7,8 @@
 <ul>
 <li>Ajouter section general
 <ul>
-<li>~~similiratité~~</li>
-<li>~~Triangle de vitesse~~</li>
+<li>similiratité</li>
+<li>Triangle de vitesse</li>
 <li>enthalpy variation</li>
 </ul>
 </li>
@@ -80,6 +80,3 @@
 wo</li>
 </ul>
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk3NTQ3Mzc4MCw0Mzg0NTEzMl19
--->
