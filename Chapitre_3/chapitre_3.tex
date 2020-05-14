@@ -5,7 +5,7 @@
 %%%%% Introduction chapitre 3 %%%%%
 %%%%%                         %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\quad\, In the beginning of the previous chapter, it has been mention that the Brayton cycle composed of several components that are more or less complex. The behavior of these components, which is required to realized the study the global system, is based on the thermodynamic notions that have be introduce all along the past lines.
+\quad\ In the beginning of the previous chapter, it has been mention that the Brayton cycle composed of several components that are more or less complex. The behavior of these components, which is required to realize the study the global system, is based on the thermodynamic notions that have been introduced all along the past lines.
 
 This chapter will be focused on the description of those components. For each of them, it will be provided the concepts or principles that will be used during this work. Then, a description of the Brayton cycle itself will be provided. Different configurations will be proposed and compared.
 \section{Turbomachines}
@@ -14,261 +14,305 @@ This chapter will be focused on the description of those components. For each of
 %%%%%    <<Turbomachines>>    %%%%%
 %%%%%                         %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\quad\, The first family of components to be studied is the turbomachines. The machines owning to this family are ones "that exchange energy between the
-fluid traversing it and mechanical energy supplied to or extracted from the machine" \cite{Hillewaert2019}. Those machines are \textbf{rotating} machines and, based on the compressible nature of the fluid, two categories can be created.
-This subsection will swept the two categories but will mainly focused on the machines exchanging energy with \textbf{compressible} flow.
+\quad\ The first family of components to be studied is the turbomachines. The machines owning to this family are ones “that exchange energy between the
+fluid traversing it and mechanical energy supplied to or extracted from the machine” \cite{Hillewaert2019}. Those machines are \textbf{rotating} machines
+can be categorized into two families.
+
+The first family of turbomachines are turbomachines which inject or extract energy from an incompressible flow. These transformations on the fluid  are respectively performed by pumps and hydraulic turbines.
+
+The second family are turbomachines dealing with compressible flow. Here, some extract effects are taken into account. For instance, the velocity of the flow can be at some points limited due to choking effects. These effects will be described in a future part of this section.
+
+Turbomachines that are encompassed in this second category are compressors and gas turbines. As for the pumps and hydraulic turbines, compressors and turbines aim to inject and extract energy into/from the flow.
+
+\subsection{General principles}
+\quad\ Some principles used when designing incompressible and compressible flow based machines are common for both of these families. Among these principles, it can be emphasized the velocity triangle and the similarity analysis. The first provides tools to well design the blades of the turbomachines, while the last principles is used to derive the performance of a given machines based on non-dimensional quantities. 
+
+\subsubsection{Velocity triangle}
+\quad\ When considering the rotating part of the turbomachine (named rotor), there is, in addition to the absolute frame of reference, a rotating frame which is attached to the rotor. This leads to definition of three components for the velocity of the fluid: 
+\begin{itemize}
+    \item Absolute velocity \(\mathbf{v}\): velocity of the fluid in the absolute frame (\(\mathbf{x},\mathbf{y}\)).
+    \item Rotating speed of the rotor \(\mathbf{u_r}\): rotating speed of the rotor in the absolute frame (\(\mathbf{x},\mathbf{y}\)).
+    \item Relative velocity \(\mathbf{w_r}\): velocity of the fluid in the relative frame  (\(\mathbf{x'},\mathbf{y'}\)).
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Frames.png}
+    \caption{Absolute and rotating frames}
+    \label{fig:C3_frames}
+\end{figure}
+Figure \ref{fig:C3_frames} shows the representations in the space of these different definitions of the velocity. Considering a point at $P$ in the time t=0, this point is moving to \(P\)'' in the time t=dt.  
+The drawing shows that the following equality (\ref{eq:C3_velocity}) is enforced at any time.
+
+\begin{equation}
+    \setstretch{1}
+    \mathbf{v} = \mathbf{u_r} + \mathbf{w_r} \label{eq:C3_velocity}
+\end{equation}
+
+Another way of representations of these velocities is to draw the velocity triangle. The velocity triangle is defined as depicted on Figure \ref{fig:C3_vtriang}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Vtriangle.png}
+    \caption{Velocity triangle}
+    \label{fig:C3_vtriang}
+\end{figure}
+
+Here, two angles $\alpha$ and $\beta$, respectively the absolute and relative flow angles, can be defined. Those angles will allow to design the shape of the rotating blade based on the desired applications. 
+
+
+\subsubsection{Similarity}
+\quad\ When the study of turbomachine is considered, experimental testing are required to accurately design it. However, due to the high cost of creating a new test bench for each designed machines, the principle of similarity have been developed. 
+
+The similarity analysis allows to extrapolate the performance of a given turbomachine based on non-dimensional quantities. Indeed, when moving from on turbomachine to a similar one, the value of the non-dimensional quantities are conserved. Similarly, operating points can be extrapolated using similarity.
+
+This is a really powerful tool which allows to significantly decrease the time and the cost related to the design of a new turbomachines.
+
 
 \subsection{Incompressible flow}
-\quad\, The first category of flow to be considered is the incompressible flow. This type of flow is characterized by a constant density over the distance. An example of incompressible fluid is the water.
+\quad\ The first category of flow to be considered is the incompressible flow. This type of flow is characterized by a constant density over the distance. An example of incompressible fluid is the water.
 
-Among the machine exchanging energy with such type of fluid, there are pumps which are designed to raise the height or total hydraulic energy $h$ of the fluid. The variation of the height of the fluid is similar to its enthalpy variation. Thus, the power output  $\dot{W}_p$ developed by the pump can be expressed as given in relation (\ref{eq:C3_Ppump})
+Among the machine exchanging energy with such type of fluid, there are pumps which are designed to raise the height or total hydraulic energy \(h\) of the fluid. The variation of the height of the fluid is similar to its enthalpy variation. Thus, the power output  \(\dot{W}_p\) developed by the pump can be expressed as given in relation (\ref{eq:C3_Ppump})
 \begin{equation}
-\dot{W}_{p,a-b} = \dot{m}\cdot (h_a - h_b)=\dot{m}\cdot\Delta h_p \label{eq:C3_Ppump}
+    \dot{W}_{p,a-b} = \dot{m}\cdot (h_a - h_b)=\dot{m}\cdot\Delta h_p \label{eq:C3_Ppump}
 \end{equation}
 considering that the transformation makes the system going from state \textbf{a} to state \textbf{b}.
 
-If the consumed power of the pump is $\dot{W}_{e,a-b}$, its global efficiency $\eta_p$ is equal to the ratio
+If the consumed power of the pump is \(\dot{W}_{e,a-b}\), its global efficiency \(\eta_p\) is equal to the ratio
 \begin{equation}
-\eta_p = \frac{\dot{W}_{p,a-b}}{\dot{W}_{e,a-b}}\label{eq:C3_Etapump}
+    \eta_p = \frac{\dot{W}_{p,a-b}}{\dot{W}_{e,a-b}}\label{eq:C3_Etapump}
 \end{equation}
 \subsubsection{Characteristic maps}
-\quad\, It has be shown that the power output and the global efficiency of the pump are functions of the height variation and the flow rate of the fluid. When operating a pump, it can be useful to know how this height variation will vary with respect to the flow rate and the rotational speed of the pump shaft. The knowledge of these two parameters allows to fully characterized the pump.
+\quad\ It has be shown that the power output and the global efficiency of the pump are functions of the height variation and the flow rate of the fluid. When operating a pump, it can be useful to know how this height variation will vary with respect to the flow rate and the rotational speed of the pump shaft. The knowledge of these two parameters allows to fully characterized the pump.
 
-Considering the volumetric flow rate $Q_p$ (m$^3$/s) and the rotational speed $N$, the two following relations (\ref{eq:C3_DHp}) and (\ref{eq:C3_Pe}) can be derived.
+Considering the volumetric flow rate \(Q_p\) (m$^3$/s) and the rotational speed \(N\), the two following relations (\ref{eq:C3_DHp}) and (\ref{eq:C3_Pe}) can be derived.
 
 \begin{subequations}
-\setstretch{1}
-\begin{equation}
-\Delta h_p = \Delta h_p(Q_p, N)\label{eq:C3_DHp}\\
-\end{equation}
-\begin{equation}
-\dot{W}_e = \dot{W}_ef(Q_p, N)\label{eq:C3_Pe}
-\end{equation}
+    \setstretch{1}
+    \begin{equation}
+        \Delta h_p = \Delta h_p(Q_p, N)\label{eq:C3_DHp}\\
+    \end{equation}
+    \begin{equation}
+        \dot{W}_e = \dot{W}_ef(Q_p, N)\label{eq:C3_Pe}
+    \end{equation}
 \end{subequations}
 Those relations will be called characteristic or performance Map and are determined \textbf{experimentally}. An example of such map is given on Figure \ref{fig:C3_MapPump}.
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth]{char_map_pump.png}
-\caption{Characteristic maps of a pump \citep{Hillewaert2019}}
-\label{fig:C3_MapPump}
+    \centering
+    \includegraphics[width=0.8\textwidth]{char_map_pump.png}
+    \caption{Characteristic maps of a pump \cite{Hillewaert2019}}
+    \label{fig:C3_MapPump}
 \end{figure}
 \subsubsection{Similarity}
-\quad\, When considering incompressible flow, it is possible to extrapolate from a known operating point a infinity of similar operating points. Indeed, There exist relationships which provides with enough accuracy the change of flow rate $Q$ and height variation $\Delta H$ when the rotational speed goes from $N_1$ to $N_2$. It can be demonstrate that the flow rate evolves linearly with the rotation speed, and that the height variation is a quadratic function of $N$.
+\quad\ When considering incompressible flow, it is possible to extrapolate from a known operating point a infinity of similar operating points. Indeed, There exist relationships which provides with enough accuracy the change of flow rate \(Q\) and height variation \(\Delta H\) when the rotational speed goes from \(N_1\) to \(N_2\). It can be demonstrated that the flow rate evolves linearly with the rotation speed, and that the height variation is a quadratic function of \(N\).
 
 \begin{subequations}
-\setstretch{1}
-\begin{equation}
-Q_2 = Q_1\cdot\frac{N_2}{N_1} \label{eq:C3_Qsim}
-\end{equation}
-\begin{equation}
-\Delta h_2 = \Delta h_1\cdot\left(\frac{N_2}{N_1}\right)^2 \label{eq:C3_DHsim}
-\end{equation}\label{eq:C3_sim}
-\end{subequations} 
+    \setstretch{1}
+    \begin{equation}
+        Q_2 = Q_1\cdot\frac{N_2}{N_1} \label{eq:C3_Qsim}
+    \end{equation}
+    \begin{equation}
+        \Delta h_2 = \Delta h_1\cdot\left(\frac{N_2}{N_1}\right)^2 \label{eq:C3_DHsim}
+    \end{equation}\label{eq:C3_sim}
+\end{subequations}
 
 These relations are really useful to extrapolate the performance maps of a pump. Similar relations can be deduced considering the variation of the radius of the pump.
 
 One important property to notice is that all the dimensionless variables (e.g. the efficiency) are kept constant for all the different similar operational points. This is a valuable property which will be very useful for the future developments of the thesis.
 \subsubsection{Types of pumps}
-\quad\, Now that the exterior characteristics of the pumps have been defined, it is interesting to have at least a brief idea about how the pump is constructed. Without entering into detailed\footnote{see the section 4.3 and 4.4 of the course \citep{Hillewaert2019}}, there are two types of pumps.
+\quad\ Now that the exterior characteristics of the pumps have been defined, it is interesting to have at least a brief idea about how the pump is constructed. Without entering into detailed\footnote{see the section 4.3 and 4.4 of the course \cite{Hillewaert2019}}, there are two types of pumps.
 
 The first type to be considered is the centrifugal pumps designed to provide a high heat for a low flow rate. Those pumps are characterized by an axial inflow and a radial outflow. The Figure \ref{fig:C3_centri_pump} shows a schematic of a centrifugal pumps.
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.4\textwidth]{centri_pump.png}
-\caption{Centrifugal pump \citep{Hillewaert2019}}
-\label{fig:C3_centri_pump}
+    \centering
+    \includegraphics[width=0.4\textwidth]{centri_pump.png}
+    \caption{Centrifugal pump \cite{Hillewaert2019}}
+    \label{fig:C3_centri_pump}
 \end{figure}
 
-Basically, the centrifugal pump can be decomposed into two parts (for the most simple device). The first  part is the rotating impeller that will convert and transfer the mechanical energy to the fluid. Behind the impeller will be placed the volute (right picture of Figure \ref{fig:C3_centri_pump}) that collects the flow to bring it to the outlet of the pump.\newpage
+Basically, the centrifugal pump can be decomposed into two parts (for the simplest machine). The first  part is the rotating impeller that will convert and transfer the mechanical energy to the fluid. Behind the impeller will be placed the volute (right picture of Figure \ref{fig:C3_centri_pump}) that collects the flow to bring it to the outlet of the pump.\newpage
 
-The second type of pump are the axial pumps which are, in opposition with the centrifugal pumps, designed to deliver low head for high flow rates. Such pumps is illustrated on Figure \ref{fig:C3_axial_pump}. 
+The second type of pump are the axial pumps which are, in opposition with the centrifugal pumps, designed to deliver low head for high flow rates. Such pumps is illustrated on Figure \ref{fig:C3_axial_pump}.
 \begin{figure}[h!]
-\centering
-\includegraphics[width=0.25\textwidth]{axial_pump.png}
-\caption{Axial pump \citep{Hillewaert2019}}
-\label{fig:C3_axial_pump}
+    \centering
+    \includegraphics[width=0.25\textwidth]{axial_pump.png}
+    \caption{Axial pump \cite{Hillewaert2019}}
+    \label{fig:C3_axial_pump}
 \end{figure}
 
-The main two parts of an axial pumps are the rotor (the rotating part) that will increase the height of the fluid followed by a diffusor which "recuperates the kinetic energy at the exit of the rotor"\citep{Hillewaert2019}.
+The main two parts of an axial pump are the rotor (the rotating part) that will increase the height of the fluid followed by a diffusor which “recuperates the kinetic energy at the exit of the rotor”\cite{Hillewaert2019}.
 \subsection{Compressible flow}
-\quad\, The previous subsection introduced the pump which is a turbomachine design to increase the energy of the incompressible fluid passing through it. However, this type of machine cannot deals with compressible flow for which the density can vary over the distance. For instance, the air is a compressible fluid. 
+\quad\ The previous subsection introduced the pump which is a turbomachine design to increase the energy of the incompressible fluid passing through it. However, this type of machine cannot deals with compressible flow for which the density can vary over the distance. For instance, the air is a compressible fluid.
 
-The behavior of the compressible flow is more complex to describe compared to incompressible flow. Indeed, "compressible flow is characterized by the propagation of acoustic waves"\citep{Hillewaert2019}.   This part of the section about turbomachines will only focused on the very main principles required for the good understanding of this work.
+The behavior of the compressible flow is more complex to describe compared to incompressible flow. Indeed, “compressible flow is characterized by the propagation of acoustic waves” \cite{Hillewaert2019}.   This part of the section about turbomachines will only focused on the very main principles required for the good understanding of this work.
 
 \subsubsection{Static and total quantities}
-\quad\, As it has be partly reveal in the previous lines, the flow characteristics are dependent on its velocity. The study of compressible flow did lead to the distinction between the static and total quantities. 
+\quad\ As it has been partly revealed in the previous lines, the flow characteristics are dependent on its velocity. The study of compressible flow did lead to the distinction between the static and total quantities.
 
-The static quantities are state variables (e.g. temperature, pressure,...) that are independent of the flow velocity. As for the total quantities, these are dependent of the flow velocity $V$. For instance, the total enthalpy is given by
+The static quantities are state variables (e.g. temperature, pressure,...) that are independent of the flow velocity. As for the total quantities, these are dependent of the flow velocity \(V\). For instance, the total enthalpy is given by
 \begin{equation}
-h^0 = h + \frac{1}{2}\cdot v^2\label{eq:C3_h0}
+    h^0 = h + \frac{1}{2}\cdot v^2\label{eq:C3_h0}
 \end{equation}
-where the total quantity is identified by the superscript "0".
+where the total quantity is identified by the superscript ''0''.
 
-The total enthalpy can be defined as "the static enthalpy obtained when the gas is brought adiabatically to a halt"\citep{Hillewaert2019}.
+The total enthalpy can be defined as “the static enthalpy obtained when the gas is brought adiabatically to a halt” \cite{Hillewaert2019}.
 
 
 \subsubsection{Conservation of the total enthalpy and rothalpy}
-\quad\, For an adiabatic transformation without viscous work, the total enthalpy is conserved between the initial state and the final state.
+\quad\ For an adiabatic transformation without viscous work, the total enthalpy is conserved between the initial state and the final state.
 \begin{equation}
-\dot{m}\cdot h_1^0 = \dot{m} h_2^0 \label{eq:C3_hcons}
+    \dot{m}\cdot h_1^0 = \dot{m} h_2^0 \label{eq:C3_hcons}
 \end{equation}
-which can be reduced to $h_1^0 = h_2^0$ if we supposed that the transformation is performed without any leakages. The states $1$ and $2$ are associated to the orthogonal boundaries to the flow of the selected control volume delimiting the studied system. 
+which can be reduced to \(h_1^0 = h_2^0\) if we supposed that the transformation is performed without any leakages. The states \(1\) and \(2\) are associated to the orthogonal boundaries to the flow of the selected control volume delimiting the studied system.
 
 Now, considering a rotating system (e.g. a rotor), the variation of the total enthalpy can be obtained by considering the modified Euler equation of turbomachinery
 \begin{align}
-\setstretch{1}
-h_2^0 - h_1^0 = \frac{1}{2}\cdot &\left(v_2^2 - v_1^2\right) - \frac{1}{2}\cdot \left(wr_2^2 - wr_1^2\right) + \frac{1}{2}\cdot \left(ur_2^2 - ur_1^2\right)\label{eq:C3_Euler}\\
-\text{with }& v = \left|\vect{v}\right|\quad\text{;}\quad  wr = \left|\vect{wr}\right|\quad\text{;}\quad ur= \left|\vect{ur}\right|\nonumber
+    \setstretch{1}
+    h_2^0 - h_1^0 = \frac{1}{2}\cdot & \left(v_2^2 - v_1^2\right) - \frac{1}{2}\cdot \left(wr_2^2 - wr_1^2\right) + \frac{1}{2}\cdot \left(ur_2^2 - ur_1^2\right)\label{eq:C3_Euler} \\
+    \text{with }                     & v = \left|\vect{v}\right|\quad\text{;}\quad  wr = \left|\vect{wr}\right|\quad\text{;}\quad ur= \left|\vect{ur}\right|\nonumber
 \end{align}
-where $\vect{ur}$, $\vect{v}$ and $\vect{wr}$ are respectively the local velocity of the rotor, and the absolute and relative velocity (with respect to the rotor) of the flow. Defining the total rothalpy as being 
+where \(\vect{ur}\), \(\vect{v}\) and \(\vect{wr}\) are respectively the local velocity of the rotor, and the absolute and relative velocity (with respect to the rotor) of the flow. Defining the total rothalpy as being
 \begin{equation}
-i^0 = h + \frac{1}{2}\cdot wr^2 - \frac{1}{2}\cdot ur^2 \label{eq:C3_i0}
+    i^0 = h + \frac{1}{2}\cdot wr^2 - \frac{1}{2}\cdot ur^2 \label{eq:C3_i0}
 \end{equation}
 It is obtained from the Euler equation (\ref{eq:C3_Euler}) that the total rothalpy is conserved through the transformation.
 \begin{equation}
-i_1^0 = i_2^0 \label{eq:C3_icons}
+    i_1^0 = i_2^0 \label{eq:C3_icons}
 \end{equation}
 \subsubsection{Velocity triangle}
-\quad\, With the relation (\ref{eq:C3_Euler}), the notion of absolute and relative velocity of the flow has been introduced. A graphic representation of these three vector can be done using the \textbf{velocity triangle}. This triangle is drawn on Figure \ref{fig:C3_vtriang}.
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.6\textwidth]{Vtriangle.png}
-\caption{Velocity triangle}
-\label{fig:C3_vtriang}
-\end{figure}
+\quad\ With the relation (\ref{eq:C3_Euler}), the notion of absolute and relative velocity of the flow has been introduced. A graphic representation of these three vector can be done using the \textbf{velocity triangle}. This triangle is drawn on Figure \ref{fig:C3_vtriang}.
 
 \subsubsection{Mach number}
-The Mach number $M$ is defined as being the ratio between the velocity $v$ and the sound speed $a$.
+The Mach number \(M\) is defined as being the ratio between the velocity \(v\) and the sound speed \(a\).
 \begin{equation}
-M = \frac{v}{a} \label{eq:C3_Mach}
+    M = \frac{v}{a} \label{eq:C3_Mach}
 \end{equation}
-The Mach number $M$ is a dimensionless variable that gives an image of the compressible effects of the flow. Thus, one criteria for the determination of similar operational points is to keep constant the Mach number.
+The Mach number \(M\) is a dimensionless variable that gives an image of the compressible effects of the flow. Thus, one criteria for the determination of similar operational points is to keep constant the Mach number.
 
 Using the Mach number allows to obtain formulas to compute the total quantities base the static ones. By considering first the total temperature, it can be found
 \begin{equation}
-T^0 = T + \frac{v^2}{2\cdot c_p} = T\cdot\left(1 + \frac{v^2}{2\cdot c_p\cdot T}\right)\label{eq:C3_TT0_1}
+    T^0 = T + \frac{v^2}{2\cdot c_p} = T\cdot\left(1 + \frac{v^2}{2\cdot c_p\cdot T}\right)\label{eq:C3_TT0_1}
 \end{equation}
-For an isentropic process, it can be demonstrate that the speed of sound $a=k\cdot r\cdot T$. Thus, the equation (\ref{eq:C3_TT0_1}) becomes
+For an isentropic process, it can be demonstrate that the speed of sound \(a=k\cdot r\cdot T\). Thus, the equation (\ref{eq:C3_TT0_1}) becomes
 \begin{equation}
-T^0 = T\cdot\left(1 + \frac{k-1}{2}\cdot M^2\right) = T\cdot f(M) \label{eq:C3_TT0}
+    T^0 = T\cdot\left(1 + \frac{k-1}{2}\cdot M^2\right) = T\cdot f(M) \label{eq:C3_TT0}
 \end{equation}
-Using the equations (\ref{eq:C2_isrelPT}), (\ref{eq:C2_isrelrhoT}) and the definition of the function $f(M)$, the relations linking the static to the total pressure, density and speed of sound can be obtained as well.
+Using the equations (\ref{eq:C2_isrelPT}), (\ref{eq:C2_isrelrhoT}) and the definition of the function \(f(M)\), the relations linking the static to the total pressure, density and speed of sound can be obtained as well.
 
 \begin{subequations}
-\setstretch{1}
-\begin{equation}
-p^0 = p\cdot f(M)^\frac{k}{k-1}\label{eq:C3_PP0}
-\end{equation}
-\begin{equation}
-\rho^0 = \rho\cdot f(M)^\frac{1}{k-1}\label{eq:C3_rhorho0}
-\end{equation}
-\begin{equation}
-a^0 = a\sqrt{f(M)} \label{eq:C3_aa0}
-\end{equation}
+    \setstretch{1}
+    \begin{equation}
+        p^0 = p\cdot f(M)^\frac{k}{k-1}\label{eq:C3_PP0}
+    \end{equation}
+    \begin{equation}
+        \rho^0 = \rho\cdot f(M)^\frac{1}{k-1}\label{eq:C3_rhorho0}
+    \end{equation}
+    \begin{equation}
+        a^0 = a\sqrt{f(M)} \label{eq:C3_aa0}
+    \end{equation}
 \end{subequations}
 
 \subsubsection{Characteristic maps}
-\quad\, As for the turbomachines exchanging energy with incompressible flow, those dealing with compressible flow can also be fully characterized knowing a pair of independent operating parameters. The most usual parameters are
+\quad\ As for the turbomachines exchanging energy with incompressible flow, those dealing with compressible flow can also be fully characterized knowing a pair of independent operating parameters. The most usual parameters are
 
 \begin{itemize}
-\setstretch{1}
-\item $\dot{m}_c$ (kg/s or lbs/min): It is the corrected mass flow rate.
+    \setstretch{1}
+    \item \(\dot{m}_c\) (kg/s or lbs/min): It is the corrected mass flow rate.
 
-\item $N$ (rpm): It is the rotational speed of the turbomachine shaft. 
+    \item \(N\) (rpm): It is the rotational speed of the turbomachine shaft.
 
-\item $\Pi$ (-): It is the pressure ratio between the inlet and the outlet of the turbomachines. If the turbomachines is compressing the flow, the ratio is reverse to keep it greater than one.
+    \item \(\Pi\) (-): It is the pressure ratio between the inlet and the outlet of the turbomachines. If the turbomachines is compressing the flow, the ratio is reverse to keep it greater than one.
 
-\item $\eta$ (-): It is the isentropic efficiency of the machine.
-\end{itemize} 
+    \item \(\eta\) (-): It is the isentropic efficiency of the machine.
+\end{itemize}
 
 The corrected mass flow rate is defined as follows
 
 \begin{equation}
-\dot{m}_c = \dot{m}\cdot \sqrt{\frac{T}{T_{ref}}}\cdot\left(\frac{p_{ref}}{p}\right)\label{eq:C3_mc}
+    \dot{m}_c = \dot{m}\cdot \sqrt{\frac{T}{T_{ref}}}\cdot\left(\frac{p_{ref}}{p}\right)\label{eq:C3_mc}
 \end{equation}
 
-with $T_{ref}$ and $p_{ref}$ being the reference temperature and pressure (all quantities being static).
+with \(T_{ref}\) and \(p_{ref}\) being the reference temperature and pressure (all quantities being static).
 
-Let's supposed now that the rotational speed and the corrected mass flow are known. Then, the two other quantities ($\Pi$ and $\eta$) can be calculated by evaluating the relationships (\ref{eq:C3_Pimap}) and (\ref{eq:C3_etamap}).
+Let's supposed now that the rotational speed and the corrected mass flow are known. Then, the two other quantities ($\Pi\) and \(\eta$) can be calculated by evaluating the relationships (\ref{eq:C3_Pimap}) and (\ref{eq:C3_etamap}).
 
 \begin{subequations}
-\setstretch{1}
-\begin{equation}
-\Pi = \Pi(N, \dot{m}_c)\label{eq:C3_Pimap}
-\end{equation}
-\begin{equation}
-\eta = \eta(N, \dot{m}_c)\label{eq:C3_etamap}
-\end{equation}
-\end{subequations}  
+    \setstretch{1}
+    \begin{equation}
+        \Pi = \Pi(N, \dot{m}_c)\label{eq:C3_Pimap}
+    \end{equation}
+    \begin{equation}
+        \eta = \eta(N, \dot{m}_c)\label{eq:C3_etamap}
+    \end{equation}
+\end{subequations}
 These relations can be established by the means of experimental measurements.
 \subsection{Gas compressor}
-\quad\, The previous lines shows some properties of compressible flows that add complexity to the analysis. Now, it is interesting to describe two types of turbomachines inducing a modification of the state of the flow. 
+\quad\ The previous lines shows some properties of compressible flows that add complexity to the analysis. Now, it is interesting to describe two types of turbomachines inducing a modification of the state of the flow.
 
 The first machines to be describe are the compressor. As for the pumps, the compressor can be axial or centrifugal.  The axial compressor are mainly composed of a rotating part (the rotor), followed by a non moving part (the stator) converting the the kinetic energy at exit of the rotor into pressure. A schematic of an axial compressor stage is given on Figure \ref{fig:C3_compstage}.
 
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{Comp_stage.png}
-\caption{Axial compressor stage \citep{Hillewaert2019}}
-\label{fig:C3_compstage}
+    \centering
+    \includegraphics[width=0.5\textwidth]{Comp_stage.png}
+    \caption{Axial compressor stage \cite{Hillewaert2019}}
+    \label{fig:C3_compstage}
 \end{figure}
 
-The half-moon entities on the graph represent the blades of the rotor and stator (respectively the left and the right ones). It can be observed that the rotor blades increase the value of the flow velocity $v$. As explained earlier this augmentation of kinetic energy is then recovered by the stator blades. 
+The half-moon entities on the graph represent the blades of the rotor and stator (respectively the left and the right ones). It can be observed that the rotor blades increase the value of the flow velocity \(v\). As explained earlier this augmentation of kinetic energy is then recovered by the stator blades.
 
 \subsubsection{Mollier diagram}
-\quad\, The transformation induced by the compressor can be represented into a hs diagram also named \textbf{Mollier diagram}. The Mollier diagram for one compressor stage has been drawn on Figure \ref{fig:C3_Molliercomp}.
+\quad\ The transformation induced by the compressor can be represented into a hs diagram also named \textbf{Mollier diagram}. The Mollier diagram for one compressor stage has been drawn on Figure \ref{fig:C3_Molliercomp}.
 
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{Comp_mollier.png}
-\caption{Mollier diagram of a compressor stage \citep{Hillewaert2019}}
-\label{fig:C3_Molliercomp}
+    \centering
+    \includegraphics[width=0.5\textwidth]{Comp_mollier.png}
+    \caption{Mollier diagram of a compressor stage \cite{Hillewaert2019}}
+    \label{fig:C3_Molliercomp}
 \end{figure}
 
 The diagram, for which the velocity triangles are given on Figure \ref{fig:C3_compstage}, has to be read as follows.
 \begin{itemize}
-\setstretch{1}
-\item State \textbf{1}: Starting from the static enthalpy and pressure $h_1$ and $p_1$, the relations (\ref{eq:C3_i0}), (\ref{eq:C3_h0}) and (\ref{eq:C3_PP0}) are used to calculate the total enthalpy, rothalpy and pressure.  
-\item State \textbf{2}: The transformation \textbf{1}-\textbf{2} takes place within the rotor of the compressor stage. Thus, the total rothalpy is conserved over the transformation ($i_2^0=i_1^0$). 
+    \setstretch{1}
+    \item State \textbf{1}: Starting from the static enthalpy and pressure \(h_1\) and \(p_1\), the relations (\ref{eq:C3_i0}), (\ref{eq:C3_h0}) and (\ref{eq:C3_PP0}) are used to calculate the total enthalpy, rothalpy and pressure.
+    \item State \textbf{2}: The transformation \textbf{1}-\textbf{2} takes place within the rotor of the compressor stage. Thus, the total rothalpy is conserved over the transformation ($i_2^0=i_1^0$).
 
-The knowledge of the total rothalpy allows to determine the other quantities. The static enthalpy (and by extension the total enthalpy) can be deduced using the relation (\ref{eq:C3_i0}). Concerning the pressure, there is an increase of the static and total pressure of the fluid "due to the diffusion in the rotor passage"\citep{Hillewaert2019} ($p_2^{(0)} > p_1^{(0)}$).
- 
-\item State \textbf{3}: The transformation \textbf{2}-\textbf{3} takes place within the stator of the compressor stage. Thus, the total enthalpy is conserved over the transformation ($h_3^0 = h_2^0$).
+          The knowledge of the total rothalpy allows to determine the other quantities. The static enthalpy (and by extension the total enthalpy) can be deduced using the relation (\ref{eq:C3_i0}). Concerning the pressure, there is an increase of the static and total pressure of the fluid “due to the diffusion in the rotor passage” \cite{Hillewaert2019} ($p_2^{(0)} > p_1^{(0)}$).
 
-Then, the static enthalpy can be computed using the relation (\ref{eq:C3_h0}). The conversion of the kinetic energy into pressure leads to an increase of the static and total pressure ($p_3^{(0)} > p_2^{(0)}$).
+    \item State \textbf{3}: The transformation \textbf{2}-\textbf{3} takes place within the stator of the compressor stage. Thus, the total enthalpy is conserved over the transformation ($h_3^0 = h_2^0$).
+
+          Then, the static enthalpy can be computed using the relation (\ref{eq:C3_h0}). The conversion of the kinetic energy into pressure leads to an increase of the static and total pressure ($p_3^{(0)} > p_2^{(0)}$).
 \end{itemize}
 As it was mentioned in the subsection \ref{C2:Isen_eff}, the enthalpy at the end of the process is higher than the one considering an isentropic transformation.
 \subsubsection{Performance maps}
-\quad\, As for any turbomachines, the compressor can be characterized by its performance map. The map is composed of the performance plot often completed with the efficiency hill. The performance plot provides the total to total (TT) pressure ratio $\Pi_c$ as a function of the rotational speed $N$ and the corrected flow rate $\dot{m}_c$.
+\quad\ As for any turbomachines, the compressor can be characterized by its performance map. The map is composed of the performance plot often completed with the efficiency hill. The performance plot provides the total to total (TT) pressure ratio \(\Pi_c\) as a function of the rotational speed \(N\) and the corrected flow rate \(\dot{m}_c\).
 
 A illustration of a compressor performance map is given on Figure \ref{fig:C3_compmap}.
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.6\textwidth]{Comp_Map.png}
-\caption{Illustration of a compressor performance map \citep{Ghorbanian2009}}
-\label{fig:C3_compmap}
-\end{figure}  
+    \centering
+    \includegraphics[width=0.6\textwidth]{Comp_Map.png}
+    \caption{Illustration of a compressor performance map \cite{Ghorbanian2009}}
+    \label{fig:C3_compmap}
+\end{figure}
 
 On the map, the solid and the dash curves represent respectively the iso-rotational speed and the iso-efficiency.
 
-To remarkable lines are emphasized on the plot. For each rotational speed $N_c$, these lines provides minimal and maximal bound for the compressor pressure ratio $\Pi_c$. 
+To remarkable lines are emphasized on the plot. For each rotational speed \(N_c\), these lines provides minimal and maximal bound for the compressor pressure ratio \(\Pi_c\).
 
-The lower limit is given by the choke line. "When the flow reaches the velocity at some cross-section"\citep{Ghorbanian2009}, an increase of the gas mass flow rate is not possible. Thus, the slope of the associated iso-rotational speed becomes equal to the infinity at this point. 
+The lower limit is given by the choke line. “When the flow reaches the velocity at some cross-section” \cite{Ghorbanian2009}, an increase of the gas mass flow rate is not possible. Thus, the slope of the associated iso-rotational speed becomes equal to the infinity at this point.
 
-The upper bound is given by the "aerodynamic stability limit line" or surge line. At this minimal flow rate, the flow start to stall in the machine. Going beyond this limit would lead to a backward flow in the compressor, causing irreversible damages to the compressor. Thus when operating the machine, a certain margin is taken with respect to the surge line\footnote{For more information about the stall and surge events, sees section 9.5 of the course "Turbomachines" \citep{Hillewaert2019}}.
+The upper bound is given by the “aerodynamic stability limit line'' or surge line. At this minimal flow rate, the flow start to stall in the machine. Going beyond this limit would lead to a backward flow in the compressor, causing irreversible damages to the compressor. Thus when operating the machine, a certain margin is taken with respect to the surge line\footnote{For more information about the stall and surge events, sees section 9.5 of the course ''Turbomachines'' \cite{Hillewaert2019}}.
 
-The compressor map, for the low rotational speeds, can be extrapolated by considering similar operational points. Indeed, for these low speed the approximation of considering an incompressible flow instead of a compressible is accurate enough. Though, the compressor can be assimilated to a pump and, using the relations of similarity \ref{eq:C3_sim}, the extrapolation is possible. 
+The compressor map, for the low rotational speeds, can be extrapolated by considering similar operational points. Indeed, for these low speed the approximation of considering an incompressible flow instead of a compressible is accurate enough. Though, the compressor can be assimilated to a pump and, using the relations of similarity \ref{eq:C3_sim}, the extrapolation is possible.
 \subsection{Gas turbine}
-\quad\, From now, only compressors have been introduced. However, in a gas cycle, the compressor are combined with a turbine that will expand the gas. Only for some exception, the turbine is always placed after the combustion chamber. This choice allows to provide to the turbine a flow with very high enthalpy.
+\quad\ From now, only compressors have been introduced. However, in a gas cycle, the compressor are combined with a turbine that will expand the gas. Only for some exception, the turbine is always placed after the combustion chamber. This choice allows to provide to the turbine a flow with very high enthalpy.
 
 Typically, an axial gas turbine is composed of a stator followed by a rotor. The stator is design to create a deflection of the flow in the sens of rotation of the rotor. This will accelerate the flow before entering the rotor.
 
 The schematic of an axial turbine stage is drawn on Figure \ref{fig:C3_turbstage}.
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{Turb_stage.png}
-\caption{Axial turbine stage \citep{Hillewaert2019}}
-\label{fig:C3_turbstage}
+    \centering
+    \includegraphics[width=0.5\textwidth]{Turb_stage.png}
+    \caption{Axial turbine stage \cite{Hillewaert2019}}
+    \label{fig:C3_turbstage}
 \end{figure}
 
 \subsubsection{Mollier diagram}
@@ -276,55 +320,55 @@ As for the compressor, the real expansion induced by the turbine can be represen
 
 
 \begin{itemize}
-\setstretch{1}
-\item State \textbf{1}: Starting from the static enthalpy and pressure, the total quantities can be deduced.
-\item State \textbf{2}: The transformation \textbf{1}-\textbf{2} takes place within the stator of the turbine stage. Therefore, the total enthalpy is conserved over the transformation ($h_2^0=h_1^0$). 
+    \setstretch{1}
+    \item State \textbf{1}: Starting from the static enthalpy and pressure, the total quantities can be deduced.
+    \item State \textbf{2}: The transformation \textbf{1}-\textbf{2} takes place within the stator of the turbine stage. Therefore, the total enthalpy is conserved over the transformation ($h_2^0=h_1^0$).
 
-Knowing the total enthalpy of the state \textbf{2} allows to compute the static enthalpy and by extension the total rothalpy. Plus, since the flow is accelerated by the stator blades, the static and total pressure falls from state \textbf{1} to state \textbf{2} ($p_2^{(0)}<p_1^{(0)}$).
-\item State \textbf{3}: The transformation \textbf{2}-\textbf{3} takes place within the rotor of the turbine stage. Therefore, the total rothalpy is conserved over the transformation ($i_3^0=i_2^0$).
+          Knowing the total enthalpy of the state \textbf{2} allows to compute the static enthalpy and by extension the total rothalpy. Plus, since the flow is accelerated by the stator blades, the static and total pressure falls from state \textbf{1} to state \textbf{2} (\(p_2^{(0)}<p_1^{(0)}\)).
+    \item State \textbf{3}: The transformation \textbf{2}-\textbf{3} takes place within the rotor of the turbine stage. Therefore, the total rothalpy is conserved over the transformation (\(i_3^0=i_2^0\)).
 
-Then, the relation (\ref{eq:C3_i0}) allows to retrieve the static enthalpy of state \textbf{3}. As shown on the schematic \ref{fig:C3_turbstage} of the turbine stage, the relative speed of the flow is augmented when going through the rotor passage. This generates a second drop of the static and total enthalpy and pressure ($p_3^{(0)}<p_2^{(0)}$). 
+          Then, the relation (\ref{eq:C3_i0}) allows to retrieve the static enthalpy of state \textbf{3}. As shown on the schematic \ref{fig:C3_turbstage} of the turbine stage, the relative speed of the flow is augmented when going through the rotor passage. This generates a second drop of the static and total enthalpy and pressure (\(p_3^{(0)}<p_2^{(0)}\)).
 
-However, there exists special stage for which "the relative velocity of the flow to the blade row" of the rotor\citep{Hillewaert2019} remains unchanged, but the flow is inverted. Neglecting the very small variation of the rotor velocity, the static enthalpy and pressure remains unchanged when passing through the rotor.
-\end{itemize} 
+          However, there exists special stage for which “the relative velocity of the flow to the blade row” of the rotor\cite{Hillewaert2019} remains unchanged, but the flow is inverted. Neglecting the very small variation of the rotor velocity, the static enthalpy and pressure remains unchanged when passing through the rotor.
+\end{itemize}
 
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{Turb_mollier.png}
-\caption{Mollier diagram of a turbine stage \citep{Hillewaert2019}}
-\label{fig:C3_Mollierturb}
+    \centering
+    \includegraphics[width=0.5\textwidth]{Turb_mollier.png}
+    \caption{Mollier diagram of a turbine stage \cite{Hillewaert2019}}
+    \label{fig:C3_Mollierturb}
 \end{figure}
 
 \subsubsection{Axial turbine design and degree of reaction}
-\quad\, The last written paragraph mentioned that some turbine are designed to put all the pressure drop over the stator to limit the axial force generated in the rotor.
+\quad\ The last written paragraph mentioned that some turbines are designed to put all the pressure drop over the stator to limit the axial force generated in the rotor.
 
-It is possible to classify the turbines by creating two categories based on the degree of reaction $R$. The degree of reaction is defined as being the ratio between the static enthalpy drop over the rotor and the static enthalpy drop over the turbine stage.
+It is possible to classify the turbines by creating two categories based on the degree of reaction \(R\). The degree of reaction is defined as being the ratio between the static enthalpy drop over the rotor and the static enthalpy drop over the turbine stage.
 \begin{equation}
-R = \frac{h_2 - h_3}{h_1 - h_3}\label{eq:C3_R}
+    R = \frac{h_2 - h_3}{h_1 - h_3}\label{eq:C3_R}
 \end{equation}
-Then the two families are 
+Then the two families are:
 
 \begin{itemize}
-\setstretch{1}
-\item The impulse or action turbines: The degree of reaction $R\simeq 0$. Thus, since the rotor doesn't see any pressure difference, the axial thrust on the shaft is minimized. The impulse turbines are often used for high pressure turbines (due to their small aspect ratio).
-\item The reaction turbines: The degree of reaction $R$ is often between 0.5 and 0.7. This means that the pressure drop is distributed between the stator and the rotor. 
+    \setstretch{1}
+    \item The impulse or action turbines: The degree of reaction \(R\simeq 0\). Thus, since the rotor doesn't see any pressure difference, the axial thrust on the shaft is minimized. The impulse turbines are often used for high pressure turbines (due to their small aspect ratio).
+    \item The reaction turbines: The degree of reaction \(R\) is often between 0.5 and 0.7. This means that the pressure drop is distributed between the stator and the rotor.
 \end{itemize}
 
 \subsubsection{Performance maps}
-\quad\, The turbines can be also be characterized by a performance map determined from experimental results. The map is often composed of two performance plots as shown on Figure \ref{fig:C3_turbmap}.
+\quad\ The turbines can be also be characterized by a performance map determined from experimental results. The map is often composed of two performance plots as shown on Figure \ref{fig:C3_turbmap}.
 
 \begin{figure}[h]
-\centering
-\includegraphics[width=\textwidth]{Turb_Map.png}
-\caption{Illustration of a turbine performance map}
-\label{fig:C3_turbmap}
-\end{figure}  
+    \centering
+    \includegraphics[width=\textwidth]{Turb_Map.png}
+    \caption{Illustration of a turbine performance map}
+    \label{fig:C3_turbmap}
+\end{figure}
 
-The two plots on the Figure \ref{fig:C3_turbmap} illustrates for each iso-rotational speed $N_t$ the relationships $\Pi_t(\dot{m}_c,N_t)$ and $\eta_t(\dot{m}_c,N_t)$. As it can be noticed on the left diagram, all the curves tends to reach the same asymptotic values as the mass flow rate increases. This is due to the choking phenomena that limits at some point the flow rate through the compressor.\\
+The two plots on the Figure \ref{fig:C3_turbmap} illustrates for each iso-rotational speed \(N_t\) the relationships \(\Pi_t(\dot{m}_c,N_t)\) and \(\eta_t(\dot{m}_c,N_t)\). As it can be noticed on the left diagram, all the curves tends to reach the same asymptotic values as the mass flow rate increases. This is due to the choking phenomena that limits at some point the flow rate through the compressor.
 
-In this section about turbomachines, the most important notions for the good understanding of the future development have been given. Particularly, the concept of performance maps has been introduced, and a method of extrapolation using the similarity have been provided. 
+In this section about turbomachines, the most important notions for the good understanding of the future development have been given. Particularly, the concept of performance maps has been introduced, and a method of extrapolation using the similarity have been provided.
 
-Also, the descriptions of the compression and the expansion have been explained using the hs Mollier diagrams. Those diagrams, along with the schematic of the compressor and turbine stages, allows to describes with a decent accuracy the two previously mentioned transformation.
+Also, the descriptions of the compression and the expansion have been explained using the hs Mollier diagrams. Those diagrams, along with the schematic of the compressor and turbine stages, allow describing with a decent accuracy the two previously mentioned transformation.
 \newpage
 \section{Combustion chamber}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -332,134 +376,134 @@ Also, the descriptions of the compression and the expansion have been explained 
 %%%%% <<Combustion chamber>>  %%%%%
 %%%%%                         %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\quad\, The previous section introduced the turbomachines and described those using schematic and hs diagram. The notion of compressible has been defined, and some important concepts have been emphasized. 
+\quad\ The previous section introduced the turbomachines and described those using schematic and hs diagram. The notion of compressible has been defined, and some important concepts have been emphasized.
 
-The present section is dedicated to the description of the combustion mechanism. Since the study of the fluid mechanic inside the combustion chamber is out of the scope of this work, only combustion equations without dynamic and non steady effects will be considered.
+In this section, the description of the combustion principle will be considered. Since the study of the fluid mechanic inside the combustion chamber is out of the scope of this work, only combustion equations without dynamic and non-steady effects will be considered.
 
 \subsection{Basis about Chemistry}
-\quad\, As it has been mentioned, some combustion reactions will be introduced in this section. Thus, the basic knowledge about chemistry has to be provided.\\
+\quad\ As it has been mentioned, some combustion reactions will be introduced in this section. Thus, the basic knowledge about chemistry has to be provided.
 
 \subsubsection{Conservation of mass}
 During a chemical reaction, the law of conservation of mass (also called the Lavoisier law) has to be satisfy. This implies that the mass of all the reagents combined has to be equal to the mass of the products. An example of chemical reaction is given in (\ref{eq:C3_chem}).
 \begin{equation}
-\underset{\mathrm{16g}}{\ce{1CH4}} \ce{+} \underset{\mathrm{64g}}{\ce{2O2}} \ce{->} \underset{\mathrm{44g}}{\ce{1CO2}} \ce{+} \underset{\mathrm{36g}}{\ce{2H2O}} \ce{+}\text{Heat}\label{eq:C3_chem}
+    \underset{\mathrm{16g}}{\ce{1CH4}} \ce{+} \underset{\mathrm{64g}}{\ce{2O2}} \ce{->} \underset{\mathrm{44g}}{\ce{1CO2}} \ce{+} \underset{\mathrm{36g}}{\ce{2H2O}} \ce{+}\text{Heat}\label{eq:C3_chem}
 \end{equation}
-It will be seen later that this reaction corresponds to the combustion of \textbf{1} mole of methane (\ce{CH4}) using \textbf{2} mole of oxygen (\ce{O2}). The products of the reaction are \textbf{1} mole of \ce{CO2}, \textbf{2} mole of \ce{H2O} and a certain amount of heat transfer to the surrouding. This heat transfer is the wanted product of the combustion. 
+It will be seen later that this reaction corresponds to the combustion of \textbf{1} mole of methane (\ce{CH4}) using \textbf{2} mole of oxygen (\ce{O2}). The products of the reaction are \textbf{1} mole of \ce{CO2}, \textbf{2} moles of \ce{H2O} and a certain amount of heat transfer to the surrounding. This heat transfer is the wanted product of the combustion.
 
 \subsubsection{Conservation of the atomic species}
 The second law of conservation states that, during the transformation of the reagent X into the product Y, all the atomic elements from X have to be recovered in Y. For instance, for the equation (\ref{eq:C3_chem}), there is one mole of carbon (\ce{C}) in the reagents. Thus, one mole of \ce{C} has to be present in the products of the reaction.
 \newpage
-\subsubsection{Proust law}
-The third law to be considered is the Proust law which states that for each chemical reactions, "the ratio between the mass of each reagents is a constant". Considering the above example (\ref{eq:C3_chem}), this implies that the ratio
+\subsubsection{Proust's law}
+The third law to be considered is the Proust law which states that for each chemical reactions, ''the ratio between the mass of each reagent is a constant''. Considering the above example (\ref{eq:C3_chem}), this implies that the ratio
 \begin{equation}
-\frac{\text{mass of \ce{O2} consumed}}{\text{mass of \ce{CH4} consumed}} = 4 
+    \frac{\text{mass of \ce{O2} consumed}}{\text{mass of \ce{CH4} consumed}} = 4
 \end{equation}
-Let's remark that the law is also valid considering the consumed quantities in mole. This would leads to the following relation
+Let's remark that the law is also valid considering the consumed quantities in mole. This would lead to the following relation
 \begin{equation}
-\frac{\text{mole of \ce{O2} consumed}}{\text{mole of \ce{CH4} consumed}} = 2  \label{eq:C3_molratio}
+    \frac{\text{mole of \ce{O2} consumed}}{\text{mole of \ce{CH4} consumed}} = 2  \label{eq:C3_molratio}
 \end{equation}
-These ratio depends on the type of fuel used. For instance, if the fuel was propane (\ce{C3H8}), the ratio would be equal to 5.
- 
-\subsection{Combustion equation}
-\quad\, The equation \ref{eq:C3_chem} was illustrating the combustion of the methane \ce{CH4}. The reaction, as written there, supposed that the provided amount of oxygen provided for the reaction is just enough to consume all the methane injected. 
+This ratio depends on the type of fuel used. For instance, if the fuel was propane (\ce{C3H8}), the ratio would be equal to 5.
 
-This situation, which is the reference, is characterized by an air factor $\lambda = 1$ (or an excess of air $e=\lambda-1=0$). It is said that such combustion is at the stoichiometry.
+\subsection{Combustion equation}
+\quad\ The equation \ref{eq:C3_chem} was illustrating the combustion of the methane \ce{CH4}. The reaction, as written there, supposed that the provided amount of oxygen provided for the reaction is just enough to consume all the methane injected.
+
+This situation, which is the reference, is characterized by an air factor \(\lambda = 1\) (or an excess of air \(e=\lambda-1=0\)). It is said that such combustion is at the stoichiometry.
 
 \subsubsection{Air factor}
 The air factor is then defined as being the ratio between
 \begin{equation}
-\lambda = \frac{\frac{\text{mole of \ce{O2} consumed}}{\text{mole of fuel consumed}}}{\frac{\text{mole of \ce{O2} consumed at stoichiometry}}{\text{mole of fuel consumed at stochiometry}}} \label{eq:C3_lbd}
+    \lambda = \frac{\frac{\text{mole of \ce{O2} consumed}}{\text{mole of fuel consumed}}}{\frac{\text{mole of \ce{O2} consumed at stoichiometry}}{\text{mole of fuel consumed at stoichiometry}}} \label{eq:C3_lbd}
 \end{equation}
 
 Let's note that every other combustive can replaced the oxygen in the relation. However, \ce{O2} is the most common one. Thus, the following development will not consider this possibility.
-For the following, the notation $w_{\ce{\text{<molecule>}}}$ will be used in replacement for "mole of <molecule> consumed". 
+For the following, the notation \(w_{\ce{\text{<molecule>}}}\) will be used in replacement for ''mole of <molecule> consumed''.
 
-For the case of the \ce{CH4} being the fuel, it has been shown in the previous section that the value of the denominator of relation (\ref{eq:C3_lbd}) is equal to 2. Therefore, for this particular combustion, the air factor relation is 
+For the case of the \ce{CH4} being the fuel, it has been shown in the previous section that the value of the denominator of relation (\ref{eq:C3_lbd}) is equal to 2. Therefore, for this particular combustion, the air factor relation is
 \begin{equation}
-\lambda = \frac{w_{\ce{O2}}}{2\cdot w_{\ce{CH4}}}\label{eq:C3_lbdCH4}
+    \lambda = \frac{w_{\ce{O2}}}{2\cdot w_{\ce{CH4}}}\label{eq:C3_lbdCH4}
 \end{equation}
 
 \subsubsection{Generalized combustion equation}
-\quad\, As explained, the chemical reaction (\ref{eq:C3_chem}) represents the ideal case with an air factor of 1. Also, it is considered that the used combustive is pure \ce{O2}. In reality, the used reagent for the combustion is ambient air which is composed of 21\% of \ce{O2} and 79\% of \ce{N2} (nitrogen). 
+\quad\ As explained, the chemical reaction (\ref{eq:C3_chem}) represents the ideal case with an air factor of 1. Also, it is considered that the used combustive is pure \ce{O2}. In reality, the used reagent for the combustion is ambient air which is composed of 21\% of \ce{O2} and 79\% of \ce{N2} (nitrogen).
 
 Thus, the generalized combustion equation (for the \ce{CH4}) is
 \begin{equation}
-\ce{CH4 +}2\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> CO2 + 2(\lambda-1)O2 + 2H2O + 2\lambda\frac{79}{21}N2 + \text{Heat}}\label{eq:C3_chemgeng0}
+    \ce{CH4 +}2\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> CO2 + 2(\lambda-1)O2 + 2H2O + 2\lambda\frac{79}{21}N2 + \text{Heat}}\label{eq:C3_chemgeng0}
 \end{equation}
 
-This equation, while being correct for any values of $\lambda$ greater or equal than 1, has to be modified to take into account the event for which the excess of air $e$ is lower than zero (with $e=\lambda -1$). For such values, the combustion equation becomes 
+This equation, while being correct for any values of \(\lambda\) greater or equal than 1, has to be modified to take into account the event for which the excess of air \(e\) is lower than zero (with \(e=\lambda -1\)). For such values, the combustion equation becomes
 \begin{equation}
-\ce{CH4 +}2\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> aCO2 + bCO + 2H2O + 2\lambda\frac{79}{21}N2 + \text{Heat}}\label{eq:C3_chemgeng1}
+    \ce{CH4 +}2\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> aCO2 + bCO + 2H2O + 2\lambda\frac{79}{21}N2 + \text{Heat}}\label{eq:C3_chemgeng1}
 \end{equation}
-where coefficients "a" and "b" satisfies the system (\ref{eq:C3_sysab})
+where coefficients ''a'' and ''b'' satisfies the system (\ref{eq:C3_sysab})
 \begin{equation}
-\begin{cases}
-\text{a} + \text{b} = 1\\
-2\text{a} + \text{b} = 4\lambda - 2
-\end{cases}\label{eq:C3_sysab}
+    \begin{cases}
+        \text{a} + \text{b} = 1 \\
+        2\text{a} + \text{b} = 4\lambda - 2
+    \end{cases}\label{eq:C3_sysab}
 \end{equation}
-where both equations have been obtained based on the conservation of the atomic species. It can be calculated that there exists a lower bound for the air factor below which the combustion will be impossible. The condition is that the coefficient "a" cannot be smaller than zero. For this case, the minimal air factor $\lambda_{min} =-\frac{3}{4}$.
+where both equations have been obtained based on the conservation of the atomic species. It can be calculated that there exists a lower bound for the air factor below which the combustion will be impossible. The condition is that the coefficient ''a'' cannot be smaller than zero. For this case, the minimal air factor \(\lambda_{min} =-\frac{3}{4}\).
 
-To provide some definitions, the mixture oxygen-fuel is said poor when $\lambda>0$, rich when $\lambda<0$ and at the stoichiometry for ab air factor $\lambda=1$. Typically in a gas turbine, the mixture is very poor.
+To provide some definitions, the mixture oxygen-fuel is said poor when \(\lambda>0\), rich when \(\lambda<0\) and at the stoichiometry for ab air factor \(\lambda=1\). Typically in a gas turbine, the mixture is very poor.
 \newpage
 \subsection{Fuel characteristic}
-\quad\, From now, the amount of heat provided during the combustion has not been quantified. This quantification is really important because this amount of heat is linked to quality and the nature of the used fuel.
+\quad\ From now, the amount of heat provided during the combustion has not been quantified. This quantification is really important because this amount of heat is linked to quality and the nature of the used fuel.
 
 \subsubsection{Heating calorific value}
-\quad\, First, let's define the heating calorific value $HCV$ of a fuel (J/kg). By definition, it is " the amount of thermal energy released during the total combustion of one physical unit of fuel"\citep{Leonard2018}. 
+\quad\ First, let's define the heating calorific value \(HCV\) of a fuel (J/kg). By definition, it is ''the amount of thermal energy released during the total combustion of one physical unit of fuel” \cite{Leonard2018}.
 \begin{equation}
-HCV = -\Delta H^o_{combustion} \label{eq:C3_HCV1}
+    HCV = -\Delta H^o_{combustion} \label{eq:C3_HCV1}
 \end{equation}
-with $-\Delta H^o_{combustion}$ being the heat released during the reaction.
+with \(-\Delta H^o_{combustion}\) being the heat released during the reaction.
 
-The $HCV$ is determined at a given reference temperature $T_0$. Considering this reference temperature, the $HCV$ can be evaluated by computing the enthalpy difference between the reagents and the products. 
+The \(HCV\) is determined at a given reference temperature \(T_0\). Considering this reference temperature, the \(HCV\) can be evaluated by computing the enthalpy difference between the reagents and the products.
 \begin{equation}
-HCV = \left.h_{reagent}\right|_{T=T_0} - \left.h_{product}\right|_{T=T_0}\label{eq:C3_HCV2}
+    HCV = \left.h_{reagent}\right|_{T=T_0} - \left.h_{product}\right|_{T=T_0}\label{eq:C3_HCV2}
 \end{equation}
-The $HCV$ value depends on the type of fuel that is used. For example, the heating calorific value of the \ce{CH4} is around 50 MJ/kg.
+The \(HCV\) value depends on the type of fuel that is used. For example, the heating calorific value of the \ce{CH4} is around 50 MJ/kg.
 
 \subsubsection{Adiabatic flame temperature}
-\quad\, The second notion that can be defined is the adiabatic flame temperature $T_f$. If the combustion chamber is supposed to be adiabatic (no heat transfer to the outside), the heat generated will be fully retained within the exhaust gas of the combustor. Thus, the temperature reached by the gas is considered to maximal and is called the adiabatic flame temperature.
+\quad\ The second notion that can be defined is the adiabatic flame temperature \(T_f\). If the combustion chamber is supposed to be adiabatic (no heat transfer to the outside), the heat generated will be fully retained within the exhaust gas of the combustor. Thus, the temperature reached by the gas is considered to maximal and is called the adiabatic flame temperature.
 
-The evaluation of $T_f$ is quite similar to the one of the $HCV$. There, starting from the reference temperature, the $T_f$ is calculate such that the enthalpy of the products is equal to the enthalpy of the reagents.
+The evaluation of \(T_f\) is quite similar to the one of the \(HCV\). There, starting from the reference temperature, the \(T_f\) is calculate such that the enthalpy of the products is equal to the enthalpy of the reagents.
 \begin{equation}
-\left.h_{reagent}\right|_{T=T_0} = \left.h_{product}\right|_{T=T_f}\label{eq:C3_T_f}
+    \left.h_{reagent}\right|_{T=T_0} = \left.h_{product}\right|_{T=T_f}\label{eq:C3_T_f}
 \end{equation}
 \newpage
 \subsection{Fumes composition}
-\quad\, Previously has been presented in the equations (\ref{eq:C3_chemgeng0}) and (\ref{eq:C3_chemgeng1}) the generalized chemical reaction for the combustion of the methane. 
+\quad\ Previously has been presented in the equations (\ref{eq:C3_chemgeng0}) and (\ref{eq:C3_chemgeng1}) the generalized chemical reaction for the combustion of the methane.
 In a more general case, if the fuel is essentially composed of carbon \ce{C}, hydrogen \ce{H}, oxygen \ce{O} and nitrogen \ce{N}, the reactions (\ref{eq:C3_chemgeng0}) and (\ref{eq:C3_chemgeng1}) are then
 \begin{equation}
-\begin{cases}
-\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}} +}\kappa\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> mCO2 +} \kappa(\lambda-1)\ce{O2 + \frac{n}{2}H2O +} (\kappa\lambda\frac{79}{21} + \frac{\text{y}}{2})\ce{N2}&\text{ for $\lambda\geq 1$}\\
-\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}} +}\kappa\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> aCO2 + bCO + \frac{n}{2}H2O} + (\kappa\lambda\frac{79}{21} + \frac{\text{y}}{2})\ce{N2}&\text{ for $\lambda< 1$}
-\end{cases}
+    \begin{cases}
+        \ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}} +}\kappa\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> mCO2 +} \kappa(\lambda-1)\ce{O2 + \frac{n}{2}H2O +} (\kappa\lambda\frac{79}{21} + \frac{\text{y}}{2})\ce{N2} & \text{ for \(\lambda\geq 1\)} \\
+        \ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}} +}\kappa\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> aCO2 + bCO + \frac{n}{2}H2O} + (\kappa\lambda\frac{79}{21} + \frac{\text{y}}{2})\ce{N2}                      & \text{ for \(\lambda< 1\)}
+    \end{cases}
 \end{equation}
-where coefficients "a" and "b" satisfies the system (\ref{eq:C3_sysab2})
+where coefficients ''a'' and ''b'' satisfies the system (\ref{eq:C3_sysab2})
 \begin{equation}
-\begin{cases}
-\text{a} + \text{b} = \text{m}\\
-2\text{a} + \text{b} = 2\kappa\lambda + \frac{\text{x}}{2} - \frac{\text{n}}{2}
-\end{cases}\label{eq:C3_sysab2}
+    \begin{cases}
+        \text{a} + \text{b} = \text{m} \\
+        2\text{a} + \text{b} = 2\kappa\lambda + \frac{\text{x}}{2} - \frac{\text{n}}{2}
+    \end{cases}\label{eq:C3_sysab2}
 \end{equation}
-with the factor $\kappa = (\text{m}+\frac{\text{n}}{4}-\frac{\text{x}}{2})$. The coefficients "m" and "n" correspond to the number of mole of atoms of carbon and hydrogen within 1 mole of fuel.
+with the factor \(\kappa = (\text{m}+\frac{\text{n}}{4}-\frac{\text{x}}{2})\). The coefficients ''m'' and ''n'' correspond to the number of mole of atoms of carbon and hydrogen within 1 mole of fuel.
 
-From theses equations, it is possible to obtain the molar fraction $x_i$ of each fume components. By definition, the molar fraction of the component $i$ is given by
+From theses equations, it is possible to obtain the molar fraction \(x_i\) of each fume components. By definition, the molar fraction of the component \(i\) is given by
 \begin{equation}
-x_i = \frac{n_i}{n_{tot}}
+    x_i = \frac{n_i}{n_{tot}}
 \end{equation}
-with $n_i$ the number of mole of the component $i$ and $n_{tot}$ the total number of mole.
+with \(n_i\) the number of mole of the component \(i\) and \(n_{tot}\) the total number of mole.
 
 Alternatively, the mass fraction can be determined applying the following transformation
 \begin{equation}
-y_i = x_i\frac{MM_{tot}}{MM_i}
+    y_i = x_i\frac{MM_{tot}}{MM_i}
 \end{equation}
-where $MM_i$ is the molar mass (in g/mol) of the component $i$ and $MM_{tot}$ is the total molar mass of the fumes.
+where \(MM_i\) is the molar mass (in g/mol) of the component \(i\) and \(MM_{tot}\) is the total molar mass of the fumes.
 \begin{equation}
-MM_{tot} = \sum_i x_i\cdot MM_i
+    MM_{tot} = \sum_i x_i\cdot MM_i
 \end{equation}
 
-This method will be called the "weight factor" method. 
+This method will be called the ''weight factor'' method.
 \section{Heat-exchangers}
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -467,25 +511,25 @@ This method will be called the "weight factor" method.
 %%%%%   <<Heat-exchanger>>    %%%%%
 %%%%%                         %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\quad\, The last important component that has to be defined and characterized is the heat-exchanger (HX). As the name says, the purpose of this element is to transfer the heat from a \textbf{hot} fluid to a \textbf{cold} fluid. The heat-exchangers can be classified into several categories\citep{Ngendakumana2018}.
+\quad\ The last important component that has to be defined and characterized is the heat-exchanger (HX). As the name says, the purpose of this element is to transfer the heat from a \textbf{hot} fluid to a \textbf{cold} fluid. The heat-exchangers can be classified into several categories\cite{Ngendakumana2018}.
 
 \begin{itemize}
-\setstretch{1}
-\item The recuperators: their purpose is to recover the heat from a hot fluid to heat up a cold fluid for direct usage. For instance, the exhaust gas from a boiler will go through a recuperator to exchange its energy with water. For this application and for many others, the two streams within the HX are separated by physical walls.
+    \setstretch{1}
+    \item The recuperators: their purpose is to recover the heat from a hot fluid to heat up a cold fluid for direct usage. For instance, the exhaust gas from a boiler will go through a recuperator to exchange its energy with water. For this application and for many others, the two streams within the HX are separated by physical walls.
 
-Alternatively, the heat exchange can be performance by direct contact between the two fluids. In this case, nothing prevents the hot flow to mix with the cold flow (and vice versa).
-\item The regenerators: considering a cycle , the purpose of the regenerators is to use a hot flow from the cycle to heat up a cold flow from the same cycle. 
+          Alternatively, the heat exchange can be performance by direct contact between the two fluids. In this case, nothing prevents the hot flow to mix with the cold flow (and vice versa).
+    \item The regenerators: considering a cycle , the purpose of the regenerators is to use a hot flow from the cycle to heat up a cold flow from the same cycle.
 \end{itemize}
 
 By definition, the hot stream is the one that \textbf{provides} the heat, and the cold stream is the one \textbf{receiving} the heat.
 
 On the Figure \ref{fig:C3_HX} are illustrated some schematics of heat-exchanger owning at different families.
 \begin{figure}[h]
-\centering
-\subfloat[HX with fined plates \citep{Ngendakumana2018}\label{fig:C3_HX_fin_plate}]{\includegraphics[width=0.4\textwidth]{HX_fin_plate}}\hfill
-\subfloat[HX with fined tubes \citep{Ngendakumana2018}\label{fig:C3_HX_fin_tube}] {\includegraphics[width=0.4\textwidth]{HX_fin_tube}}\hfill
-\subfloat[Plate heat-exchangers \citep{Ngendakumana2018}\label{fig:C3_PHE}]{\includegraphics[width=0.4\textwidth]{HX_brased_plate}}
-\caption{HX illustrations} \label{fig:C3_HX}
+    \centering
+    \subfloat[HX with fined plates \cite{Ngendakumana2018}\label{fig:C3_HX_fin_plate}]{\includegraphics[width=0.4\textwidth]{HX_fin_plate}}\hfill
+    \subfloat[HX with fined tubes \cite{Ngendakumana2018}\label{fig:C3_HX_fin_tube}] {\includegraphics[width=0.4\textwidth]{HX_fin_tube}}\hfill
+    \subfloat[Plate heat-exchangers \cite{Ngendakumana2018}\label{fig:C3_PHE}]{\includegraphics[width=0.4\textwidth]{HX_brased_plate}}
+    \caption{HX illustrations} \label{fig:C3_HX}
 \end{figure}
 
 The selected family will highly depends on the type of application that is targeted. Plate heat-exchangers are one of the most compact type of heat-exchangers. This compactness is highly appreciated for any system where the foot print and volume has to be as minimal as possible. However, this is at the cost of more complicated maintenance due the brazing of the plates.
@@ -493,174 +537,174 @@ The selected family will highly depends on the type of application that is targe
 This section will not cover the specificity of these different families. Instead, the main notions which are necessary to characterized the heat transfer between two fluids will be given.
 
 \subsection{Stream configurations}
-\quad\, There isn't an unique configuration regarding about the interaction between the hot and cold streams. Indeed, here are the main categories based on flow configurations.
+\quad\ There isn't an unique configuration regarding about the interaction between the hot and cold streams. Indeed, here are the main categories based on flow configurations.
 
 \begin{itemize}
-\setstretch{1}
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.4\textwidth]{parallele_flow}
-\caption{Parallel flow heat-exchanger \citep{Ngendakumana2018}}
-\label{fig:C3_para_flow}
-\end{figure}
+    \setstretch{1}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.4\textwidth]{parallele_flow}
+        \caption{Parallel flow heat-exchanger \cite{Ngendakumana2018}}
+        \label{fig:C3_para_flow}
+    \end{figure}
 
-\item Parallel flow HX: The two streams go through the heat-exchanger in the same direction. 
+    \item Parallel flow HX: The two streams go through the heat-exchanger in the same direction.
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.4\textwidth]{opposite_flow}
-\caption{Counter flow heat-exchanger \citep{Ngendakumana2018}}
-\label{fig:C3_counter_flow}
-\end{figure}
+          \begin{figure}[h]
+              \centering
+              \includegraphics[width=0.4\textwidth]{opposite_flow}
+              \caption{Counter flow heat-exchanger \cite{Ngendakumana2018}}
+              \label{fig:C3_counter_flow}
+          \end{figure}
 
-\item Counter flow HX: The two streams go through the heat-exchanger in the opposite direction. This configuration is more frequent than the parallel flow HX due to higher efficiency.
+    \item Counter flow HX: The two streams go through the heat-exchanger in the opposite direction. This configuration is more frequent than the parallel flow HX due to higher efficiency.
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.4\textwidth]{crossed_flow_non_mixed}
-\caption{Cross flow heat-exchanger, both fluids unmixed \citep{Ngendakumana2018}}
-\label{fig:C3_cross_flow_unmixed}
-\end{figure}
+          \begin{figure}[h]
+              \centering
+              \includegraphics[width=0.4\textwidth]{crossed_flow_non_mixed}
+              \caption{Cross flow heat-exchanger, both fluids unmixed \cite{Ngendakumana2018}}
+              \label{fig:C3_cross_flow_unmixed}
+          \end{figure}
 
-\item Cross flow HX, both fluids unmixed: The flow in the tube does not sees the property of cross flow varying along with the distance traveled. Both flow are unmixed.
-\newpage
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.4\textwidth]{crossed_flow_one_mixed}
-\caption{Cross flow heat-exchanger, one fluid mixed \citep{Ngendakumana2018}}
-\label{fig:C3_cross_flow_1mixed}
-\end{figure}
+    \item Cross flow HX, both fluids unmixed: The flow in the tube does not sees the property of cross flow varying along with the distance traveled. Both flow are unmixed.
+          \newpage
+          \begin{figure}[h]
+              \centering
+              \includegraphics[width=0.4\textwidth]{crossed_flow_one_mixed}
+              \caption{Cross flow heat-exchanger, one fluid mixed \cite{Ngendakumana2018}}
+              \label{fig:C3_cross_flow_1mixed}
+          \end{figure}
 
-\item Cross flow HX, one fluid mixed: The flow in the tube does not sees the property of cross flow varying along with the distance traveled. The cross flow does not travel inside isolated channels.
+    \item Cross flow HX, one fluid mixed: The flow in the tube does not sees the property of cross flow varying along with the distance traveled. The cross flow does not travel inside isolated channels.
 \end{itemize}
 
 Considering the parallel and counter flow heat-exchanger, Two temperature differences can be defined based on the temperature profiles (Figure \ref{fig:C3_Tprof}) of both fluids inside the heat-exchanger.
 
 \begin{figure}[h]
-\centering
-\subfloat[Temperature profil for parallel flow HX \citep{Ngendakumana2018}\label{fig:C3_HX_par_flow_T}]{\includegraphics[width=0.45\textwidth]{parallele_flow_T}}\hfill
-\subfloat[Temperature profil for counter flow HX \citep{Ngendakumana2018}\label{fig:C3_HX_opo_flow_T}] {\includegraphics[width=0.45\textwidth]{opposite_flow_T}}\caption{Temperature profiles for different stream configurations}\label{fig:C3_Tprof}
+    \centering
+    \subfloat[Temperature profil for parallel flow HX \cite{Ngendakumana2018}\label{fig:C3_HX_par_flow_T}]{\includegraphics[width=0.45\textwidth]{parallele_flow_T}}\hfill
+    \subfloat[Temperature profil for counter flow HX \cite{Ngendakumana2018}\label{fig:C3_HX_opo_flow_T}] {\includegraphics[width=0.45\textwidth]{opposite_flow_T}}\caption{Temperature profiles for different stream configurations}\label{fig:C3_Tprof}
 \end{figure}
 
 where the subscripts h and c indicate which flow is considered (h:hot; c:cold), and the subscripts i and o refer to the inlet and the outlet of the heat-exchanger.
 
-The first temperature difference $\Delta T_0$ is defined as being the largest temperature difference between the two flows, regardless the position inside the HX. Thus,
+The first temperature difference \(\Delta T_0\) is defined as being the largest temperature difference between the two flows, regardless the position inside the HX. Thus,
 
 \begin{equation}
-\setstretch{1}
-\Delta T_0 =
-\begin{cases}
-T_{h,i} - T_{c,i} \text{ For the parallel flow}\\
-T_{h,i} - T_{c,o} \text{ For the counter flow}\\
-\end{cases}\label{eq:C3_DT0}
+    \setstretch{1}
+    \Delta T_0 =
+    \begin{cases}
+        T_{h,i} - T_{c,i} \text{ For the parallel flow} \\
+        T_{h,i} - T_{c,o} \text{ For the counter flow}  \\
+    \end{cases}\label{eq:C3_DT0}
 \end{equation}
 
-The second temperature difference $\Delta T_L$ corresponds to the smallest temperature difference between the two flows. Thus,
+The second temperature difference \(\Delta T_L\) corresponds to the smallest temperature difference between the two flows. Thus,
 \begin{equation}
-\setstretch{1}
-\Delta T_0 =
-\begin{cases}
-T_{h,o} - T_{c,o} \text{ For the parallel flow}\\
-T_{h,o} - T_{c,i} \text{ For the counter flow}\\
-\end{cases}\label{eq:C3_DTL}
+    \setstretch{1}
+    \Delta T_0 =
+    \begin{cases}
+        T_{h,o} - T_{c,o} \text{ For the parallel flow} \\
+        T_{h,o} - T_{c,i} \text{ For the counter flow}  \\
+    \end{cases}\label{eq:C3_DTL}
 \end{equation}
 
 \subsection{Heat transfer within a heat-exchanger}
-\quad\, The heat transfer rate of a heat-exchanger is directly dependent on the nature of the fluids and the heat-exchanger itself. Let's consider the following relation (\ref{eq:C3_Qdot1})
+\quad\ The heat transfer rate of a heat-exchanger is directly dependent on the nature of the fluids and the heat-exchanger itself. Let's consider the following relation (\ref{eq:C3_Qdot1})
 \begin{equation}
-\dot{Q} = \frac{\Delta T_{LM}}{R}= A\cdot U\cdot \Delta T_{LM}\text{ ( in W)}\label{eq:C3_Qdot1}
+    \dot{Q} = \frac{\Delta T_{LM}}{R}= A\cdot U\cdot \Delta T_{LM}\text{ ( in W)}\label{eq:C3_Qdot1}
 \end{equation}
-where $A$ is the global surface area of the HX, and $R$ and $U$ are the global thermal resistance and transfer coefficient respectively. The $\Delta T_{LM}$ is called the logarithmic mean temperature difference. It's definition is
+where \(A\) is the global surface area of the HX, and \(R\) and \(U\) are the global thermal resistance and transfer coefficient respectively. The \(\Delta T_{LM}\) is called the logarithmic mean temperature difference. It's definition is
 \begin{equation}
-\Delta T_{LM} = \frac{\Delta T_0-\Delta T_L}{ln\left(\frac{\Delta T_0}{\Delta T_L}\right)}\label{eq:C3_lmtd}
-\end{equation} 
-with $ln$ being the neperian logarithm.
+    \Delta T_{LM} = \frac{\Delta T_0-\Delta T_L}{ln\left(\frac{\Delta T_0}{\Delta T_L}\right)}\label{eq:C3_lmtd}
+\end{equation}
+with \(ln\) being the neperian logarithm.
 \subsubsection{Transfer coefficient}
-The general definition for the product $A\cdot U$ is 
+The general definition for the product \(A\cdot U\) is
 \begin{equation}
-\frac{1}{A\cdot U}  = \frac{1}{\eta_{0,c}\cdot h_c \cdot A_c} + \frac{F_c}{\eta_{0,c}\cdot A_c} + R_w + \frac{F_h}{\eta_{0,h}\cdot A_h} + \frac{1}{\eta_{0,h}\cdot h_h \cdot A_h}\label{eq:C3_AU}
+    \frac{1}{A\cdot U}  = \frac{1}{\eta_{0,c}\cdot h_c \cdot A_c} + \frac{F_c}{\eta_{0,c}\cdot A_c} + R_w + \frac{F_h}{\eta_{0,h}\cdot A_h} + \frac{1}{\eta_{0,h}\cdot h_h \cdot A_h}\label{eq:C3_AU}
 \end{equation}
-where $h$ is the convective heat transfer coefficient (in W/m$^2$/K) of the fluid, $F$ is a degradation factor due to the clogging, $\eta_0$ is the global efficiency of the surface and $R_w$ is the wall resistance. 
+where \(h\) is the convective heat transfer coefficient (in W/m$^2$/K) of the fluid, \(F\) is a degradation factor due to the clogging, \(\eta_0\) is the global efficiency of the surface and \(R_w\) is the wall resistance.
 
-Making the assumption that all the ducts considered in this work are smooth and the flows are turbulent, the convective heat transfer coefficient $h$ is obtained using the formula (\ref{eq:C3_h}).
+Making the assumption that all the ducts considered in this work are smooth and the flows are turbulent, the convective heat transfer coefficient \(h\) is obtained using the formula (\ref{eq:C3_h}).
 \begin{equation}
-h = Nu \cdot \frac{\lambda_c}{D_t} = 0.023\cdot Re^{0.8}\cdot Pr^{1/3}\frac{\lambda_c}{D_t}\label{eq:C3_h}
+    h = Nu \cdot \frac{\lambda_c}{D_t} = 0.023\cdot Re^{0.8}\cdot Pr^{1/3}\frac{\lambda_c}{D_t}\label{eq:C3_h}
 \end{equation}
-where $Nu$, $Re$ and $Pr$ are the Nusselt, Reynolds and Prandtl number. $\lambda_c$ is the thermal conductivity (in W/m/K) of the fluid and $D_t$ is the diameter of the duct\citep{Ngendakumana2018}.
+where \(Nu\), \(Re\) and \(Pr\) are the Nusselt, Reynolds and Prandtl number. \(\lambda_c\) is the thermal conductivity (in W/m/K) of the fluid and \(D_t\) is the diameter of the duct\cite{Ngendakumana2018}.
 
 By definition, the Reynolds and Prandtl numbers are defined as follows
 \begin{align}
-Re &= \frac{\rho\cdot v\cdot D_h}{\mu}\label{eq:C3_Re}\\
-Pr &= \frac{\mu\cdot c_p}{\lambda_c}\label{eq:C3_Pr}
+    Re & = \frac{\rho\cdot v\cdot D_h}{\mu}\label{eq:C3_Re} \\
+    Pr & = \frac{\mu\cdot c_p}{\lambda_c}\label{eq:C3_Pr}
 \end{align}
-where $D_h$ is the hydraulic diameter, $v$ is the velocity of the flow and $\mu$ is the dynamic viscosity (in Pa$\cdot$s). The hydraulic diameter and the flow velocity are respectively obtained using the two following relations
+where \(D_h\) is the hydraulic diameter, \(v\) is the velocity of the flow and \(\mu\) is the dynamic viscosity (in Pa$\cdot$s). The hydraulic diameter and the flow velocity are respectively obtained using the two following relations
 \begin{align}
-D_h = \frac{4\cdot A_c}{P_c}\label{eq:C3_Dh}\\
-v=\frac{\dot{m}}{\rho\cdot\pi\cdot\frac{D_h^2}{4}}\label{eq:C3_v}\\
+    D_h = \frac{4\cdot A_c}{P_c}\label{eq:C3_Dh}                      \\
+    v=\frac{\dot{m}}{\rho\cdot\pi\cdot\frac{D_h^2}{4}}\label{eq:C3_v} \\
 \end{align}
-with $A_c$ and $P_c$ the cross area and perimeter of the duct\citep{Ngendakumana2018}.
+with \(A_c\) and \(P_c\) the cross area and perimeter of the duct\cite{Ngendakumana2018}.
 
-Making the assumption that both $D_h$ and $D_t$ are equal, let's pose $D=D_h=D_t$. Therefore, the convective heat transfer coefficient $h$ can be expressed as follows
+Making the assumption that both \(D_h\) and \(D_t\) are equal, let's pose \(D=D_h=D_t\). Therefore, the convective heat transfer coefficient \(h\) can be expressed as follows
 \begin{equation}
-h = 0.0697\cdot \frac{\dot{m}^{4/5}\cdot cp^{1/3}}{\pi^{4/5}\cdot D^{9/5}}\cdot \frac{\lambda_c^{2/3}}{\mu^{7/15}}
+    h = 0.0697\cdot \frac{\dot{m}^{4/5}\cdot cp^{1/3}}{\pi^{4/5}\cdot D^{9/5}}\cdot \frac{\lambda_c^{2/3}}{\mu^{7/15}}
 \end{equation}
 
-In the present work, the heat-exchanger that will be used are plate heat-exchangers. For this specific category, the surface dimensions $A$ for the cold and the hot side are very closed from each others. Also, if the flow considered is only composed of one phase (i.e. only liquid or gaseous), the wall resistance $R_w$ can be neglected. 
+In the present work, the heat-exchanger that will be used are plate heat-exchangers. For this specific category, the surface dimensions \(A\) for the cold and the hot side are very closed from each others. Also, if the flow considered is only composed of one phase (i.e. only liquid or gaseous), the wall resistance \(R_w\) can be neglected.
 
-If the efficiency $\eta_0$ are supposed equal for both the hot and the cold side and if the degradation factors $F$ are neglected, then the heat transfer coefficient $U$ can be approached by
+If the efficiency \(\eta_0\) are supposed equal for both the hot and the cold side and if the degradation factors \(F\) are neglected, then the heat transfer coefficient \(U\) can be approached by
 \begin{equation}
-U \simeq \frac{h_h\cdot h_c}{h_h + h_c}\label{eq:C3_AU_prop}
+    U \simeq \frac{h_h\cdot h_c}{h_h + h_c}\label{eq:C3_AU_prop}
 \end{equation}
 \subsubsection{LMTD method}
-\quad\, In the previous lines, a definition of the heat transfer rate based on the global transfer coefficient. This method is called the LMTD method and requires the knowledge of the geometry of the heat-exchanger.
-When the $\dot{Q}$ has been calculated, the temperatures at the outlet of the heat-exchanger for the cold and hot stream can be computed using the two equations (\ref{eq:C3_ThQ}) and (\ref{eq:C3_TcQ}).
+\quad\ In the previous lines, a definition of the heat transfer rate based on the global transfer coefficient. This method is called the LMTD method and requires the knowledge of the geometry of the heat-exchanger.
+When the \(\dot{Q}\) has been calculated, the temperatures at the outlet of the heat-exchanger for the cold and hot stream can be computed using the two equations (\ref{eq:C3_ThQ}) and (\ref{eq:C3_TcQ}).
 \begin{subequations}
-\setstretch{1}
-\begin{equation}
-\dot{Q} = \dot{m}_h\cdot c_{p,h}\cdot(T_{h,in} - T_{h,out}) =\dot{C}_h\cdot(T_{h,in} - T_{h,out}) \label{eq:C3_ThQ}
-\end{equation}
-\begin{equation}
-\dot{Q} = \dot{m}_c\cdot c_{p,c}\cdot (T_{c,out} - T_{c,in}) =\dot{C}_c\cdot (T_{c,out} - T_{c,in}) \label{eq:C3_TcQ} 
-\end{equation}
+    \setstretch{1}
+    \begin{equation}
+        \dot{Q} = \dot{m}_h\cdot c_{p,h}\cdot(T_{h,in} - T_{h,out}) =\dot{C}_h\cdot(T_{h,in} - T_{h,out}) \label{eq:C3_ThQ}
+    \end{equation}
+    \begin{equation}
+        \dot{Q} = \dot{m}_c\cdot c_{p,c}\cdot (T_{c,out} - T_{c,in}) =\dot{C}_c\cdot (T_{c,out} - T_{c,in}) \label{eq:C3_TcQ}
+    \end{equation}
 \end{subequations}
 
-This method requires the knowledge of the inlet and outlet temperatures of both fluids before initiating the computation of the heat transfer rate $\dot{Q}$ using the relation (\ref{eq:C3_Qdot1}). Therefore, this method needs iteration in the event where these temperatures are not known a priori.
+This method requires the knowledge of the inlet and outlet temperatures of both fluids before initiating the computation of the heat transfer rate \(\dot{Q}\) using the relation (\ref{eq:C3_Qdot1}). Therefore, this method needs iteration in the event where these temperatures are not known a priori.
 
 \subsubsection{$\varepsilon$-NTU method}
-\quad\, There exists a second method for the evaluation of the heat transfer rate which does not need the outlet temperature of the fluids. First, the maximum heat transfer rate $\dot{Q}_{max}$ is computed.
+\quad\ There exists a second method for the evaluation of the heat transfer rate which does not need the outlet temperature of the fluids. First, the maximum heat transfer rate \(\dot{Q}_{max}\) is computed.
 \begin{equation}
-\dot{Q}_{max} = \dot{C}_{min}\cdot (T_{h,in} - T_{c,in})
+    \dot{Q}_{max} = \dot{C}_{min}\cdot (T_{h,in} - T_{c,in})
 \end{equation}
-with $\dot{C}_{min}=min(\dot{C}_h,\dot{C}_c)$
-Then the heat transfer rate is equal to 
+with \(\dot{C}_{min}=min(\dot{C}_h,\dot{C}_c)\)
+Then the heat transfer rate is equal to
 \begin{equation}
-\dot{Q} = \varepsilon\cdot\dot{Q}_{max}
+    \dot{Q} = \varepsilon\cdot\dot{Q}_{max}
 \end{equation}
-where $\varepsilon$ is the efficiency of the heat-exchanger. This efficiency is a function of the ratio $C_r = \frac{\dot{C}_{min}}{\dot{C}_{max}}$, the flow arrangement, and the number of transfer unit NTU defined as being the ratio
+where \(\varepsilon\) is the efficiency of the heat-exchanger. This efficiency is a function of the ratio \(C_r = \frac{\dot{C}_{min}}{\dot{C}_{max}}\), the flow arrangement, and the number of transfer unit NTU defined as being the ratio
 \begin{equation}
-\text{NTU} = \frac{A\cdot U}{\dot{C}_{min}}\label{eq:C3_NTU}
+    \text{NTU} = \frac{A\cdot U}{\dot{C}_{min}}\label{eq:C3_NTU}
 \end{equation}
 
-As said, the relations $\varepsilon(\text{NTU},C_r)$ and $\text{NTU}(\varepsilon,C_r)$ depend on the heat-exchanger configurations. An non exhaustive list is written in the annex \ref{annex_epsNTU}\citep{GregoryNellis2015}. Nevertheless, as said earlier, the type of heat-exchanger use for the modeled Brayton cycle are plate heat-exchanger. The flow configuration for this type of heat-exchanger is counter-flow. The associated relation linking the efficiency $\varepsilon$ to the number of transfer units  NTU is 
+As said, the relations \(\varepsilon(\text{NTU},C_r)\) and \(\text{NTU}(\varepsilon,C_r)\) depend on the heat-exchanger configurations. An non exhaustive list is written in the annex \ref{annex_epsNTU}\cite{GregoryNellis2015}. Nevertheless, as said earlier, the type of heat-exchanger use for the modeled Brayton cycle are plate heat-exchanger. The flow configuration for this type of heat-exchanger is counter-flow. The associated relation linking the efficiency \(\varepsilon\) to the number of transfer units  NTU is
 \begin{equation}
-\varepsilon = \frac{1 - exp\left[-NTU\cdot \left(1 - C_r\right)\right]}{1 - C_r\cdot exp\left[-NTU\cdot \left(1 - C_r\right)\right]}\citep{GregoryNellis2015}
+    \varepsilon = \frac{1 - exp\left[-NTU\cdot \left(1 - C_r\right)\right]}{1 - C_r\cdot exp\left[-NTU\cdot \left(1 - C_r\right)\right]}\cite{GregoryNellis2015}
 \end{equation}
 %%%%%%%%%%%%%%%
 %ECRIRE ANNEXE%
 %%%%%%%%%%%%%%%
 
-Once the coefficient $\varepsilon$ computed, the outlet temperatures of the fluids can be obtained using the relations (\ref{eq:C3_ThQ}) and (\ref{eq:C3_TcQ}).
+Once the coefficient \(\varepsilon\) computed, the outlet temperatures of the fluids can be obtained using the relations (\ref{eq:C3_ThQ}) and (\ref{eq:C3_TcQ}).
 
 \subsubsection{Rating and sizing problem}
-\quad\, The $\varepsilon$-NTU method is really useful for solving rating and sizing problems.
+\quad\ The \(\varepsilon\)-NTU method is really useful for solving rating and sizing problems.
 
-On one hand, rating problem are problem that, based on the knowledge of the geometry of the heat-exchanger, evaluates its performance for given inlet temperature for both fluids. For this kind of problem, the NTU is first computed. Then, the efficiency $\varepsilon$ is derived to allow the calculation of the heat transfer rate.
+On one hand, rating problem are problem that, based on the knowledge of the geometry of the heat-exchanger, evaluates its performance for given inlet temperature for both fluids. For this kind of problem, the NTU is first computed. Then, the efficiency \(\varepsilon\) is derived to allow the calculation of the heat transfer rate.
 
-On the other hand, sizing problems are used for the design of heat-exchanger to provide the wished outlet temperatures. There, the efficiency is first calculated and then the NTU is deduced. Finally, from the equation (\ref{eq:C3_NTU}) the heat transfer area $A$ can be obtained\citep{Ngendakumana2018}.
+On the other hand, sizing problems are used for the design of heat-exchanger to provide the wished outlet temperatures. There, the efficiency is first calculated and then the NTU is deduced. Finally, from the equation (\ref{eq:C3_NTU}) the heat transfer area \(A\) can be obtained\cite{Ngendakumana2018}.
 
-A mix of these two types of problems will be used during this work. Indeed, the efficiency $\varepsilon$ of the heat-exchangers in the system are known for a certain nominal flow rate.    The knowledge of the nominal efficiency provides the required tools to compute the product $A\cdot U_{nom}$ using the sizing problem methodology. 
+A mix of these two types of problems will be used during this work. Indeed, the efficiency \(\varepsilon\) of the heat-exchangers in the system are known for a certain nominal flow rate.    The knowledge of the nominal efficiency provides the required tools to compute the product \(A\cdot U_{nom}\) using the sizing problem methodology.
 
-Then, based on the approximation (\ref{eq:C3_AU_prop}), the $U$ for the given condition can be obtained since the heat transfer area $A$ remains unchanged. Finally, the non nominal $U$ can be used to obtain the of design efficiency $\varepsilon$. This last step is done through a rating problem.
+Then, based on the approximation (\ref{eq:C3_AU_prop}), the \(U\) for the given condition can be obtained since the heat transfer area \(A\) remains unchanged. Finally, the non nominal \(U\) can be used to obtain the of design efficiency \(\varepsilon\). This last step is done through a rating problem.
 \newpage
 \section{Piping and pressure drop}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -668,15 +712,15 @@ Then, based on the approximation (\ref{eq:C3_AU_prop}), the $U$ for the given co
 %%%%%       <<Piping>>        %%%%%
 %%%%%                         %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\quad\, From now, the loss of pressure inside the different elements has not be considered. However, for a system like a gas turbine, the pressure drops have to be as minimal as possible to guaranty that the expanded gas in the turbine is at a pressure as high as possible. 
+\quad\ From now, the loss of pressure inside the different elements has not be considered. However, for a system like a gas turbine, the pressure drops have to be as minimal as possible to guaranty that the expanded gas in the turbine is at a pressure as high as possible.
 
-In this work, simple formula will be applied for the pressure drops computation. These one will be computed based on a pressure drop factor $Dp$ varying from 0 to 1. Then the pressure at the outlet of the component is given by
+In this work, simple formula will be applied for the pressure drops computation. These one will be computed based on a pressure drop factor \(Dp\) varying from 0 to 1. Then the pressure at the outlet of the component is given by
 \begin{equation}
-p_{o} = p_{i}\cdot (1 - Dp)
+    p_{o} = p_{i}\cdot (1 - Dp)
 \end{equation}
-where the factor $Dp$ is different for each component of the system. 
+where the factor \(Dp\) is different for each component of the system.
 
-Before the present work, the pressure drop factors have been evaluated using computational fluid dynamics (CFD) for a nominal point of operation. Then, it can be demonstrated that the pressure difference $\Delta p = p_{i} - p_{o}$ is a quadratic function of the mass flow rate $\dot{m}$. Thus, the pressure losses for any non nominal points of operation are given by
+Before the present work, the pressure drop factors have been evaluated using computational fluid dynamics (CFD) for a nominal point of operation. Then, it can be demonstrated that the pressure difference \(\Delta p = p_{i} - p_{o}\) is a quadratic function of the mass flow rate \(\dot{m}\). Thus, the pressure losses for any non-nominal points of operation are given by
 \begin{equation}
-\Delta p \simeq \Delta p_{nom}\cdot \frac{\dot{m}^2}{\dot{m}^2_{nom}}
+    \Delta p \simeq \Delta p_{nom}\cdot \frac{\dot{m}^2}{\dot{m}^2_{nom}}
 \end{equation}
