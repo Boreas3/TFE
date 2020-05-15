@@ -39,7 +39,7 @@ Turbomachines that are encompassed in this second category are compressors and g
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{Frames.png}
-    \caption{Absolute and rotating frames}
+    \caption{Absolute and rotating frames.}
     \label{fig:C3_frames}
 \end{figure}
 
@@ -56,7 +56,7 @@ Another way of representations of these velocities is to draw the velocity trian
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{Vtriangle.png}
-    \caption{Velocity triangle}
+    \caption{Velocity triangle.}
     \label{fig:C3_vtriang}
 \end{figure}
 where $v_m$ is the projection of the vector $\mathbf{v}$ on the meridional axis.
@@ -157,14 +157,26 @@ Those relations will be called characteristic or performance map and has to be d
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{char_map_pump.png}
-    \caption{Characteristic maps of a pump \cite{Hillewaert2019}}
+    \caption{Characteristic maps of a pump \cite{Hillewaert2019}.}
     \label{fig:C3_MapPump}
 \end{figure}
 
 However, not all the operating points constituting the performance map have to be computed through an experimental campaign. Indeed, using the similarity analysis described during the previous section, determining the operating points for one rotational speed is sufficient to deduce the rest of the characteristic map.
 
-\subsubsection{Similarity}
-\quad\ When considering incompressible flow, it is possible to extrapolate from a known operating point a infinity of similar operating points. Indeed, There exist relationships which provides with enough accuracy the change of flow rate \(Q\) and height variation \(\Delta H\) when the rotational speed goes from \(N_1\) to \(N_2\). It can be demonstrated that the flow rate evolves linearly with the rotation speed, and that the height variation is a quadratic function of \(N\).
+\begin{subequations}
+    \begin{equation}
+        \phi = \frac{Q}{N\cdot r_2^3}\label{eq:C3_phipump}
+    \end{equation}
+    \begin{equation}
+        \psi = \frac{4\cdot g\cdot \Delta h_p}{N^2\cdot r_2^2}\label{eq:C3_psipump}
+    \end{equation}
+\end{subequations}
+
+For the pump, the head and flow non-dimensional coefficients \(\phi\) and \(\psi\) are defined based on the outlet condition \textbf{2} of the pump. Those coefficients are respectively defined by the relations (\ref{eq:C3_phipump}) and (\ref{eq:C3_psipump}), \(r_2\) being the outlet radius of the pump. 
+
+From the definitions of these two non-dimensional quantities, the height variation \(\Delta h_p\) and the volumetric flow rate $Q$ can be obtained for any rotational speed. 
+
+Considering that the operating point (\(Q_1, \Delta h_{p,1},N_1\)) is known, the similar operating point\linebreak (\(Q_2, \Delta h_{p,2},N_2\)) for any rotational speed \(N_2\) can be obtained using the relations (\ref{eq:C3_Qsim}) and (\ref{eq:C3_DHsim}).
 
 \begin{subequations}
     \setstretch{1}
@@ -176,31 +188,32 @@ However, not all the operating points constituting the performance map have to b
     \end{equation}\label{eq:C3_sim}
 \end{subequations}
 
-These relations are really useful to extrapolate the performance maps of a pump. Similar relations can be deduced considering the variation of the radius of the pump.
+These relations stand since for any similar point of operation, the non-dimensional quantities remain constant. Consequently, the pump isentropic efficiency remains constant as well.
 
-One important property to notice is that all the dimensionless variables (e.g. the efficiency) are kept constant for all the different similar operational points. This is a valuable property which will be very useful for the future developments of the thesis.
-\subsubsection{Types of pumps}
-\quad\ Now that the exterior characteristics of the pumps have been defined, it is interesting to have at least a brief idea about how the pump is constructed. Without entering into detailed\footnote{see the section 4.3 and 4.4 of the course \cite{Hillewaert2019}}, there are two types of pumps.
+Similar reasoning can be performed for the hydraulic turbines. For hydraulic turbines, the head and flow coefficients are defined based on the inlet condition \textbf{1} of the turbine.
 
-The first type to be considered is the centrifugal pumps designed to provide a high heat for a low flow rate. Those pumps are characterized by an axial inflow and a radial outflow. The Figure \ref{fig:C3_centri_pump} shows a schematic of a centrifugal pumps.
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.4\textwidth]{centri_pump.png}
-    \caption{Centrifugal pump \cite{Hillewaert2019}}
-    \label{fig:C3_centri_pump}
-\end{figure}
+% \subsubsection{Types of pumps and hydraulic turbines}
+% \quad\ Now that the exterior characteristics of the turbomachines  have been defined, it is interesting to have at least a brief idea about how the pump is constructed. Without entering into detailed\footnote{see the section 4.3 and 4.4 of the course \cite{Hillewaert2019}}, there are two types of pumps.
 
-Basically, the centrifugal pump can be decomposed into two parts (for the simplest machine). The first  part is the rotating impeller that will convert and transfer the mechanical energy to the fluid. Behind the impeller will be placed the volute (right picture of Figure \ref{fig:C3_centri_pump}) that collects the flow to bring it to the outlet of the pump.\newpage
+% The first type to be considered is the centrifugal pumps designed to provide a high heat for a low flow rate. Those pumps are characterized by an axial inflow and a radial outflow. The Figure \ref{fig:C3_centri_pump} shows a schematic of a centrifugal pumps.
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.4\textwidth]{centri_pump.png}
+%     \caption{Centrifugal pump \cite{Hillewaert2019}.}
+%     \label{fig:C3_centri_pump}
+% \end{figure}
 
-The second type of pump are the axial pumps which are, in opposition with the centrifugal pumps, designed to deliver low head for high flow rates. Such pumps is illustrated on Figure \ref{fig:C3_axial_pump}.
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.25\textwidth]{axial_pump.png}
-    \caption{Axial pump \cite{Hillewaert2019}}
-    \label{fig:C3_axial_pump}
-\end{figure}
+% Basically, the centrifugal pump can be decomposed into two parts (for the simplest machine). The first  part is the rotating impeller that will convert and transfer the mechanical energy to the fluid. Behind the impeller will be placed the volute (right picture of Figure \ref{fig:C3_centri_pump}) that collects the flow to bring it to the outlet of the pump.\newpage
 
-The main two parts of an axial pump are the rotor (the rotating part) that will increase the height of the fluid followed by a diffusor which “recuperates the kinetic energy at the exit of the rotor”\cite{Hillewaert2019}.
+% The second type of pump are the axial pumps which are, in opposition with the centrifugal pumps, designed to deliver low head for high flow rates. Such pumps are illustrated on Figure \ref{fig:C3_axial_pump}.
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.25\textwidth]{axial_pump.png}
+%     \caption{Axial pump \cite{Hillewaert2019}.}
+%     \label{fig:C3_axial_pump}
+% \end{figure}
+
+% The main two parts of an axial pump are the rotor (the rotating part) that will increase the height of the fluid followed by a diffusor which “recuperates the kinetic energy at the exit of the rotor”\cite{Hillewaert2019}.
 \subsection{Compressible flow}
 \quad\ The previous subsection introduced the pump which is a turbomachine design to increase the energy of the incompressible fluid passing through it. However, this type of machine cannot deals with compressible flow for which the density can vary over the distance. For instance, the air is a compressible fluid.
 
@@ -282,7 +295,7 @@ The first machines to be describe are the compressor. As for the pumps, the comp
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{Comp_stage.png}
-    \caption{Axial compressor stage \cite{Hillewaert2019}}
+    \caption{Axial compressor stage \cite{Hillewaert2019}.}
     \label{fig:C3_compstage}
 \end{figure}
 
@@ -318,7 +331,7 @@ A illustration of a compressor performance map is given on Figure \ref{fig:C3_co
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{Comp_Map.png}
-    \caption{Illustration of a compressor performance map \cite{Ghorbanian2009}}
+    \caption{Illustration of a compressor performance map \cite{Ghorbanian2009}.}
     \label{fig:C3_compmap}
 \end{figure}
 
@@ -340,7 +353,7 @@ The schematic of an axial turbine stage is drawn on Figure \ref{fig:C3_turbstage
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{Turb_stage.png}
-    \caption{Axial turbine stage \cite{Hillewaert2019}}
+    \caption{Axial turbine stage \cite{Hillewaert2019}.}
     \label{fig:C3_turbstage}
 \end{figure}
 
@@ -364,7 +377,7 @@ As for the compressor, the real expansion induced by the turbine can be represen
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{Turb_mollier.png}
-    \caption{Mollier diagram of a turbine stage \cite{Hillewaert2019}}
+    \caption{Mollier diagram of a turbine stage \cite{Hillewaert2019}.}
     \label{fig:C3_Mollierturb}
 \end{figure}
 
@@ -389,7 +402,7 @@ Then the two families are:
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{Turb_Map.png}
-    \caption{Illustration of a turbine performance map}
+    \caption{Illustration of a turbine performance map.}
     \label{fig:C3_turbmap}
 \end{figure}
 
@@ -555,10 +568,10 @@ By definition, the hot stream is the one that \textbf{provides} the heat, and th
 On the Figure \ref{fig:C3_HX} are illustrated some schematics of heat-exchanger owning at different families.
 \begin{figure}[h]
     \centering
-    \subfloat[HX with fined plates \cite{Ngendakumana2018}\label{fig:C3_HX_fin_plate}]{\includegraphics[width=0.4\textwidth]{HX_fin_plate}}\hfill
-    \subfloat[HX with fined tubes \cite{Ngendakumana2018}\label{fig:C3_HX_fin_tube}] {\includegraphics[width=0.4\textwidth]{HX_fin_tube}}\hfill
-    \subfloat[Plate heat-exchangers \cite{Ngendakumana2018}\label{fig:C3_PHE}]{\includegraphics[width=0.4\textwidth]{HX_brased_plate}}
-    \caption{HX illustrations} \label{fig:C3_HX}
+    \subfloat[HX with fined plates \cite{Ngendakumana2018}.\label{fig:C3_HX_fin_plate}]{\includegraphics[width=0.4\textwidth]{HX_fin_plate}}\hfill
+    \subfloat[HX with fined tubes \cite{Ngendakumana2018}.\label{fig:C3_HX_fin_tube}] {\includegraphics[width=0.4\textwidth]{HX_fin_tube}}\hfill
+    \subfloat[Plate heat-exchangers \cite{Ngendakumana2018}.\label{fig:C3_PHE}]{\includegraphics[width=0.4\textwidth]{HX_brased_plate}}
+    \caption{HX illustrations.} \label{fig:C3_HX}
 \end{figure}
 
 The selected family will highly depends on the type of application that is targeted. Plate heat-exchangers are one of the most compact type of heat-exchangers. This compactness is highly appreciated for any system where the foot print and volume has to be as minimal as possible. However, this is at the cost of more complicated maintenance due the brazing of the plates.
@@ -573,7 +586,7 @@ This section will not cover the specificity of these different families. Instead
     \begin{figure}[h]
         \centering
         \includegraphics[width=0.4\textwidth]{parallele_flow}
-        \caption{Parallel flow heat-exchanger \cite{Ngendakumana2018}}
+        \caption{Parallel flow heat-exchanger \cite{Ngendakumana2018}.}
         \label{fig:C3_para_flow}
     \end{figure}
 
@@ -591,7 +604,7 @@ This section will not cover the specificity of these different families. Instead
           \begin{figure}[h]
               \centering
               \includegraphics[width=0.4\textwidth]{crossed_flow_non_mixed}
-              \caption{Cross flow heat-exchanger, both fluids unmixed \cite{Ngendakumana2018}}
+              \caption{Cross flow heat-exchanger, both fluids unmixed \cite{Ngendakumana2018}.}
               \label{fig:C3_cross_flow_unmixed}
           \end{figure}
 
@@ -600,7 +613,7 @@ This section will not cover the specificity of these different families. Instead
           \begin{figure}[h]
               \centering
               \includegraphics[width=0.4\textwidth]{crossed_flow_one_mixed}
-              \caption{Cross flow heat-exchanger, one fluid mixed \cite{Ngendakumana2018}}
+              \caption{Cross flow heat-exchanger, one fluid mixed \cite{Ngendakumana2018}.}
               \label{fig:C3_cross_flow_1mixed}
           \end{figure}
 
@@ -612,7 +625,7 @@ Considering the parallel and counter flow heat-exchanger, Two temperature differ
 \begin{figure}[h]
     \centering
     \subfloat[Temperature profil for parallel flow HX \cite{Ngendakumana2018}\label{fig:C3_HX_par_flow_T}]{\includegraphics[width=0.45\textwidth]{parallele_flow_T}}\hfill
-    \subfloat[Temperature profil for counter flow HX \cite{Ngendakumana2018}\label{fig:C3_HX_opo_flow_T}] {\includegraphics[width=0.45\textwidth]{opposite_flow_T}}\caption{Temperature profiles for different stream configurations}\label{fig:C3_Tprof}
+    \subfloat[Temperature profil for counter flow HX \cite{Ngendakumana2018}\label{fig:C3_HX_opo_flow_T}] {\includegraphics[width=0.45\textwidth]{opposite_flow_T}}\caption{Temperature profiles for different stream configurations.}\label{fig:C3_Tprof}
 \end{figure}
 
 where the subscripts h and c indicate which flow is considered (h:hot; c:cold), and the subscripts i and o refer to the inlet and the outlet of the heat-exchanger.
