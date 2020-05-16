@@ -5,7 +5,7 @@
 
 <h3 id="turbomachines"><s>Turbomachines</s></h3>
 <ul>
-<li>~~Ajouter section general ~~
+<li><s>Ajouter section general</s>
 <ul>
 <li><s>similiratité</s></li>
 <li><s>Triangle de vitesse</s></li>
