@@ -3,30 +3,30 @@
 
 ---
 
-<h3 id="turbomachines">Turbomachines</h3>
+<h3 id="turbomachines"><s>Turbomachines</s></h3>
 <ul>
-<li>Ajouter section general
+<li>~~Ajouter section general ~~
 <ul>
-<li>similiratité</li>
-<li>Triangle de vitesse</li>
-<li>enthalpy variation</li>
+<li><s>similiratité</s></li>
+<li><s>Triangle de vitesse</s></li>
+<li><s>enthalpy variation</s></li>
 </ul>
 </li>
 </ul>
-<h3 id="thermo">Thermo</h3>
+<h3 id="thermo"><s>Thermo</s></h3>
 <ul>
-<li>Ajouter section a propos des différentes transformations</li>
+<li><s>Ajouter section a propos des différentes transformations</s></li>
 </ul>
-<h3 id="cycle-de-brayton">Cycle de Brayton</h3>
+<h3 id="cycle-de-brayton"><s>Cycle de Brayton</s></h3>
 <ul>
-<li>Corriger et commenter les graphes</li>
+<li><s>Corriger et commenter les graphes</s></li>
 </ul>
 <h2 id="implementation-composants">Implementation composants</h2>
 <h3 id="fluides---propriété">Fluides - propriété</h3>
 <ul>
 <li>Gas
 <ul>
-<li>Tables NASA pour l’enthalpie, le cp et l’entropie (pour augmenter la rapidité) – regression polynomiale</li>
+<li>Tables NASA pour l’enthalpie et le cp (pour augmenter la rapidité) – regression polynomiale</li>
 <li>Gas constant - relation avec fuel air ratio</li>
 <li>viscosité dynamique et conductivité thermique --&gt; CoolProp</li>
 <li>utilisation des fractions massiques/molaires pour le calcul de variables thermo d’un mélange de gaz idéaux</li>
@@ -80,6 +80,3 @@
 wo</li>
 </ul>
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNDM4NDUxMzJdfQ==
--->
