@@ -1,39 +1,153 @@
 \graphicspath{{Chapitre_6/Images/}}
-\chapter{Brayton cycle modeling}\label{C6}
-\quad\, This chapter is about the description of the different part constituting the Brayton cycle model. The previous chapter described the main structure of the program. Also, it showed that the programming have been performed in such manner that all the object can individually be called by the main function of the model without too much difficulties.
+\chapter{Brayton cycle modeling - Overview}\label{C6}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                         %%%%%
+%%%%% Introduction chapitre 5 %%%%%
+%%%%%                         %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\quad\, In the chapter \ref{C5}, the Brayton cycle has been introduced by presenting two configurations. Also, it has been mentioned that many other configurations (illustrated in the annex \ref{annex:Brayton_variant}) exists to cover a large panel of applications. 
 
-When the objects have been built, two categories started to be drawn. The first category represents the object called \textbf{core objects}, are ones for which the ''position'' within the program does not change once the type of Brayton cycle configuration have been chosen. Those are, for instance, the compressor, the turbine, the combustion chamber,etc\dots
+This chapter will be devoted to the description of the  Brayton cycle model. This model, will only consider steady state operations. Thus, transient effects like acceleration of the turbomachines or the heating up of the heat-exchangers will not be taken into consideration.
+ 
 
-Then, there is a second category which corresponds to the \textbf{flow objects}. Those are essentially the different fluids that will move through the cycle. These fluids will be submitted to various transformations induced by the core objects. The flow objects are mainly composed of the composition of the represented fluids. Also, depending on the fluids, some specific procedures are embedded in these objects.
+\section{Python language}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                         %%%%%
+%%%%%  <<Python language>>    %%%%%
+%%%%%                         %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\quad\, Python is a computing language that was created by Guido van Rossum at the Centrum Wiskunde \& Informatica (CWI - \url{https://www.cwi.nl}) in the early 1990s. Starting 1995, G. van Rossum continued to work on Python at the Corporation for National Research Initiatives (CNRI - \url{https://www.cnri.reston.va.us/}). Since the very first release, the language was open source. This means that the source code was accessible to anyone. 
 
-This chapter dedicated to the modeling of the Brayton cycle will describe the structure of these different objects. The methods of implementation of the theoretical notions through numerical tools will be explained as well.
+From this time, Python progressively gained in popularity, and the community participating to the development of the software didn't stop to grow. Today, this language is used by many companies and for many types of applications. Indeed, this programming language is used for website creation, machine learning, automation, etc. 
 
-\section{Flow objects}
-\quad\ The first category to be considered in this chapter is the one represented the flow objects. Those, as it has been said, contain the information regarding the different fluids used within the cycle.
+Since Python is an open source language, it lives thanks to its community which creates and shares libraries. Indeed, what have already been implemented in the past can be freely used by the other users. Moreover, new users can easily start developing under Python thanks to huge amount of guide and documentation to starting learning about the Python language.
 
-\subsection{Composition of the fluids}
-Within a Brayton cycle, the working fluids are in the majority of the cases ar air, gaseous fuel, and exhaust gas. These two fluids can be decomposed, without losing in accuracy, into ideal gases. Those gases are ones that follows the ideal equation seen during the chapter \ref{C2}. 
+Also, Python is a programming language that allows the object oriented programming. This paradigm consists in the definition of blocks of code (called objects) which are able to interact together through relations, defined in order to solve a given problem. This allows to create computer code that can evolve through the times. 
 
-From common knowledge, it is known that the atmospheric air is mainly composed of 79\% of $\ce{N2}$ and 21\% of $\ce{O2}$, two gases that with a behavior closed from the behavior of an ideal gas.
+\section{Structure of the model}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                         %%%%%
+%%%%% <<Structure of the>>    %%%%%
+%%%%%      <<model>>          %%%%%
+%%%%%                         %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\quad\, the previous section shows that Python was a great language due to its huge community and the ability to do oriented object programming. Combined with the fact that Python is free and open source, it has been chosen to program the model developed during this master thesis under the Python language.
 
-Considering now the fuel, its composition really varies depending on the location. Indeed, if the fuel used in the system is natural gas, the principal component is $\ce{CH4}$, but there are also $\ce{C}_\text{m}\ce{H}_\text{n}$, $\ce{CO2}$, $\ce{N2}$,etc\dots
+The focus of this section is the description of the structure of the computer code itself. As it can be expect from what have been previously said, the program will be composed of multiple blocks that will interact together.
 
-The Table \ref{tab:C6_compgas} gives some data about the natural gas composition for some sites.
+\subsection{Inputs}
+\quad\, To start the program, the user has to provide an input file that will contain the required data for the program. The input file is structured as a dictionary\footnote{see \url{https://www.w3schools.com/python/python_dictionaries.asp} for further information} and is composed of three main fields. A template of an input file for the gas turbine configuration is given in the annex \ref{annex:Input_file}.
 
+The first field named "Type" says to the computer code which configuration of the Brayton cycle has to be assess. The possible configurations are listed in Table \ref{tab:C5_inputconfig}.
 
-\begin{table}[h]
+\begin{longtable}[c]{ll}
+\caption{Program input - "Type" field}
+\label{tab:C5_inputconfig}\\
+\hline
+Type - Abbreviation & Type - full name                            \\ \hline
+\endfirsthead
+%
+\multicolumn{2}{c}%
+{{\bfseries Table \thetable\ continued from previous page}} \\
+\hline
+Type - Abbreviation & Type - full name                            \\ \hline
+\endhead
+%
+GT                  & Gas Turbine                                 \\
+RGT                 & Regenerative Gas Turbine                    \\
+IRGT                & Intercooler-Regenerative Gas Turbine        \\
+RHGT                & Regenerative-Reheat Gas Turbine             \\
+IHGT                & Intercooler-Reheat Gas Turbine              \\
+IRHGT               & Intercooler-Regenerative-Reheat Gas Turbine \\
+EFGT                & Externally-Fired Gas Turbine               
+\end{longtable} 
+
+These different configurations are described in the annex \ref{annex:Brayton_variant}. 
+
+The second field list all the input data required to initialized the model. The number of variables to be specified at the start of the program depends on the selected configuration. For instance, considering the gas turbine (GT), the inputs required are listed in Table \ref{tab:C5_inputGT}.
+\begin{longtable}[c]{llll}
+\caption{Input - gas turbine (GT)}
+\label{tab:C5_inputGT}\\
+\hline
+Parameter                                                                             & Symbol         & Parameter                                                                        & Symbol           \\ \hline
+\endfirsthead
+\multicolumn{4}{c}%
+{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
+Parameter                                                                             & Symbol         & Parameter                                                                        & Symbol           \\ \hline
+\endhead
+\multicolumn{4}{r}{\textit{Continued on next page}} \\
+\endfoot
+\endlastfoot
+%
+Reference temperature (°C)                                                            & $T_{ref}$      & \begin{tabular}[c]{@{}l@{}}Combustion chamber\\ efficiency (\%)\end{tabular}     & $\eta_{cc}$      \\
+Ambient temperature (°C)                                                              & $T_{amb}$      & \begin{tabular}[c]{@{}l@{}}Shaft mechanical\\ efficiency (\%)\end{tabular}       & $\eta_{shaft}$   \\
+Fuel temperature (°C)                                                                 & $T_{fuel}$     & Generator efficiency (\%)                                                        & $\eta_{gen}$     \\
+\begin{tabular}[c]{@{}l@{}}Combustion chamber\\ exhaust temperature (°C)\end{tabular} & $T_{cc,ex}$    & \begin{tabular}[c]{@{}l@{}}Compressor isentropic \\ efficiency (\%)\end{tabular} & $\eta_{comp}$    \\
+Reference pressure (Pa)                                                               & $p_{ref}$      & \begin{tabular}[c]{@{}l@{}}Turbine isentropic \\ efficiency (\%)\end{tabular}    & $\eta_{t}$       \\
+Ambient pressure (Pa)                                                                 & $p_{amb}$      & \begin{tabular}[c]{@{}l@{}}Compressor pressure\\ ratio (-)\end{tabular}          & $P_{comp,ratio}$ \\ \hline
+Duct pressure drop (\%)                                                               & $Dp_{duct}$    & Air mass flow rate (kg/s)                                                        & $\dot{m}_{air}$  \\
+\begin{tabular}[c]{@{}l@{}}Combustion chamber\\ pressure drop (\%)\end{tabular}       & $Dp_{cc}$      & Nominal mass flow rate (kg/s)                                                    & $\dot{m}_{nom}$  \\
+Chimney suction (Pa)                                                                  & $Dp_{chimney}$ & Air factor (-)                                                                   & $\lambda$         \\ \hline
+Fuel composition (\%)                                                                 & $Fuel_{char}$  & {\color{PineGreen} Compressor performance map} (.xls/.xlsx) &  $Comp_{excel}$                 \\
+Air composition (\%)                                                                  & $Air_{char}$   &{\color{PineGreen} Turbine performance map} (.xls/.xlsx) & $Turb_{excel}$ \\ \hline
+{\color{Gray} Rotational speed} (rpm) & $N$ & &\\ \hline
+\end{longtable}
+
+The last field named "Selection" is composed of two boolean variables. The first one gives the choice to add a water heat exchanger between the \textit{end} of the cycle and the exhaust. When this variable, named "WHX", is set to \textit{true}, the following inputs as to be added.
+
+\begin{itemize}
+\setstretch{1}
+\item Water inlet temperature (\degree C): $T_{whx,su,w}$
+\item Water outlet temperature (\degree C): $T_{whx,ex,w}$
+\item Water inlet pressure (Pa): $p_{whx,su,w}$
+\end{itemize}
+
+"MAP" is the second variable. It used to choose whether or not the performance map for the turbomachines (defined as in chapter \ref{C4}). If the variable is set to \textit{true}, the {\color{Gray} gray} field in Table \ref{tab:C4_inputGT} is at least required. Then, depending on the validity of the {\color{PineGreen} pinegreen} fields, the compressor and/or the turbine map(s) will be used in the code. 
+
+When a valid compressor map is given, the variables $\eta_{comp}$ and $P_{comp,ratio}$ are not required to be filled. Indeed, as seen in chapter \ref{C4}, the knowledge of two independent operating variables are sufficient to derived the other variables. In particular, the rotational speed $N$, the air mass flow rate and the inlet state of the compressor are known. Thus, using the relation (\ref{eq:C4_mc}) to obtain the corrected mass flow rate $\dot{m}_{c,comp}$ through the compressor, the compression ratio and the compressor efficiency can be derived.  
+
+Similarly, if a valid turbine map is provided in the inputs, the turbine isentropic efficiency $\eta_{t}$ and the combustion chamber exhaust temperature $T_{cc,ex}$ specified in the inputs will not be used. From the knowledge of the compression ratio, the expansion ratio $P_{turb,ratio}$ can be obtained by computing the pressure drops within the cycle. Then, the efficiency and the corrected mass flow rate $\dot{m}_{c,turb}$ can be derived since two independent variables are known.
+
+The knowledge of both the corrected and \textit{not} corrected mass flow rate through the turbine are sufficient to compute the turbine inlet temperature (TIT). Indeed, the relation (\ref{eq:C4_mc}) from chapter \ref{C4} can be rewritten as followed
+
+\begin{equation}
+    \setstretch{1}
+TIT =T_{ref}\cdot \left(\frac{\dot{m}_c}{\dot{m}}\cdot\frac{p}{p_{ref}}\right)
+\end{equation} 
+
+which allows the computation of the turbine inlet temperature.
+\newpage
+\subsection{Flow chart of the model}
+\quad\,  The previous section detailed the the structure of the input file to be provided at the start of the program. Once provided, the program will first read the "Type" field to select the desired configuration. If the configuration is contained in the database of the program, the associated model will be created.
+\begin{wrapfigure}{l}{0.45\linewidth}
 \centering
-\begin{tabular}{ll|lllll}
-                                &                                       & \multicolumn{4}{c}{Molar fraction (in \%)}                            &                 \\ \hline
-Combustible                  & Location                              & $\ce{CH4}$ & $\ce{C}_\text{m}\ce{H}_\text{n}$ & $\ce{CO2}$ & $\ce{N2}$ & $HCV_l$ (kJ/kg) \\ \hline
-\multirow{4}{*}{Natural gas} & Slochteren (Netherlands)              & 81.4       & 3.5                              & 0.9        & 14.2      & 38100           \\
-                                & North sea                             & 88.6       & 6.1                              & 1.4        & 3.9       & 44690           \\
-                                & CIS & 92.3       & 4.3                              & 0.4        & 3.0       & 46540           \\
-                                & Algeria                               & 87.0       & 12.6                             & -          & 0.4       & 49150          
-\end{tabular}
-\caption{Composition and lower heating calorific value of the natural gas \cite{Leonard2018}.}
-\label{tab:C6_compgas}
-\end{table}
-with CIS being the ''Commonwealth of Independent States'' \cite{EncyclopaediaBritannica2018}.
+\includegraphics{Flow_chart.png}
+\caption{Flow chart of the Brayton cycle model}
+\label{fig:C6_flowchart}
+\end{wrapfigure}
+The second step consists in the reading and storage of the input data from the input file. Then, a restructuring of the input is performed to be understood by the model. This extraction of data is performed regarding to value of the variables within the field "Selection".
 
-As it can be noticed, the location of the fuel sink have a strong influence on the gas composition. Therefore, to assure the consumer that the sold gas always has the same heating calorific value, a mixture is made at the factory.
+When all the required inputs are loaded, the program starts the model. To initiate the assessment of the performance of the selected cycle, a initial guess on the mass flow rate of fuel $\dot{m}_{fuel}$ is realized. Then, the model \textit{travels} along the cycle by calling the objects associated to the real components. 
+After having gone through the combustion chamber(s), the mass flow rate of fuel is re-evaluated to update the initial guess. If the change is smaller than $\varepsilon$, the model escapes the loop. Otherwise, new passages are performed until no noticeable change of the mass flow rate value.
+   
+Finally, outputs are generated based on the assessed cycle. Among these, the temperature, pressure, enthalpy, and density at each state of the cycle are specified. The fuel mass flow rate is also provided to the user along with the thermal efficiency of the cycle and the power consumed and produced. 
+
+This structure is followed for every selected configurations. The flow chart on Figure \ref{fig:C6_flowchart} graphically illustrates the structure of the model from the reading of the inputs to the generation of the outputs.\\ \newpage
+
+As it has been presented, the main structure of the program is relatively linear without many branches. This linear scheme allows a rapid comprehension of how the program works from the outside. However, when considering the calls of the objects in the ''Calculate\_cycle'' function, the structure becomes more complex. 
+
+Thus, this main function relies on objects to live within the program.  Among these objects, two categories, namely the \textbf{static} and \textbf{non-static} object, can be defined.
+
+The first category called \textbf{static} objects are the objects associated to the thermodynamic components (compressor, turbine,etc...). These objects are called statics because each of the components will not change of position in the cycle once the latter is defined. \\
+
+Then, there are the objects representing the fluids involved in cycle. These \textbf{non static} objects will live the thermodynamic cycle by going through the different components.
+
+For a Brayton cycle, the modeled fluids are typically air, fuel, exhaust gas, and sometimes water (if there is any water heat exchanger). This explicit definition for each of these fluids is useful. Indeed, it allows to create a more flexible model since the modification of one fluid composition has only to be performed while defining the associated object. 
+
+The next chapter will present the implementation method of each thermodynamic components. For each of those, the functions involved will be defined and explained. Also, some links with the theoretical notions seen in chapters \ref{C2}, \ref{C3} and \ref{C4} will be created.
+
+
+
+
+
+ 
