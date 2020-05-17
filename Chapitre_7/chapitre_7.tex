@@ -36,4 +36,79 @@ Combustible                  & Location                              & $\ce{CH4}
 \end{table}
 with CIS being the ''Commonwealth of Independent States'' \cite{EncyclopaediaBritannica2018}.
 
-As it can be noticed, the location of the fuel sink have a strong influence on the gas composition. Therefore, to assure the consumer that the sold gas always has the same heating calorific value, a mixture is made at the factory.
+As it can be noticed, the location of the fuel sink have a strong influence on the gas composition. Therefore, to assure the consumer that the sold gas always has the same heating calorific value, a mixture is made at the factory. 
+
+The different components of the fuel can all be considered as ideal gases. 
+
+Finally, there is the exhaust gas for which the composition depends on the one of the two previously mentioned gases. Indeed, the theoretical part in chapter \ref{C4} about the combustion shows that the exhaust gas composition can be obtained through one of the reactions (\ref{eq:C7_chemgeng01}).
+\begin{equation}
+    \setstretch{1}
+    \begin{cases}
+        \ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}} +}\kappa\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> mCO2 +} \kappa(\lambda-1)\ce{O2 + \frac{n}{2}H2O +} (\kappa\lambda\frac{79}{21} + \frac{\text{y}}{2})\ce{N2} & \text{ for \(\lambda\geq 1\)} \\
+        \ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}} +}\kappa\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> aCO2 + bCO + \frac{n}{2}H2O} + (\kappa\lambda\frac{79}{21} + \frac{\text{y}}{2})\ce{N2}                      & \text{ for \(\lambda< 1\)}
+    \end{cases}\label{eq:C7_chemgeng01}
+\end{equation}
+where the coefficients ''m'', ''n'', ''x'', and ''y'' have to be determined. As a reminder, $\kappa$ is a coefficient equal to m+$\frac{\text{n}}{4}$-$\frac{\text{x}}{2}$. 
+\newpage
+\subsubsection{Computation of the fuel coefficients}
+\quad\ In the equations, the used fictitious fuel is $\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}}}$. The coefficients ''m'', ''n'', ''x'' and ''y'' are obtained by analyzing the composition of the real fuel.
+
+To determine these coefficients, the knowledge of the molar fraction $x_i$\footnote{with $i$ being a given species} of the different species is required. If the fuel composition is given as mass fraction, the conversion is made using the formula (\ref{eq:C7_y2x}).
+
+\begin{equation}
+\setstretch{1}
+    x_i = y_i\cdot \frac{MM_{tot}}{MM_i}\label{eq:C7_y2x}
+\end{equation}
+
+with $MM_i$ and $MM_{tot}$ being respectively the molar mass of the specie $i$ and of the fuel.
+Then, a filter is applied to eliminate the species that will not react during the combustion. Among these components considered as stable, there are the water \ce{H2O}, the nitrogen \ce{N2} and the carbon dioxide \ce{CO2}. Other elements, like the noble gases, could be considered as well but those are rarely present within a fossil fuel.
+
+Once the filter is done, the global mass fraction of the remaining part of the fuel, called fictitious fuel, is computed. The expression of the real fuel composition is then  ($y_{\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}}}}$, $y_{\ce{H2O}}$, $y_{\ce{N2}}$, $y_{\ce{CO2}}$).
+
+Considering now only the fictitious fuel $\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}}}$, the fuel coefficients can be obtained. This is done by iterating over the different species contained within the fictitious fuel. Initially, the coefficients ''m'' to ''y'' are set to 0. The following operation are then performed for each species constituting the fictitious fuel:
+\begin{itemize}
+    \item First, the program analyze the atomic composition of the component. It counts, for one mole, the number of moles of carbon \ce{C}, hydrogen \ce{H}, oxygen \ce{O}, and nitrogen \ce{N} that composed the component. For instance, the returning result for \ce{CH4} will be ($x_{\ce{C}}$, $x_{\ce{H}}$, $x_{\ce{O}}$, $x_{\ce{N}}$) = (1, 4, 0, 0).
+    \item Then, the contribution of the component to the fuel coefficients is taken into account. By considering the molar fraction $x_{\left.i\right|_f}$ of the component in the fictitious fuel, the four coefficients are updated according to the rules (\ref{eq:C7_updatecoef}).
+    
+    \begin{equation}
+    \setstretch{1}
+        \begin{cases}
+        \text{m}=\text{m}+x_{\left.i\right|_f}\cdot x_{\ce{C}}\\
+        \text{n}=\text{n}+x_{\left.i\right|_f}\cdot x_{\ce{H}}\\
+        \text{x}=\text{x}+x_{\left.i\right|_f}\cdot x_{\ce{O}}\\
+        \text{y}=\text{y}+x_{\left.i\right|_f}\cdot x_{\ce{N}}
+        \end{cases}\label{eq:C7_updatecoef}
+    \end{equation}
+\end{itemize}
+After having perform this iterative process, the computed coefficients are stored in memory to be used during the fumes composition computations.
+\subsubsection{Exhaust gas compositions}
+\quad\ The preliminary computations described in the previous lines were required to compute the coefficients ''m'', ''n'', ''x'', and ''y'' of the fictitious fuel $\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}}}$. From this point, the composition of the fumes can easily be obtained. 
+
+Indeed, by performing a quick analysis of the first reaction of (\ref{eq:C7_chemgeng01}), the relations (\ref{eq:C7_O2}) to (\ref{eq:C7_CO2y}) can be obtained.
+\begin{subequations}
+\begin{align}
+    w_{\left.\ce{O2}\right|{fumes}} &= w_{\left.\ce{O2}\right|{air}} - \kappa\cdot w_{\left.\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}}}\right|{fuel}}\label{eq:C7_O2}\\
+    \rightarrow & y_{\left.\ce{O2}\right|{fumes}} =  w_{\left.\ce{O2}\right|{fumes}}\cdot \frac{MM_{\ce{O2}}}{\dot{m}_{gas}}\label{eq:C7_O2y}\\
+    w_{\left.\ce{N2}\right|{fumes}} &= w_{\left.\ce{N2}\right|{air}} + w_{\left.\ce{N2}\right|{fuel}} + \frac{\text{y}}{2}\cdot w_{\left.\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}}}\right|{fuel}}\label{eq:C7_N2}\\
+    \rightarrow & y_{\left.\ce{N2}\right|{fumes}} =  w_{\left.\ce{N2}\right|{fumes}}\cdot \frac{MM_{\ce{N2}}}{\dot{m}_{gas}}\label{eq:C7_N2y}\\
+    w_{\left.\ce{H2O}\right|{fumes}} &= w_{\left.\ce{H2O}\right|{air}} + w_{\left.\ce{H2O}\right|{fuel}} + \frac{\text{n}}{2}\cdot w_{\left.\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}}}\right|{fuel}}\label{eq:C7_H2O}\\
+    \rightarrow & y_{\left.\ce{H2O}\right|{fumes}} =  w_{\left.\ce{H2O}\right|{fumes}}\cdot \frac{MM_{\ce{H2O}}}{\dot{m}_{gas}}\label{eq:C7_H2Oy}\\
+    w_{\left.\ce{CO2}\right|{fumes}} &= w_{\left.\ce{CO2}\right|{air}} + w_{\left.\ce{CO2}\right|{fuel}} + \text{m}\cdot w_{\left.\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}}}\right|{fuel}}\label{eq:C7_CO2}\\
+    \rightarrow & y_{\left.\ce{CO2}\right|{fumes}} =  w_{\left.\ce{CO2}\right|{fumes}}\cdot \frac{MM_{\ce{CO2}}}{\dot{m}_{gas}}\label{eq:C7_CO2y}
+\end{align}\label{eq:C7_compfumes}
+\end{subequations}
+Where $w_{\left.i\right|fluid}$ corresponds to the molar flow rate of the element $i$ within the $fluid$. The mass flow rate $\dot{m}_{gas}$ is obtained as being the sum $\dot{m}_{air}+\dot{m}_{fuel}$.
+
+\subsubsection{Liquid composition}
+\quad\ Aside the gases, water will also be used when considering the water heat-exchanger. For this particular case, it will be supposed that pure water is used.
+
+\subsection{Thermodynamic state assessment}
+\quad\ A method to compute the composition of the exhaust gas based on the air and fuel composition has been established in the previous section. Now that the required tools to determine the fluid compositions have been developed, it is possible to evaluate the state of the fluids. 
+
+To minimize the computation time, only the state at the beginning and ending of each core objects will be evaluated. The reason behind this choice is that it is sufficient to know the state at the inlet and outlet of each components to assess the power production/consumption, the heat transfer between two fluids,etc\dots
+
+Assuming that the temperature and pressure at a given point are known, there exist several possibilities regarding to the evaluation of the flow state at this point. 
+
+The first option consists in using CoolProp \cite{Bell2014}, an open-source thermodynamic library. This tools, as it has been mentioned in the chapter \ref{C3}, uses the Helmotz and Gibbs functions to evaluate the desired state variables. When using CoolProp, the state is accuratly assess since the library is solving the exact partial derivative equations.
+
+However, when considering an ideal gas, 
