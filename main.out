@@ -18,12 +18,12 @@
 \BOOKMARK [1][-]{section.3.2}{Second principle definition}{chapter.3}% 18
 \BOOKMARK [1][-]{section.3.3}{Type of reversible transformations}{chapter.3}% 19
 \BOOKMARK [2][-]{subsection.3.3.1}{Isothermal transformation}{section.3.3}% 20
-\BOOKMARK [2][-]{subsection.3.3.2}{Isobaric transformation}{section.3.3}% 21
-\BOOKMARK [2][-]{subsection.3.3.3}{Polytropic transformation}{section.3.3}% 22
+\BOOKMARK [2][-]{subsection.3.3.2}{Polytropic transformation}{section.3.3}% 21
+\BOOKMARK [2][-]{subsection.3.3.3}{Isobaric transformation}{section.3.3}% 22
 \BOOKMARK [2][-]{subsection.3.3.4}{Isentropic transformation}{section.3.3}% 23
-\BOOKMARK [1][-]{section.3.4}{Isentropic efficiency}{chapter.3}% 24
-\BOOKMARK [1][-]{section.3.5}{Computation of the thermodynamic properties}{chapter.3}% 25
-\BOOKMARK [1][-]{section.3.6}{Entropy variation}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.4}{Computation of the thermodynamic properties}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.5}{Entropy variation}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.6}{Isentropic efficiency}{chapter.3}% 26
 \BOOKMARK [0][-]{chapter.4}{Thermodynamic components}{}% 27
 \BOOKMARK [1][-]{section.4.1}{Turbomachines}{chapter.4}% 28
 \BOOKMARK [2][-]{subsection.4.1.1}{General principles}{section.4.1}% 29
@@ -50,3 +50,5 @@
 \BOOKMARK [2][-]{subsection.6.2.1}{Inputs}{section.6.2}% 50
 \BOOKMARK [2][-]{subsection.6.2.2}{Flow chart of the model}{section.6.2}% 51
 \BOOKMARK [0][-]{chapter.7}{Brayton cycle modeling}{}% 52
+\BOOKMARK [1][-]{section.7.1}{Flow objects}{chapter.7}% 53
+\BOOKMARK [2][-]{subsection.7.1.1}{Composition of the fluids}{section.7.1}% 54

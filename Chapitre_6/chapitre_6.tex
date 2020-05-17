@@ -1,5 +1,39 @@
 \graphicspath{{Chapitre_6/Images/}}
 \chapter{Brayton cycle modeling}\label{C6}
-\quad\, This chapter is about the description of the different part constituting the Brayton cycle model. The previous chapter described the main structure of the program. Also, it showed that the model is designed in such manner that the objects representing the different components of the cycle are consecutively called.
+\quad\, This chapter is about the description of the different part constituting the Brayton cycle model. The previous chapter described the main structure of the program. Also, it showed that the programming have been performed in such manner that all the object can individually be called by the main function of the model without too much difficulties.
 
-Two categories, namely the static and non-static objects, have been defined to distinguish the fluids to the thermodynamic components. Indeed, the non-static objects are constructed to be used within the static objects.
+When the objects have been built, two categories started to be drawn. The first category represents the object called \textbf{core objects}, are ones for which the ''position'' within the program does not change once the type of Brayton cycle configuration have been chosen. Those are, for instance, the compressor, the turbine, the combustion chamber,etc\dots
+
+Then, there is a second category which corresponds to the \textbf{flow objects}. Those are essentially the different fluids that will move through the cycle. These fluids will be submitted to various transformations induced by the core objects. The flow objects are mainly composed of the composition of the represented fluids. Also, depending on the fluids, some specific procedures are embedded in these objects.
+
+This chapter dedicated to the modeling of the Brayton cycle will describe the structure of these different objects. The methods of implementation of the theoretical notions through numerical tools will be explained as well.
+
+\section{Flow objects}
+\quad\ The first category to be considered in this chapter is the one represented the flow objects. Those, as it has been said, contain the information regarding the different fluids used within the cycle.
+
+\subsection{Composition of the fluids}
+Within a Brayton cycle, the working fluids are in the majority of the cases ar air, gaseous fuel, and exhaust gas. These two fluids can be decomposed, without losing in accuracy, into ideal gases. Those gases are ones that follows the ideal equation seen during the chapter \ref{C2}. 
+
+From common knowledge, it is known that the atmospheric air is mainly composed of 79\% of $\ce{N2}$ and 21\% of $\ce{O2}$, two gases that with a behavior closed from the behavior of an ideal gas.
+
+Considering now the fuel, its composition really varies depending on the location. Indeed, if the fuel used in the system is natural gas, the principal component is $\ce{CH4}$, but there are also $\ce{C}_\text{m}\ce{H}_\text{n}$, $\ce{CO2}$, $\ce{N2}$,etc\dots
+
+The Table \ref{tab:C6_compgas} gives some data about the natural gas composition for some sites.
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll|lllll}
+                                &                                       & \multicolumn{4}{c}{Molar fraction (in \%)}                            &                 \\ \hline
+Combustible                  & Location                              & $\ce{CH4}$ & $\ce{C}_\text{m}\ce{H}_\text{n}$ & $\ce{CO2}$ & $\ce{N2}$ & $HCV_l$ (kJ/kg) \\ \hline
+\multirow{4}{*}{Natural gas} & Slochteren (Netherlands)              & 81.4       & 3.5                              & 0.9        & 14.2      & 38100           \\
+                                & North sea                             & 88.6       & 6.1                              & 1.4        & 3.9       & 44690           \\
+                                & CIS & 92.3       & 4.3                              & 0.4        & 3.0       & 46540           \\
+                                & Algeria                               & 87.0       & 12.6                             & -          & 0.4       & 49150          
+\end{tabular}
+\caption{Composition and lower heating calorific value of the natural gas \cite{Leonard2018}.}
+\label{tab:C6_compgas}
+\end{table}
+with CIS being the ''Commonwealth of Independent States'' \cite{EncyclopaediaBritannica2018}.
+
+As it can be noticed, the location of the fuel sink have a strong influence on the gas composition. Therefore, to assure the consumer that the sold gas always has the same heating calorific value, a mixture is made at the factory.

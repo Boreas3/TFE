@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.4.22)  15 MAY 2020 17:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.4.22)  17 MAY 2020 13:58
 entering extended mode
 **"g:/Mon Drive/TFE/main.tex"
 ("g:/Mon Drive/TFE/main.tex"
@@ -321,6 +321,12 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \c@LT@tables=\count285
 \c@LT@chunks=\count286
 \LT@p@ftn=\toks21
+) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/multirow\multirow.sty"
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip70
+\multirow@cntb=\count287
+\multirow@dima=\skip71
+\bigstrutjot=\dimen165
 ) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
@@ -340,8 +346,8 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 )) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/frontendlayer\tikz.sty" ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/basiclayer\pgf.sty" ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgfrcs.sty" ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pgfutil-common.tex"
 \pgfutil@everybye=\toks22
-\pgfutil@tempdima=\dimen165
-\pgfutil@tempdimb=\dimen166
+\pgfutil@tempdima=\dimen166
+\pgfutil@tempdimb=\dimen167
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pgfutil-common-lists.tex")) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pgfutil-latex.def"
 \pgfutil@abb=\box52
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ms\everyshi.sty"
@@ -358,26 +364,26 @@ Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pgfkeysfiltered.code.tex"
 \pgfkeys@tmptoks=\toks25
 ))
-\pgf@x=\dimen167
-\pgf@y=\dimen168
-\pgf@xa=\dimen169
-\pgf@ya=\dimen170
-\pgf@xb=\dimen171
-\pgf@yb=\dimen172
-\pgf@xc=\dimen173
-\pgf@yc=\dimen174
-\pgf@xd=\dimen175
-\pgf@yd=\dimen176
+\pgf@x=\dimen168
+\pgf@y=\dimen169
+\pgf@xa=\dimen170
+\pgf@ya=\dimen171
+\pgf@xb=\dimen172
+\pgf@yb=\dimen173
+\pgf@xc=\dimen174
+\pgf@yc=\dimen175
+\pgf@xd=\dimen176
+\pgf@yd=\dimen177
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
-\c@pgf@counta=\count287
-\c@pgf@countb=\count288
-\c@pgf@countc=\count289
-\c@pgf@countd=\count290
+\c@pgf@counta=\count288
+\c@pgf@countb=\count289
+\c@pgf@countc=\count290
+\c@pgf@countd=\count291
 \t@pgf@toka=\toks26
 \t@pgf@tokb=\toks27
 \t@pgf@tokc=\toks28
-\pgf@sys@id@count=\count291
+\pgf@sys@id@count=\count292
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgf.cfg"
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
@@ -388,59 +394,59 @@ File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
 File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 ))) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex"
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count292
-\pgfsyssoftpath@bigbuffer@items=\count293
+\pgfsyssoftpath@smallbuffer@items=\count293
+\pgfsyssoftpath@bigbuffer@items=\count294
 ) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex"
 File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcore.code.tex"
 Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath.code.tex" ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathcalc.code.tex" ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathutil.code.tex") ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathparser.code.tex"
-\pgfmath@dimen=\dimen177
-\pgfmath@count=\count294
+\pgfmath@dimen=\dimen178
+\pgfmath@count=\count295
 \pgfmath@box=\box53
 \pgfmath@toks=\toks29
 \pgfmath@stack@operand=\toks30
 \pgfmath@stack@operation=\toks31
 ) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.code.tex" ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex") ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex") ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.random.code.tex") ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex") ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.base.code.tex") ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.round.code.tex") ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex") ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex"))) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count295
+\c@pgfmathroundto@lastzeros=\count296
 )) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfint.code.tex") ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex"
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen178
-\pgf@picmaxx=\dimen179
-\pgf@picminy=\dimen180
-\pgf@picmaxy=\dimen181
-\pgf@pathminx=\dimen182
-\pgf@pathmaxx=\dimen183
-\pgf@pathminy=\dimen184
-\pgf@pathmaxy=\dimen185
-\pgf@xx=\dimen186
-\pgf@xy=\dimen187
-\pgf@yx=\dimen188
-\pgf@yy=\dimen189
-\pgf@zx=\dimen190
-\pgf@zy=\dimen191
+\pgf@picminx=\dimen179
+\pgf@picmaxx=\dimen180
+\pgf@picminy=\dimen181
+\pgf@picmaxy=\dimen182
+\pgf@pathminx=\dimen183
+\pgf@pathmaxx=\dimen184
+\pgf@pathminy=\dimen185
+\pgf@pathmaxy=\dimen186
+\pgf@xx=\dimen187
+\pgf@xy=\dimen188
+\pgf@yx=\dimen189
+\pgf@yy=\dimen190
+\pgf@zx=\dimen191
+\pgf@zy=\dimen192
 ) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex"
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen192
-\pgf@path@lasty=\dimen193
+\pgf@path@lastx=\dimen193
+\pgf@path@lasty=\dimen194
 ) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex"
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen194
-\pgf@shorten@start@additional=\dimen195
+\pgf@shorten@end@additional=\dimen195
+\pgf@shorten@start@additional=\dimen196
 ) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex"
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfpic=\box54
 \pgf@hbox=\box55
 \pgf@layerbox@main=\box56
-\pgf@picture@serial@count=\count296
+\pgf@picture@serial@count=\count297
 ) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex"
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen196
+\pgflinewidth=\dimen197
 ) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex"
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen197
-\pgf@pt@y=\dimen198
-\pgf@pt@temp=\dimen199
+\pgf@pt@x=\dimen198
+\pgf@pt@y=\dimen199
+\pgf@pt@temp=\dimen256
 ) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorequick.code.tex"
 File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex"
@@ -449,12 +455,12 @@ File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex"
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen256
+\pgfarrowsep=\dimen257
 ) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen257
-\pgf@sys@shading@range@num=\count297
-\pgf@shadingcount=\count298
+\pgf@max=\dimen258
+\pgf@sys@shading@range@num=\count298
+\pgf@shadingcount=\count299
 ) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex"
 File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex"
@@ -471,58 +477,58 @@ File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfmoduleshapes.code.tex"
 File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfnodeparttextbox=\box58
-) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfmoduleplot.code.tex"
-File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
-("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty"
+("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfmoduleplot.code.tex"
+File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty"
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen258
-\pgf@nodesepend=\dimen259
+\pgf@nodesepstart=\dimen259
+\pgf@nodesepend=\dimen260
 ) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty"
 Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
 )) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgffor.sty" ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgfkeys.sty" ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pgfkeys.code.tex")) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/math\pgfmath.sty" ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath.code.tex")) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pgffor.code.tex"
 Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath.code.tex")
-\pgffor@iter=\dimen260
-\pgffor@skip=\dimen261
+\pgffor@iter=\dimen261
+\pgffor@skip=\dimen262
 \pgffor@stack=\toks32
 \pgffor@toks=\toks33
 )) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex"
 Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex"
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count299
-\pgfplotmarksize=\dimen262
+\pgf@plot@mark@count=\count300
+\pgfplotmarksize=\dimen263
 )
-\tikz@lastx=\dimen263
-\tikz@lasty=\dimen264
-\tikz@lastxsaved=\dimen265
-\tikz@lastysaved=\dimen266
-\tikz@lastmovetox=\dimen267
-\tikz@lastmovetoy=\dimen268
-\tikzleveldistance=\dimen269
-\tikzsiblingdistance=\dimen270
+\tikz@lastx=\dimen264
+\tikz@lasty=\dimen265
+\tikz@lastxsaved=\dimen266
+\tikz@lastysaved=\dimen267
+\tikz@lastmovetox=\dimen268
+\tikz@lastmovetoy=\dimen269
+\tikzleveldistance=\dimen270
+\tikzsiblingdistance=\dimen271
 \tikz@figbox=\box59
 \tikz@figbox@bg=\box60
 \tikz@tempbox=\box61
 \tikz@tempbox@bg=\box62
-\tikztreelevel=\count300
-\tikznumberofchildren=\count301
-\tikznumberofcurrentchild=\count302
-\tikz@fig@count=\count303
+\tikztreelevel=\count301
+\tikznumberofchildren=\count302
+\tikznumberofcurrentchild=\count303
+\tikz@fig@count=\count304
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfmodulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count304
-\pgfmatrixcurrentcolumn=\count305
-\pgf@matrix@numberofcolumns=\count306
+\pgfmatrixcurrentrow=\count305
+\pgfmatrixcurrentcolumn=\count306
+\pgf@matrix@numberofcolumns=\count307
 )
-\tikz@expandcount=\count307
+\tikz@expandcount=\count308
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex"
 File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wrapfig\wrapfig.sty"
-\wrapoverhang=\dimen271
-\WF@size=\dimen272
-\c@WF@wrappedlines=\count308
+\wrapoverhang=\dimen272
+\WF@size=\dimen273
+\c@WF@wrappedlines=\count309
 \WF@box=\box63
 \WF@everypar=\toks34
 Package: wrapfig 2003/01/31  v 3.6
@@ -531,54 +537,54 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifvtex.sty"
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count309
-\Gm@cntv=\count310
-\c@Gm@tempcnt=\count311
-\Gm@bindingoffset=\dimen273
-\Gm@wd@mp=\dimen274
-\Gm@odd@mp=\dimen275
-\Gm@even@mp=\dimen276
-\Gm@layoutwidth=\dimen277
-\Gm@layoutheight=\dimen278
-\Gm@layouthoffset=\dimen279
-\Gm@layoutvoffset=\dimen280
+\Gm@cnth=\count310
+\Gm@cntv=\count311
+\c@Gm@tempcnt=\count312
+\Gm@bindingoffset=\dimen274
+\Gm@wd@mp=\dimen275
+\Gm@odd@mp=\dimen276
+\Gm@even@mp=\dimen277
+\Gm@layoutwidth=\dimen278
+\Gm@layoutheight=\dimen279
+\Gm@layouthoffset=\dimen280
+\Gm@layoutvoffset=\dimen281
 \Gm@dimlist=\toks35
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.cfg"))
 No file main.aux.
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 27.
 ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 \symgns@font=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/ptm/m/n --> TS1/ptm/b/n on input line 26.
-Package gensymb Info: Math companion symbols declared on input line 26.
-LaTeX Info: Redefining \degree on input line 26.
-LaTeX Info: Redefining \celsius on input line 26.
-Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 26.
-LaTeX Info: Redefining \ohm on input line 26.
-Package gensymb Info: Using \textohm for \ohm on input line 26.
-Package gensymb Info: Using \textmu for \micro on input line 26.
+(Font)                  TS1/ptm/m/n --> TS1/ptm/b/n on input line 27.
+Package gensymb Info: Math companion symbols declared on input line 27.
+LaTeX Info: Redefining \degree on input line 27.
+LaTeX Info: Redefining \celsius on input line 27.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 27.
+LaTeX Info: Redefining \ohm on input line 27.
+Package gensymb Info: Using \textohm for \ohm on input line 27.
+Package gensymb Info: Using \textmu for \micro on input line 27.
 \AtBeginShipoutBox=\box64
-Package hyperref Info: Link coloring OFF on input line 26.
+Package hyperref Info: Link coloring OFF on input line 27.
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/refcount\refcount.sty"
@@ -586,33 +592,33 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/gettitlestring\gettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count312
+\c@section@level=\count313
 )
-LaTeX Info: Redefining \ref on input line 26.
-LaTeX Info: Redefining \pageref on input line 26.
-LaTeX Info: Redefining \nameref on input line 26.
+LaTeX Info: Redefining \ref on input line 27.
+LaTeX Info: Redefining \pageref on input line 27.
+LaTeX Info: Redefining \nameref on input line 27.
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count313
-\scratchdimen=\dimen281
+\scratchcounter=\count314
+\scratchdimen=\dimen282
 \scratchbox=\box65
-\nofMPsegments=\count314
-\nofMParguments=\count315
+\nofMPsegments=\count315
+\nofMParguments=\count316
 \everyMPshowfont=\toks36
-\MPscratchCnt=\count316
-\MPscratchDim=\dimen282
-\MPnumerator=\count317
-\makeMPintoPDFobject=\count318
+\MPscratchCnt=\count317
+\MPscratchDim=\dimen283
+\MPnumerator=\count318
+\makeMPintoPDFobject=\count319
 \everyMPtoPDFconversion=\toks37
 ) ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstopdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
 )
 
-Package chemgreek Info: Activating mapping `default' on line 26.
+Package chemgreek Info: Activating mapping `default' on line 27.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: longtable package is loaded.
@@ -656,15 +662,15 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 31.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
 ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 31.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 31.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 32.
  ("C:\Users\Martin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ts1ptm.fd"
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [1
@@ -676,7 +682,7 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.33 \listoffigures
+l.34 \listoffigures
                     [1
 
 ]
@@ -921,23 +927,34 @@ File: Chapitre_2_5/Images/isoT.png Graphic file (type png)
 Package pdftex.def Info: Chapitre_2_5/Images/isoT.png  used on input line 186.
 (pdftex.def)             Requested size: 160.56288pt x 242.49623pt.
 
-LaTeX Warning: Citation `2015' on page 15 undefined on input line 187.
+Overfull \hbox (15.45235pt too wide) in paragraph at lines 186--187
+ [][] 
+ []
 
 
 LaTeX Warning: Citation `2015' on page 15 undefined on input line 187.
 
 
-LaTeX Warning: Reference `fig:C2_5_isoT' on page 15 undefined on input line 192.
+LaTeX Warning: Citation `2015' on page 15 undefined on input line 187.
 
 
-LaTeX Warning: Reference `eq:C2_GP' on page 15 undefined on input line 192.
+LaTeX Warning: Reference `fig:C2_5_isoT' on page 15 undefined on input line 193.
 
 
-LaTeX Warning: Reference `eq:C2_5_isoT' on page 15 undefined on input line 192.
+LaTeX Warning: Reference `eq:C2_GP' on page 15 undefined on input line 193.
+
+
+LaTeX Warning: Reference `eq:C2_5_isoT' on page 15 undefined on input line 193.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 199.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 199.
 
 [15 <./Chapitre_2_5/Images/isoT.png>]
 
-LaTeX Warning: Reference `eq:C2_5_WbisoT' on page 16 undefined on input line 204.
+LaTeX Warning: Reference `eq:C2_5_WbisoT' on page 16 undefined on input line 203.
 
 
 LaTeX Font Warning: Command \normalsize invalid in math mode on input line 209.
@@ -945,105 +962,136 @@ LaTeX Font Warning: Command \normalsize invalid in math mode on input line 209.
 
 LaTeX Font Warning: Command \normalsize invalid in math mode on input line 209.
 
-<Chapitre_2_5/Images/isoP.png, id=146, 160.5633pt x 229.94249pt>
-File: Chapitre_2_5/Images/isoP.png Graphic file (type png)
-<use Chapitre_2_5/Images/isoP.png>
-Package pdftex.def Info: Chapitre_2_5/Images/isoP.png  used on input line 213.
-(pdftex.def)             Requested size: 160.56288pt x 229.94193pt.
-
-LaTeX Warning: Citation `2015' on page 16 undefined on input line 214.
-
-
-LaTeX Warning: Citation `2015' on page 16 undefined on input line 214.
-
-
-LaTeX Warning: Reference `fig:C2_5_isoB' on page 16 undefined on input line 217.
-
-[16 <./Chapitre_2_5/Images/isoP.png>]
-<Chapitre_2_5/Images/poly.png, id=156, 155.93802pt x 241.83607pt>
+<Chapitre_2_5/Images/poly.png, id=146, 155.93802pt x 241.83607pt>
 File: Chapitre_2_5/Images/poly.png Graphic file (type png)
 <use Chapitre_2_5/Images/poly.png>
-Package pdftex.def Info: Chapitre_2_5/Images/poly.png  used on input line 234.
+Package pdftex.def Info: Chapitre_2_5/Images/poly.png  used on input line 214.
 (pdftex.def)             Requested size: 155.93764pt x 241.83548pt.
 
-
-LaTeX Warning: Citation `2015' on page 17 undefined on input line 235.
-
-
-LaTeX Warning: Citation `2015' on page 17 undefined on input line 235.
+Overfull \hbox (10.8271pt too wide) in paragraph at lines 214--215
+ [][] 
+ []
 
 
-LaTeX Warning: Reference `fig:C2_5_poly' on page 17 undefined on input line 238.
+LaTeX Warning: Citation `2015' on page 16 undefined on input line 215.
 
 
-LaTeX Warning: Reference `eq:C2_5_poly' on page 17 undefined on input line 238.
+LaTeX Warning: Citation `2015' on page 16 undefined on input line 215.
 
 
-LaTeX Warning: Reference `eq:C2_5_isrel' on page 17 undefined on input line 257.
-
-[17 <./Chapitre_2_5/Images/poly.png>]
-
-LaTeX Warning: Reference `eq:C2_5_Deltas' on page 18 undefined on input line 263.
-
-Chapitre_2_5/chapitre_2_5.tex:272: Double subscript.
-<argument> T_1-T_T_
-                   1-T_{2,is}
-l.272 ...{is}=\frac{T_1-T_{2}}{T_1-T_T_1-T_{2,is}}
-                                                  =\frac{h_1-h_{2}}{h_1-h_{2...
-I treat `x_1_2' essentially like `x_1{}_2'.
+LaTeX Warning: Reference `fig:C2_5_poly' on page 16 undefined on input line 219.
 
 
-LaTeX Warning: Citation `2015' on page 18 undefined on input line 284.
+LaTeX Warning: Reference `eq:C2_5_poly' on page 16 undefined on input line 219.
 
 
-LaTeX Warning: Reference `eq:C2_5_Gibbs' on page 18 undefined on input line 286.
+Package wrapfig Warning: Collision between wrapping environments on input line 229.
+
+<Chapitre_2_5/Images/isoP.png, id=147, 160.5633pt x 229.94249pt>
+File: Chapitre_2_5/Images/isoP.png Graphic file (type png)
+<use Chapitre_2_5/Images/isoP.png>
+Package pdftex.def Info: Chapitre_2_5/Images/isoP.png  used on input line 231.
+(pdftex.def)             Requested size: 160.56288pt x 229.94193pt.
+
+Overfull \hbox (61.986pt too wide) in paragraph at lines 231--232
+ [][] 
+ []
 
 
-LaTeX Font Warning: Command \normalsize invalid in math mode on input line 311.
+LaTeX Warning: Citation `2015' on page 16 undefined on input line 232.
 
 
-LaTeX Font Warning: Command \normalsize invalid in math mode on input line 311.
+LaTeX Warning: Citation `2015' on page 16 undefined on input line 232.
 
 
-LaTeX Warning: Reference `eq:C2_5_partMax' on page 18 undefined on input line 313.
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 236.
 
 
-LaTeX Warning: Reference `eq:C2_5_Gibbs1' on page 18 undefined on input line 313.
+LaTeX Warning: Reference `fig:C2_5_isoB' on page 16 undefined on input line 236.
 
 
-LaTeX Warning: Reference `eq:C2_5_Gibbs4' on page 18 undefined on input line 313.
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 238.
+
+
+LaTeX Warning: Reference `eq:C2_5_WbisoP' on page 16 undefined on input line 240.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 246.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 246.
+
+[16 <./Chapitre_2_5/Images/poly.png> <./Chapitre_2_5/Images/isoP.png>]
+<Chapitre_2_5/Images/expansion.png, id=161, 2091.815pt x 1397.22pt>
+File: Chapitre_2_5/Images/expansion.png Graphic file (type png)
+<use Chapitre_2_5/Images/expansion.png>
+Package pdftex.def Info: Chapitre_2_5/Images/expansion.png  used on input line 256.
+(pdftex.def)             Requested size: 290.22107pt x 193.83992pt.
+
+
+LaTeX Warning: Reference `fig:C2_5_expansion' on page 17 undefined on input line 261.
+
+
+LaTeX Warning: Citation `2015' on page 17 undefined on input line 268.
+
+
+LaTeX Warning: Reference `eq:C2_5_Gibbs' on page 17 undefined on input line 270.
+
+[17
+
+ <./Chapitre_2_5/Images/expansion.png>]
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 295.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 295.
+
+
+LaTeX Warning: Reference `eq:C2_5_partMax' on page 18 undefined on input line 297.
+
+
+LaTeX Warning: Reference `eq:C2_5_Gibbs1' on page 18 undefined on input line 297.
+
+
+LaTeX Warning: Reference `eq:C2_5_Gibbs4' on page 18 undefined on input line 297.
+
+
+LaTeX Warning: Reference `eq:C2_5_Max' on page 18 undefined on input line 314.
+
+
+LaTeX Warning: Citation `2015' on page 18 undefined on input line 316.
+
+
+LaTeX Warning: Citation `Bell2014' on page 18 undefined on input line 318.
+
+
+LaTeX Warning: Reference `eq:C2_5_Gibbs1' on page 18 undefined on input line 321.
+
+
+LaTeX Warning: Reference `eq:C2_5_Gibbs4' on page 18 undefined on input line 321.
+
+
+LaTeX Warning: Reference `eq:C2_5_ds' on page 18 undefined on input line 321.
 
 [18]
 
-LaTeX Warning: Reference `eq:C2_5_Max' on page 19 undefined on input line 330.
+LaTeX Warning: Reference `eq:C2_5_UP' on page 19 undefined on input line 325.
 
 
-LaTeX Warning: Citation `2015' on page 19 undefined on input line 332.
+LaTeX Warning: Reference `eq:C2_GP' on page 19 undefined on input line 325.
 
 
-LaTeX Warning: Citation `Bell2014' on page 19 undefined on input line 334.
+LaTeX Warning: Reference `eq:C2_5_r' on page 19 undefined on input line 335.
 
 
-LaTeX Warning: Reference `eq:C2_5_Gibbs1' on page 19 undefined on input line 336.
+LaTeX Warning: Reference `eq:C2_5_k' on page 19 undefined on input line 335.
 
 
-LaTeX Warning: Reference `eq:C2_5_Gibbs4' on page 19 undefined on input line 336.
-
-
-LaTeX Warning: Reference `eq:C2_5_ds' on page 19 undefined on input line 336.
-
-
-LaTeX Warning: Reference `eq:C2_5_UP' on page 19 undefined on input line 340.
-
-
-LaTeX Warning: Reference `eq:C2_5_GP' on page 19 undefined on input line 340.
+LaTeX Warning: Reference `eq:C2_5_isrelPT' on page 19 undefined on input line 358.
 
 [19]
 
-LaTeX Warning: Reference `eq:C2_5_r' on page 20 undefined on input line 350.
-
-
-LaTeX Warning: Reference `eq:C2_5_k' on page 20 undefined on input line 350.
+LaTeX Warning: Reference `eq:C2_5_Deltas' on page 20 undefined on input line 363.
 
 ) [20] (Chapitre_3/chapitre_3.tex
 Chapter 4.
@@ -1053,26 +1101,26 @@ LaTeX Warning: Citation `Hillewaert2019' on page 21 undefined on input line 18.
 [21
 
 ]
-<Chapitre_3/Images/Frames.png, id=209, 2099.845pt x 1630.09pt>
+<Chapitre_3/Images/Frames.png, id=212, 2099.845pt x 1630.09pt>
 File: Chapitre_3/Images/Frames.png Graphic file (type png)
 <use Chapitre_3/Images/Frames.png>
 Package pdftex.def Info: Chapitre_3/Images/Frames.png  used on input line 41.
 (pdftex.def)             Requested size: 290.22107pt x 225.27602pt.
 
 
-LaTeX Warning: Reference `fig:C3_frames' on page 22 undefined on input line 46.
+LaTeX Warning: Reference `fig:C4_frames' on page 22 undefined on input line 46.
 
 
-LaTeX Warning: Reference `eq:C3_velocity' on page 22 undefined on input line 47.
+LaTeX Warning: Reference `eq:C4_velocity' on page 22 undefined on input line 47.
 
 [22 <./Chapitre_3/Images/Frames.png>]
 
 LaTeX Font Warning: Command \normalsize invalid in math mode on input line 50.
 
 
-LaTeX Warning: Reference `fig:C3_vtriang' on page 23 undefined on input line 54.
+LaTeX Warning: Reference `fig:C4_vtriang' on page 23 undefined on input line 54.
 
-<Chapitre_3/Images/Vtriangle.png, id=220, 299.6796pt x 99.4917pt>
+<Chapitre_3/Images/Vtriangle.png, id=223, 299.6796pt x 99.4917pt>
 File: Chapitre_3/Images/Vtriangle.png Graphic file (type png)
 <use Chapitre_3/Images/Vtriangle.png>
 Package pdftex.def Info: Chapitre_3/Images/Vtriangle.png  used on input line 58.
@@ -1084,10 +1132,10 @@ LaTeX Font Warning: Command \normalsize invalid in math mode on input line 71.
 LaTeX Font Warning: Command \normalsize invalid in math mode on input line 82.
 
 
-LaTeX Warning: Reference `eq:C3_i0' on page 23 undefined on input line 86.
+LaTeX Warning: Reference `eq:C4_i0' on page 23 undefined on input line 86.
 
 
-LaTeX Warning: Reference `eq:C3_Euler' on page 23 undefined on input line 86.
+LaTeX Warning: Reference `eq:C4_Euler' on page 23 undefined on input line 86.
 
 [23 <./Chapitre_3/Images/Vtriangle.png>]
 
@@ -1097,31 +1145,31 @@ LaTeX Font Warning: Command \normalsize invalid in math mode on input line 92.
 LaTeX Font Warning: Command \normalsize invalid in math mode on input line 92.
 
 
-LaTeX Warning: Reference `eq:C3_icons' on page 24 undefined on input line 94.
+LaTeX Warning: Reference `eq:C4_icons' on page 24 undefined on input line 94.
 
 
 LaTeX Font Warning: Command \normalsize invalid in math mode on input line 97.
 
 
-LaTeX Warning: Reference `eq:C3_vinc' on page 24 undefined on input line 101.
+LaTeX Warning: Reference `eq:C4_vinc' on page 24 undefined on input line 101.
 
 
-LaTeX Warning: Reference `eq:C3_winc' on page 24 undefined on input line 101.
+LaTeX Warning: Reference `eq:C4_winc' on page 24 undefined on input line 101.
 
 [24]
 
-LaTeX Warning: Reference `eq:C3_Pinc' on page 25 undefined on input line 132.
+LaTeX Warning: Reference `eq:C4_Pinc' on page 25 undefined on input line 132.
 
 
-LaTeX Warning: Reference `eq:C3_DHp' on page 25 undefined on input line 145.
+LaTeX Warning: Reference `eq:C4_DHp' on page 25 undefined on input line 145.
 
 
-LaTeX Warning: Reference `eq:C3_Pe' on page 25 undefined on input line 145.
+LaTeX Warning: Reference `eq:C4_Pe' on page 25 undefined on input line 145.
 
 
-LaTeX Warning: Reference `fig:C3_MapPump' on page 25 undefined on input line 156.
+LaTeX Warning: Reference `fig:C4_MapPump' on page 25 undefined on input line 156.
 
-<Chapitre_3/Images/char_map_pump.png, id=246, 486.18pt x 153.98438pt>
+<Chapitre_3/Images/char_map_pump.png, id=249, 486.18pt x 153.98438pt>
 File: Chapitre_3/Images/char_map_pump.png Graphic file (type png)
 <use Chapitre_3/Images/char_map_pump.png>
 Package pdftex.def Info: Chapitre_3/Images/char_map_pump.png  used on input line 159.
@@ -1137,401 +1185,463 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [25]
 
-LaTeX Warning: Reference `eq:C3_phipump' on page 26 undefined on input line 175.
+LaTeX Warning: Reference `eq:C4_phipump' on page 26 undefined on input line 175.
 
 
-LaTeX Warning: Reference `eq:C3_psipump' on page 26 undefined on input line 175.
+LaTeX Warning: Reference `eq:C4_psipump' on page 26 undefined on input line 175.
 
 
-LaTeX Warning: Reference `eq:C3_Qsim' on page 26 undefined on input line 179.
+LaTeX Warning: Reference `eq:C4_Qsim' on page 26 undefined on input line 179.
 
 
-LaTeX Warning: Reference `eq:C3_DHsim' on page 26 undefined on input line 179.
+LaTeX Warning: Reference `eq:C4_DHsim' on page 26 undefined on input line 179.
 
 
 LaTeX Warning: Citation `Hillewaert2019' on page 26 undefined on input line 220.
 
 [26 <./Chapitre_3/Images/char_map_pump.png (PNG copy)>]
 
-LaTeX Warning: Reference `eq:C3_Euler' on page 27 undefined on input line 224.
+LaTeX Warning: Reference `eq:C4_Euler' on page 27 undefined on input line 224.
 
 
-LaTeX Warning: Reference `fig:C3_vtriang' on page 27 undefined on input line 224.
+LaTeX Warning: Reference `fig:C4_vtriang' on page 27 undefined on input line 224.
 
 
-LaTeX Warning: Reference `eq:C3_TT0_1' on page 27 undefined on input line 237.
+LaTeX Warning: Reference `eq:C4_TT0_1' on page 27 undefined on input line 237.
 
 
-LaTeX Warning: Reference `eq:C2_isrelPT' on page 27 undefined on input line 241.
+LaTeX Warning: Reference `eq:C2_5_isrelPT' on page 27 undefined on input line 241.
 
 
-LaTeX Warning: Reference `eq:C2_isrelrhoT' on page 27 undefined on input line 241.
+LaTeX Warning: Reference `eq:C2_5_isrelrhoT' on page 27 undefined on input line 241.
 
 [27]
 
-LaTeX Warning: Reference `eq:C3_Pimap' on page 28 undefined on input line 278.
+LaTeX Warning: Reference `eq:C4_mc' on page 28 undefined on input line 269.
 
 
-LaTeX Warning: Reference `eq:C3_etamap' on page 28 undefined on input line 278.
+LaTeX Warning: Reference `eq:C4_Pimap' on page 28 undefined on input line 280.
 
 
-LaTeX Warning: Reference `fig:C3_compstage' on page 28 undefined on input line 293.
+LaTeX Warning: Reference `eq:C4_etamap' on page 28 undefined on input line 280.
 
-<Chapitre_3/Images/Comp_stage.png, id=284, 368.94656pt x 194.22563pt>
+
+LaTeX Warning: Reference `fig:C4_compstage' on page 28 undefined on input line 295.
+
+<Chapitre_3/Images/Comp_stage.png, id=287, 368.94656pt x 194.22563pt>
 File: Chapitre_3/Images/Comp_stage.png Graphic file (type png)
 <use Chapitre_3/Images/Comp_stage.png>
-Package pdftex.def Info: Chapitre_3/Images/Comp_stage.png  used on input line 297.
+Package pdftex.def Info: Chapitre_3/Images/Comp_stage.png  used on input line 299.
 (pdftex.def)             Requested size: 241.84843pt x 127.318pt.
 
-LaTeX Warning: Citation `Hillewaert2019' on page 28 undefined on input line 298.
+LaTeX Warning: Citation `Hillewaert2019' on page 28 undefined on input line 300.
 
 
-LaTeX Warning: Citation `Hillewaert2019' on page 28 undefined on input line 298.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Reference `fig:C3_Molliercomp' on page 28 undefined on input line 305.
-
-<Chapitre_3/Images/Comp_mollier.png, id=285, 293.80219pt x 331.37437pt>
-File: Chapitre_3/Images/Comp_mollier.png Graphic file (type png)
-<use Chapitre_3/Images/Comp_mollier.png>
-Package pdftex.def Info: Chapitre_3/Images/Comp_mollier.png  used on input line 309.
-(pdftex.def)             Requested size: 241.84843pt x 272.78047pt.
-
-LaTeX Warning: Citation `Hillewaert2019' on page 28 undefined on input line 310.
-
-
-LaTeX Warning: Citation `Hillewaert2019' on page 28 undefined on input line 310.
+LaTeX Warning: Citation `Hillewaert2019' on page 28 undefined on input line 300.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Reference `fig:C3_compstage' on page 28 undefined on input line 314.
-
-
-LaTeX Warning: Reference `eq:C3_i0' on page 28 undefined on input line 317.
-
-
-LaTeX Warning: Reference `eq:C3_h0' on page 28 undefined on input line 317.
-
-
-LaTeX Warning: Reference `eq:C3_PP0' on page 28 undefined on input line 317.
 
 [28]
 
-LaTeX Warning: Reference `eq:C3_i0' on page 29 undefined on input line 320.
+LaTeX Warning: Reference `fig:C4_Molliercomp' on page 29 undefined on input line 307.
+
+<Chapitre_3/Images/Comp_mollier.png, id=298, 293.80219pt x 331.37437pt>
+File: Chapitre_3/Images/Comp_mollier.png Graphic file (type png)
+<use Chapitre_3/Images/Comp_mollier.png>
+Package pdftex.def Info: Chapitre_3/Images/Comp_mollier.png  used on input line 311.
+(pdftex.def)             Requested size: 241.84843pt x 272.78047pt.
+
+LaTeX Warning: Citation `Hillewaert2019' on page 29 undefined on input line 312.
 
 
-LaTeX Warning: Citation `Hillewaert2019' on page 29 undefined on input line 320.
+LaTeX Warning: Citation `Hillewaert2019' on page 29 undefined on input line 312.
 
 
-LaTeX Warning: Reference `eq:C3_h0' on page 29 undefined on input line 324.
+LaTeX Warning: Reference `fig:C4_compstage' on page 29 undefined on input line 316.
 
 
-LaTeX Warning: Reference `C2:Isen_eff' on page 29 undefined on input line 326.
+LaTeX Warning: Reference `eq:C4_i0' on page 29 undefined on input line 319.
+
+
+LaTeX Warning: Reference `eq:C4_h0' on page 29 undefined on input line 319.
+
+
+LaTeX Warning: Reference `eq:C4_PP0' on page 29 undefined on input line 319.
+
+
+LaTeX Warning: Reference `eq:C4_i0' on page 29 undefined on input line 322.
+
+
+LaTeX Warning: Citation `Hillewaert2019' on page 29 undefined on input line 322.
 
 [29 <./Chapitre_3/Images/Comp_stage.png> <./Chapitre_3/Images/Comp_mollier.png>]
 
-LaTeX Warning: Reference `fig:C3_compmap' on page 30 undefined on input line 330.
+LaTeX Warning: Reference `eq:C4_h0' on page 30 undefined on input line 326.
 
-<Chapitre_3/Images/Comp_Map.png, id=304, 225.76381pt x 161.1685pt>
+
+LaTeX Warning: Reference `fig:C4_compmap' on page 30 undefined on input line 332.
+
+<Chapitre_3/Images/Comp_Map.png, id=308, 225.76381pt x 161.1685pt>
 File: Chapitre_3/Images/Comp_Map.png Graphic file (type png)
 <use Chapitre_3/Images/Comp_Map.png>
-Package pdftex.def Info: Chapitre_3/Images/Comp_Map.png  used on input line 333.
+Package pdftex.def Info: Chapitre_3/Images/Comp_Map.png  used on input line 335.
 (pdftex.def)             Requested size: 290.22107pt x 207.19502pt.
 
-LaTeX Warning: Citation `Ghorbanian2009' on page 30 undefined on input line 334.
+LaTeX Warning: Citation `Ghorbanian2009' on page 30 undefined on input line 336.
 
 
-LaTeX Warning: Citation `Ghorbanian2009' on page 30 undefined on input line 334.
+LaTeX Warning: Citation `Ghorbanian2009' on page 30 undefined on input line 336.
 
 
-LaTeX Warning: Citation `Ghorbanian2009' on page 30 undefined on input line 342.
-
-
-LaTeX Warning: Citation `Hillewaert2019' on page 30 undefined on input line 344.
-
-
-LaTeX Warning: Reference `eq:C3_sim' on page 30 undefined on input line 346.
+LaTeX Warning: Citation `Ghorbanian2009' on page 30 undefined on input line 344.
 
 [30 <./Chapitre_3/Images/Comp_Map.png>]
 
-LaTeX Warning: Reference `fig:C3_turbstage' on page 31 undefined on input line 352.
+LaTeX Warning: Reference `fig:C4_turbstage' on page 31 undefined on input line 357.
 
-<Chapitre_3/Images/Turb_stage.png, id=314, 313.68256pt x 187.28694pt>
+<Chapitre_3/Images/Turb_stage.png, id=316, 313.68256pt x 187.28694pt>
 File: Chapitre_3/Images/Turb_stage.png Graphic file (type png)
 <use Chapitre_3/Images/Turb_stage.png>
-Package pdftex.def Info: Chapitre_3/Images/Turb_stage.png  used on input line 355.
+Package pdftex.def Info: Chapitre_3/Images/Turb_stage.png  used on input line 360.
 (pdftex.def)             Requested size: 241.84843pt x 144.39998pt.
 
-LaTeX Warning: Citation `Hillewaert2019' on page 31 undefined on input line 356.
+LaTeX Warning: Citation `Hillewaert2019' on page 31 undefined on input line 361.
 
 
-LaTeX Warning: Citation `Hillewaert2019' on page 31 undefined on input line 356.
-
-
-LaTeX Warning: Reference `fig:C3_Mollierturb' on page 31 undefined on input line 361.
-
-
-LaTeX Warning: Reference `eq:C3_i0' on page 31 undefined on input line 372.
-
-
-LaTeX Warning: Reference `fig:C3_turbstage' on page 31 undefined on input line 372.
-
-
-LaTeX Warning: Citation `Hillewaert2019' on page 31 undefined on input line 374.
+LaTeX Warning: Citation `Hillewaert2019' on page 31 undefined on input line 361.
 
 [31 <./Chapitre_3/Images/Turb_stage.png>]
-<Chapitre_3/Images/Turb_mollier.png, id=323, 175.90825pt x 190.36226pt>
+
+LaTeX Warning: Reference `fig:C4_Mollierturb' on page 32 undefined on input line 366.
+
+<Chapitre_3/Images/Turb_mollier.png, id=324, 175.90825pt x 190.36226pt>
 File: Chapitre_3/Images/Turb_mollier.png Graphic file (type png)
 <use Chapitre_3/Images/Turb_mollier.png>
 Package pdftex.def Info: Chapitre_3/Images/Turb_mollier.png  used on input line 379.
 (pdftex.def)             Requested size: 241.84843pt x 261.7213pt.
 
-
 LaTeX Warning: Citation `Hillewaert2019' on page 32 undefined on input line 380.
 
 
 LaTeX Warning: Citation `Hillewaert2019' on page 32 undefined on input line 380.
 
 
-LaTeX Warning: Reference `fig:C3_turbmap' on page 32 undefined on input line 400.
+LaTeX Warning: Reference `eq:C4_i0' on page 32 undefined on input line 387.
 
-<Chapitre_3/Images/Turb_Map.png, id=324, 656.2604pt x 162.7092pt>
-File: Chapitre_3/Images/Turb_Map.png Graphic file (type png)
-<use Chapitre_3/Images/Turb_Map.png>
-Package pdftex.def Info: Chapitre_3/Images/Turb_Map.png  used on input line 404.
-(pdftex.def)             Requested size: 483.69687pt x 119.92622pt.
+
+LaTeX Warning: Reference `fig:C4_turbstage' on page 32 undefined on input line 387.
+
+
+LaTeX Warning: Citation `Hillewaert2019' on page 32 undefined on input line 389.
+
 [32 <./Chapitre_3/Images/Turb_mollier.png>]
 
-LaTeX Warning: Reference `fig:C3_turbmap' on page 33 undefined on input line 409.
+LaTeX Warning: Reference `fig:C4_turbmap' on page 33 undefined on input line 409.
 
-[33 <./Chapitre_3/Images/Turb_Map.png (PNG copy)>]
+<Chapitre_3/Images/Turb_Map.png, id=332, 656.2604pt x 162.7092pt>
+File: Chapitre_3/Images/Turb_Map.png Graphic file (type png)
+<use Chapitre_3/Images/Turb_Map.png>
+Package pdftex.def Info: Chapitre_3/Images/Turb_Map.png  used on input line 413.
+(pdftex.def)             Requested size: 483.69687pt x 119.92622pt.
 
-LaTeX Warning: Reference `eq:C3_chem' on page 34 undefined on input line 429.
-
-
-LaTeX Warning: Reference `eq:C3_chem' on page 34 undefined on input line 436.
-
-[34]
-
-LaTeX Warning: Reference `eq:C3_chem' on page 35 undefined on input line 439.
+LaTeX Warning: Citation `Dixon2013' on page 33 undefined on input line 414.
 
 
-LaTeX Warning: Reference `eq:C3_chem' on page 35 undefined on input line 450.
+LaTeX Warning: Citation `Dixon2013' on page 33 undefined on input line 414.
 
 
-LaTeX Warning: Reference `eq:C3_lbd' on page 35 undefined on input line 463.
+LaTeX Warning: Reference `fig:C4_turbmap' on page 33 undefined on input line 418.
+
+[33 <./Chapitre_3/Images/Turb_Map.png (PNG copy)>] [34]
+
+LaTeX Warning: Reference `eq:C4_chem' on page 35 undefined on input line 445.
 
 
-LaTeX Warning: Reference `eq:C3_chem' on page 35 undefined on input line 469.
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 448.
+
+
+LaTeX Warning: Reference `eq:C4_chem' on page 35 undefined on input line 455.
 
 [35]
 
-LaTeX Warning: Reference `eq:C3_sysab' on page 36 undefined on input line 480.
+LaTeX Warning: Reference `eq:C4_chem' on page 36 undefined on input line 458.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 461.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 468.
+
+
+LaTeX Warning: Reference `eq:C4_chem' on page 36 undefined on input line 475.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 483.
+
+
+LaTeX Warning: Reference `eq:C4_lbd' on page 36 undefined on input line 490.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 492.
+
+
+LaTeX Warning: Reference `eq:C4_chem' on page 36 undefined on input line 497.
 
 [36]
 
-LaTeX Warning: Citation `Leonard2018' on page 37 undefined on input line 495.
+LaTeX Warning: Reference `eq:C4_chemgeng0' on page 37 undefined on input line 499.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 502.
+
+
+LaTeX Warning: Reference `eq:C4_chemgeng1' on page 37 undefined on input line 506.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 509.
+
+
+LaTeX Warning: Reference `eq:C4_sysab' on page 37 undefined on input line 513.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 516.
+
+
+LaTeX Warning: Citation `Leonard2018' on page 37 undefined on input line 531.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 534.
 
 [37]
 
-LaTeX Warning: Reference `eq:C3_chemgeng0' on page 38 undefined on input line 516.
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 543.
 
 
-LaTeX Warning: Reference `eq:C3_chemgeng1' on page 38 undefined on input line 516.
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 559.
 
 
-LaTeX Warning: Reference `eq:C3_chemgeng0' on page 38 undefined on input line 517.
+LaTeX Warning: Reference `eq:C4_chemgeng0' on page 38 undefined on input line 564.
 
 
-LaTeX Warning: Reference `eq:C3_chemgeng1' on page 38 undefined on input line 517.
+LaTeX Warning: Reference `eq:C4_chemgeng1' on page 38 undefined on input line 564.
 
 
-Overfull \hbox (3.85805pt too wide) detected at line 523
+LaTeX Warning: Reference `eq:C4_chemgeng0' on page 38 undefined on input line 565.
+
+
+LaTeX Warning: Reference `eq:C4_chemgeng1' on page 38 undefined on input line 565.
+
+
+LaTeX Warning: Reference `eq:C4_chemgeng01' on page 38 undefined on input line 565.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 568.
+
+
+Overfull \hbox (2.85808pt too wide) detected at line 573
 [] []
  []
 
-
-LaTeX Warning: Reference `eq:C3_sysab2' on page 38 undefined on input line 524.
-
 [38]
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 39 undefined on input line 556.
+LaTeX Warning: Reference `eq:C4_sysab2' on page 39 undefined on input line 575.
 
 
-LaTeX Warning: Reference `fig:C3_HX' on page 39 undefined on input line 568.
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 578.
 
-<Chapitre_3/Images/HX_fin_plate.png, id=389, 155.60478pt x 95.69545pt>
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 590.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 599.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 606.
+
+
+LaTeX Warning: Citation `Ngendakumana2018' on page 39 undefined on input line 617.
+
+[39]
+
+LaTeX Warning: Reference `fig:C4_HX' on page 40 undefined on input line 629.
+
+<Chapitre_3/Images/HX_fin_plate.png, id=395, 155.60478pt x 95.69545pt>
 File: Chapitre_3/Images/HX_fin_plate.png Graphic file (type png)
 <use Chapitre_3/Images/HX_fin_plate.png>
-Package pdftex.def Info: Chapitre_3/Images/HX_fin_plate.png  used on input line 571.
+Package pdftex.def Info: Chapitre_3/Images/HX_fin_plate.png  used on input line 632.
 (pdftex.def)             Requested size: 193.47578pt x 118.99258pt.
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 39 undefined on input line 571.
+LaTeX Warning: Citation `Ngendakumana2018' on page 40 undefined on input line 632.
 
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 39 undefined on input line 571.
+LaTeX Warning: Citation `Ngendakumana2018' on page 40 undefined on input line 632.
 
-<Chapitre_3/Images/HX_fin_tube.png, id=390, 155.60478pt x 95.69545pt>
+<Chapitre_3/Images/HX_fin_tube.png, id=396, 155.60478pt x 95.69545pt>
 File: Chapitre_3/Images/HX_fin_tube.png Graphic file (type png)
 <use Chapitre_3/Images/HX_fin_tube.png>
-Package pdftex.def Info: Chapitre_3/Images/HX_fin_tube.png  used on input line 572.
+Package pdftex.def Info: Chapitre_3/Images/HX_fin_tube.png  used on input line 633.
 (pdftex.def)             Requested size: 193.47578pt x 118.99258pt.
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 39 undefined on input line 572.
+LaTeX Warning: Citation `Ngendakumana2018' on page 40 undefined on input line 633.
 
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 39 undefined on input line 572.
+LaTeX Warning: Citation `Ngendakumana2018' on page 40 undefined on input line 633.
 
-<Chapitre_3/Images/HX_brased_plate.png, id=391, 155.60478pt x 95.69545pt>
+<Chapitre_3/Images/HX_brased_plate.png, id=397, 155.60478pt x 95.69545pt>
 File: Chapitre_3/Images/HX_brased_plate.png Graphic file (type png)
 <use Chapitre_3/Images/HX_brased_plate.png>
-Package pdftex.def Info: Chapitre_3/Images/HX_brased_plate.png  used on input line 573.
+Package pdftex.def Info: Chapitre_3/Images/HX_brased_plate.png  used on input line 634.
 (pdftex.def)             Requested size: 193.47578pt x 118.99258pt.
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 39 undefined on input line 573.
+LaTeX Warning: Citation `Ngendakumana2018' on page 40 undefined on input line 634.
 
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 39 undefined on input line 573.
+LaTeX Warning: Citation `Ngendakumana2018' on page 40 undefined on input line 634.
 
-<Chapitre_3/Images/parallele_flow.png, id=392, 126.79646pt x 47.84772pt>
+
+LaTeX Warning: Reference `fig:C4_para_flow' on page 40 undefined on input line 647.
+
+
+LaTeX Warning: Reference `fig:C4_counter_flow' on page 40 undefined on input line 649.
+
+
+LaTeX Warning: Reference `fig:C4_cross_flow_unmixed' on page 40 undefined on input line 651.
+
+[40 <./Chapitre_3/Images/HX_fin_plate.png (PNG copy)> <./Chapitre_3/Images/HX_fin_tube.png> <./Chapitre_3/Images/HX_brased_plate.png (PNG copy)>]
+
+LaTeX Warning: Reference `fig:C4_cross_flow_1mixed' on page 41 undefined on input line 653.
+
+<Chapitre_3/Images/parallele_flow.png, id=405, 126.79646pt x 47.84772pt>
 File: Chapitre_3/Images/parallele_flow.png Graphic file (type png)
 <use Chapitre_3/Images/parallele_flow.png>
-Package pdftex.def Info: Chapitre_3/Images/parallele_flow.png  used on input line 588.
+Package pdftex.def Info: Chapitre_3/Images/parallele_flow.png  used on input line 659.
 (pdftex.def)             Requested size: 193.47578pt x 73.01765pt.
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 39 undefined on input line 589.
+LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 660.
 
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 39 undefined on input line 589.
+LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 660.
 
-[39 <./Chapitre_3/Images/HX_fin_plate.png (PNG copy)> <./Chapitre_3/Images/HX_fin_tube.png> <./Chapitre_3/Images/HX_brased_plate.png (PNG copy)>]
-<Chapitre_3/Images/opposite_flow.png, id=399, 126.79646pt x 47.84772pt>
+<Chapitre_3/Images/opposite_flow.png, id=406, 126.79646pt x 47.84772pt>
 File: Chapitre_3/Images/opposite_flow.png Graphic file (type png)
 <use Chapitre_3/Images/opposite_flow.png>
-Package pdftex.def Info: Chapitre_3/Images/opposite_flow.png  used on input line 597.
+Package pdftex.def Info: Chapitre_3/Images/opposite_flow.png  used on input line 665.
 (pdftex.def)             Requested size: 193.47578pt x 73.01765pt.
 
+LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 666.
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 40 undefined on input line 598.
 
+LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 666.
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 40 undefined on input line 598.
-
-<Chapitre_3/Images/crossed_flow_non_mixed.png, id=400, 107.65738pt x 82.53732pt>
+<Chapitre_3/Images/crossed_flow_non_mixed.png, id=407, 107.65738pt x 82.53732pt>
 File: Chapitre_3/Images/crossed_flow_non_mixed.png Graphic file (type png)
 <use Chapitre_3/Images/crossed_flow_non_mixed.png>
-Package pdftex.def Info: Chapitre_3/Images/crossed_flow_non_mixed.png  used on input line 606.
+Package pdftex.def Info: Chapitre_3/Images/crossed_flow_non_mixed.png  used on input line 671.
 (pdftex.def)             Requested size: 193.47578pt x 148.33153pt.
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 40 undefined on input line 607.
+LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 672.
 
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 40 undefined on input line 607.
+LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 672.
 
-[40 <./Chapitre_3/Images/parallele_flow.png> <./Chapitre_3/Images/opposite_flow.png> <./Chapitre_3/Images/crossed_flow_non_mixed.png>]
-<Chapitre_3/Images/crossed_flow_one_mixed.png, id=412, 107.65738pt x 82.53732pt>
+<Chapitre_3/Images/crossed_flow_one_mixed.png, id=408, 107.65738pt x 82.53732pt>
 File: Chapitre_3/Images/crossed_flow_one_mixed.png Graphic file (type png)
 <use Chapitre_3/Images/crossed_flow_one_mixed.png>
-Package pdftex.def Info: Chapitre_3/Images/crossed_flow_one_mixed.png  used on input line 615.
+Package pdftex.def Info: Chapitre_3/Images/crossed_flow_one_mixed.png  used on input line 677.
 (pdftex.def)             Requested size: 193.47578pt x 148.33153pt.
 
-
-LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 616.
-
-
-LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 616.
+LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 678.
 
 
-LaTeX Warning: Reference `fig:C3_Tprof' on page 41 undefined on input line 623.
+LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 678.
 
-<Chapitre_3/Images/parallele_flow_T.png, id=413, 163.38004pt x 106.3615pt>
+
+LaTeX Warning: Reference `fig:C4_Tprof' on page 41 undefined on input line 683.
+
+<Chapitre_3/Images/parallele_flow_T.png, id=409, 163.38004pt x 106.3615pt>
 File: Chapitre_3/Images/parallele_flow_T.png Graphic file (type png)
 <use Chapitre_3/Images/parallele_flow_T.png>
-Package pdftex.def Info: Chapitre_3/Images/parallele_flow_T.png  used on input line 627.
-(pdftex.def)             Requested size: 217.66211pt x 141.70242pt.
+Package pdftex.def Info: Chapitre_3/Images/parallele_flow_T.png  used on input line 689.
+(pdftex.def)             Requested size: 193.47578pt x 125.95663pt.
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 627.
+LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 690.
 
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 627.
+LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 690.
 
-<Chapitre_3/Images/opposite_flow_T.png, id=414, 163.38004pt x 106.3615pt>
+<Chapitre_3/Images/opposite_flow_T.png, id=410, 163.38004pt x 106.3615pt>
 File: Chapitre_3/Images/opposite_flow_T.png Graphic file (type png)
 <use Chapitre_3/Images/opposite_flow_T.png>
-Package pdftex.def Info: Chapitre_3/Images/opposite_flow_T.png  used on input line 628.
-(pdftex.def)             Requested size: 217.66211pt x 141.70242pt.
+Package pdftex.def Info: Chapitre_3/Images/opposite_flow_T.png  used on input line 695.
+(pdftex.def)             Requested size: 193.47578pt x 125.95663pt.
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 628.
-
-
-LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 628.
+LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 696.
 
 
-LaTeX Font Warning: Command \normalsize invalid in math mode on input line 636.
+LaTeX Warning: Citation `Ngendakumana2018' on page 41 undefined on input line 696.
+
+[41 <./Chapitre_3/Images/parallele_flow.png> <./Chapitre_3/Images/opposite_flow.png> <./Chapitre_3/Images/crossed_flow_non_mixed.png> <./Chapitre_3/Images/crossed_flow_one_mixed.png> <./Chapitre_3/Images/parallele_flow_T.png> <./Chapitre_3/Images/opposite_flow_T.png>]
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 708.
 
 
-LaTeX Font Warning: Command \normalsize invalid in math mode on input line 646.
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 719.
 
 
-LaTeX Warning: Reference `eq:C3_Qdot1' on page 41 undefined on input line 655.
-
-[41 <./Chapitre_3/Images/crossed_flow_one_mixed.png> <./Chapitre_3/Images/parallele_flow_T.png> <./Chapitre_3/Images/opposite_flow_T.png>]
-
-LaTeX Warning: Reference `eq:C3_h' on page 42 undefined on input line 671.
+LaTeX Warning: Reference `eq:C4_Qdot1' on page 42 undefined on input line 728.
 
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 42 undefined on input line 675.
+LaTeX Warning: Reference `eq:C4_h' on page 42 undefined on input line 744.
 
 [42]
 
-LaTeX Warning: Citation `Ngendakumana2018' on page 43 undefined on input line 687.
+LaTeX Warning: Citation `Ngendakumana2018' on page 43 undefined on input line 748.
 
 
-LaTeX Warning: Reference `eq:C3_ThQ' on page 43 undefined on input line 702.
+LaTeX Warning: Citation `Ngendakumana2018' on page 43 undefined on input line 760.
 
 
-LaTeX Warning: Reference `eq:C3_TcQ' on page 43 undefined on input line 702.
+LaTeX Warning: Reference `eq:C4_ThQ' on page 43 undefined on input line 775.
 
 
-LaTeX Warning: Reference `eq:C3_Qdot1' on page 43 undefined on input line 713.
+LaTeX Warning: Reference `eq:C4_TcQ' on page 43 undefined on input line 775.
 
 [43]
 
-LaTeX Warning: Reference `annex_epsNTU' on page 44 undefined on input line 730.
+LaTeX Warning: Reference `eq:C4_Qdot1' on page 44 undefined on input line 786.
 
 
-LaTeX Warning: Citation `GregoryNellis2015' on page 44 undefined on input line 730.
+LaTeX Warning: Reference `annex_epsNTU' on page 44 undefined on input line 803.
 
 
-LaTeX Warning: Citation `GregoryNellis2015' on page 44 undefined on input line 732.
+LaTeX Warning: Citation `GregoryNellis2015' on page 44 undefined on input line 803.
 
 
-LaTeX Warning: Reference `eq:C3_ThQ' on page 44 undefined on input line 738.
+LaTeX Warning: Citation `GregoryNellis2015' on page 44 undefined on input line 805.
 
 
-LaTeX Warning: Reference `eq:C3_TcQ' on page 44 undefined on input line 738.
+LaTeX Warning: Reference `eq:C4_ThQ' on page 44 undefined on input line 811.
 
 
-LaTeX Warning: Reference `eq:C3_NTU' on page 44 undefined on input line 745.
-
-
-LaTeX Warning: Citation `Ngendakumana2018' on page 44 undefined on input line 745.
+LaTeX Warning: Reference `eq:C4_TcQ' on page 44 undefined on input line 811.
 
 [44]
 
-LaTeX Warning: Reference `eq:C3_AU_prop' on page 45 undefined on input line 749.
+LaTeX Warning: Reference `eq:C4_NTU' on page 45 undefined on input line 818.
+
+
+LaTeX Warning: Citation `Ngendakumana2018' on page 45 undefined on input line 818.
+
+
+LaTeX Warning: Reference `eq:C4_AU_prop' on page 45 undefined on input line 822.
 
 [45]) [46] (Chapitre_4/chapitre_4.tex
 Chapter 5.
 
 LaTeX Warning: Reference `fig:C4_BraytonGT' on page 47 undefined on input line 16.
 
-<Chapitre_4/Images/GT.png, id=473, 402.50375pt x 189.70876pt>
+<Chapitre_4/Images/GT.png, id=472, 402.50375pt x 189.70876pt>
 File: Chapitre_4/Images/GT.png Graphic file (type png)
 <use Chapitre_4/Images/GT.png>
 Package pdftex.def Info: Chapitre_4/Images/GT.png  used on input line 20.
@@ -1564,12 +1674,12 @@ LaTeX Warning: Reference `fig:C4_Ts_GT' on page 48 undefined on input line 59.
 
 LaTeX Warning: Reference `fig:C4_hp_GT' on page 48 undefined on input line 59.
 
-<Chapitre_4/Images/Ts_GT.png, id=482, 505.89pt x 433.62pt>
+<Chapitre_4/Images/Ts_GT.png, id=481, 505.89pt x 433.62pt>
 File: Chapitre_4/Images/Ts_GT.png Graphic file (type png)
 <use Chapitre_4/Images/Ts_GT.png>
 Package pdftex.def Info: Chapitre_4/Images/Ts_GT.png  used on input line 65.
 (pdftex.def)             Requested size: 193.47578pt x 165.83595pt.
-<Chapitre_4/Images/hp_GT.png, id=483, 505.89pt x 433.62pt>
+<Chapitre_4/Images/hp_GT.png, id=482, 505.89pt x 433.62pt>
 File: Chapitre_4/Images/hp_GT.png Graphic file (type png)
 <use Chapitre_4/Images/hp_GT.png>
 Package pdftex.def Info: Chapitre_4/Images/hp_GT.png  used on input line 71.
@@ -1587,17 +1697,17 @@ LaTeX Warning: Reference `fig:C4_RGT' on page 49 undefined on input line 91.
 
 LaTeX Warning: Reference `fig:C4_thermo_diagram_RGT' on page 49 undefined on input line 91.
 
-<Chapitre_4/Images/RGT.png, id=490, 402.50375pt x 266.9975pt>
+<Chapitre_4/Images/RGT.png, id=489, 402.50375pt x 266.9975pt>
 File: Chapitre_4/Images/RGT.png Graphic file (type png)
 <use Chapitre_4/Images/RGT.png>
 Package pdftex.def Info: Chapitre_4/Images/RGT.png  used on input line 95.
 (pdftex.def)             Requested size: 241.84843pt x 160.42787pt.
-<Chapitre_4/Images/Ts_RGT.png, id=491, 505.89pt x 433.62pt>
+<Chapitre_4/Images/Ts_RGT.png, id=490, 505.89pt x 433.62pt>
 File: Chapitre_4/Images/Ts_RGT.png Graphic file (type png)
 <use Chapitre_4/Images/Ts_RGT.png>
 Package pdftex.def Info: Chapitre_4/Images/Ts_RGT.png  used on input line 103.
 (pdftex.def)             Requested size: 193.47578pt x 165.83595pt.
-<Chapitre_4/Images/hp_RGT.png, id=492, 505.89pt x 433.62pt>
+<Chapitre_4/Images/hp_RGT.png, id=491, 505.89pt x 433.62pt>
 File: Chapitre_4/Images/hp_RGT.png Graphic file (type png)
 <use Chapitre_4/Images/hp_RGT.png>
 Package pdftex.def Info: Chapitre_4/Images/hp_RGT.png  used on input line 109.
@@ -1672,47 +1782,66 @@ LaTeX Warning: Reference `eq:C3_mc' on page 54 undefined on input line 112.
 
 LaTeX Warning: Reference `C3' on page 54 undefined on input line 112.
 
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 115.
+
 [54]
-<Chapitre_5/Images/Flow_chart.png, id=542, 160.4394pt x 543.4704pt>
+<Chapitre_5/Images/Flow_chart.png, id=541, 160.4394pt x 543.4704pt>
 File: Chapitre_5/Images/Flow_chart.png Graphic file (type png)
 <use Chapitre_5/Images/Flow_chart.png>
-Package pdftex.def Info: Chapitre_5/Images/Flow_chart.png  used on input line 124.
+Package pdftex.def Info: Chapitre_5/Images/Flow_chart.png  used on input line 125.
 (pdftex.def)             Requested size: 160.43901pt x 543.46906pt.
 
 
-LaTeX Warning: Reference `fig:C5_flowchart' on page 55 undefined on input line 135.
+LaTeX Warning: Reference `fig:C5_flowchart' on page 55 undefined on input line 136.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--135
+Underfull \hbox (badness 10000) in paragraph at lines 136--136
 
  []
 
 [55 <./Chapitre_5/Images/Flow_chart.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
 
  []
 
 
-LaTeX Warning: Reference `C2' on page 56 undefined on input line 147.
+LaTeX Warning: Reference `C2' on page 56 undefined on input line 148.
 
 
-LaTeX Warning: Reference `C3' on page 56 undefined on input line 147.
+LaTeX Warning: Reference `C3' on page 56 undefined on input line 148.
 
 ) [56] (Chapitre_6/chapitre_6.tex
 Chapter 7.
-)
-No file main.bbl.
+
+LaTeX Warning: Reference `C2' on page 57 undefined on input line 15.
+
 [57
 
 ]
 
+LaTeX Warning: Reference `tab:C6_compgas' on page 58 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Leonard2018' on page 58 undefined on input line 34.
+
+
+LaTeX Warning: Citation `Leonard2018' on page 58 undefined on input line 34.
+
+
+LaTeX Warning: Citation `EncyclopaediaBritannica2018' on page 58 undefined on input line 37.
+
+)
+No file main.bbl.
+[58]
+
 Package longtable Warning: Table widths have changed. Rerun LaTeX.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 87.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 87.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 88.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 88.
 (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 87.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 87.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 88.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 88.
 
 
 Package rerunfilecheck Warning: File `main.out' has changed.
@@ -1721,33 +1850,31 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  800DE23958C603A49C0E24BE0FA09D4D;3594.
+(rerunfilecheck)             After:  8776CBA1C4DACE9A3119BE673DB900ED;3732.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 87.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 88.
  ) 
 Here is how much of TeX's memory you used:
- 21416 strings out of 480930
- 407377 string characters out of 2899292
- 669463 words of memory out of 3000000
- 36500 multiletter control sequences out of 15000+200000
- 600650 words of font info for 118 fonts, out of 3000000 for 9000
+ 21483 strings out of 480930
+ 408607 string characters out of 2899292
+ 670056 words of memory out of 3000000
+ 36561 multiletter control sequences out of 15000+200000
+ 597847 words of font info for 116 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,17n,60p,715b,558s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist, replaced by a fixed one
-
+ 60i,17n,60p,715b,570s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Martin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (58 pages, 6332137 bytes).
+Output written on main.pdf (59 pages, 6672636 bytes).
 PDF statistics:
- 687 PDF objects out of 1000 (max. 8388607)
- 283 named destinations out of 1000 (max. 500000)
- 173 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 693 PDF objects out of 1000 (max. 8388607)
+ 285 named destinations out of 1000 (max. 500000)
+ 178 words of extra memory for PDF output out of 10000 (max. 10000000)
 
