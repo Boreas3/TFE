@@ -71,7 +71,7 @@ If it is done under constant volume constraint, it is called specific heat at co
 If the transformation is performed at constant pressure, the symbol associated to the specific heat is $c_p$.
 It is worth to note that the specific heat at constant pressure is always higher than the $c_v$. When performing the transformation a constant pressure, the gas expands against the external pressure. This means that the gas does work and, this is the reason behind the greater value of the supplied heat when dealing with a transformation at constant pressure. 
 
-It had been shown that for an ideal gas, the variation of the internal energy can be linked to the specific heat at constant volume as written in the relation (\ref{eq:C3_UC}).
+For an ideal gas, the variation of the internal energy can be linked to the specific heat at constant volume as written in the relation (\ref{eq:C3_UC}).
 
 \begin{equation}
 \setstretch{1}
@@ -192,23 +192,17 @@ As it has been explained, a transformation is said reversible if it takes an inf
 
 The transformation is said reversible isothermal if during all the process the temperature remains constant. Such transformation is depicted on Figure \ref{fig:C3_isoT}. The ideal gas equation (\ref{eq:C2_GP}) allows to derive the relation (\ref{eq:C3_isoT}) if the mass within the system does not vary.
 
-  \begin{align}
     \setstretch{1}
+  \begin{align}
     p_1\cdot \mathrm{V}_1 &= p_2\cdot \mathrm{V}_2\nonumber\\
     \rightarrow p\cdot \mathrm{V} &= C \label{eq:C3_isoT}  
   \end{align}
-
- For a compression (resp. an expansion), the process is said isothermal if the system is cooled (resp. heat up) to bring the final state temperature to its initial value.
+  
+\setstretch{1.5}
+ For a compression (resp. an expansion), the process is said isothermal if the system is cooled (resp. heat up) to bring the final state temperature to its initial value.\clearpage
 
 Considering an isothermal compression, the boundary work $W_b$, corresponding to the area below the curve, is given in the development (\ref{eq:C3_WbisoT})
 
-\begin{align}
-  \setstretch{1}
-  W_b &= \int_1^2 pd\mathrm{V} = C\cdot\int_1^2d\mathrm{V}\nonumber\\
-  &= C\cdot \ln \frac{V_2}{V_1} = p_1\cdot V_1\cdot \ln \frac{V_2}{V_1} \label{eq:C3_WbisoT}
-\end{align}
-
-\subsection{Polytropic transformation}
 \begin{wrapfigure}{r}{0.3\linewidth}
   \centering
   \includegraphics{poly.png}
@@ -216,13 +210,23 @@ Considering an isothermal compression, the boundary work $W_b$, corresponding to
   \label{fig:C3_poly}
 \end{wrapfigure}
 
+ \setstretch{1}
+\begin{align}
+  W_b &= \int_1^2 pd\mathrm{V} = C\cdot\int_1^2d\mathrm{V}\nonumber\\
+  &= C\cdot \ln \frac{V_2}{V_1} = p_1\cdot V_1\cdot \ln \frac{V_2}{V_1} \label{eq:C3_WbisoT}
+\end{align}
+\subsection{Polytropic transformation}
+ \setstretch{1.5}
 \quad\ The polytropic transformation, depicted on Figure \ref{fig:C3_poly}, is  generalization of the isothermal transformation. For an ideal gas, the polytropic transformation is characterized by the relation (\ref{eq:C3_poly}).
 
+  \setstretch{1}
 \begin{equation}
   p\cdot \mathrm{V}^n = C \label{eq:C3_poly}
 \end{equation}
+\setstretch{1.5}
+where $n$ is a constant. 
 
-where $n$ is a constant. For $n=1$, the transformation simply correspond to the isothermal transformation.
+For $n=1$, the transformation simply correspond to the isothermal transformation.
  
 
 \subsection{Isobaric transformation}
@@ -239,14 +243,15 @@ Typically, the transformation within the combustion chamber, heat exchanger or p
 
 As for the isothermal transformation, the boundary work for an isobaric transformation is equal to the area below the curve. Here, the expression is given in the equation (\ref{eq:C3_WbisoP}).
 
-\begin{align}
   \setstretch{1}
+\begin{align}
   W_b &= p_0\cdot \int_1^2d\mathrm{V}\nonumber\\
    &= p_0\cdot (\mathrm{V_2} - \mathrm{V_1}) = m\cdot p_0\cdot (\mathrm{v_2} - \mathrm{v_1}) \label{eq:C3_WbisoP}
 \end{align}\clearpage
 
 
 \subsection{Isentropic transformation}
+\setstretch{1.5}
 \quad\ The last transformation to be considered is the isentropic transformation. This transformation corresponds to a reversible adiabatic transformation. 
 
 Typically, when considering the expansion or the compression of a fluid, the manufacturers aim to build a machine which tends to minimize as much as possible the irreversibilities. 
