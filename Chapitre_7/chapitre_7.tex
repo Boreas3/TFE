@@ -109,6 +109,10 @@ To minimize the computation time, only the state at the beginning and ending of 
 
 Assuming that the temperature and pressure at a given point are known, there exist several possibilities regarding to the evaluation of the flow state at this point. 
 
-The first option consists in using CoolProp \cite{Bell2014}, an open-source thermodynamic library. This tools, as it has been mentioned in the chapter \ref{C3}, uses the Helmotz and Gibbs functions to evaluate the desired state variables. When using CoolProp, the state is accuratly assess since the library is solving the exact partial derivative equations.
+The first option consists in using CoolProp \cite{Bell2014}, an open-source thermodynamic library. This tools, as it has been mentioned in the chapter \ref{C3}, uses the Helmotz and Gibbs functions to evaluate the desired state variables. When using CoolProp, the state is accurately assess since the library is solving the exact partial derivative equations. 
 
-However, when considering an ideal gas, 
+Now, when considering an ideal, there exists an alternative to CoolProp for the calculation of the enthalpy and the heat capacity. In the chapter \ref{C3}, it has been shown that those quantity can only be computed using the temperature. This valuable property could be used to build polynomial of the type f(T) to estimate the value of the enthalpy and heat capacity for a given temperature T. 
+
+Since the middle of the last century, scientists started to conduct experiments to assess the state of various gases to a large range of temperature. For each temperature tested, records have been made to build a table. This table, called thermodynamic table, is composed of rows corresponding each to one temperature value for which states have been recorded. 
+An example of thermodynamic table is given in Table \ref{tab:C7_thermotab}.
+Among the differents 
