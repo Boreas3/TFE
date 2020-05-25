@@ -1,5 +1,5 @@
 \graphicspath{{Chapitre_6/Images/}}
-\chapter{Brayton cycle modeling - Overview}\label{C6}
+\chapter{Model overview}\label{C6}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%                         %%%%%
 %%%%% Introduction chapitre 5 %%%%%
@@ -24,7 +24,7 @@ Since Python is an open source language, it lives thanks to its community which 
 
 Also, Python is a programming language that allows the object oriented programming. This paradigm consists in the definition of blocks of code (called objects) which are able to interact together through relations, defined in order to solve a given problem. This allows to create computer code that can evolve through the times. 
 
-\section{Structure of the model}
+\section{Model structure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%                         %%%%%
 %%%%% <<Structure of the>>    %%%%%
@@ -43,54 +43,55 @@ The first field named "Type" says to the computer code which configuration of th
 \begin{longtable}[c]{ll}
 \caption{Program input - "Type" field}
 \label{tab:C5_inputconfig}\\
-\hline
-Type - Abbreviation & Type - full name                            \\ \hline
+\toprule
+\textbf{Type - Acronym} & \textbf{Type - Name}                   \\* \midrule
 \endfirsthead
 %
-\multicolumn{2}{c}%
-{{\bfseries Table \thetable\ continued from previous page}} \\
-\hline
-Type - Abbreviation & Type - full name                            \\ \hline
 \endhead
 %
-GT                  & Gas Turbine                                 \\
-RGT                 & Regenerative Gas Turbine                    \\
-IRGT                & Intercooler-Regenerative Gas Turbine        \\
-RHGT                & Regenerative-Reheat Gas Turbine             \\
-IHGT                & Intercooler-Reheat Gas Turbine              \\
-IRHGT               & Intercooler-Regenerative-Reheat Gas Turbine \\
-EFGT                & Externally-Fired Gas Turbine               
-\end{longtable} 
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+GT                           & Gas Turbine                                 \\
+RGT                          & Regenerative Gas Turbine                    \\
+IRGT                         & Intercooler-Regenerative Gas Turbine        \\
+RHGT                         & Regenerative-Reheat Gas Turbine             \\
+IHGT                         & Intercooler-Reheat Gas Turbine              \\
+IRHGT                        & Intercooler-Regenerative-Reheat Gas Turbine \\
+EFGT                         & Externally-Fired Gas Turbine                \\* \bottomrule
+\end{longtable}
 
 These different configurations are described in the annex \ref{annex:Brayton_variant}. 
 
 The second field list all the input data required to initialized the model. The number of variables to be specified at the start of the program depends on the selected configuration. For instance, considering the gas turbine (GT), the inputs required are listed in Table \ref{tab:C5_inputGT}.
-\begin{longtable}[c]{llll}
+\begin{longtable}[c]{ll|ll}
 \caption{Input - gas turbine (GT)}
 \label{tab:C5_inputGT}\\
-\hline
-Parameter                                                                             & Symbol         & Parameter                                                                        & Symbol           \\ \hline
+\toprule
+\textbf{Inputs - Name}                                                                          & \textbf{Inputs - Abbreviation} & \textbf{Inputs - Name}                                                                                          & \textbf{Inputs - Abbreviation} \\* \midrule
 \endfirsthead
-\multicolumn{4}{c}%
-{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
-Parameter                                                                             & Symbol         & Parameter                                                                        & Symbol           \\ \hline
+%
 \endhead
-\multicolumn{4}{r}{\textit{Continued on next page}} \\
+%
+\bottomrule
 \endfoot
+%
 \endlastfoot
 %
-Reference temperature (°C)                                                            & $T_{ref}$      & \begin{tabular}[c]{@{}l@{}}Combustion chamber\\ efficiency (\%)\end{tabular}     & $\eta_{cc}$      \\
-Ambient temperature (°C)                                                              & $T_{amb}$      & \begin{tabular}[c]{@{}l@{}}Shaft mechanical\\ efficiency (\%)\end{tabular}       & $\eta_{shaft}$   \\
-Fuel temperature (°C)                                                                 & $T_{fuel}$     & Generator efficiency (\%)                                                        & $\eta_{gen}$     \\
-\begin{tabular}[c]{@{}l@{}}Combustion chamber\\ exhaust temperature (°C)\end{tabular} & $T_{cc,ex}$    & \begin{tabular}[c]{@{}l@{}}Compressor isentropic \\ efficiency (\%)\end{tabular} & $\eta_{comp}$    \\
-Reference pressure (Pa)                                                               & $p_{ref}$      & \begin{tabular}[c]{@{}l@{}}Turbine isentropic \\ efficiency (\%)\end{tabular}    & $\eta_{t}$       \\
-Ambient pressure (Pa)                                                                 & $p_{amb}$      & \begin{tabular}[c]{@{}l@{}}Compressor pressure\\ ratio (-)\end{tabular}          & $P_{comp,ratio}$ \\ \hline
-Duct pressure drop (\%)                                                               & $Dp_{duct}$    & Air mass flow rate (kg/s)                                                        & $\dot{m}_{air}$  \\
-\begin{tabular}[c]{@{}l@{}}Combustion chamber\\ pressure drop (\%)\end{tabular}       & $Dp_{cc}$      & Nominal mass flow rate (kg/s)                                                    & $\dot{m}_{nom}$  \\
-Chimney suction (Pa)                                                                  & $Dp_{chimney}$ & Air factor (-)                                                                   & $\lambda$         \\ \hline
-Fuel composition (\%)                                                                 & $Fuel_{char}$  & {\color{PineGreen} Compressor performance map} (.xls/.xlsx) &  $Comp_{excel}$                 \\
-Air composition (\%)                                                                  & $Air_{char}$   &{\color{PineGreen} Turbine performance map} (.xls/.xlsx) & $Turb_{excel}$ \\ \hline
-{\color{Gray} Rotational speed} (rpm) & $N$ & &\\ \hline
+\begin{tabular}[c]{@{}l@{}}Reference \\ temperature (°C)\end{tabular}                  & $T_{ref}$             & \begin{tabular}[c]{@{}l@{}}Combustion chamber \\ efficiency (\%)\end{tabular}                          & $\eta_{cc}$           \\
+\begin{tabular}[c]{@{}l@{}}Ambient \\ temperature (°C)\end{tabular}                    & $T_{amb}$             & \begin{tabular}[c]{@{}l@{}}Shaft mechanical \\ efficiency (\%)\end{tabular}                            & $\eta_{shaft}$        \\
+\begin{tabular}[c]{@{}l@{}}Fuel \\ temperature (°C)\end{tabular}                       & $T_{fuel}$            & \begin{tabular}[c]{@{}l@{}}Generator \\ efficiency (\%)\end{tabular}                                   & $\eta_{gen}$          \\
+\begin{tabular}[c]{@{}l@{}}Combustion chamber \\ exhaust temperature (°C)\end{tabular} & $T_{cc,ex}$           & \begin{tabular}[c]{@{}l@{}}Compressor isentropic \\ efficiency (\%)\end{tabular}                       & $\eta_{comp}$         \\
+\begin{tabular}[c]{@{}l@{}}Reference \\ pressure (Pa)\end{tabular}                     & $p_{ref}$             & \begin{tabular}[c]{@{}l@{}}Turbine isentropic \\ efficiency (\%)\end{tabular}                          & $\eta_{t}$            \\
+\begin{tabular}[c]{@{}l@{}}Ambient \\ pressure (Pa)\end{tabular}                       & $p_{amb}$             & \begin{tabular}[c]{@{}l@{}}Compressor \\ pressure ratio (-)\end{tabular}                               & $P_{comp,ratio}$      \\
+\begin{tabular}[c]{@{}l@{}}Duct \\ pressure drop (\%)\end{tabular}                     & $Dp_{duct}$           & \begin{tabular}[c]{@{}l@{}}Air mass \\ flow rate (kg/s)\end{tabular}                                   & $\dot{m}_{air}$       \\
+\begin{tabular}[c]{@{}l@{}}Combustion chamber \\ pressure drop (\%)\end{tabular}       & $Dp_{cc}$             & \begin{tabular}[c]{@{}l@{}}Nominal mass \\ flow rate (kg/s)\end{tabular}                               & $\dot{m}_{nom}$       \\
+Chimney suction (Pa)                                                                   & $Dp_{chimney}$        & Air factor (-)                                                                                         & $\lambda$             \\
+Fuel composition (\%)                                                                  & $Fuel_{char}$         & \begin{tabular}[c]{@{}l@{}}{\color{PineGreen}{Compressor}} \\ {\color{PineGreen}{performance map}} (.xls/.xlsx)\end{tabular} & $Comp_{excel}$        \\
+Air composition (\%)                                                                   & $Air_{char}$          & \begin{tabular}[c]{@{}l@{}}{\color{PineGreen}{Turbine}} \\ {\color{PineGreen}{performance map}} (.xls/.xlsx)\end{tabular}    & $Turb_{excel}$        \\
+{\color{Gray} Rotational speed} (rpm)                                                  & $N$                   &                                                                                                        &                       \\* \bottomrule
 \end{longtable}
 
 The last field named "Selection" is composed of two boolean variables. The first one gives the choice to add a water heat exchanger between the \textit{end} of the cycle and the exhaust. When this variable, named "WHX", is set to \textit{true}, the following inputs as to be added.
@@ -119,7 +120,7 @@ which allows the computation of the turbine inlet temperature.
 \newpage
 \subsection{Flow chart of the model}
 \quad\,  The previous section detailed the the structure of the input file to be provided at the start of the program. Once provided, the program will first read the "Type" field to select the desired configuration. If the configuration is contained in the database of the program, the associated model will be created.
-\begin{wrapfigure}{l}{0.45\linewidth}
+\begin{wrapfigure}{l}{0.42\linewidth}
 \centering
 \includegraphics{Flow_chart.png}
 \caption{Flow chart of the Brayton cycle model}
@@ -132,7 +133,7 @@ After having gone through the combustion chamber(s), the mass flow rate of fuel 
    
 Finally, outputs are generated based on the assessed cycle. Among these, the temperature, pressure, enthalpy, and density at each state of the cycle are specified. The fuel mass flow rate is also provided to the user along with the thermal efficiency of the cycle and the power consumed and produced. 
 
-This structure is followed for every selected configurations. The flow chart on Figure \ref{fig:C6_flowchart} graphically illustrates the structure of the model from the reading of the inputs to the generation of the outputs.\\ \newpage
+This structure is followed for every selected configurations. The flow chart on Figure \ref{fig:C6_flowchart} graphically illustrates the structure of the model from the reading of the inputs to the generation of the outputs.\clearpage
 
 As it has been presented, the main structure of the program is relatively linear without many branches. This linear scheme allows a rapid comprehension of how the program works from the outside. However, when considering the calls of the objects in the ''Calculate\_cycle'' function, the structure becomes more complex. 
 
