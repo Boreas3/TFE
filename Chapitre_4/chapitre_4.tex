@@ -123,7 +123,6 @@ minimize the number of experimental campaign that has to be conducted. By defini
 This is a really powerful tool which allows to significantly decrease the time and the cost related to the design of a new turbomachines. Indeed, it allows to do the testing on smaller turbomachines, and then the performance of the desired machine are extrapolated. Since the machines and the associated test benches are smaller, the cost of the experimental campaign are significantly smaller, and the experimental results can be reused for future designed machines.
 
 This concludes the introductory section about the basis notions to study the turbomachines. 
-\newpage
 \subsection{Pumps and hydraulic turbines}
 \quad\, Now that the base principles have been introduced, those can be specified for the analysis of turbomachines performing transformation on incompressible flow. 
 
@@ -262,9 +261,9 @@ Using the equations (\ref{eq:C3_isrelPT}), (\ref{eq:C3_isrelrhoT}) and the defin
 
     \item \(N\) (rpm): It is the rotational speed of the turbomachine shaft.
 
-    \item \(\Pi\) (-): It is the pressure ratio between the inlet and the outlet of the turbomachines. If the turbomachines is compressing the flow, the ratio is reverse to keep it greater than one.
+    \item \(\Pi_{tt}\) (-): It is the total to total pressure ratio between the inlet and the outlet of the turbomachines. If the turbomachines is compressing the flow, the ratio is reverse to keep it greater than one.
 
-    \item \(\eta\) (-): It is the isentropic efficiency of the machine.
+    \item \(\eta_{tt}\) (-): It is the total to total isentropic efficiency of the machine.
 \end{itemize}
 The corrected mass flow rate is defined as being the flow that would observed at the prescribed \textbf{static} reference conditions ($T_{ref},P_{ref}$). Using the similarity, the relation (\ref{eq:C4_mc}) allows to derived the corrected mass flow rate.
 
@@ -282,10 +281,10 @@ Let's supposed now that the rotational speed and the corrected mass flow are kno
 \begin{subequations}
     \setstretch{1}
     \begin{equation}
-        \Pi = \Pi(N, \dot{m}_c)\label{eq:C4_Pimap}
+        \Pi_{tt} = \Pi_{tt}(N, \dot{m}_c)\label{eq:C4_Pimap}
     \end{equation}
     \begin{equation}
-        \eta = \eta(N, \dot{m}_c)\label{eq:C4_etamap}
+        \eta_{tt} = \eta_{tt}(N, \dot{m}_c)\label{eq:C4_etamap}
     \end{equation}
 \end{subequations}
 These relations can be established by the means of experimental measurements.
@@ -327,7 +326,7 @@ The diagram, for which the velocity triangles are given on Figure \ref{fig:C4_co
 \end{itemize}
 As a reminder, the enthalpy at the end of the process is higher than the one considering an isentropic transformation.
 \subsubsection{Performance maps}
-\quad\ As for any turbomachines, the compressor can be characterized by its performance map. The map is composed of the performance plot often completed with the efficiency hill. The performance plot provides the total to total (TT) pressure ratio \(\Pi_c\) as a function of the rotational speed \(N\) and the corrected flow rate \(\dot{m}_c\).
+\quad\ As for any turbomachines, the compressor can be characterized by its performance map. The map is composed of the performance plot often completed with the efficiency hill. The performance plot provides the total to total (TT) pressure ratio \(\Pi_{tt,c}\) as a function of the rotational speed \(N\) and the corrected flow rate \(\dot{m}_c\).
 
 A illustration of a compressor performance map is given on Figure \ref{fig:C4_compmap}.
 \begin{figure}[h]
@@ -339,7 +338,7 @@ A illustration of a compressor performance map is given on Figure \ref{fig:C4_co
 
 On the map, the solid and the dash curves represent respectively the iso-rotational speed and the iso-efficiency.
 
-To remarkable lines are emphasized on the plot. For each rotational speed \(N_c\), these lines provides minimal and maximal bound for the compressor pressure ratio \(\Pi_c\).
+To remarkable lines are emphasized on the plot. For each rotational speed \(N_c\), these lines provides minimal and maximal bound for the compressor pressure ratio \(\Pi_{tt,c}\).
 
 The lower limit is given by the choke line. “When the flow reaches the velocity at some cross-section” \cite{Ghorbanian2009}, an increase of the gas mass flow rate is not possible. Thus, the slope of the associated iso-rotational speed becomes equal to the infinity at this point. 
 
@@ -397,7 +396,7 @@ In general, i is possible to classify the turbomachines by creating two categori
 \begin{equation}
     R = \frac{h_2 - h_3}{h_1 - h_3}\label{eq:C4_R}
 \end{equation}
-Then the two families are:
+From this definition, the two categories can be defined as follows:
 
 \begin{itemize}
     \setstretch{1}
@@ -761,7 +760,7 @@ with \(A_c\) and \(P_c\) the cross area and perimeter of the duct\cite{Ngendakum
 
 Making the assumption that both \(D_h\) and \(D_t\) are equal, let's pose \(D=D_h=D_t\). Therefore, the convective heat transfer coefficient \(h\) can be expressed as follows
 \begin{equation}
-    h = 0.0697\cdot \frac{\dot{m}^{4/5}\cdot cp^{1/3}}{\pi^{4/5}\cdot D^{9/5}}\cdot \frac{\lambda_c^{2/3}}{\mu^{7/15}}
+    h = 0.0697\cdot \frac{\dot{m}^{4/5}\cdot c_p^{1/3}}{\pi^{4/5}\cdot D^{9/5}}\cdot \frac{\lambda_c^{2/3}}{\mu^{7/15}}
 \end{equation}
 
 In the present work, the heat-exchanger that will be used are plate heat-exchangers. For this specific category, the surface dimensions \(A\) for the cold and the hot side are very closed from each others. Also, if the flow considered is only composed of one phase (i.e. only liquid or gaseous), the wall resistance \(R_w\) can be neglected.
