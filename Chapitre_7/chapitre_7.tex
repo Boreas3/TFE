@@ -562,7 +562,9 @@ Figure \ref{fig:C7_trimap} depicts the result of the triangulation of the compre
 As it can be seen on the graph, the surge line is misrepresented by the mesh. The limit provided by the triangulation is very optimistic and doesn't correspond with the reality. 
 
 \subsubsection{Triangulation with constraints}
-\quad\ The triangulation cannot be used without performing some tweaks to remove the triangle outside the compressor map domain. Studyy
+\quad\ As explained in last lines, the basic triangulation method cannot handle concave hull by itself. In order to take into consideration these shapes, some conditions have to be set to reject or not the triangle of the mesh. A selection algorithm  has been developed \cite{} based on the geometry of the triangle.
 
+To express the algorithm, the triangle 
+For each triangle, the length of each side are computed based 
 
 
