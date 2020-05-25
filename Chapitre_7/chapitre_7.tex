@@ -564,7 +564,7 @@ As it can be seen on the graph, the surge line is misrepresented by the mesh. Th
 \subsubsection{Triangulation with constraints}
 \quad\ As explained in last lines, the basic triangulation method cannot handle concave hull by itself. In order to take into consideration these shapes, some conditions have to be set to reject or not the triangle of the mesh. A selection algorithm  has been developed \cite{} based on the geometry of the triangle.
 
-To illustrate the algorithm, the triangle with its circumcircle on Figure \ref{fig:C7_triangmesh} can be considered.
+To illustrate the algorithm, the triangle with its circumscribed circle on Figure \ref{fig:C7_triangmesh} can be considered.
 
 \begin{figure}[h]
     \centering
@@ -586,5 +586,9 @@ Then, the intermediary quantity $s$, called simeperimeter, is computed using the
     \setstretch{1}
     s = \frac{a + b + c}{2}\label{eq:C7_semiperim}
 \end{equation}
-Using $l_a$, $l_b$
+Using $l_a$, $l_b$, $l_c$, and $s$, the radius $circ_R$ of the circumscribed circle can be calculated using the relation (\ref{eq:C7_circum}). 
 
+\begin{equation}
+    \setstretch{1}
+   circum_r = a * b * c / (4.0 * area)
+\end{equation}
