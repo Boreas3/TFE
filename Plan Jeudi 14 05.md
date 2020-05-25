@@ -1,8 +1,3 @@
----
-
-
----
-
 <h3 id="turbomachines"><s>Turbomachines</s></h3>
 <ul>
 <li><s>Ajouter section general</s>
@@ -80,3 +75,6 @@
 wo</li>
 </ul>
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTU1MzQxOTYsLTEwOTc1NDU4NThdfQ==
+-->
