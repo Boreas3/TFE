@@ -564,15 +564,27 @@ As it can be seen on the graph, the surge line is misrepresented by the mesh. Th
 \subsubsection{Triangulation with constraints}
 \quad\ As explained in last lines, the basic triangulation method cannot handle concave hull by itself. In order to take into consideration these shapes, some conditions have to be set to reject or not the triangle of the mesh. A selection algorithm  has been developed \cite{} based on the geometry of the triangle.
 
-To illustrate the algorithm, the triangle on Figure \ref{fig:C7_triangmesh} can be considered.
+To illustrate the algorithm, the triangle with its circumcircle on Figure \ref{fig:C7_triangmesh} can be considered.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\textwidth]{Comp_map/triang_mesh.png}
+    \includegraphics[width=0.45\textwidth]{Comp_map/triang_mesh.png}
     \caption{Triangle with its coordinates within the mesh}
     \label{fig:C7_triangmesh}
 \end{figure}
-The three nodes $i_a$, $i_b$ and $i_c$
-For each triangle, the length of each side are computed based 
+The three nodes $i_a$, $i_b$ and $i_c$ are respectively characterized by the coordinates $(x_a,y_a)$, $(x_b,y_b)$, $(x_c,y_c)$. Using the coordinates, the length of the triangle edges are computed as follows.
 
+\begin{align*}
+    \setstretch{1}
+    l_a &= \sqrt{(x_a - x_b)^2 + (y_a - y_b)^2}\\
+    l_b &= \sqrt{(x_b - x_c)^2 + (y_b - y_c)^2}\\
+    l_c &= \sqrt{(x_c - x_a)^2 + (y_c - y_a)^2}
+\end{align*}
+Then, the intermediary quantity $s$, called simeperimeter, is computed using the formula (\ref{eq:C7_semiperim}).
+
+\begin{equation}
+    \setstretch{1}
+    s = \frac{a + b + c}{2}\label{eq:C7_semiperim}
+\end{equation}
+Using $l_a$, $l_b$
 
