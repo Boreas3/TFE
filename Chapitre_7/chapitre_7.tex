@@ -486,17 +486,32 @@ According to the theory, a polynomial of degree N can exactly fit N+1 points. Ho
     \end{subfigure}
     \caption{Polynomial fitting of 15 points.} \label{fig:C7_poly}
 \end{figure}
+
 As illustrated in the series of schematics, when the highest degree of the polynomial increases, the amplitude of the variations increases as well. More precisely, the magnitude at the extremity of the domain defined by the set of points are the relatively large compared to the remaining of the function. 
 
 Thus, it is required to minimize the degree of the polynomial to avoid these large fluctuation. This will be performed by  using the LS-R algorithm. The algorithm allows to restrict the maximal degree of the polynomial while keeping a good accuracy at the given points. For the remaining of the report, the abbreviation LS-RP will refer to the least-square regression algorithm using polynomials as basis functions.
+\subsection{Splitting of the performance maps}
+\quad\ When considering the performance maps of the compressor and the turbine, the range of value for the rotational speed can be becomes quite large. However, if the domain to be extrapolated by the polynomial is to wide, an evident loss of accuracy will occur. 
 
+To avoid this loss of accuracy, it would be interesting to split the maps before applying the least-squares regression algorithm. Therefore, the polynomial will be defined by parts. However, there isn't any guaranty that the value of the polynomial at the junction of two parts will be the same. To solve this issue, each parts will be superimposed on each other. Then, a linear blending is perform to remove the discontinuity between the different parts. 
+
+Considering two functions $f_1(x,N)$ and $f_2(x,N)$ superimposed for value of $N\in [N_{start},N_{end}]$, the blended function $f_{1,2}(x,N)$ is defined as follows:
+\begin{equation}
+ f_{1,2}(x,N) = \begin{cases}
+f_1(x,N) &\text{ if }N<N_{start}\\
+f_1(x,N) + f_2(x,N) - f_1(x,N))\cdot \alpha &\text{ if } N\in [N_{start},N_{end}]\\
+f_2(x,N) &\text{ if }N>N_{end}
+\end{cases}   
+\end{equation}
+where $\alpha$ is a coefficient for which its value is 0 for $N = N_{start}$ and 1 for $N = N_{end}$.  
 \subsection{Compressor maps}
-\quad\ First are considered the compressor maps. As it has been mentioned before, two functions need to be defined to fully characterized the compressor operating points.  To select the degree of the polynomial such that the function fit the best the given set of operating points, a parametric study over the maximal degree $d$ of the polynomial has been conducted. The data from Table \ref{tab:C7_compmap} will be used to perform this study.
-
+\quad\ First are considered the compressor maps. As it has been mentioned before, two functions need to be defined to fully characterized the compressor operating points.  
+\subsubsection{Selection of the polynomial degree}
+\quad\ To select the degree of the polynomial such that the function fit the best the given set of operating points, a parametric study over the maximal degree $d$ of the polynomial has been conducted. The data from Table \ref{tab:C7_compmap} will be used to perform this study.
 For each of these polynomial, the value of the objective function $\textbf{F}$ and of the square of the residual function $Res^2$ are computed then compared. The results are expressed in Table \ref{tab:C7_regcomp}.
 
 \begin{longtable}[c]{@{}lll|ll@{}}
-\caption{Regression result - Compressor map}
+\caption{Regression result - Compressor map (part 1 - Polynomial functions)}
 \label{tab:C7_regcomp}\\
 \toprule
                 & \multicolumn{2}{l|}{$\Pi_{tt,c} = \Pi_{tt,c}(\dot{m}_{corr,c},N_c)$} & \multicolumn{2}{l}{$\eta_{is,c} = \eta_{is,c}(\Pi_{tt,c},N_c)$} \\* \midrule
@@ -521,8 +536,6 @@ For each of these polynomial, the value of the objective function $\textbf{F}$ a
 
 From these results, several remarks can be drawn. First, the error with respect to the cloud of points when using polynomials of degree 1 or 2 is non negligible. For linear polynomials (degree 1), the square of the residual function is in average 25\% below the unity value, which is not acceptable. Considering now the quadratic polynomials (degree 2), the objective function can still be improve if polynomials of higher degree are used.
 
-Now, the choice of the maximal degree will depend on the relation. For the first one, it can be seen that there is no massive improvement of the residual function value for polynomials of degree greater than 6. Considering the second function, the analysis of the results shows that there is non interest of selecting polynomial of degree greater than 5.
-On Figures \ref{fig:C7_polycomp1} and \ref{fig:C7_polycomp2} respectively depict the interpolating polynomial for the two relations.
 \begin{figure}[h]
     \setstretch{1}
     \centering
@@ -538,16 +551,74 @@ On Figures \ref{fig:C7_polycomp1} and \ref{fig:C7_polycomp2} respectively depict
         \caption{$\eta_{is,c} = \eta_{is,c}(\Pi_{tt,c},N_c)$}
         \label{fig:C7_polycomp2}
     \end{subfigure}
-    \caption{Polynomial interpolation of the compressor relations.} \label{fig:C7_polycomp}
+    \caption{Polynomial interpolation of the compressor.} \label{fig:C7_polycomp}
 \end{figure}
+
+Now, the choice of the maximal degree will depend on the relation. For the first one, it can be seen that there is no massive improvement of the residual function value for polynomials of degree greater than 6. Considering the second function, the analysis of the results shows that there is non interest of selecting polynomial of degree greater than 5.
+On Figures \ref{fig:C7_polycomp1} and \ref{fig:C7_polycomp2} respectively depict the interpolating polynomial for the two relations.
+
+
+\subsubsection{Extrapolation of the map at low RPM}
+\quad\, When the compressor map is built, the low rotational speed operation points are usually not represented. However, at these low rotational speeds (below $\sim$ 40,000 RPM) the flow starts to behave as an incompressible flow. Therefore, the method of extrapolation of the performance maps seen for the pumps in chapter \ref{C4} can be applied on the map.
+
+As expressed in the chapter \ref{C4}, two similar operating points $A$ and $B$ are linked by the relations (\ref{eq:C7_mdot}) to (\ref{eq:C7_eta}). 
+
+\begin{subequations}
+\setstretch{1}
+\begin{align}
+    \dot{Q}_{c,B} &= \dot{Q}_{c,A} \cdot \frac{N_{c,B}}{N_{c,A}}\nonumber\\
+    \dot{m}_{corr,c,B} &= \dot{m}_{corr,c,A} \cdot \frac{N_{c,B}}{N_{c,A}}\label{eq:C7_mdot}\\
+    \Delta h_{B}^0 &= \Delta h_{A}^0 \cdot \left(\frac{N_{c,B}}{N_{c,A}}\right)^2 \label{eq:C7_Dh}\\
+    \eta_{is,c,B} &= \eta_{is,c,A} \label{eq:C7_eta}
+\end{align}
+\end{subequations}
+with $\Delta h^0 = h_{2}^0 - h_{1}^0$, where the inlet and outlet states of the compressor are denoted \textbf{1} and \textbf{2}.\\
+
+The extrapolation will assume that the gas used is air with constant
+$c_p=1005 J/kg*K$ and $r = 287 J/kg*K$. 
+
+To initialize the method, reference conditions needs to be defined:
+
+\begin{align*}
+    \setstretch{1}
+    T_{0}^0 & = 293.15K\\
+    h_{0}^0 & = \int_{T_{0}^0}^{T_{0}^0} c_p dT = 0\\
+    r & = 287 \text{ J/(kg$\cdot$ K)}\\
+    k &= \frac{c_p - r}{c_p} = 1.4
+\end{align*}
+Then, considering the known operating point $A$, the variation of the enthalpy $\delta_{A}^0$ is obtained  following the relations seen in the section \ref{C3:Isen_eff} are used. The mathematics development are expressed in (\ref{eq:C7_DhA}), where the inlet condition $1$ of the compressor corresponds to the reference conditions specified above.
+
+\begin{align}
+\setstretch{1}
+    T_{A,1}^0 = T_{0}^0 &\text{ and } h_{A,1}^0 = T_{0}^0\nonumber\\
+    \frac{T_{A,2,is}^0}{T_{A,1}^0} &= \left(\Pi_{tt,c,A}\right)^{\frac{k-1}{k}}\nonumber\\
+    T_{A,2}^0 &= T_{A,1}^0 + \frac{T_{A,2,is}^0 - T_{A,1}^0}{\eta_{is,c,A}}\label{eq:C7_DhA}\\
+    h_{A,2}^0 &= h_{0}^0 + c_p\cdot (T_{A,2}^0 - T_{0}^0)\nonumber\\
+    \Rightarrow \Delta h_A^0 &= h_{A,2}^0  - h_{A,1}^0\nonumber
+\end{align}
+
+Once the enthalpy variation $\Delta h_A^0$ is computed, the one for the similar operating point $B$ can be obtained from the relation (\ref{eq:C7_Dh}).
+
+Then, the total to total pressure ratio produced by the compressor at the operating point $B$ by applying backward the relations of (\ref{ea:C7_DhA}). Therefore, the following development (\ref{eq:C7_DhB} can be derived.
+
+\begin{align}
+\setstretch{1}
+    T_{B,2}^0 = T_{0}^0 &\text{ and } h_{B,2}^0 = T_{0}^0\nonumber\\
+    h_{B,2}^0 &= \Delta h_B^0 + h_{B,1}^0\nonumber\\
+    T_{B,2}^0 &= \frac{h_{B,2}^0 - h_{0}^0}{c_p} + T_0^0\label{eq:C7_DhB}\\
+    T_{B,2,is}^0 &= \left(T_{B,2}^0 - T_{B,1}^0\right)\cdot \eta_{is,c,B} + T_{B,1}^0\nonumber\\
+    \Pi_{tt,c,B} &= \left(\frac{T_{B,2,is}^0}{T_{B,1}^0}\right)^{\frac{k}{k-1}}\nonumber
+\end{align}
+Using this method, low rotational speed operating points can be derived and used to improve the accuracy of the polynomial regression.
 
 \subsection{Delimitation of the compressor map domain}
 \quad\ While it has been expressed previously that polynomial of high degree are not reliable at the extremity of the domain defined by the given set of operating points, this doesn't really matter here since the domain of operation of the compressor is naturally limited by the choke and surge lines described in the chapter \ref{C4}.
 
+Several methods are going to be presented in this part of the section dedicated to the modeling of the turbomachines. 
 \subsubsection{Triangulation without constraints}
 To implement these limits into the model, different methods have been studied. The first method consisted in creating a triangular meshing not constraint through the couple of points $(\dot{m}_{corr,c},\Pi_{tt,c})$. This method has some advantages with first the rapidity of the method. Indeed, it does not take lots of computer resources to generate the mesh. Also, once the triangles created, the algorithm to check if the operating point is inside or outside the domain is really easy.
 
-However, there are serious flaws that makes the method unusable for the targeted application. Indeed, while the method gives easy tools to reject or not an operating point, finding the coordinate $(\dot{m}_{corr,c},\Pi_{tt,c})$ of the boundary for a given rotational speed is more tricky. 
+However, there are serious flaws that makes the method unusable for the targeted application. Indeed, while the method gives easy tools to reject or not an operating point, finding the coordinates $(\dot{m}_{corr,c},\Pi_{tt,c})$ of the boundary for a given rotational speed is more tricky. 
 
 The other weakness of the triangulation method is that it only works well with convex hull. The reason behind is that during the triangulation process, the program building the triangle does not know how the points are linked together. Unfortunately, some sections of the compressor map are not convex but concave. Therefore, when performing the triangulation, the concavity disappear and the resulting mesh exceed the real envelop of the map.
 
@@ -557,6 +628,7 @@ The other weakness of the triangulation method is that it only works well with c
     \caption{Simple triangulation of the compressor map}
     \label{fig:C7_trimap}
 \end{figure}
+
 Figure \ref{fig:C7_trimap} depicts the result of the triangulation of the compressor map. In red is represented the compressor map boundary, and in green the meshing. The time taken to create the mesh is equal to 2.5ms.
 
 As it can be seen on the graph, the surge line is misrepresented by the mesh. The limit provided by the triangulation is very optimistic and doesn't correspond with the reality. 
@@ -568,10 +640,11 @@ To illustrate the algorithm, the triangle with its circumscribed circle on Figur
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.45\textwidth]{Comp_map/triang_mesh.png}
+    \includegraphics[width=0.4\textwidth]{Comp_map/triang_mesh.png}
     \caption{Triangle with its coordinates within the mesh}
     \label{fig:C7_triangmesh}
 \end{figure}
+
 The three nodes $i_a$, $i_b$ and $i_c$ are respectively characterized by the coordinates $(x_a,y_a)$, $(x_b,y_b)$, $(x_c,y_c)$. Using the coordinates, the length of the triangle edges are computed as follows.
 
 \begin{align*}
@@ -590,5 +663,195 @@ Using $l_a$, $l_b$, $l_c$, and $s$, the radius $circ_R$ of the circumscribed cir
 
 \begin{equation}
     \setstretch{1}
-   circum_r = a * b * c / (4.0 * area)
+   circ_r = \frac{a\cdot b\cdot c}{4\cdot \sqrt{s\cdot (s - l_a)\cdot (s - l_b)\cdot (s - l_c)}}\label{eq:C7_circum}
 \end{equation}
+
+Now that the radius of the circumscribed circle of the triangle have been computed, the triangle will be rejected if the condition $circ_r <\frac{1}{\alpha}$ is not satisfied. This condition is justified by noting that for triangles outside the envelope, the radius will likely be bigger since all these triangles are obtuse. The parameter $\alpha$ needs to be tuned in order to eliminate the triangles outside the concave hull. 
+
+The series of Figures \ref{fig:C7_alpha} illustrates the triangle mesh considering different values for the parameter $\alpha$.
+
+\begin{figure}[h]
+    \setstretch{1}
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/alpha/map_triang0_0.png}
+        \caption{$\alpha=0$.}
+        \label{fig:alpha0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/alpha/map_triang1_0.png}
+        \caption{$\alpha=1$.}
+        \label{fig:alpha1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/alpha/map_triang2_0.png}
+        \caption{$\alpha=2$.}
+        \label{fig:alpha2}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/alpha/map_triang3_0.png}
+        \caption{$\alpha=3$.}
+        \label{fig:alpha3}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/alpha/map_triang4_0.png}
+        \caption{$\alpha=4$.}
+        \label{fig:alpha4}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/alpha/map_triang5_0.png}
+        \caption{$\alpha=5$.}
+        \label{fig:alpha5}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/alpha/map_triang6_0.png}
+        \caption{$\alpha=6$.}
+        \label{fig:alpha6}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/alpha/map_triang7_0.png}
+        \caption{$\alpha=7$.}
+        \label{fig:alpha7}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/alpha/map_triang8_0.png}
+        \caption{$\alpha=8$.}
+        \label{fig:alpha8}
+    \end{subfigure}
+    \caption{Triangulation with triangle selection condition.} \label{fig:C7_alpha}
+\end{figure}
+
+The picture \ref{fig:alpha3} shows that for $\alpha=3$, most of the triangles outside the map domain are rejected. However, for the low pressure ratio it still remains some non desired artifacts. Increasing the value of the $\alpha$ would allow to reject these
+triangles as well but, some triangles within the domain also start to be removed. So, the value $\alpha=3$ is a good compromise.
+
+\subsubsection{2D level-set}
+\quad\ The triangulation with a condition to select the triangles provides relatively good results. However, this method is not really robust because each times a new map is provided to the program, the value of the $\alpha$ has to be tuned by hand. An automatic method would consist in defining a level-set function that would delimit the performance map domain.
+
+First has been considered a 2 dimensional function defined by the coordinates $(\dot{m}_{corr,c},\Pi_{tt,c})$ of the boundary points of the map. To built this function, a linear interpolation between these points have been used. Linear interpolation is chosen to have an interpolated surge line that is more restrictive that the actual surge line.
+
+On Figure \ref{fig:C7_LS2D} is represented the level set function.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Comp_map/2D_LS.png}
+    \caption{2D level-set function.}
+    \label{fig:C7_LS2D}
+\end{figure}
+
+Compared to the triangulation, the computation of the boundary coordinates for a given rotational speed $N_c$ can easily be found by determining the intersection points between the level-set function $f_{ls,2D}$ and the interpolation function $\Pi_{tt,c} = \Pi_{tt,c}(\dot{m}_{corr,c},N_c)$. 
+However, this 2D level-set function needs to be defined by parts since for some value of mass flow rate $\dot{m}_{corr,c}$, there exist two corresponding values for the pressure ratio $\Pi_{tt,c}$. Also, the data need to be pre-processed to only retained the boundary points of the maps. 
+
+\subsubsection{3D level-set}
+\quad\ The two cons of the 2D level-set can be erased by considering a 3D level-set. Here, the principle then to be closed to the performance maps regressions described in the previous parts of this section. However, here what is desired is a function defined inside the cloud of points and equal to the NULL value outside the cloud. 
+
+The relation used to build the 3D level-set function $f_{ls,3D}$ is $\dot{m}_{corr,c} = \dot{m}_{corr,c}(\Pi_{tt,c},N_c)$. On Figure \ref{fig:C7_LS3D} is illustrated this level-set function. A 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Comp_map/3D_LS.png}
+    \caption{3D level-set function - color bar representing the value of the pressure ratio.}
+    \label{fig:C7_LS3D}
+\end{figure}
+For each rotational speed $N_c$, the function gives all the admissible couples $(\dot{m}_{corr,c},\Pi_{tt,c})$ based on the compressor map initially provided. 
+
+Considering first the surge line, the limit drawn by the function is relatively faithful regarding to what was expected. If some margins is applied, the surge line can be nicely characterized by this 3D level-set function. 
+
+\subsection{Estimation of the choke line}
+\quad\ The choke lines can be defined by the 3D level-set function as well but, an alternative solution using the least-square regression algorithm can be consider.
+
+
+In chapter \ref{C4}, it has been explained that the relation $\Pi_{tt,c}(\dot{m}_{corr,c},N_c)$ is characterized by an infinite slope when the compressor is choking. However, the polynomial built using the least-square regression algorithm is not designed to represent infinite slope. Indeed, the polynomials composed of monomial of degree greater than zeros don't have any asymptotic behavior.
+
+If the inverse relation $\dot{m}_{corr,c}(\Pi_{tt,c},N_c)$ is considered instead, the choke limit will happen when the derivative of the function will be equal to zeros. To select the degree of the polynomial, a parametric study have been conducted. The results in Table \ref{tab:C7_regcomp2} shows that a polynomial of degree 4 should be selected.
+
+\begin{longtable}[c]{@{}lll@{}}
+\caption{Regression result - Compressor map (part 2 - Polynomial functions)}
+\label{tab:C7_regcomp2}\\
+\toprule
+                & \multicolumn{2}{l}{$\dot{m}_{corr,c} = \dot{m}_{corr,c}(\Pi_{tt,c},N_c)$} \\* \midrule
+\endfirsthead
+%
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+\textbf{Degree} & \textbf{F}                       & $\mathbf{Res^2}$                       \\
+\textbf{1}      & 0.104838                         & 0.745893                               \\
+\textbf{2}      & 0.051117                         & 0.876103                               \\
+\textbf{3}      & 0.028068                         & 0.93197                                \\
+\textbf{4}      & 0.014399                         & 0.965099                               \\
+\textbf{5}      & 0.008665                         & 0.978999                               \\
+\textbf{6}      & 0.007111                         & 0.982765                               \\
+\textbf{7}      & 0.006594                         & 0.984018                               \\* \bottomrule
+\end{longtable}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Comp_map/calc_231_map.png}
+    \caption{$\dot{m}_{corr,c}(\Pi_{tt,c},N_c)$ - polynomial function.}
+    \label{fig:C7_polycomp3}
+\end{figure}
+
+However, It can be noticed on Figure \ref{fig:C7_polycomp3} depicting the polynomial function that, for a given rotational speed $N_c$, there are several values of $\Pi_{tt,c}$ for which the derivative of the function is equal to zeros. Therefore, it would be difficult to apply a systematic rule to determined the corrected mass flow rate at which the machine is choking. 
+
+If the degree of the polynomial is decreased such that the number of minimum/maximum is smaller, the fitting function will loose too much in accuracy to stay reliable. Therefore, for this particular application polynomial are not good enough.
+
+An alternative to polynomials would be trigonometric functions. These functions are characterized by linear combination of cosinus and sinus. Here, the degree is no longer the maximal exponent but rather the maximal factor multiplying the variable within the trigonometric functions. An example of degree 2 trigonometric function is given in (\ref{eq:C7_trigo}).
+
+\begin{align}
+\setstretch{1}
+    f(x,y) &= a_{1,1} + a_{1,2}\cdot sin(y) + a_{1,3}\cdot cos(y) + a_{1,4}\cdot sin(2\cdot y) + a_{1,5}\cdot cos(2\cdot y)\nonumber\\
+           &+ a_{2,1}\cdot sin(x) + a_{2,2}\cdot sin(x)\cdot sin(y) + a_{2,3}\cdot sin(x)\cdot cos(y)\nonumber\\
+           &+ a_{3,1}\cdot cos(x) + a_{3,2}\cdot sin(y)\cdot cos(x) + a_{3,3}\cdot cos(x)\cdot cos(y)\label{eq:C7_trigo}\\
+           &+ a_{4,1}\cdot sin(2\cdot x)\nonumber\\
+           &+ a_{5,1}\cdot cos(2\cdot x) \nonumber
+\end{align}
+
+As for the polynomial function, a study on the degree have been performed. The results, expressed in Table \ref{tab:reg_compmap3}, shows that a trigonometric function of degree 2 is the best choice to be made. The Figure \ref{fig:C7_trigo} depicts the fitting function for the rotational speed specified in the data.
+
+\begin{longtable}[c]{@{}lll@{}}
+\caption{Regression result - Compressor map (part 3 - Trigonometric functions).}
+\label{tab:reg_compmap3}\\
+\toprule
+                & \multicolumn{2}{l}{$\dot{m}_{corr,c} = \dot{m}_{corr,c}(\Pi_{tt,c},N_c)$} \\* \midrule
+\endfirsthead
+%
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+\textbf{Degree} & \textbf{F}                       & $\mathbf{Res^2}$                       \\
+\textbf{1}      & 0.113446                         & 0.677763                               \\
+\textbf{2}      & 0.02983                          & 0.915268                               \\
+\textbf{3}      & 0.028411                         & 0.919299                               \\
+\textbf{4}      & 0.028243                         & 0.919777                               \\
+\textbf{5}      & 0.027913                         & 0.920714                               \\* \bottomrule
+\end{longtable}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Comp_map/calc_231_map_trigo.png}
+    \caption{$\dot{m}_{corr,c}(\Pi_{tt,c},N_c)$ - trigonometric function}
+    \label{fig:C7_trigo}
+\end{figure}
+
+Here, it can be noticed that the function systematically goes through a local minimum before going up to the infinity for decreasing values of the pressure ratio $\Pi_{tt,c}$. Thus, the flow rate at which the compressor start to choke can be set at the value of the function at that local minimum. 
+
+\subsection{Turbine maps}
+
+

@@ -38,11 +38,11 @@ The focus of this section is the description of the structure of the computer co
 \subsection{Inputs}
 \quad\, To start the program, the user has to provide an input file that will contain the required data for the program. The input file is structured as a dictionary\footnote{see \url{https://www.w3schools.com/python/python_dictionaries.asp} for further information} and is composed of three main fields. A template of an input file for the gas turbine configuration is given in the annex \ref{annex:Input_file}.
 
-The first field named "Type" says to the computer code which configuration of the Brayton cycle has to be assess. The possible configurations are listed in Table \ref{tab:C5_inputconfig}.
+The first field named "Type" says to the computer code which configuration of the Brayton cycle has to be assess. The possible configurations are listed in Table \ref{tab:C6_inputconfig}.
 
 \begin{longtable}[c]{ll}
 \caption{Program input - "Type" field}
-\label{tab:C5_inputconfig}\\
+\label{tab:C6_inputconfig}\\
 \toprule
 \textbf{Type - Acronym} & \textbf{Type - Name}                   \\* \midrule
 \endfirsthead
@@ -65,10 +65,10 @@ EFGT                         & Externally-Fired Gas Turbine                \\* \
 
 These different configurations are described in the annex \ref{annex:Brayton_variant}. 
 
-The second field list all the input data required to initialized the model. The number of variables to be specified at the start of the program depends on the selected configuration. For instance, considering the gas turbine (GT), the inputs required are listed in Table \ref{tab:C5_inputGT}.
+The second field list all the input data required to initialized the model. The number of variables to be specified at the start of the program depends on the selected configuration. For instance, considering the gas turbine (GT), the inputs required are listed in Table \ref{tab:C6_inputGT}.
 \begin{longtable}[c]{ll|ll}
 \caption{Input - gas turbine (GT)}
-\label{tab:C5_inputGT}\\
+\label{tab:C6_inputGT}\\
 \toprule
 \textbf{Inputs - Name}                                                                          & \textbf{Inputs - Abbreviation} & \textbf{Inputs - Name}                                                                                          & \textbf{Inputs - Abbreviation} \\* \midrule
 \endfirsthead
@@ -103,7 +103,7 @@ The last field named "Selection" is composed of two boolean variables. The first
 \item Water inlet pressure (Pa): $p_{whx,su,w}$
 \end{itemize}
 
-"MAP" is the second variable. It used to choose whether or not the performance map for the turbomachines (defined as in chapter \ref{C4}). If the variable is set to \textit{true}, the {\color{Gray} gray} field in Table \ref{tab:C4_inputGT} is at least required. Then, depending on the validity of the {\color{PineGreen} pinegreen} fields, the compressor and/or the turbine map(s) will be used in the code. 
+"MAP" is the second variable. It used to choose whether or not the performance map for the turbomachines (defined as in chapter \ref{C4}). If the variable is set to \textit{true}, the {\color{Gray} gray} field in Table \ref{tab:C6_inputGT} is at least required. Then, depending on the validity of the {\color{PineGreen} pinegreen} fields, the compressor and/or the turbine map(s) will be used in the code. 
 
 When a valid compressor map is given, the variables $\eta_{comp}$ and $P_{comp,ratio}$ are not required to be filled. Indeed, as seen in chapter \ref{C4}, the knowledge of two independent operating variables are sufficient to derived the other variables. In particular, the rotational speed $N$, the air mass flow rate and the inlet state of the compressor are known. Thus, using the relation (\ref{eq:C4_mc}) to obtain the corrected mass flow rate $\dot{m}_{c,comp}$ through the compressor, the compression ratio and the compressor efficiency can be derived.  
 
