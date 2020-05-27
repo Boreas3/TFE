@@ -358,7 +358,7 @@ In practice, the algorithm can be applied to any functions. A good practice when
 \caption{Normalized compressor map}
 \label{tab:C7_compmap}\\
 \toprule
-$\mathbf{\dot{m}_{corr,norm}}$ & $\mathbf{\Pi_{tt,norm}}$ & $\mathbf{N_{norm}}$ & $\mathbf{\eta_{is,norm}}$ & $\mathbf{\dot{m}_{corr,norm}}$ & $\mathbf{\Pi_{tt,norm}}$ & $\mathbf{N_{norm}}$ & $\mathbf{\eta_{is,norm}}$ \\* \midrule
+$\mathbf{\dot{m}_{corr,c,norm}}$ & $\mathbf{\Pi_{tt,c,norm}}$ & $\mathbf{N_{c,norm}}$ & $\mathbf{\eta_{is,c,norm}}$ & $\mathbf{\dot{m}_{corr,c,norm}}$ & $\mathbf{\Pi_{tt,c,norm}}$ & $\mathbf{N_{c,norm}}$ & $\mathbf{\eta_{is,c,norm}}$ \\* \midrule
 \endfirsthead
 %
 \endhead
@@ -368,21 +368,21 @@ $\mathbf{\dot{m}_{corr,norm}}$ & $\mathbf{\Pi_{tt,norm}}$ & $\mathbf{N_{norm}}$ 
 %
 \endlastfoot
 %
-0.4107687                   & 0.5935426                & 0.7333333            & 0.8834168                 & 0.9182858                   & 0.5734372                & 0.8333333            & 0.8577718                 \\
-0.4929225                   & 0.6101794                & 0.7333333            & 0.9553581                 & 0.9309826                   & 0.5161755                & 0.8333333            & 0.756057                  \\
-0.5750762                   & 0.6096236                & 0.7333333            & 0.996588                  & 0.9389105                   & 0.4005459                & 0.8333333            & 0.4703911                 \\
-0.6572299                   & 0.5891736                & 0.7333333            & 1                         & 0.6572299                   & 0.8557076                & 0.9166667            & 0.9105146                 \\
-0.7326882                   & 0.560747                 & 0.7333333            & 0.9794299                 & 0.7393837                   & 0.8622333                & 0.9166667            & 0.9502684                 \\
-0.7393837                   & 0.5574896                & 0.7333333            & 0.9750543                 & 0.8215374                   & 0.8468916                & 0.9166667            & 0.9704698                 \\
-0.8215374                   & 0.5126013                & 0.7333333            & 0.9103032                 & 0.9036912                   & 0.7916921                & 0.9166667            & 0.9514447                 \\
-0.8469476                   & 0.493313                 & 0.7333333            & 0.8705679                 & 0.9296148                   & 0.7542217                & 0.9166667            & 0.9295078                 \\
-0.8919925                   & 0.4188086                & 0.7333333            & 0.6585567                 & 0.9640413                   & 0.5916221                & 0.9166667            & 0.7621914                 \\
-0.9038719                   & 0.3375365                & 0.7333333            & 0.4711212                 & 0.9659719                   & 0.476087                 & 0.9166667            & 0.5736042                 \\
-0.5750762                   & 0.7325349                & 0.8333333            & 0.9270373                 & 0.8215374                   & 1                        & 1                    & 0.9204138                 \\
-0.6572299                   & 0.7358423                & 0.8333333            & 0.9666768                 & 0.9036912                   & 0.9787523                & 1                    & 0.9466955                 \\
-0.7393837                   & 0.721768                 & 0.8333333            & 0.9876648                 & 0.9635936                   & 0.8974831                & 1                    & 0.9150869                 \\
-0.8215374                   & 0.6836917                & 0.8333333            & 0.974527                  & 0.9950831                   & 0.7479906                & 1                    & 0.8173506                 \\
-0.9036912                   & 0.613862                 & 0.8333333            & 0.909245                  & 1                           & 0.5808051                & 1                    & 0.6519626                 \\* \bottomrule
+0.411                            & 0.594                      & 0.733                 & 0.883                       & 0.918                            & 0.573                      & 0.833                 & 0.858                       \\
+0.493                            & 0.610                      & 0.733                 & 0.955                       & 0.931                            & 0.516                      & 0.833                 & 0.756                       \\
+0.575                            & 0.610                      & 0.733                 & 0.997                       & 0.939                            & 0.401                      & 0.833                 & 0.470                       \\
+0.657                            & 0.589                      & 0.733                 & 1.000                       & 0.657                            & 0.856                      & 0.917                 & 0.911                       \\
+0.733                            & 0.561                      & 0.733                 & 0.979                       & 0.739                            & 0.862                      & 0.917                 & 0.950                       \\
+0.739                            & 0.557                      & 0.733                 & 0.975                       & 0.822                            & 0.847                      & 0.917                 & 0.970                       \\
+0.822                            & 0.513                      & 0.733                 & 0.910                       & 0.904                            & 0.792                      & 0.917                 & 0.951                       \\
+0.847                            & 0.493                      & 0.733                 & 0.871                       & 0.930                            & 0.754                      & 0.917                 & 0.930                       \\
+0.892                            & 0.419                      & 0.733                 & 0.659                       & 0.964                            & 0.592                      & 0.917                 & 0.762                       \\
+0.904                            & 0.338                      & 0.733                 & 0.471                       & 0.966                            & 0.476                      & 0.917                 & 0.574                       \\
+0.575                            & 0.733                      & 0.833                 & 0.927                       & 0.822                            & 1.000                      & 1.000                 & 0.920                       \\
+0.657                            & 0.736                      & 0.833                 & 0.967                       & 0.904                            & 0.979                      & 1.000                 & 0.947                       \\
+0.739                            & 0.722                      & 0.833                 & 0.988                       & 0.964                            & 0.897                      & 1.000                 & 0.915                       \\
+0.822                            & 0.684                      & 0.833                 & 0.975                       & 0.995                            & 0.748                      & 1.000                 & 0.817                       \\
+0.904                            & 0.614                      & 0.833                 & 0.909                       & 1.000                            & 0.581                      & 1.000                 & 0.652                       \\* \bottomrule
 \end{longtable}
 These relations are obtained by building fitting functions involving three of the four parameters. The LS-R algorithm is applied to a generic function to determine the value of the weight coefficients $a_{i,j}$. 
 
@@ -507,14 +507,16 @@ where $\alpha$ is a coefficient for which its value is 0 for $N = N_{start}$ and
 \subsection{Compressor maps}
 \quad\ First are considered the compressor maps. As it has been mentioned before, two functions need to be defined to fully characterized the compressor operating points.  
 \subsubsection{Selection of the polynomial degree}
-\quad\ To select the degree of the polynomial such that the function fit the best the given set of operating points, a parametric study over the maximal degree $d$ of the polynomial has been conducted. The data from Table \ref{tab:C7_compmap} will be used to perform this study.
-For each of these polynomial, the value of the objective function $\textbf{F}$ and of the square of the residual function $Res^2$ are computed then compared. The results are expressed in Table \ref{tab:C7_regcomp}.
+\quad\ To select the degree of the polynomial such that the function fit the best the given set of operating points, a parametric study over the maximal degree $d$ of the polynomial has been conducted. First, The raw data from Table \ref{tab:C7_compmap} will be used to perform this study.
+For each of these polynomial, the value of the objective function $\textbf{F}$ and of the square of the residual function $Res^2$ are computed then compared. The accuracy of the fitting function is described by the value of the objective and residual function. Respectively, a low and high value of these functions implies that the data is well fit by the polynomial.
+
+The results are expressed in Table \ref{tab:C7_regcomp}.
 
 \begin{longtable}[c]{@{}lll|ll@{}}
-\caption{Regression result - Compressor map (part 1 - Polynomial functions)}
+\caption{Regression result - Compressor map}
 \label{tab:C7_regcomp}\\
 \toprule
-                & \multicolumn{2}{l|}{$\Pi_{tt,c} = \Pi_{tt,c}(\dot{m}_{corr,c},N_c)$} & \multicolumn{2}{l}{$\eta_{is,c} = \eta_{is,c}(\Pi_{tt,c},N_c)$} \\* \midrule
+                & \multicolumn{2}{l|}{$\Pi_{tt,c}(\dot{m}_{corr,c},N_c)$} & \multicolumn{2}{l}{$\eta_{is,c}(\Pi_{tt,c},N_c)$} \\* \midrule
 \endfirsthead
 %
 \endhead
@@ -525,37 +527,39 @@ For each of these polynomial, the value of the objective function $\textbf{F}$ a
 \endlastfoot
 %
 \textbf{Degree} & \textbf{F}                     & $\mathbf{Res^2}$                    & \textbf{F}                  & $\mathbf{Res^2}$                  \\
-\textbf{1}      & 0.104838                       & 0.745893                            & 0.073129                    & 0.780745                          \\
-\textbf{2}      & 0.051117                       & 0.876103                            & 0.017796                    & 0.946643                          \\
-\textbf{3}      & 0.028068                       & 0.93197                             & 0.008672                    & 0.973999                          \\
-\textbf{4}      & 0.014399                       & 0.965099                            & 0.007718                    & 0.976861                          \\
-\textbf{5}      & 0.008665                       & 0.978999                            & 0.007024                    & 0.97894                           \\
-\textbf{6}      & 0.007111                       & 0.982765                            & 0.00668                     & 0.979973                          \\
-\textbf{7}      & 0.006594                       & 0.984018                            & 0.006696                    & 0.979925                          \\* \bottomrule
+\textbf{1}      & 0.105                       & 0.746                            & 0.073                    & 0.781                          \\
+\textbf{2}      & 0.051                       & 0.876                            & 0.018                    & 0.947                         \\
+\textbf{3}      & 0.028                       & 0.932                             & 0.009                    & 0.974                          \\
+\textbf{4}      & 0.014                       & 0.965                            & 0.008                    & 0.977                          \\
+\textbf{5}      & 0.008                       & 0.979                            & 0.007                    & 0.979                           \\
+\textbf{6}      & 0.007                       & 0.983                            & 0.007                     & 0.979                          \\
+\textbf{7}      & 0.006                       & 0.984                            & 0.007                    & 0.979                          \\* \bottomrule
 \end{longtable}
 
-From these results, several remarks can be drawn. First, the error with respect to the cloud of points when using polynomials of degree 1 or 2 is non negligible. For linear polynomials (degree 1), the square of the residual function is in average 25\% below the unity value, which is not acceptable. Considering now the quadratic polynomials (degree 2), the objective function can still be improve if polynomials of higher degree are used.
+The analysis of the results shows that for the first relation, the degree of the polynomial need to be at least equal to 4 to be enough accurate regarding to the given operating points. 
+But, there is still some improvement of the accuracy by increasing up to 6 the degree of the polynomial.
+
+Considering the second relation, starting from a degree equal to 3 there is no significant improvement of the accuracy of the polynomial. 
+
+Figures \ref{fig:C7_polycomp1} and \ref{fig:C7_polycomp2} respectively depicts the interpolating polynomial for the two relations.
 
 \begin{figure}[h]
     \setstretch{1}
     \centering
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{/Comp_map/calc_132_map.png}
-        \caption{$\Pi_{tt,c} = \Pi_{tt,c}(\dot{m}_{corr,c},N_c)$}
+        \includegraphics[width=\textwidth]{/Comp_map/HRPM/calc_132_map.png}
+        \caption{$\Pi_{tt,c}(\dot{m}_{corr,c},N_c)$}
         \label{fig:C7_polycomp1}
     \end{subfigure}
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{/Comp_map/calc_234_map.png}
-        \caption{$\eta_{is,c} = \eta_{is,c}(\Pi_{tt,c},N_c)$}
+        \includegraphics[width=\textwidth]{/Comp_map/HRPM/calc_234_map.png}
+        \caption{$\eta_{is,c}(\Pi_{tt,c},N_c)$}
         \label{fig:C7_polycomp2}
     \end{subfigure}
     \caption{Polynomial interpolation of the compressor.} \label{fig:C7_polycomp}
 \end{figure}
-
-Now, the choice of the maximal degree will depend on the relation. For the first one, it can be seen that there is no massive improvement of the residual function value for polynomials of degree greater than 6. Considering the second function, the analysis of the results shows that there is non interest of selecting polynomial of degree greater than 5.
-On Figures \ref{fig:C7_polycomp1} and \ref{fig:C7_polycomp2} respectively depict the interpolating polynomial for the two relations.
 
 
 \subsubsection{Extrapolation of the map at low RPM}
@@ -599,7 +603,7 @@ Then, considering the known operating point $A$, the variation of the enthalpy $
 
 Once the enthalpy variation $\Delta h_A^0$ is computed, the one for the similar operating point $B$ can be obtained from the relation (\ref{eq:C7_Dh}).
 
-Then, the total to total pressure ratio produced by the compressor at the operating point $B$ by applying backward the relations of (\ref{ea:C7_DhA}). Therefore, the following development (\ref{eq:C7_DhB} can be derived.
+Then, the total to total pressure ratio produced by the compressor at the operating point $B$ by applying backward the relations of (\ref{eq:C7_DhA}). Therefore, the following development (\ref{eq:C7_DhB} can be derived.
 
 \begin{align}
 \setstretch{1}
@@ -611,6 +615,118 @@ Then, the total to total pressure ratio produced by the compressor at the operat
 \end{align}
 Using this method, low rotational speed operating points can be derived and used to improve the accuracy of the polynomial regression.
 
+\subsubsection{Fitting function at low RPM}
+\quad\ Now that the method to extend the compressor map to lower rotational speed has been expressed, it would be interesting to verify the validity of the LS-RP for the selected degree of polynomial. To do so, operating points at low RPM have been calculated based on the development described previously. The normalized value are in Table \ref{tab:C7_compmap LRPM}.
+
+\begin{longtable}[c]{@{}llll|llll@{}}
+\caption{Normalized compressor map (Low RPM)}
+\label{tab:C7_compmap LRPM}\\
+\toprule
+$\mathbf{\dot{m}_{corr,c,norm}}$ & $\mathbf{\Pi_{tt,c,norm}}$ & $\mathbf{N_{c,norm}}$ & $\mathbf{\eta_{is,c,norm}}$ & $\mathbf{\dot{m}_{corr,c,norm}}$ & $\mathbf{\Pi_{tt,c,norm}}$ & $\mathbf{N_{c,norm}}$ & $\mathbf{\eta_{is,c,norm}}$ \\* \midrule
+\endfirsthead
+%
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+0.074                            & 0.933                      & 0.200                 & 0.948                       & 0.298                            & 0.987                      & 0.800                 & 0.948                       \\
+0.108                            & 0.933                      & 0.200                 & 0.972                       & 0.434                            & 0.979                      & 0.800                 & 0.972                       \\
+0.140                            & 0.933                      & 0.200                 & 0.835                       & 0.558                            & 0.972                      & 0.800                 & 0.835                       \\
+0.167                            & 0.932                      & 0.200                 & 0.557                       & 0.667                            & 0.967                      & 0.800                 & 0.557                       \\
+0.061                            & 0.934                      & 0.200                 & 0.896                       & 0.242                            & 0.991                      & 0.800                 & 0.896                       \\
+0.091                            & 0.933                      & 0.200                 & 1.000                       & 0.364                            & 0.984                      & 0.800                 & 1.000                       \\
+0.117                            & 0.933                      & 0.200                 & 0.975                       & 0.468                            & 0.978                      & 0.800                 & 0.975                       \\
+0.140                            & 0.933                      & 0.200                 & 0.877                       & 0.558                            & 0.973                      & 0.800                 & 0.877                       \\
+0.149                            & 0.941                      & 0.400                 & 0.948                       & 0.447                            & 0.999                      & 1.000                 & 0.948                       \\
+0.217                            & 0.940                      & 0.400                 & 0.972                       & 0.651                            & 0.991                      & 1.000                 & 0.972                       \\
+0.279                            & 0.938                      & 0.400                 & 0.835                       & 0.837                            & 0.975                      & 1.000                 & 0.835                       \\
+0.333                            & 0.935                      & 0.400                 & 0.557                       & 1.000                            & 0.957                      & 1.000                 & 0.557                       \\
+0.121                            & 0.942                      & 0.400                 & 0.896                       & 0.363                            & 1.000                      & 1.000                 & 0.896                       \\
+0.182                            & 0.941                      & 0.400                 & 1.000                       & 0.545                            & 0.999                      & 1.000                 & 1.000                       \\
+0.234                            & 0.940                      & 0.400                 & 0.975                       & 0.702                            & 0.990                      & 1.000                 & 0.975                       \\
+0.279                            & 0.938                      & 0.400                 & 0.877                       & 0.838                            & 0.979                      & 1.000                 & 0.877                       \\* \bottomrule
+\end{longtable}
+
+Considering the same degree for both fitting polynomial, the regression of these points are depicted in Figures \ref{fig:C7_polycomp1_LRPM} and \ref{fig:C7_polycomp2_LRPM}.
+
+\begin{figure}[h]
+    \setstretch{1}
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Comp_map/LRPM/calc_142_map.png}
+        \caption{$\Pi_{tt,c}(\dot{m}_{corr,c},N_c)$}
+        \label{fig:C7_polycomp1_LRPM}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Comp_map/LRPM/calc_245_map.png}
+        \caption{$\eta_{is,c}(\Pi_{tt,c},N_c)$}
+        \label{fig:C7_polycomp2_LRPM}
+    \end{subfigure}
+    \caption{Polynomial interpolation of the compressor (Low rotational speed).} \label{fig:C7_polycomp_LRPM}
+\end{figure}
+
+As it can be noticed, the relation to obtain the isentropic efficiency is not well conditioned. This is mainly due to the relative proximity of the iso-rotational speeds lines. The relation $\Pi_{tt,c}(\dot{m}_{corr,c},N_c)$ is also affected by this phenomenon but at a lower level.
+
+For both graphs, the regression can be improved by multiplying the pressure ratio $\Pi_{tt,c}$ by the rotational speed $N_c$. Doing this will increase the gap between the lines and will likely improve the overall accuracy of the fitting functions. Figures \ref{fig:C7_polycomp1_LRPM_imp} and \ref{fig:C7_polycomp2_LRPM_imp} shows the improvements resulting from this manipulation.
+
+\begin{figure}[h]
+    \setstretch{1}
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Comp_map/LRPM/calc_143_map.png}
+        \caption{$[\Pi_{tt,c}\cdot N_c](\dot{m}_{corr,c},N_c)$}
+        \label{fig:C7_polycomp1_LRPM_imp}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Comp_map/LRPM/calc_345_map.png}
+        \caption{$\eta_{is,c}(\Pi_{tt,c}\cdot N_c,N_c)$}
+        \label{fig:C7_polycomp2_LRPM_imp}
+    \end{subfigure}
+    \caption{Polynomial interpolation of the compressor (part 2 - Low rotational speed).} \label{fig:C7_polycomp_LRPM_imp}
+\end{figure}
+
+As depicted in the Figures \ref{fig:C7_polycomp1_LRPM_imp} and \ref{fig:C7_polycomp2_LRPM_imp}, the gap between the curves is larger. This result in a really good estimation of the relation linking the pressure ratio with the corrected mass flow rate and the rotational speed. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Comp_map/LRPM/calc_543_map.png}
+    \caption{$[\Pi_{tt,c}\cdot N_c](\eta_{is,c},N_c)$}
+    \label{fig:C7_polycomp2_LRPM_imp2}
+\end{figure}
+    
+However, the relation to obtain the isentropic efficiency is still not well represented. The reason is that the pressure ratio does not vary much at low rotational speed. Therefore, the polynomial has to fit data that are quasi vertically align which leads to really high slope.
+
+This can be resolve by considering the inverse relation $[\Pi_{tt,c}\cdot N_c](\eta_{is,c},N_c)$. Doing so, the iso-rotational speed curves are horizontal, which is much easier to approach using polynomials. The Figure \ref{fig:C7_polycomp2_LRPM_imp2} illustrates the new polynomial for a degree $d=3$.  However, in order to have a starting guess value for the the isentropic efficiency, the relation $\eta_{is,c}(\Pi_{tt,c},N_c)$ will be used for this purpose.
+
+These operations will be applied on the all the parts of the compressor map. As a summary, the Table \ref{tab:C7_compmaprel} includes for each relations the associated degree of polynomial and the residual values for the low RPM and high RPM data.
+
+\begin{longtable}[c]{@{}llll@{}}
+\caption{Compressor map - Table of relations}
+\label{tab:C7_compmaprel}\\
+\toprule
+\multicolumn{1}{c}{\multirow{2}{*}{Relation}} & \multicolumn{1}{c}{\multirow{2}{*}{Degree}} & \multicolumn{2}{c}{$Res^2$} \\
+\multicolumn{1}{c}{}                          & \multicolumn{1}{c}{}                        & Low RPM      & High RPM     \\* \midrule
+\endfirsthead
+%
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+$[\Pi_{tt,c}\cdot N_c](\dot{m}_{corr,c},N_c)$ & 6                       & 1.000        & 0.990        \\
+$\Pi_{tt,c}(\dot{m}_{corr,c},N_c)$            & 6                       & 1.000        & 0.989        \\
+$[\Pi_{tt,c}\cdot N_c](\eta_{is,c},N_c)$      & 3                       & 1.000        & 0.978        \\
+$\eta_{is,c}(\Pi_{tt,c},N_c)$                 & 3                       & 0.780766     & 0.974        \\* \bottomrule
+\end{longtable}
 \subsection{Delimitation of the compressor map domain}
 \quad\ While it has been expressed previously that polynomial of high degree are not reliable at the extremity of the domain defined by the given set of operating points, this doesn't really matter here since the domain of operation of the compressor is naturally limited by the choke and surge lines described in the chapter \ref{C4}.
 
@@ -634,7 +750,7 @@ Figure \ref{fig:C7_trimap} depicts the result of the triangulation of the compre
 As it can be seen on the graph, the surge line is misrepresented by the mesh. The limit provided by the triangulation is very optimistic and doesn't correspond with the reality. 
 
 \subsubsection{Triangulation with constraints}
-\quad\ As explained in last lines, the basic triangulation method cannot handle concave hull by itself. In order to take into consideration these shapes, some conditions have to be set to reject or not the triangle of the mesh. A selection algorithm  has been developed \cite{} based on the geometry of the triangle.
+\quad\ As explained in last lines, the basic triangulation method cannot handle concave hull by itself. In order to take into consideration these shapes, some conditions have to be set to reject or not the triangle of the mesh. A selection algorithm  has been developed \cite{Dwyer2014} based on the geometry of the triangle.
 
 To illustrate the algorithm, the triangle with its circumscribed circle on Figure \ref{fig:C7_triangmesh} can be considered.
 
@@ -747,7 +863,7 @@ On Figure \ref{fig:C7_LS2D} is represented the level set function.
     \label{fig:C7_LS2D}
 \end{figure}
 
-Compared to the triangulation, the computation of the boundary coordinates for a given rotational speed $N_c$ can easily be found by determining the intersection points between the level-set function $f_{ls,2D}$ and the interpolation function $\Pi_{tt,c} = \Pi_{tt,c}(\dot{m}_{corr,c},N_c)$. 
+Compared to the triangulation, the computation of the boundary coordinates for a given rotational speed $N_c$ can easily be found by determining the intersection points between the level-set function $f_{ls,2D}$ and the interpolation function $\Pi_{tt,c}(\dot{m}_{corr,c},N_c)$. 
 However, this 2D level-set function needs to be defined by parts since for some value of mass flow rate $\dot{m}_{corr,c}$, there exist two corresponding values for the pressure ratio $\Pi_{tt,c}$. Also, the data need to be pre-processed to only retained the boundary points of the maps. 
 
 \subsubsection{3D level-set}
@@ -771,13 +887,13 @@ Considering first the surge line, the limit drawn by the function is relatively 
 
 In chapter \ref{C4}, it has been explained that the relation $\Pi_{tt,c}(\dot{m}_{corr,c},N_c)$ is characterized by an infinite slope when the compressor is choking. However, the polynomial built using the least-square regression algorithm is not designed to represent infinite slope. Indeed, the polynomials composed of monomial of degree greater than zeros don't have any asymptotic behavior.
 
-If the inverse relation $\dot{m}_{corr,c}(\Pi_{tt,c},N_c)$ is considered instead, the choke limit will happen when the derivative of the function will be equal to zeros. To select the degree of the polynomial, a parametric study have been conducted. The results in Table \ref{tab:C7_regcomp2} shows that a polynomial of degree 4 should be selected.
+If the inverse and \textit{improved}\footnote{Improved by multiplying the pressure ratio $\Pi_{tt,c}$ by the rotational speed $N_c$.} relation $\dot{m}_{corr,c}(\Pi_{tt,c}\cdot N_c,N_c)$ is considered instead, the choke limit will happen when the derivative of the function will be equal to zeros. To select the degree of the polynomial, a parametric study have been conducted first on the high rotational speed operating points.
 
 \begin{longtable}[c]{@{}lll@{}}
-\caption{Regression result - Compressor map (part 2 - Polynomial functions)}
+\caption{Regression result - Compressor map (part 2)}
 \label{tab:C7_regcomp2}\\
 \toprule
-                & \multicolumn{2}{l}{$\dot{m}_{corr,c} = \dot{m}_{corr,c}(\Pi_{tt,c},N_c)$} \\* \midrule
+\textbf{Degree} & \textbf{F} & $\mathbf{Res^2}$ \\* \midrule
 \endfirsthead
 %
 \endhead
@@ -787,45 +903,96 @@ If the inverse relation $\dot{m}_{corr,c}(\Pi_{tt,c},N_c)$ is considered instead
 %
 \endlastfoot
 %
-\textbf{Degree} & \textbf{F}                       & $\mathbf{Res^2}$                       \\
-\textbf{1}      & 0.104838                         & 0.745893                               \\
-\textbf{2}      & 0.051117                         & 0.876103                               \\
-\textbf{3}      & 0.028068                         & 0.93197                                \\
-\textbf{4}      & 0.014399                         & 0.965099                               \\
-\textbf{5}      & 0.008665                         & 0.978999                               \\
-\textbf{6}      & 0.007111                         & 0.982765                               \\
-\textbf{7}      & 0.006594                         & 0.984018                               \\* \bottomrule
+\textbf{1}      & 0.138   & 0.607         \\
+\textbf{2}      & 0.057   & 0.837         \\
+\textbf{3}      & 0.033   & 0.906         \\
+\textbf{4}      & 0.029   & 0.917         \\
+\textbf{5}      & 0.028   & 0.919         \\
+\textbf{6}      & 0.028   & 0.920         \\
+\textbf{7}      & 0.028   & 0.920         \\* \bottomrule
 \end{longtable}
-
+ The results in Table \ref{tab:C7_regcomp2} shows that a polynomial of degree 4 should be selected. Above, there is not any improvement of the accuracy of the polynomial. The Figure \ref{fig:C7_polycomp3} depicts the functions for 4 rotational speeds.
+ 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\textwidth]{Comp_map/calc_231_map.png}
-    \caption{$\dot{m}_{corr,c}(\Pi_{tt,c},N_c)$ - polynomial function.}
+    \includegraphics[width=0.6\textwidth]{Comp_map/HRPM/calc_231_map.png}
+    \caption{$\dot{m}_{corr,c}(\Pi_{tt,c}\cdot N_c,N_c)$ - polynomial function.}
     \label{fig:C7_polycomp3}
 \end{figure}
 
-However, It can be noticed on Figure \ref{fig:C7_polycomp3} depicting the polynomial function that, for a given rotational speed $N_c$, there are several values of $\Pi_{tt,c}$ for which the derivative of the function is equal to zeros. Therefore, it would be difficult to apply a systematic rule to determined the corrected mass flow rate at which the machine is choking. 
+As it can be noticed, there are several values of $\Pi_{tt,c}\cdot N_c$ for which the derivative of the function is equal to zero. However, the evaluation of the function $\dot{m}_{corr,c}(\Pi_{tt,c}\cdot N_c,N_c)$ at these points provides close results. Therefore, the selection of the local maximum or local minimum will both provides acceptable results for the choke limit.
 
-If the degree of the polynomial is decreased such that the number of minimum/maximum is smaller, the fitting function will loose too much in accuracy to stay reliable. Therefore, for this particular application polynomial are not good enough.
+This method works well with the high rotational speed operating points. For low rotational speeds curves, the issue express earlier when the relation $\eta_{is,c}(\Pi_{tt,c}\cdot N_c,N_c)$ was considered remains. Another condition for to obtain the maximum flow rate has to be defined. 
 
-An alternative to polynomials would be trigonometric functions. These functions are characterized by linear combination of cosinus and sinus. Here, the degree is no longer the maximal exponent but rather the maximal factor multiplying the variable within the trigonometric functions. An example of degree 2 trigonometric function is given in (\ref{eq:C7_trigo}).
+It can be demonstrated that for the low rotational speed curves, the choke limit occurs for a \textbf{non normalized} pressure ratio equals to one. Thus, the relation $\dot{m}_{corr,c}(\Pi_{tt,c}\cdot N_c,N_c)$ with $\Pi_{tt,c}=1$ will provides the maximal flow rate.
 
-\begin{align}
+% If the degree of the polynomial is decreased such that the number of minimum/maximum is smaller, the fitting function will loose too much in accuracy to stay reliable. Therefore, for this particular application polynomial are not good enough.
+
+% An alternative to polynomials would be trigonometric functions. These functions are characterized by linear combination of cosinus and sinus. Here, the degree is no longer the maximal exponent but rather the maximal factor multiplying the variable within the trigonometric functions. An example of degree 2 trigonometric function is given in (\ref{eq:C7_trigo}).
+
+% \begin{align}
+% \setstretch{1}
+%     f(x,y) &= a_{1,1} + a_{1,2}\cdot sin(y) + a_{1,3}\cdot cos(y) + a_{1,4}\cdot sin(2\cdot y) + a_{1,5}\cdot cos(2\cdot y)\nonumber\\
+%           &+ a_{2,1}\cdot sin(x) + a_{2,2}\cdot sin(x)\cdot sin(y) + a_{2,3}\cdot sin(x)\cdot cos(y)\nonumber\\
+%           &+ a_{3,1}\cdot cos(x) + a_{3,2}\cdot sin(y)\cdot cos(x) + a_{3,3}\cdot cos(x)\cdot cos(y)\label{eq:C7_trigo}\\
+%           &+ a_{4,1}\cdot sin(2\cdot x)\nonumber\\
+%           &+ a_{5,1}\cdot cos(2\cdot x) \nonumber
+% \end{align}
+
+% As for the polynomial function, a study on the degree have been performed. The results, expressed in Table \ref{tab:reg_compmap3}, shows that a trigonometric function of degree 2 is the best choice to be made. Indeed, based on the Figure \ref{fig:C7_trigo} depicting the fitting function, the inaccuracy of the function is mainly for the low mass flow rate. However, this doesn't have any negative impact on the method since the objective is to find the highest corrected mass flow rate for a given rotational speed. 
+
+% \begin{longtable}[c]{@{}lll@{}}
+% \caption{Regression result - Compressor map (part 3 - Trigonometric functions).}
+% \label{tab:reg_compmap3}\\
+% \toprule
+%                 & \multicolumn{2}{l}{$\dot{m}_{corr,c}(\Pi_{tt,c},N_c)$} \\* \midrule
+% \endfirsthead
+% %
+% \endhead
+% %
+% \bottomrule
+% \endfoot
+% %
+% \endlastfoot
+% %
+% \textbf{Degree} & \textbf{F}                       & $\mathbf{Res^2}$                       \\
+% \textbf{1}      & 0.113                         & 0.678                              \\
+% \textbf{2}      & 0.030                          & 0.915                               \\
+% \textbf{3}      & 0.028                         & 0.919                              \\
+% \textbf{4}      & 0.028                         & 0.920                               \\
+% \textbf{5}      & 0.028                         & 0.921                               \\* \bottomrule
+% \end{longtable}
+
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.6\textwidth]{Comp_map/calc_231_map_trigo.png}
+%     \caption{$\dot{m}_{corr,c}(\Pi_{tt,c},N_c)$ - trigonometric function}
+%     \label{fig:C7_trigo}
+% \end{figure}
+
+% Here, it can be noticed that the function systematically goes through a local minimum before going up to the infinity for decreasing values of the pressure ratio $\Pi_{tt,c}$. Thus, the flow rate at which the compressor start to choke can be set at the value of the function at that local minimum. 
+
+% For the low rotational speed, the choke limit wil
+\subsection{Turbine maps}
+\quad\ From now, only the compressor maps have been considered. However, the extrapolation of the turbine maps using a fitting function is also required in order to characterize the turbine operating point. In the beginning of the current section, it was said that the two relations that need to be obtained using the least-square regression algorithm are (\ref{eq:C7_turbMCbis}) and (\ref{eq:C7_turbETAbis}.
+
+\begin{subequations}
 \setstretch{1}
-    f(x,y) &= a_{1,1} + a_{1,2}\cdot sin(y) + a_{1,3}\cdot cos(y) + a_{1,4}\cdot sin(2\cdot y) + a_{1,5}\cdot cos(2\cdot y)\nonumber\\
-           &+ a_{2,1}\cdot sin(x) + a_{2,2}\cdot sin(x)\cdot sin(y) + a_{2,3}\cdot sin(x)\cdot cos(y)\nonumber\\
-           &+ a_{3,1}\cdot cos(x) + a_{3,2}\cdot sin(y)\cdot cos(x) + a_{3,3}\cdot cos(x)\cdot cos(y)\label{eq:C7_trigo}\\
-           &+ a_{4,1}\cdot sin(2\cdot x)\nonumber\\
-           &+ a_{5,1}\cdot cos(2\cdot x) \nonumber
-\end{align}
+\begin{equation}
+    \dot{m}_{corr,t} = \dot{m}_{corr,t}(\Pi_{tt,t},N_t)\label{eq:C7_turbMCbis}
+\end{equation}
+\begin{equation}
+    \eta_{is,t} = \eta_{is,t}(\Pi_{tt,t},N_t)\label{eq:C7_turbETAbis}
+\end{equation}
+\end{subequations}
 
-As for the polynomial function, a study on the degree have been performed. The results, expressed in Table \ref{tab:reg_compmap3}, shows that a trigonometric function of degree 2 is the best choice to be made. The Figure \ref{fig:C7_trigo} depicts the fitting function for the rotational speed specified in the data.
+As  for the compressor maps, a parametric study on the degree of the polynomial has to be performed in order to select the best candidate for the polynomial regression. The set of operating points on which the study will be performed is given in the Table \ref{tab:C7_turbmap}.
 
-\begin{longtable}[c]{@{}lll@{}}
-\caption{Regression result - Compressor map (part 3 - Trigonometric functions).}
-\label{tab:reg_compmap3}\\
+\begin{longtable}[c]{@{}llll|llll@{}}
+\caption{Normalized turbine map}
+\label{tab:C7_turbmap}\\
 \toprule
-                & \multicolumn{2}{l}{$\dot{m}_{corr,c} = \dot{m}_{corr,c}(\Pi_{tt,c},N_c)$} \\* \midrule
+$\mathbf{\dot{m}_{corr,t,norm}}$ & $\mathbf{\Pi_{tt,t,norm}}$ & $\mathbf{N_{t,norm}}$ & $\mathbf{\eta_{is,t,norm}}$ & $\mathbf{\dot{m}_{corr,t,norm}}$ & $\mathbf{\Pi_{tt,t,norm}}$ & $\mathbf{N_{t,norm}}$ & $\mathbf{\eta_{is,t,norm}}$ \\* \midrule
 \endfirsthead
 %
 \endhead
@@ -835,23 +1002,104 @@ As for the polynomial function, a study on the degree have been performed. The r
 %
 \endlastfoot
 %
-\textbf{Degree} & \textbf{F}                       & $\mathbf{Res^2}$                       \\
-\textbf{1}      & 0.113446                         & 0.677763                               \\
-\textbf{2}      & 0.02983                          & 0.915268                               \\
-\textbf{3}      & 0.028411                         & 0.919299                               \\
-\textbf{4}      & 0.028243                         & 0.919777                               \\
-\textbf{5}      & 0.027913                         & 0.920714                               \\* \bottomrule
+0.620                            & 0.342                      & 0.692                 & 0.913                       & 0.945                            & 0.618                      & 0.846                 & 0.955                       \\
+0.768                            & 0.392                      & 0.692                 & 0.960                       & 0.959                            & 0.660                      & 0.846                 & 0.950                       \\
+0.817                            & 0.424                      & 0.692                 & 0.936                       & 0.979                            & 0.746                      & 0.846                 & 0.939                       \\
+0.857                            & 0.457                      & 0.692                 & 0.921                       & 0.985                            & 0.792                      & 0.846                 & 0.933                       \\
+0.892                            & 0.491                      & 0.692                 & 0.910                       & 0.997                            & 0.933                      & 0.846                 & 0.923                       \\
+0.957                            & 0.605                      & 0.692                 & 0.876                       & 0.580                            & 0.364                      & 1.000                 & 0.582                       \\
+0.969                            & 0.646                      & 0.692                 & 0.866                       & 0.723                            & 0.416                      & 1.000                 & 0.834                       \\
+0.986                            & 0.732                      & 0.692                 & 0.850                       & 0.782                            & 0.445                      & 1.000                 & 0.933                       \\
+0.992                            & 0.777                      & 0.692                 & 0.844                       & 0.827                            & 0.478                      & 1.000                 & 0.975                       \\
+1.000                            & 0.915                      & 0.692                 & 0.821                       & 0.862                            & 0.513                      & 1.000                 & 0.990                       \\
+0.597                            & 0.351                      & 0.846                 & 0.740                       & 0.932                            & 0.631                      & 1.000                 & 1.000                       \\
+0.750                            & 0.402                      & 0.846                 & 0.963                       & 0.947                            & 0.673                      & 1.000                 & 0.999                       \\
+0.805                            & 0.432                      & 0.846                 & 0.977                       & 0.968                            & 0.762                      & 1.000                 & 0.996                       \\
+0.847                            & 0.465                      & 0.846                 & 0.981                       & 0.976                            & 0.807                      & 1.000                 & 0.994                       \\
+0.881                            & 0.500                      & 0.846                 & 0.977                       & 0.993                            & 1.000                      & 1.000                 & 0.988                       \\* \bottomrule
 \end{longtable}
+
+The results of the study are included in the Table \ref{tab:reg_turbmap1}. 
+\begin{longtable}[c]{@{}lll|ll@{}}
+\caption{Regression result - Turbine map}
+\label{tab:reg_turbmap1}\\
+\toprule
+                & \multicolumn{2}{l|}{$\dot{m}_{corr,t}(\Pi_{tt,t},N_t)$} & \multicolumn{2}{l}{$\eta_{is,t}(\Pi_{tt,t},N_t)$} \\* \midrule
+\endfirsthead
+%
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+\textbf{Degree} & \textbf{F}                       & $\mathbf{Res^2}$                       & F                          & $\mathbf{Res^2}$                   \\
+\textbf{1}      & 0.055                          & 0.753                               & 0.108                   & 0.070                           \\
+\textbf{2}      & 0.013                         & 0.943                               & 0.052                   & 0.550                           \\
+\textbf{3}      & 0.002                         & 0.992                               & 0.018                  & 0.847                           \\
+\textbf{4}      & 2.55E-04                         & 0.999                               & 0.004                   & 0.967                           \\
+\textbf{5}      & 7.12E-05                         & 0.999                               & 0.001                   & 0.990                            \\
+\textbf{6}      & 3.32E-05                         & 0.999                               & 6.98E-04                  & 0.993                           \\* \bottomrule
+\end{longtable}
+
+From these results, it can be seen that a polynomial of degree 6 provide good results for the relation defining the isentropic efficiency of the expansion. The Figure \ref{fig:C7_etaturb} depicts the polynomial obtain for this relation.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\textwidth]{Comp_map/calc_231_map_trigo.png}
-    \caption{$\dot{m}_{corr,c}(\Pi_{tt,c},N_c)$ - trigonometric function}
-    \label{fig:C7_trigo}
+    \includegraphics[width=0.6\textwidth]{/Turb_map/calc_356_map.png}
+    \caption{$\eta_{is,t}(\Pi_{tt,t},N_t)$ - polynomial function}
+    \label{fig:C7_etaturb}
+\end{figure}
+Considering now the first relation, the value of the objective function $\mathbf{F}$ and of the square of the residual function $Res^2$ shows that the fitting is nearly perfect for a polynomial of degree 4. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Turb_map/calc_351_map.png}
+    \caption{$\dot{m}_{corr,t}(\Pi_{tt,t},N_t)$ - polynomial function}
+    \label{fig:C7_mturb1}
+\end{figure}
+However, when the graphical representation in Figure \ref{fig:C7_mturb1} of the polynomial is analyzed, the first notice is that the points for the different iso-rotational speeds are really close from one to the other. Thus, while the of the point is perfect, the results that the function will provide outside the given domain will be disastrous. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Turb_map/calc_452_map.png}
+    \caption{$\dot{m}_{corr,t}\cdot\Pi_{tt,t}](\Pi_{tt,t}\cdot N_t,N_t)$ - polynomial function}
+    \label{fig:C7_mturb2}
 \end{figure}
 
-Here, it can be noticed that the function systematically goes through a local minimum before going up to the infinity for decreasing values of the pressure ratio $\Pi_{tt,c}$. Thus, the flow rate at which the compressor start to choke can be set at the value of the function at that local minimum. 
+To solve this problem, a method needs to be found to increase the gap between the iso-rotational speeds. The retained solution consists modifying the relation (\ref{eq:C7_turbMCbis}) as given in the new relation (\ref{eq:C7_turbMCbis_new}).
 
-\subsection{Turbine maps}
+\begin{equation}
+\setstretch{1}
+    [\dot{m}_{corr,t}\cdot\Pi_{tt,t}](\Pi_{tt,t}\cdot N_t,N_t)\label{eq:C7_turbMCbis_new}
+\end{equation}
+
+Starting from this new relation, the spacing between the different curves is increased. It results in a quasi straight polynomial as illustrated in Figure \ref{fig:C7_mturb2}. 
 
 
+The degree selected of this polynomial is 3 according to the results from the table \ref{tab:reg_turbmap2}. 
+
+\begin{longtable}[c]{@{}lll@{}}
+\caption{Regression result - Turbine map (part 2)}
+\label{tab:reg_turbmap2}\\
+\toprule
+                & \multicolumn{2}{l}{$\dot{m}_{corr,t}\cdot\Pi_{tt,t}](\Pi_{tt,t}\cdot N_t,N_t)$} \\* \midrule
+\endfirsthead
+%
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+\textbf{Degree} & \textbf{F}                          & $\mathbf{Res^2}$                          \\
+\textbf{1}      & 0.020                               & 0.974                                     \\
+\textbf{2}      & 1.21E-03                            & 0.999                                     \\
+\textbf{3}      & 1.79E-04                            & 1.000                                     \\
+\textbf{4}      & 3.76E-05                            & 1.000                                     \\
+\textbf{5}      & 1.5E-05                             & 1.000                                     \\
+\textbf{6}      & 7.61E-06                            & 1.000                                     \\
+\textbf{7}      & 7.79E-06                            & 1.000                                     \\* \bottomrule
+\end{longtable}
