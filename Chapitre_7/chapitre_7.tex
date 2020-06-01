@@ -213,10 +213,10 @@ The Table \ref{tab:C7_acc_table} contains the minimum, maximum, and mean errors 
 %
 \endlastfoot
 %
-\textbf{1}                                  & 0.009365                                       & 0.160054                                       & 0.04083                     \\
-\textbf{2}                                  & 0.000308                                       & 0.60843                                        & 0.050755                    \\
-\textbf{3}                                  & 0.017788                                       & 1.388374                                       & 0.087446                    \\
-\textbf{4}                                  & 0.0111                                         & 2.180027                                       & 0.127399                    \\* \bottomrule
+\multicolumn{1}{c}{\textbf{1}}                                  & 0.009365                                       & 0.160054                                       & 0.04083                     \\
+\multicolumn{1}{c}{\textbf{2}}                                  & 0.000308                                       & 0.60843                                        & 0.050755                    \\
+\multicolumn{1}{c}{\textbf{3}}                                  & 0.017788                                       & 1.388374                                       & 0.087446                    \\
+\multicolumn{1}{c}{\textbf{4}}                                  & 0.0111                                         & 2.180027                                       & 0.127399                    \\* \bottomrule
 \end{longtable}
 As it is illustrated in the results from the Table \ref{tab:C7_acc_table}, increasing the pressure tends to increase the error of the method using the thermodynamic tables. However, a finer analysis can shows that it is at low temperature that the error is maximal. At 100\degree C, the error for a pressure of 4 bars is just of 0.5\%, which is reasonable. 
 
@@ -311,7 +311,7 @@ Since four parameters are involved, at least two function of the type f(x,y), wh
 
 \begin{equation*}
     \setstretch{1}
-    z = f(x,y) = a_{0,0} + a_{1,0}\cdot x + a_{0,1}\cdot y + a_{1,1}\cdot x\cdot y
+    z = f(x,y) = a_{0,0} + a_{1,0}\cdot x + a_{0,1}\cdot y
 \end{equation*}
 where the coefficients $a_{i,j}$ are the unknowns. Those coefficients are computed following the scheme ($\ref{eq:C7_leastsquare}$). 
 
@@ -321,7 +321,7 @@ where the coefficients $a_{i,j}$ are the unknowns. Those coefficients are comput
 & \underset{a\in\mathbb{R}}{\text{minimize}}
 & &  \textbf{F} = \frac{1}{2}\cdot\sum_{k\in\textsc{P}}\left[z_k - f(x_k, y_k) \right]^2 \\
 & \text{with}
-& & f(x, y) = a_{0,0} + a_{1,0}\cdot x + a_{0,1}\cdot y + a_{1,1}\cdot x\cdot y
+& & f(x, y) = a_{0,0} + a_{1,0}\cdot x + a_{0,1}\cdot y
 \end{aligned}\label{eq:C7_leastsquare}
 \end{equation}
 minimizing $\textbf{F}$ is similar to enforce all the partial derivatives with respect to the $a_[{i,j}$ coefficient to be equal to zeros. therefore, (\ref{eq:C7_lqcond}) becomes the new condition.
@@ -331,23 +331,22 @@ minimizing $\textbf{F}$ is similar to enforce all the partial derivatives with r
 \begin{align}
     \frac{\partial \textbf{F}}{\partial a_{0,0}} &=\sum_{k\in\textsc{P}}\left[z_k - f(x_k, y_k)\right] = 0\\
     \frac{\partial \textbf{F}}{\partial a_{1,0}} &=\sum_{k\in\textsc{P}}\left[z_k - f(x_k, y_k)\right]\cdot x = 0\\
-    \frac{\partial \textbf{F}}{\partial a_{1,0}} &=\sum_{k\in\textsc{P}}\left[z_k - f(x_k, y_k)\right]\cdot y = 0\\
-    \frac{\partial \textbf{F}}{\partial a_{1,1}} &=\sum_{k\in\textsc{P}}\left[z_k - f(x_k, y_k)\right]\cdot x \cdot y = 0
+    \frac{\partial \textbf{F}}{\partial a_{1,0}} &=\sum_{k\in\textsc{P}}\left[z_k - f(x_k, y_k)\right]\cdot y = 0
 \end{align}\label{eq:C7_lqcond}
 \end{subequations}
 Satisfying those relations will ensure that the value of the function \textbf{F} corresponds to a stationary point. In theory, this point could be either a maximum or a minimum but, the function \textbf{F} is composed of the positive sum of square. Therefore, the value cannot be a maximum. 
 
-Then, the quality of the curve fitting can be assessed by computing the square of the residual function. The definition of this function is given in the expression (\ref{eq:C7_R2}).
+Then, the quality of the curve fitting can be assessed by computing the square of the residual function $\chi^2$. The definition of this function is given in the expression (\ref{eq:C7_R2}).
 \begin{equation}
 \setstretch{1}
 \begin{aligned}
-& & &  Res^2 = 1 - \frac{SS_{res}}{SS_{tot}} \\
+& & &  \chi^2 = 1 - \frac{SS_{res}}{SS_{tot}} \\
 &\text{with}
 & & SS_{res} = \sum_{k\in\textsc{P}}\left(z_k - f(x_k,y_k)\right)^2\\
 & & & SS_{tot} = \sum_{k\in\textsc{P}}\left(z_k - \bar{z}\right)^2
 \end{aligned}\label{eq:C7_R2}
 \end{equation}
-where $\bar{z}$ is the mean value of the $z_k$. If the value of the function $Res^2$ is equal to the unity, the fitting curve exactly goes through the set of points. 
+where $\bar{z}$ is the mean value of the $z_k$. If the value of the function $\chi^2$ is equal to the unity, the fitting curve exactly goes through the set of points. 
 
 In practice, the algorithm can be applied to any functions. A good practice when providing the set of points is to normalized them around the respective maximal value of each component. The normalizing operation allows to reduce the magnitude of the different coefficients $a_{i,j}$. This is necessary to avoid getting an ill conditioned problem.
 
@@ -433,9 +432,9 @@ In this work, The type of basis function that has been considered are are polyno
 
 \begin{equation}
     \setstretch{1}
-    f(x,y) = \sum_{i=1^d}\sum_{j=1}^{d-i}a_{i,j}\cdot x^i\cdot y^j \label{eq:C7_poly}
+    f(x,y) = \sum_{i=1}^d\sum_{j=1}^{d-i}a_{i,j}\cdot x^i\cdot y^j \label{eq:C7_poly}
 \end{equation}
-where the parameter $d$ corresponds to the maximal degree of the polynomial.
+where the parameter $d$ corresponds to the degree of the polynomial. the degree is defined such that the sum of the power factor applied on $x$ and $y$ does not exceed $d$ for each monomial constituting the function f(x,y).
 
 According to the theory, a polynomial of degree N can exactly fit N+1 points. However, polynomial of high order tends to fluctuate outside the domain defined by the set of points. On the set of Figures \ref{fig:C7_poly} are represented the fitting of a polynomial over 15 points for different degree $d$.
 
@@ -490,6 +489,7 @@ According to the theory, a polynomial of degree N can exactly fit N+1 points. Ho
 As illustrated in the series of schematics, when the highest degree of the polynomial increases, the amplitude of the variations increases as well. More precisely, the magnitude at the extremity of the domain defined by the set of points are the relatively large compared to the remaining of the function. 
 
 Thus, it is required to minimize the degree of the polynomial to avoid these large fluctuation. This will be performed by  using the LS-R algorithm. The algorithm allows to restrict the maximal degree of the polynomial while keeping a good accuracy at the given points. For the remaining of the report, the abbreviation LS-RP will refer to the least-square regression algorithm using polynomials as basis functions.
+
 \subsection{Splitting of the performance maps}
 \quad\ When considering the performance maps of the compressor and the turbine, the range of value for the rotational speed can be becomes quite large. However, if the domain to be extrapolated by the polynomial is to wide, an evident loss of accuracy will occur. 
 
@@ -505,65 +505,10 @@ f_2(x,N) &\text{ if }N>N_{end}
 \end{equation}
 where $\alpha$ is a coefficient for which its value is 0 for $N = N_{start}$ and 1 for $N = N_{end}$.  
 \subsection{Compressor maps}
-\quad\ First are considered the compressor maps. As it has been mentioned before, two functions need to be defined to fully characterized the compressor operating points.  
-\subsubsection{Selection of the polynomial degree}
-\quad\ To select the degree of the polynomial such that the function fit the best the given set of operating points, a parametric study over the maximal degree $d$ of the polynomial has been conducted. First, The raw data from Table \ref{tab:C7_compmap} will be used to perform this study.
-For each of these polynomial, the value of the objective function $\textbf{F}$ and of the square of the residual function $Res^2$ are computed then compared. The accuracy of the fitting function is described by the value of the objective and residual function. Respectively, a low and high value of these functions implies that the data is well fit by the polynomial.
+\quad\ The algorithm will first be applied on the compressor map. In the Brayton cycle code, the inlet condition of the compressor are specified. Thus, since the mass flow going through and the compressor rotational speed are known, the produced pressure ratio and the isentropic efficiency associated to the compression can be computed.
 
-The results are expressed in Table \ref{tab:C7_regcomp}.
-
-\begin{longtable}[c]{@{}lll|ll@{}}
-\caption{Regression result - Compressor map}
-\label{tab:C7_regcomp}\\
-\toprule
-                & \multicolumn{2}{l|}{$\Pi_{tt,c}(\dot{m}_{corr,c},N_c)$} & \multicolumn{2}{l}{$\eta_{is,c}(\Pi_{tt,c},N_c)$} \\* \midrule
-\endfirsthead
-%
-\endhead
-%
-\bottomrule
-\endfoot
-%
-\endlastfoot
-%
-\textbf{Degree} & \textbf{F}                     & $\mathbf{Res^2}$                    & \textbf{F}                  & $\mathbf{Res^2}$                  \\
-\textbf{1}      & 0.105                       & 0.746                            & 0.073                    & 0.781                          \\
-\textbf{2}      & 0.051                       & 0.876                            & 0.018                    & 0.947                         \\
-\textbf{3}      & 0.028                       & 0.932                             & 0.009                    & 0.974                          \\
-\textbf{4}      & 0.014                       & 0.965                            & 0.008                    & 0.977                          \\
-\textbf{5}      & 0.008                       & 0.979                            & 0.007                    & 0.979                           \\
-\textbf{6}      & 0.007                       & 0.983                            & 0.007                     & 0.979                          \\
-\textbf{7}      & 0.006                       & 0.984                            & 0.007                    & 0.979                          \\* \bottomrule
-\end{longtable}
-
-The analysis of the results shows that for the first relation, the degree of the polynomial need to be at least equal to 4 to be enough accurate regarding to the given operating points. 
-But, there is still some improvement of the accuracy by increasing up to 6 the degree of the polynomial.
-
-Considering the second relation, starting from a degree equal to 3 there is no significant improvement of the accuracy of the polynomial. 
-
-Figures \ref{fig:C7_polycomp1} and \ref{fig:C7_polycomp2} respectively depicts the interpolating polynomial for the two relations.
-
-\begin{figure}[h]
-    \setstretch{1}
-    \centering
-    \begin{subfigure}[b]{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{/Comp_map/HRPM/calc_132_map.png}
-        \caption{$\Pi_{tt,c}(\dot{m}_{corr,c},N_c)$}
-        \label{fig:C7_polycomp1}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{/Comp_map/HRPM/calc_234_map.png}
-        \caption{$\eta_{is,c}(\Pi_{tt,c},N_c)$}
-        \label{fig:C7_polycomp2}
-    \end{subfigure}
-    \caption{Polynomial interpolation of the compressor.} \label{fig:C7_polycomp}
-\end{figure}
-
-
-\subsubsection{Extrapolation of the map at low RPM}
-\quad\, When the compressor map is built, the low rotational speed operation points are usually not represented. However, at these low rotational speeds (below $\sim$ 40,000 RPM) the flow starts to behave as an incompressible flow. Therefore, the method of extrapolation of the performance maps seen for the pumps in chapter \ref{C4} can be applied on the map.
+\subsubsection{Extrapolation of the map to low RPM}
+\quad\, Before studying the polynomial fitting of the relations defining those operating variables, the extrapolation of the compressor performance map to the low rotational speed has to be described. Indeed, those operating points are not always calculated when the building of the map is performed. However, at these low rotational speeds, the flow starts to behave as an incompressible flow. Therefore, the method of extrapolation of the performance maps seen for the pumps in chapter \ref{C4} can be applied on the map.
 
 As expressed in the chapter \ref{C4}, two similar operating points $A$ and $B$ are linked by the relations (\ref{eq:C7_mdot}) to (\ref{eq:C7_eta}). 
 
@@ -613,14 +558,11 @@ Then, the total to total pressure ratio produced by the compressor at the operat
     T_{B,2,is}^0 &= \left(T_{B,2}^0 - T_{B,1}^0\right)\cdot \eta_{is,c,B} + T_{B,1}^0\nonumber\\
     \Pi_{tt,c,B} &= \left(\frac{T_{B,2,is}^0}{T_{B,1}^0}\right)^{\frac{k}{k-1}}\nonumber
 \end{align}
-Using this method, low rotational speed operating points can be derived and used to improve the accuracy of the polynomial regression.
 
-\subsubsection{Fitting function at low RPM}
-\quad\ Now that the method to extend the compressor map to lower rotational speed has been expressed, it would be interesting to verify the validity of the LS-RP for the selected degree of polynomial. To do so, operating points at low RPM have been calculated based on the development described previously. The normalized value are in Table \ref{tab:C7_compmap LRPM}.
-
+A part of the map extrapolated to the low rotational speed is includes in the Table \ref{tab:C7_compmap_LRPM}. 
 \begin{longtable}[c]{@{}llll|llll@{}}
 \caption{Normalized compressor map (Low RPM)}
-\label{tab:C7_compmap LRPM}\\
+\label{tab:C7_compmap_LRPM}\\
 \toprule
 $\mathbf{\dot{m}_{corr,c,norm}}$ & $\mathbf{\Pi_{tt,c,norm}}$ & $\mathbf{N_{c,norm}}$ & $\mathbf{\eta_{is,c,norm}}$ & $\mathbf{\dot{m}_{corr,c,norm}}$ & $\mathbf{\Pi_{tt,c,norm}}$ & $\mathbf{N_{c,norm}}$ & $\mathbf{\eta_{is,c,norm}}$ \\* \midrule
 \endfirsthead
@@ -649,70 +591,27 @@ $\mathbf{\dot{m}_{corr,c,norm}}$ & $\mathbf{\Pi_{tt,c,norm}}$ & $\mathbf{N_{c,no
 0.234                            & 0.940                      & 0.400                 & 0.975                       & 0.702                            & 0.990                      & 1.000                 & 0.975                       \\
 0.279                            & 0.938                      & 0.400                 & 0.877                       & 0.838                            & 0.979                      & 1.000                 & 0.877                       \\* \bottomrule
 \end{longtable}
+\subsubsection{Compression ratio $\Pi_{tt,c}$}
+\quad\ Now that the compressor map is defined for the whole range of rotational speed, the study can be conducted. First, the relation defining the compression ratio is (\ref{eq:C7_Pratio}).
 
-Considering the same degree for both fitting polynomial, the regression of these points are depicted in Figures \ref{fig:C7_polycomp1_LRPM} and \ref{fig:C7_polycomp2_LRPM}.
-
-\begin{figure}[h]
+\begin{equation}
     \setstretch{1}
-    \centering
-    \begin{subfigure}[b]{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{/Comp_map/LRPM/calc_142_map.png}
-        \caption{$\Pi_{tt,c}(\dot{m}_{corr,c},N_c)$}
-        \label{fig:C7_polycomp1_LRPM}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{/Comp_map/LRPM/calc_245_map.png}
-        \caption{$\eta_{is,c}(\Pi_{tt,c},N_c)$}
-        \label{fig:C7_polycomp2_LRPM}
-    \end{subfigure}
-    \caption{Polynomial interpolation of the compressor (Low rotational speed).} \label{fig:C7_polycomp_LRPM}
-\end{figure}
+    \Pi_{tt,c}(\dot{m}_{corr,c},N_c) \label{eq:C7_Pratio}
+\end{equation}
 
-As it can be noticed, the relation to obtain the isentropic efficiency is not well conditioned. This is mainly due to the relative proximity of the iso-rotational speeds lines. The relation $\Pi_{tt,c}(\dot{m}_{corr,c},N_c)$ is also affected by this phenomenon but at a lower level.
+Based on the set of operating points characterizing the performance map of the machine, the relation can be defined by a polynomial using the least-square regression algorithm.
 
-For both graphs, the regression can be improved by multiplying the pressure ratio $\Pi_{tt,c}$ by the rotational speed $N_c$. Doing this will increase the gap between the lines and will likely improve the overall accuracy of the fitting functions. Figures \ref{fig:C7_polycomp1_LRPM_imp} and \ref{fig:C7_polycomp2_LRPM_imp} shows the improvements resulting from this manipulation.
+First, the minimal degree of the polynomial representing the relation has to be established. For each polynomial built using the LS-RP, the values of the objective function $\textbf{F}$ and of the $\chi^2$ functions are computed. 
 
-\begin{figure}[h]
-    \setstretch{1}
-    \centering
-    \begin{subfigure}[b]{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{/Comp_map/LRPM/calc_143_map.png}
-        \caption{$[\Pi_{tt,c}\cdot N_c](\dot{m}_{corr,c},N_c)$}
-        \label{fig:C7_polycomp1_LRPM_imp}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{/Comp_map/LRPM/calc_345_map.png}
-        \caption{$\eta_{is,c}(\Pi_{tt,c}\cdot N_c,N_c)$}
-        \label{fig:C7_polycomp2_LRPM_imp}
-    \end{subfigure}
-    \caption{Polynomial interpolation of the compressor (part 2 - Low rotational speed).} \label{fig:C7_polycomp_LRPM_imp}
-\end{figure}
+These values have to respectively be minimal and maximal in order to minimize the error regarding to the set of points. The table \ref{tab:C7_regcomp} includes the results from the analysis for the data from Tables \ref{tab:C7_compmap} and \ref{tab:C7_compmap_LRPM}. 
 
-As depicted in the Figures \ref{fig:C7_polycomp1_LRPM_imp} and \ref{fig:C7_polycomp2_LRPM_imp}, the gap between the curves is larger. This result in a really good estimation of the relation linking the pressure ratio with the corrected mass flow rate and the rotational speed. 
+It has to be known that the coefficients $a_{i,j}$ characterizing the polynomial are different for the two set of operating points. This is the consequence of the splitting of the performance map. 
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.6\textwidth]{/Comp_map/LRPM/calc_543_map.png}
-    \caption{$[\Pi_{tt,c}\cdot N_c](\eta_{is,c},N_c)$}
-    \label{fig:C7_polycomp2_LRPM_imp2}
-\end{figure}
-    
-However, the relation to obtain the isentropic efficiency is still not well represented. The reason is that the pressure ratio does not vary much at low rotational speed. Therefore, the polynomial has to fit data that are quasi vertically align which leads to really high slope.
-
-This can be resolve by considering the inverse relation $[\Pi_{tt,c}\cdot N_c](\eta_{is,c},N_c)$. Doing so, the iso-rotational speed curves are horizontal, which is much easier to approach using polynomials. The Figure \ref{fig:C7_polycomp2_LRPM_imp2} illustrates the new polynomial for a degree $d=3$.  However, in order to have a starting guess value for the the isentropic efficiency, the relation $\eta_{is,c}(\Pi_{tt,c},N_c)$ will be used for this purpose.
-
-These operations will be applied on the all the parts of the compressor map. As a summary, the Table \ref{tab:C7_compmaprel} includes for each relations the associated degree of polynomial and the residual values for the low RPM and high RPM data.
-
-\begin{longtable}[c]{@{}llll@{}}
-\caption{Compressor map - Table of relations}
-\label{tab:C7_compmaprel}\\
+\begin{longtable}[c]{@{}lll|ll@{}}
+\caption{$\Pi_{tt,c}(\dot{m}_{corr,c},N_c)$ - regression results }
+\label{tab:C7_regcomp}\\
 \toprule
-\multicolumn{1}{c}{\multirow{2}{*}{Relation}} & \multicolumn{1}{c}{\multirow{2}{*}{Degree}} & \multicolumn{2}{c}{$Res^2$} \\
-\multicolumn{1}{c}{}                          & \multicolumn{1}{c}{}                        & Low RPM      & High RPM     \\* \midrule
+\textit{\textbf{Polynomial}} & \multicolumn{2}{c|}{High RPM}  & \multicolumn{2}{c}{Low RPM}    \\* \midrule
 \endfirsthead
 %
 \endhead
@@ -722,17 +621,218 @@ These operations will be applied on the all the parts of the compressor map. As 
 %
 \endlastfoot
 %
-$[\Pi_{tt,c}\cdot N_c](\dot{m}_{corr,c},N_c)$ & 6                       & 1.000        & 0.990        \\
-$\Pi_{tt,c}(\dot{m}_{corr,c},N_c)$            & 6                       & 1.000        & 0.989        \\
-$[\Pi_{tt,c}\cdot N_c](\eta_{is,c},N_c)$      & 3                       & 1.000        & 0.978        \\
-$\eta_{is,c}(\Pi_{tt,c},N_c)$                 & 3                       & 0.780766     & 0.974        \\* \bottomrule
+\multicolumn{1}{c}{\textbf{Degree}}              & \multicolumn{1}{c}{$\mathbf{F}$} & \multicolumn{1}{c|}{$\mathbf{\chi^2}$} & \multicolumn{1}{c}{$\mathbf{F}$} & \multicolumn{1}{c}{$\mathbf{\chi^2}$} \\
+\multicolumn{1}{c}{\textbf{1}}                   & 0.094      & 0.772             & 3.20E-04   & 0.966             \\
+\multicolumn{1}{c}{\textbf{2}}                   & 0.046      & 0.889             & 1.62E-04   & 0.983             \\
+\multicolumn{1}{c}{\textbf{3}}                   & 0.024      & 0.942             & 1.60E-05   & 0.998             \\
+\multicolumn{1}{c}{\textbf{4}}                   & 0.013      & 0.970             & 6.81E-06   & 0.999             \\
+\multicolumn{1}{c}{\textbf{5}}                   & 0.008      & 0.981             & 6.24E-06   & 0.999             \\
+\multicolumn{1}{c}{\textbf{6}}                   & 0.008      & 0.982             & 5.54E-06   & 0.999             \\* \bottomrule
 \end{longtable}
-\subsection{Delimitation of the compressor map domain}
-\quad\ While it has been expressed previously that polynomial of high degree are not reliable at the extremity of the domain defined by the given set of operating points, this doesn't really matter here since the domain of operation of the compressor is naturally limited by the choke and surge lines described in the chapter \ref{C4}.
 
-Several methods are going to be presented in this part of the section dedicated to the modeling of the turbomachines. 
+
+These results shows that for a degree $d=3$, the error with respect to the given points start to be acceptable. Going above this degree would be interested but, it will be expressed later that it is preferable to keep de polynomial degree as small as possible. Considering the low RPM operating points, the polynomial built perfectly fit the data starting from a degree $d=3$. The graphic representation of the two polynomials is given in the Figures \ref{fig:C7_polycomp_P_HRPM} and \ref{fig:C7_polycomp_P_LRPM}.
+
+\begin{figure}[H]
+    \setstretch{1}
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Comp_map/HRPM/calc_0_2_1_map.png}
+        \caption{High rotational speed}
+        \label{fig:C7_polycomp_P_HRPM}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Comp_map/LRPM/calc_0_2_1_map.png}
+        \caption{Low rotational speed}
+        \label{fig:C7_polycomp_P_LRPM}
+    \end{subfigure}
+    \caption{Polynomial regression ($d=3$) - $\Pi_{tt,c}(\dot{m}_{corr,c},N_c)$} \label{fig:C7_polycomp_P}
+\end{figure}
+
+The Figure \ref{fig:C7_polycomp_P_LRPM} shows that the iso-rotational speed curves are relatively closed from one to the others. The quality of the overall extrapolation would be improved if the gap between these curves is wider. 
+
+By applying a multiplication factor on the pressure ratio, it is possible to create an artificial increase of this gap. Here, the factor selected is the rotational speed $N_c$. Therefore, the new relation is $[\Pi_{tt,c}\cdot N_c](\dot{m}_{corr,c},N_c)$. 
+
+After having applied this multiplication factor, the parametric study have been performed again. The outputs have been written in the Table \ref{tab:C7_regcomp2}.
+
+\begin{longtable}[c]{@{}lll|ll@{}}
+\caption{$[\Pi_{tt,c}\cdot N_c](\dot{m}_{corr,c},N_c)$ - regression results }
+\label{tab:C7_regcomp2}\\
+\toprule
+\textit{\textbf{Polynomial}} & \multicolumn{2}{c|}{High RPM}  & \multicolumn{2}{c}{Low RPM}    \\* \midrule
+\endfirsthead
+%
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+\multicolumn{1}{c}{\textbf{Degree}}              & \multicolumn{1}{c}{$\mathbf{F}$} & \multicolumn{1}{c|}{$\mathbf{\chi^2}$} & \multicolumn{1}{c}{$\mathbf{F}$} & \multicolumn{1}{c}{$\mathbf{\chi^2}$} \\
+\multicolumn{1}{c}{\textbf{1}}                   & 0.089      & 0.843             & 5.70E-04   & 1.000             \\
+\multicolumn{1}{c}{\textbf{2}}                   & 0.042      & 0.925             & 5.01E-05   & 1.000             \\
+\multicolumn{1}{c}{\textbf{3}}                   & 0.021      & 0.962             & 1.22E-05   & 1.000             \\
+\multicolumn{1}{c}{\textbf{4}}                   & 0.011      & 0.980             & 6.31E-06   & 1.000             \\
+\multicolumn{1}{c}{\textbf{5}}                   & 0.007      & 0.987             & 5.91E-06   & 1.000             \\
+\multicolumn{1}{c}{\textbf{6}}                   & 0.007      & 0.988             & 5.24E-06   & 1.000             \\* \bottomrule
+\end{longtable}
+
+Comparing the two Tables \ref{tab:C7_regcomp} and \ref{tab:C7_regcomp2} shows that, for a even degree, the the residual function $\chi^2$ has an higher value. This implies that the accuracy of the polynomial is improved over the set of points. 
+
+The degree $d=3$ remains the best choice based on the results of the study. Respectively, the Figures \ref{fig:C7_polycomp_PN_HRPM} and \ref{fig:C7_polycomp_PN_LRPM} depict the polynomial for the high and low rotational speed operating points.
+
+\begin{figure}[H]
+    \setstretch{1}
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Comp_map/HRPM/calc_0_2_12_map.png}
+        \caption{High rotational speed}
+        \label{fig:C7_polycomp_PN_HRPM}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Comp_map/LRPM/calc_0_2_12_map.png}
+        \caption{Low rotational speed}
+        \label{fig:C7_polycomp_PN_LRPM}
+    \end{subfigure}
+    \caption{Polynomial regression ($d=3$) - $[\Pi_{tt,c}\cdot N_c](\dot{m}_{corr,c},N_c)$} \label{fig:C7_polycomp_PN}
+\end{figure}
+
+\subsubsection{Isentropic efficiency $\eta_{is,c}$}
+\quad\ The second operating variable to be determined is the isentropic efficiency. The first relation to be considered is (\ref{eq:C7_etarel}), where the pressure ratio is already multiplied by the rotational speed.
+\begin{equation}
+    \setstretch{1}
+    \eta_{is,c}(\Pi_{tt,c}\cdot N_c,N_c) \label{eq:C7_etarel}
+\end{equation}
+Considering this relation, a similar study over the degree of the polynonial have been considered. The obtained results have been included in the Table \ref{tab:C7_regcomp3}.
+
+\begin{longtable}[c]{@{}lll|ll@{}}
+\caption{$\eta_{is,c}(\Pi_{tt,c}\cdot N_c,N_c)$ - regression results}
+\label{tab:C7_regcomp3}\\
+\toprule
+\textit{\textbf{Polynomial}} & \multicolumn{2}{c|}{High RPM}                        & \multicolumn{2}{c}{Low RPM}    \\* \midrule
+\endfirsthead
+%
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+\multicolumn{1}{c}{\textbf{Degree}}              & \multicolumn{1}{c}{$\mathbf{F}$} & \multicolumn{1}{c|}{$\mathbf{\chi^2}$} & \multicolumn{1}{c}{$\mathbf{F}$} & \multicolumn{1}{c}{$\mathbf{\chi^2}$} \\
+\multicolumn{1}{c}{\textbf{1}}                   & 0.097      & 0.709             & 0.215      & 0.242             \\
+\multicolumn{1}{c}{\textbf{2}}                   & 0.024      & 0.929             & 0.187      & 0.342             \\
+\multicolumn{1}{c}{\textbf{3}}                   & 0.005      & 0.986             & 0.086      & 0.698             \\
+\multicolumn{1}{c}{\textbf{4}}                   & 0.004      & 0.988            & 0.030      & 0.896             \\
+\multicolumn{1}{c}{\textbf{5}}                   & 0.002      & 0.993           & 0.030      & 0.894             \\
+\multicolumn{1}{c}{\textbf{6}}                   & 0.002      & 0.994                                  & 0.030      & 0.893             \\* \bottomrule
+\end{longtable}
+
+The results expressed in the Table \ref{tab:C7_regcomp3} show that, the fitting function has difficulties to represent the relation for the low rotational speed operating point. 
+
+The reason behind is that the pressure ratio does not vary much on a given iso-rotational speed curve. Therefore, as depicted in the Figure \ref{fig:C7_polycomp_eta1_LRPM}, the polynomial has a really high slope.  
+
+\begin{figure}[H]
+    \setstretch{1}
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Comp_map/HRPM/calc_12_2_3_map.png}
+        \caption{High rotational speed}
+        \label{fig:C7_polycomp_eta1_HRPM}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Comp_map/LRPM/calc_12_2_3_map.png}
+        \caption{Low rotational speed}
+        \label{fig:C7_polycomp_eta1_LRPM}
+    \end{subfigure}
+    \caption{Polynomial regression ($d=3$) - $\eta_{is,c}(\Pi_{tt,c}\cdot N_c,N_c)$} \label{fig:C7_polycomp_eta1}
+\end{figure}
+
+However, for the high rotational speed operating points, the variation of the pressure ratio are large enough to provide a reliable polynomial regression. 
+
+This relation will only be used for the high rotational speeds. Thus for these operating points, a degree $d=3$ will be selected since the accuracy does not improve significantly beyond for $d>3$.
+
+Considering the inverse relation $[\Pi_{tt,c}\cdot N_c](\eta_{is,c},N_c)$ instead will transpose the graph. Using this tweak will make the iso-curves quasi horizontal for the low rotational speed operating points. The results from the parametric study for this part of the compressor map are given in Table \ref{tab:C7_regcomp4}. 
+
+\begin{longtable}[c]{@{}lll@{}}
+\caption{$[\Pi_{tt,c}\cdot N_c](\eta_{is,c},N_c)$ - regression results }
+\label{tab:C7_regcomp4}\\
+\toprule
+\textit{\textbf{Polynomial}} & &  \\* \midrule
+\endfirsthead
+%
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+\multicolumn{1}{c}{\textbf{Degree}}              & \multicolumn{1}{c}{$\mathbf{F}$}            & \multicolumn{1}{c}{$\mathbf{\chi^2}$}                  \\
+\multicolumn{1}{c}{\textbf{1}}                   & 9.18E-04   & 0.999             \\
+\multicolumn{1}{c}{\textbf{2}}                   & 4.16E-04   & 1.000             \\
+\multicolumn{1}{c}{\textbf{3}}                   & 2.32E-04   & 1.000             \\
+\multicolumn{1}{c}{\textbf{4}}                   & 1.79E-04   & 1.000             \\
+\multicolumn{1}{c}{\textbf{5}}                   & 1.48E-04   & 1.000             \\
+\multicolumn{1}{c}{\textbf{6}}                   & 7.87E-05   & 1.000             \\* \bottomrule
+\end{longtable}
+Here, the regression of the points is nearly perfect considering any value of the polynomial degree $d$. To avoid the generation of a polynomial with potential high variations, the degree $d=3$ has been selected for this relation.
+
+The Figure \ref{fig:C7_polycomp_eta3_LRPM} depicts the relation for the low rotational speed operating points.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{/Comp_map/LRPM/calc_3_2_12_map.png}
+    \caption{Polynomial regression ($d=3$) - $[\Pi_{tt,c}\cdot N_c](\eta_{is,c},N_c)$}
+    \label{fig:C7_polycomp_eta3_LRPM}
+\end{figure}
+    
+When increasing the natural value (in RPM) of $N_c$, the relation $\eta_{is,c}(\Pi_{tt,c}\cdot N_c,N_c)$ obtained by polynomial regression becomes accurate enough to be used instead. 
+
+As a summary, the Table \ref{tab:C7_compmaprel} includes the results of the parametric studies for the retained degree of each relations. 
+
+\begin{longtable}[c]{@{}llll|ll@{}}
+\caption{Compressor map - Table of relations}
+\label{tab:C7_compmaprel}\\
+\toprule
+\multicolumn{1}{c}{\multirow{2}{*}{\textit{\textbf{Relation}}}} & \multicolumn{1}{c}{\multirow{2}{*}{Degree}} & \multicolumn{2}{c|}{High RPM}                  & \multicolumn{2}{c}{Low RPM}                   \\
+\multicolumn{1}{c}{}                                            & \multicolumn{1}{c}{}                        & \multicolumn{1}{c}{$\mathbf{F}$}          & $\chi^2$               & \multicolumn{1}{c}{$\mathbf{F}$}          & $\chi^2$               \\* \midrule
+\endfirsthead
+%
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+$[\Pi_{tt,c}\cdot N_c](\dot{m}_{corr,c},N_c)$                   & \multicolumn{1}{c}{\textbf{3}}                                           & 0.021
+                 & 0.962
+                  & 1.22079E-05      & 1.000                 \\
+$\eta_{is,c}(\Pi_{tt,c}\cdot N_c,N_c)$                          & \multicolumn{1}{c}{\textbf{3}}                                           & 0.005             & 0.986                  & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} \\
+$[\Pi_{tt,c}\cdot N_c](\eta_{is,c},N_c)$                        & \multicolumn{1}{c}{\textbf{3}}                                           & \multicolumn{1}{c}{-} & \multicolumn{1}{c|}{-} & 2.32E-04              & 1.000                 \\* \bottomrule
+\end{longtable}
+
+\subsubsection{N-1 study}
+\quad\ The degree of polynomial have been selected based on the quality of the regression of the set of operating points. For each relations, the LS-RP has been applied to determine the best degree.
+
+Now that the degree of the polynomials has been set, the N-1 study can be performed.
+This study consist in analyzing the difference of accuracy between the polynomial obtained using the complete data, and the polynomial generated based on the set of operating points where one have been removed. 
+
+Thi
+The polynomial based on the whole data will be labeled  $f_N(x,y)$, and the polynomial obtained where the $i^{th}$ operating point has been removed from the data 
+\subsection{Delimitation of the compressor map domain}
+\quad\ When studying the compressor, for each rotational speed the range of operating points is bounded by a minimal and maximal mass flow rate. The two respectively correspond to the surge and the choke limits described in the chapter \ref{C4}. The purpose of this section is to express several numerical methods to estimate these boundary limits.
+
 \subsubsection{Triangulation without constraints}
-To implement these limits into the model, different methods have been studied. The first method consisted in creating a triangular meshing not constraint through the couple of points $(\dot{m}_{corr,c},\Pi_{tt,c})$. This method has some advantages with first the rapidity of the method. Indeed, it does not take lots of computer resources to generate the mesh. Also, once the triangles created, the algorithm to check if the operating point is inside or outside the domain is really easy.
+\quad\ The first method consisted in creating a triangular meshing not constraint through the couple of points $(\dot{m}_{corr,c},\Pi_{tt,c})$. This method has some advantages with first the rapidity of the method. Indeed, it does not take lots of computer resources to generate the mesh. Also, once the triangles created, the algorithm to check if the operating point is inside or outside the domain is really easy.
 
 However, there are serious flaws that makes the method unusable for the targeted application. Indeed, while the method gives easy tools to reject or not an operating point, finding the coordinates $(\dot{m}_{corr,c},\Pi_{tt,c})$ of the boundary for a given rotational speed is more tricky. 
 
@@ -745,7 +845,7 @@ The other weakness of the triangulation method is that it only works well with c
     \label{fig:C7_trimap}
 \end{figure}
 
-Figure \ref{fig:C7_trimap} depicts the result of the triangulation of the compressor map. In red is represented the compressor map boundary, and in green the meshing. The time taken to create the mesh is equal to 2.5ms.
+Figure \ref{fig:C7_trimap} depicts the results of the triangulation of the compressor map. In red is represented the compressor map boundary, and in green the meshing.
 
 As it can be seen on the graph, the surge line is misrepresented by the mesh. The limit provided by the triangulation is very optimistic and doesn't correspond with the reality. 
 
@@ -858,7 +958,7 @@ On Figure \ref{fig:C7_LS2D} is represented the level set function.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\textwidth]{Comp_map/2D_LS.png}
+    \includegraphics[width=0.5\textwidth]{Comp_map/2D_LS.png}
     \caption{2D level-set function.}
     \label{fig:C7_LS2D}
 \end{figure}
@@ -869,14 +969,14 @@ However, this 2D level-set function needs to be defined by parts since for some 
 \subsubsection{3D level-set}
 \quad\ The two cons of the 2D level-set can be erased by considering a 3D level-set. Here, the principle then to be closed to the performance maps regressions described in the previous parts of this section. However, here what is desired is a function defined inside the cloud of points and equal to the NULL value outside the cloud. 
 
-The relation used to build the 3D level-set function $f_{ls,3D}$ is $\dot{m}_{corr,c} = \dot{m}_{corr,c}(\Pi_{tt,c},N_c)$. On Figure \ref{fig:C7_LS3D} is illustrated this level-set function. A 
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{Comp_map/3D_LS.png}
+    \includegraphics[width=0.5\textwidth]{Comp_map/3D_LS.png}
     \caption{3D level-set function - color bar representing the value of the pressure ratio.}
     \label{fig:C7_LS3D}
 \end{figure}
+The relation used to build the 3D level-set function $f_{ls,3D}$ is $\dot{m}_{corr,c} = \dot{m}_{corr,c}(\Pi_{tt,c},N_c)$. On Figure \ref{fig:C7_LS3D} is illustrated this level-set function. 
 For each rotational speed $N_c$, the function gives all the admissible couples $(\dot{m}_{corr,c},\Pi_{tt,c})$ based on the compressor map initially provided. 
 
 Considering first the surge line, the limit drawn by the function is relatively faithful regarding to what was expected. If some margins is applied, the surge line can be nicely characterized by this 3D level-set function. 
@@ -887,13 +987,13 @@ Considering first the surge line, the limit drawn by the function is relatively 
 
 In chapter \ref{C4}, it has been explained that the relation $\Pi_{tt,c}(\dot{m}_{corr,c},N_c)$ is characterized by an infinite slope when the compressor is choking. However, the polynomial built using the least-square regression algorithm is not designed to represent infinite slope. Indeed, the polynomials composed of monomial of degree greater than zeros don't have any asymptotic behavior.
 
-If the inverse and \textit{improved}\footnote{Improved by multiplying the pressure ratio $\Pi_{tt,c}$ by the rotational speed $N_c$.} relation $\dot{m}_{corr,c}(\Pi_{tt,c}\cdot N_c,N_c)$ is considered instead, the choke limit will happen when the derivative of the function will be equal to zeros. To select the degree of the polynomial, a parametric study have been conducted first on the high rotational speed operating points.
+Considering the inverse relation $\dot{m}_{corr,c}(\Pi_{tt,c},N_c)$, the choke limit will happen when the derivative of the function will be equal to zeros. Instead of considering this relation as it is, the pressure ratio can multiplied by the rotational speed $N_c$. After the parametric study on the polynomial degree $d$, the results obtained have been written in the Table \ref{tab:C7_regcomp4}.
 
-\begin{longtable}[c]{@{}lll@{}}
-\caption{Regression result - Compressor map (part 2)}
-\label{tab:C7_regcomp2}\\
+\begin{longtable}[c]{@{}lll|ll@{}}
+\caption{$\dot{m}_{corr,c}(\Pi_{tt,c}\cdot N_c,N_c)$ - regression results}
+\label{tab:C7_regcomp4}\\
 \toprule
-\textbf{Degree} & \textbf{F} & $\mathbf{Res^2}$ \\* \midrule
+\textit{\textbf{Polynomial}} & \multicolumn{2}{c|}{High RPM}  & \multicolumn{2}{c}{Low RPM}    \\* \midrule
 \endfirsthead
 %
 \endhead
@@ -903,28 +1003,42 @@ If the inverse and \textit{improved}\footnote{Improved by multiplying the pressu
 %
 \endlastfoot
 %
-\textbf{1}      & 0.138   & 0.607         \\
-\textbf{2}      & 0.057   & 0.837         \\
-\textbf{3}      & 0.033   & 0.906         \\
-\textbf{4}      & 0.029   & 0.917         \\
-\textbf{5}      & 0.028   & 0.919         \\
-\textbf{6}      & 0.028   & 0.920         \\
-\textbf{7}      & 0.028   & 0.920         \\* \bottomrule
+\textbf{Degree}              & \textbf{F} & $\mathbf{\chi^2}$ & \textbf{F} & $\mathbf{\chi^2}$ \\
+\textbf{1}                   & 0.103      & 0.618             & 0.130      & 0.865             \\
+\textbf{2}                   & 0.037      & 0.863             & 0.033      & 0.966             \\
+\textbf{3}                   & 0.016      & 0.940             & 0.011      & 0.989             \\
+\textbf{4}                   & 0.012      & 0.955             & 0.008      & 0.992             \\
+\textbf{5}                   & 0.011      & 0.961             & 0.008      & 0.992             \\
+\textbf{6}                   & 0.010      & 0.962             & 0.008      & 0.992             \\* \bottomrule
 \end{longtable}
- The results in Table \ref{tab:C7_regcomp2} shows that a polynomial of degree 4 should be selected. Above, there is not any improvement of the accuracy of the polynomial. The Figure \ref{fig:C7_polycomp3} depicts the functions for 4 rotational speeds.
- 
-\begin{figure}[h]
+
+As for the other relation, the accuracy provided by a polynomial of degree $d=3$ is already very acceptable. The polynomials obtained for the two maps \ref{tab:C7_compmap} and \ref{tab:C7_compmap_LRPM} are depicted in the set of Figure \ref{fig:C7_polycomp_m}.
+
+\begin{figure}[H]
+    \setstretch{1}
     \centering
-    \includegraphics[width=0.6\textwidth]{Comp_map/HRPM/calc_231_map.png}
-    \caption{$\dot{m}_{corr,c}(\Pi_{tt,c}\cdot N_c,N_c)$ - polynomial function.}
-    \label{fig:C7_polycomp3}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Comp_map/HRPM/calc_12_2_0_map.png}
+        \caption{High rotational speed}
+        \label{fig:C7_polycomp_m_HRPM}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Comp_map/LRPM/calc_12_2_0_map.png}
+        \caption{Low rotational speed}
+        \label{fig:C7_polycomp_m_LRPM}
+    \end{subfigure}
+    \caption{Polynomial regression ($d=3$) - $\dot{m}_{corr,c}(\Pi_{tt,c}\cdot N_c,N_c)$} \label{fig:C7_polycomp_m}
 \end{figure}
 
-As it can be noticed, there are several values of $\Pi_{tt,c}\cdot N_c$ for which the derivative of the function is equal to zero. However, the evaluation of the function $\dot{m}_{corr,c}(\Pi_{tt,c}\cdot N_c,N_c)$ at these points provides close results. Therefore, the selection of the local maximum or local minimum will both provides acceptable results for the choke limit.
+Considering first the map related to the high rotational speed operating points, it can be noticed that the derivative of the iso-curves can be at most be two times equal to zeros in the domain of validity of the map. Since the value that is interesting is the maximal mass flow rate, the mass flow rate at the local maximum is the value that will characterized the choke line.
 
-This method works well with the high rotational speed operating points. For low rotational speeds curves, the issue express earlier when the relation $\eta_{is,c}(\Pi_{tt,c}\cdot N_c,N_c)$ was considered remains. Another condition for to obtain the maximum flow rate has to be defined. 
 
-It can be demonstrated that for the low rotational speed curves, the choke limit occurs for a \textbf{non normalized} pressure ratio equals to one. Thus, the relation $\dot{m}_{corr,c}(\Pi_{tt,c}\cdot N_c,N_c)$ with $\Pi_{tt,c}=1$ will provides the maximal flow rate.
+This method works well with the high rotational speed operating points. However, for the low rotational speed operating points, the iso-rotational speed curves are quasi vertical, making difficult the regression. Also, the local minimum and maximum are really far from the boundary of the compressor map.
+
+Thus, in the event that there is no operating point for which the derivative is equal to zeros, the maximal mass flow rate will be the one such that the compression ratio produced by the compressor is equal to one.
+
 
 % If the degree of the polynomial is decreased such that the number of minimum/maximum is smaller, the fitting function will loose too much in accuracy to stay reliable. Therefore, for this particular application polynomial are not good enough.
 
@@ -955,17 +1069,17 @@ It can be demonstrated that for the low rotational speed curves, the choke limit
 % %
 % \endlastfoot
 % %
-% \textbf{Degree} & \textbf{F}                       & $\mathbf{Res^2}$                       \\
+% \multicolumn{1}{c}{\textbf{Degree}} & multicolumn{1}{c}{$\mathbf{F}$}                       & multicolumn{1}{c}{$\mathbf{\chi^2}$}                       \\
 % \textbf{1}      & 0.113                         & 0.678                              \\
-% \textbf{2}      & 0.030                          & 0.915                               \\
-% \textbf{3}      & 0.028                         & 0.919                              \\
-% \textbf{4}      & 0.028                         & 0.920                               \\
-% \textbf{5}      & 0.028                         & 0.921                               \\* \bottomrule
+% \multicolumn{1}{c}{\textbf{2}}      & 0.030                          & 0.915                               \\
+% \multicolumn{1}{c}{\textbf{3}}      & 0.028                         & 0.919                              \\
+% \multicolumn{1}{c}{\textbf{4}}      & 0.028                         & 0.920                               \\
+% \multicolumn{1}{c}{\textbf{5}}      & 0.028                         & 0.921                               \\* \bottomrule
 % \end{longtable}
 
 % \begin{figure}[h]
 %     \centering
-%     \includegraphics[width=0.6\textwidth]{Comp_map/calc_231_map_trigo.png}
+%     \includegraphics[width=0.5\textwidth]{Comp_map/calc_231_map_trigo.png}
 %     \caption{$\dot{m}_{corr,c}(\Pi_{tt,c},N_c)$ - trigonometric function}
 %     \label{fig:C7_trigo}
 % \end{figure}
@@ -1021,7 +1135,7 @@ $\mathbf{\dot{m}_{corr,t,norm}}$ & $\mathbf{\Pi_{tt,t,norm}}$ & $\mathbf{N_{t,no
 
 The results of the study are included in the Table \ref{tab:reg_turbmap1}. 
 \begin{longtable}[c]{@{}lll|ll@{}}
-\caption{Regression result - Turbine map}
+\caption{Regression results - Turbine map}
 \label{tab:reg_turbmap1}\\
 \toprule
                 & \multicolumn{2}{l|}{$\dot{m}_{corr,t}(\Pi_{tt,t},N_t)$} & \multicolumn{2}{l}{$\eta_{is,t}(\Pi_{tt,t},N_t)$} \\* \midrule
@@ -1034,37 +1148,37 @@ The results of the study are included in the Table \ref{tab:reg_turbmap1}.
 %
 \endlastfoot
 %
-\textbf{Degree} & \textbf{F}                       & $\mathbf{Res^2}$                       & F                          & $\mathbf{Res^2}$                   \\
-\textbf{1}      & 0.055                          & 0.753                               & 0.108                   & 0.070                           \\
-\textbf{2}      & 0.013                         & 0.943                               & 0.052                   & 0.550                           \\
-\textbf{3}      & 0.002                         & 0.992                               & 0.018                  & 0.847                           \\
-\textbf{4}      & 2.55E-04                         & 0.999                               & 0.004                   & 0.967                           \\
-\textbf{5}      & 7.12E-05                         & 0.999                               & 0.001                   & 0.990                            \\
-\textbf{6}      & 3.32E-05                         & 0.999                               & 6.98E-04                  & 0.993                           \\* \bottomrule
+\multicolumn{1}{c}{\textbf{Degree}} & \multicolumn{1}{c}{$\mathbf{F}$}                       & \multicolumn{1}{c}{$\mathbf{\chi^2}$}                       & F                          & \multicolumn{1}{c}{$\mathbf{\chi^2}$}                   \\
+\multicolumn{1}{c}{\textbf{1}}      & 0.055                          & 0.753                               & 0.108                   & 0.070                           \\
+\multicolumn{1}{c}{\textbf{2}}      & 0.013                         & 0.943                               & 0.052                   & 0.550                           \\
+\multicolumn{1}{c}{\textbf{3}}      & 0.002                         & 0.992                               & 0.018                  & 0.847                           \\
+\multicolumn{1}{c}{\textbf{4}}      & 2.55E-04                         & 0.999                               & 0.004                   & 0.967                           \\
+\multicolumn{1}{c}{\textbf{5}}      & 7.12E-05                         & 0.999                               & 0.001                   & 0.990                            \\
+\multicolumn{1}{c}{\textbf{6}}      & 3.32E-05                         & 0.999                               & 6.98E-04                  & 0.993                           \\* \bottomrule
 \end{longtable}
 
 From these results, it can be seen that a polynomial of degree 6 provide good results for the relation defining the isentropic efficiency of the expansion. The Figure \ref{fig:C7_etaturb} depicts the polynomial obtain for this relation.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\textwidth]{/Turb_map/calc_356_map.png}
-    \caption{$\eta_{is,t}(\Pi_{tt,t},N_t)$ - polynomial function}
+    \includegraphics[width=0.5\textwidth]{/Turb_map/calc_356_map.png}
+    \caption{$\eta_{is,t}(\Pi_{tt,t},N_t)$}
     \label{fig:C7_etaturb}
 \end{figure}
-Considering now the first relation, the value of the objective function $\mathbf{F}$ and of the square of the residual function $Res^2$ shows that the fitting is nearly perfect for a polynomial of degree 4. 
+Considering now the first relation, the value of the objective function $\mathbf{F}$ and of the square of the residual function $\chi^2$ shows that the fitting is nearly perfect for a polynomial of degree 4. 
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{/Turb_map/calc_351_map.png}
-    \caption{$\dot{m}_{corr,t}(\Pi_{tt,t},N_t)$ - polynomial function}
+    \includegraphics[width=0.5\textwidth]{/Turb_map/calc_351_map.png}
+    \caption{$\dot{m}_{corr,t}(\Pi_{tt,t},N_t)$}
     \label{fig:C7_mturb1}
 \end{figure}
 However, when the graphical representation in Figure \ref{fig:C7_mturb1} of the polynomial is analyzed, the first notice is that the points for the different iso-rotational speeds are really close from one to the other. Thus, while the of the point is perfect, the results that the function will provide outside the given domain will be disastrous. 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\textwidth]{/Turb_map/calc_452_map.png}
-    \caption{$\dot{m}_{corr,t}\cdot\Pi_{tt,t}](\Pi_{tt,t}\cdot N_t,N_t)$ - polynomial function}
+    \includegraphics[width=0.5\textwidth]{/Turb_map/calc_452_map.png}
+    \caption{$[\dot{m}_{corr,t}\cdot\Pi_{tt,t}](\Pi_{tt,t}\cdot N_t,N_t)$}
     \label{fig:C7_mturb2}
 \end{figure}
 
@@ -1081,7 +1195,7 @@ Starting from this new relation, the spacing between the different curves is inc
 The degree selected of this polynomial is 3 according to the results from the table \ref{tab:reg_turbmap2}. 
 
 \begin{longtable}[c]{@{}lll@{}}
-\caption{Regression result - Turbine map (part 2)}
+\caption{Regression results - Turbine map (part 2)}
 \label{tab:reg_turbmap2}\\
 \toprule
                 & \multicolumn{2}{l}{$\dot{m}_{corr,t}\cdot\Pi_{tt,t}](\Pi_{tt,t}\cdot N_t,N_t)$} \\* \midrule
@@ -1094,12 +1208,33 @@ The degree selected of this polynomial is 3 according to the results from the ta
 %
 \endlastfoot
 %
-\textbf{Degree} & \textbf{F}                          & $\mathbf{Res^2}$                          \\
-\textbf{1}      & 0.020                               & 0.974                                     \\
-\textbf{2}      & 1.21E-03                            & 0.999                                     \\
-\textbf{3}      & 1.79E-04                            & 1.000                                     \\
-\textbf{4}      & 3.76E-05                            & 1.000                                     \\
-\textbf{5}      & 1.5E-05                             & 1.000                                     \\
-\textbf{6}      & 7.61E-06                            & 1.000                                     \\
+\multicolumn{1}{c}{\textbf{Degree}} & \multicolumn{1}{c}{$\mathbf{F}$}                          & \multicolumn{1}{c}{$\mathbf{\chi^2}$}                          \\
+\multicolumn{1}{c}{\textbf{1}}      & 0.020                               & 0.974                                     \\
+\multicolumn{1}{c}{\textbf{2}}      & 1.21E-03                            & 0.999                                     \\
+\multicolumn{1}{c}{\textbf{3}}      & 1.79E-04                            & 1.000                                     \\
+\multicolumn{1}{c}{\textbf{4}}      & 3.76E-05                            & 1.000                                     \\
+\multicolumn{1}{c}{\textbf{5}}      & 1.5E-05                             & 1.000                                     \\
+\multicolumn{1}{c}{\textbf{6}}      & 7.61E-06                            & 1.000                                     \\
 \textbf{7}      & 7.79E-06                            & 1.000                                     \\* \bottomrule
+\end{longtable}
+
+With the relations $\dot{m}_{corr,t}\cdot\Pi_{tt,t}](\Pi_{tt,t}\cdot N_t,N_t)$ and $\eta_{is,t}(\Pi_{tt,t},N_t)$, the turbine is fully defined. The table \ref{tab:C7_turbmaprel} summarize the different obtained results. 
+
+
+\begin{longtable}[c]{@{}lll@{}}
+\caption{Turbine map - Table of relations}
+\label{tab:C7_turbmaprel}\\
+\toprule
+Relation & Degree & $\chi^2$ \\* \midrule
+\endfirsthead
+%
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+$\dot{m}_{corr,t}\cdot\Pi_{tt,t}](\Pi_{tt,t}\cdot N_t,N_t)$ & 3                       & 1.000 \\
+$\eta_{is,t}(\Pi_{tt,t},N_t)$           & 6                       & 0.993        \\* \bottomrule
 \end{longtable}
