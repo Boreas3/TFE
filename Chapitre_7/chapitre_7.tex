@@ -1326,10 +1326,26 @@ The enthalpy of the air, fuel and fumes are computes utilizing the method expres
 Let's remark that here the higher heat calorific value is not used. Indeed, the condensation of the water is not considered in this work. This implies that the water remains in as a gas in the fumes.
 
 \subsection{Energy balance}
-\quad\ Once the (lower) heat calorific value is computed, the energy balance over the combustion chamber can be assessed. Considering t
-This law (\ref{eq:C7_consh}) says that the sum of the energy within each inflow is equal to the sum of the energy carried by of each outflow. 
+\quad\ Once the (lower) heat calorific value is computed, the energy balance over the control volume delimiting the combustion chamber can be assessed.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Chapitre_7/Images/CC.png}
+    \caption{Combustion chamber schematic}
+    \label{fig:C7_CC}
+\end{figure}
+
+ Considering the schematic \ref{fig:C7_CC} of a combustion chamber, the temporal form of the energy balance is expressed as given in the equality (\ref{eq:C7_EbalanceCC}).
+ 
+\begin{equation}
+    \setstretch{1}
+    \dot{m}_{Fumes}\cdot h_{Fumes} =  \dot{m}_{Air}\cdot h_{Air} + \dot{m}_{Fuel}\cdot\left(HCV\cdot \eta_{cc} + h_{Fuel}\right)\label{eq:C7_EbalanceCC}
+\end{equation}
+Where $\eta_{cc}$ is the efficiency of the combustion. 
+
+The combustion efficiency is defined as being the ratio between the heat injected into the combustion chamber the heat that can be \textit{used} for the combustion. This is expressed in the relation (\ref{eq:C7_etaCC}).
 
 \begin{equation}
     \setstretch{1}
-    m_air = m_fuel * (HCV * self.n_cc + H_cc_su_fuel - H_cc_ex_gas) / (H_cc_ex_gas - H_cc_su_air)
+    \eta_{cc} = \frac{\dot{Q}}{\dot{m}_{Fuel}\cdot HCV_{Fuel}}\label{eq:C7_etaCC}
 \end{equation}
