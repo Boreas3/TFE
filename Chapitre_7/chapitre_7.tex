@@ -1351,38 +1351,4 @@ The combustion efficiency is defined as being the ratio between the heat injecte
 \end{equation}
 
 From the relation \ref{eq:C7_EbalanceCC} have been derived three functions that respectively compute the mass flow of air, of fuel and the enthalpy of the fumes knowing all the other variables.
-
-\section{Heat-Exchangers}
-\quad\ One of the last component that had to be modeled was the heat-exchanger. The purpose of an heat-exchanger is to exchange energy from one flow to the other using heat transfer. 
-
-To model the heat-exchanger, the relations characterizing the heat transfer from a hot flow (H) to a cold flow (C) needs to be implemented. To recall those relations described in the chapter \ref{C4}, the relations (\ref{eq:C7_Qdot}), (\ref{eq:C7_Qmax}),  (\ref{eq:C7_QdotQmax}) respectively describes the actual heat transfer rate from the hot flow to the cold flow, the theoretical maximal heat transfer rate, and the relation between these two quantities.   
-
-\begin{subequations}
-\setstretch{1}
-\begin{align}
-    \dot{Q} &= \dot{C}_C\cdot (T_{C,out} - T_{C,in}) = \dot{C}_H\cdot(T_{H,in} - T_{H,out})\label{eq:C7_Qdot}\\
-    \dot{Q}_{max} &= \dot{C}_{min}\cdot (T_{H,in} - T_{C,in})\label{eq:C7_Qmax}\\
-    \dot{Q} &= \varepsilon\cdot\dot{Q}_{max}\label{eq:C7_QdotQmax}
-\end{align}
-\end{subequations}
-Where $\dot{C} = \dot{m}\cdot c_p$ is thermal heat capacity, and the index "in" and "out" specifies if the temperature is taken at the entrance or the outlet of the heat-exchanger. 
-
-Based on how the heat-exchanger to be modeled is defined, the usage of these relations will vary. For instance, for a water heat-exchanger the inlet and outlet temperature of the water to be heat-up are usually known before the computation. Indeed, for this application it is important to maintain at least the outlet temperature constant to provide a reliable heating system. 
-
-These variations are going to be described in the following parts of this section.
-
-\subsection{Regenerator}
-\quad\ First are considered the regenerator. The purpose of this category of heat-exchanger is to preheat a cold flow of a cycle using the hot flow coming from a different stage of the same cycle. This usually increases the thermal efficiency of the system\footnote{see the chapter \ref{C5} for more information}. 
-
-For the modeling of this first category of heat-exchanger, the inlet temperature and the mass flow rate of both flows are known. Therefore, the maximal heat transfer rate  $\dot{Q}_{max}$ can be easily computed by applying the equation \ref{eq:C7_Qmax}. By calculating the minimal thermal heat capacity $\dot{C}_{min}$ defines as being the minimum between $\dot{C}_H$ and $\dot{C}_C$, $\dot{Q}_{max}$ can be obtained.
-
-From there, the actual heat transfer rate $\dot{Q}$ can be computing using the relation (\ref{eq:C7_QdotQmax}). $\varepsilon$ is the thermal efficiency of the heat-exchanger. In the event where the efficiency is assumed to be independent of the operating condition of the heat-exchanger, a constant value is used. In reality the thermal efficiency of the heat-exchanger depend on the temperature and the mass flow rate of the flows. The method to take into account this dependency will be described later in this section.
-
-Then, once the heat transfer rate $\dot{Q}$ is computed, the temperatures $T_{H,out}$ and $T_{C,out}$ at the outlet of the heat-exchanger is computed using the formulas in (\ref{eq:C7_Qdot}).
-
-\subsection{Water heat-exchanger and inter-cooler}
-\quad\ Now are considered the water heat-exchanger. As it has been mentioned previously, the purpose is to use the energy within the gas to heat-up water. This water is used for sanitary purposes or to feed an heating system (like in a house). 
-
-It is often required for this type of application that the outlet temperature of the water remains constant. Indeed, this outlet temperature corresponds to the starting temperature of the water into the auxiliary loop. Therefore, it is preferable to have steady condition in times for the outlet state of the water.
-
-In this model of the Brayton cycle, the inlet temperature of the water is fixed as well. This implies that the only degree of freedom is on the mass flow rate of the water within the water heat-exchanger. The Figure 
+\input{Chapitre_7/Section/HX}
