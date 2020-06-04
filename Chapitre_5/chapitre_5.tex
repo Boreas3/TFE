@@ -5,22 +5,22 @@
 %%%%% Introduction chapitre 4 %%%%%
 %%%%%                         %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\quad\, In the introduction, the simplest configuration for the Brayton gas cycle have been defined has being a cycle successively composed of a compressor, a combustion chamber and a turbine. This simple configuration is called gas turbine or GT. 
+\quad\, In the introduction, the simplest configuration for the Brayton gas cycle have been defined has being a cycle successively composed of a compressor, a combustion chamber and a turbine. This simple configuration is called Gas Turbine or GT. 
 
-The previous chapter \ref{C4} described individually these components by providing the required theoretical notions to be able to analyze their performances. Now, the components will be considered together as a thermodynamic cycle to assess the performances of the gas turbine and of its existing variants.
+The previous chapter \ref{C4} described individually these components by providing the required theoretical notions to be able to analyze their performances. Now, the components will be considered together as a thermodynamic cycle to assess the performances of the Gas Turbine and of its existing variants.
 
-\section{Gas turbine (GT)}
+\section{Gas Turbine (GT)}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%                         %%%%%
-%%%%%     <<Gas turbine>>     %%%%%
+%%%%%     <<Gas Turbine>>     %%%%%
 %%%%%                         %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\quad\, The gas turbine (GT) is the most basic configuration of the Brayton cycle. As it is illustrated in the Figure \ref{fig:C5_BraytonGT}, the three main component are the the compressor (COMP), the combustion chamber (CC) and the turbine (TURB).
+\quad\, The Gas Turbine (GT) is the most basic configuration of the Brayton cycle. As it is illustrated in the Figure \ref{fig:C5_BraytonGT}, the three main component are the the compressor (COMP), the combustion chamber (CC) and the turbine (TURB).
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth] {GT}
-\caption{Gas turbine(GT)}
+\caption{Gas Turbine (GT)}
 \label{fig:C5_BraytonGT}
 \end{figure}
 
@@ -58,27 +58,27 @@ Where the state \textbf{0} corresponds to the reference conditions. It is worth 
 
 For each of the mentioned states, 5 thermodynamic properties are evaluated. Namely the temperature, pressure, enthalpy, entropy and density. For the last variable, the ideal gas equation (\ref{eq:C2_GP}) from the chapter \ref{C2} is used. 
 
-A graphical representation of these states can be performed by drawing some thermodynamic diagrams. Here, the T-s and p-v diagrams have been drawn in the Figures \ref{fig:C5_Ts_GT} and \ref{fig:C5_pv_GT} respectively.
+A graphical representation of these states can be performed by drawing some thermodynamic diagrams. Here, the T-s and p-v diagrams have been drawn in the Figures \ref{fig:C5_Ts_GT} and \ref{fig:C5_pv_GT} respectively. The diagrams have been obtained using the computer code that will be described in the next chapters. For now, let's just assume that the program is just a black box.
 
 \begin{figure}[H]
      \centering
      \begin{subfigure}[b]{0.4\textwidth}
          \centering
          \includegraphics[width=\textwidth]{Ts_GT}
-         \caption{T-s diagram - gas turbine}
+         \caption{T-s diagram - Gas Turbine}
          \label{fig:C5_Ts_GT}
      \end{subfigure}
      \begin{subfigure}[b]{0.4\textwidth}
          \centering
          \includegraphics[width=\textwidth]{pv_GT}
-         \caption{p-v diagram - gas turbine}
+         \caption{p-v diagram - Gas Turbine}
          \label{fig:C5_pv_GT}
      \end{subfigure}
-        \caption{Thermodynamic diagrams of a gas turbine}
+        \caption{Thermodynamic diagrams of a Gas Turbine}
         \label{fig:C5_thermo_diagram_GT}
 \end{figure}
 
-These twp diagrams have been obtained considering ideal components. An ideal components is characterized by an efficiency of 100\%. This means that the there aren't any pressure drops, the isentropic efficiency $\eta_{is}$ of the compressor and the turbine is equal to 100\%, and the combustion chamber efficiency $\eta_{cc}$ is also equal to 100\%.
+These two diagrams have been obtained considering ideal components. An ideal components is characterized by an efficiency of 100\%. This means that the there aren't any pressure drops, the isentropic efficiency $\eta_{is}$ of the compressor and the turbine is equal to 100\%, and the combustion chamber efficiency $\eta_{cc}$ is also equal to 100\%.
 
 The p-v diagram gives an indication of the net work produced by the GT cycle. Indeed, it has been seen that the work is given by the integral (\ref{eq:C5_W}).
 
@@ -90,7 +90,7 @@ where $p$ is the pressure and $v$ the specific volume of the fluid.
 
 The first diagram shows the effect of the isentropic efficiency regarding to the evolution of the entropy during the compression and the expansion. Here, since the isentropic efficiency have been set to 100\%, the entropy at the beginning and the end of the these transformations are equal.
 
-Also, it can be noticed that at the exhaust of the cycle, the energy available within the gas is still non negligeable. A possible way of improvement will be given in the following section.
+Also, it can be noticed that at the exhaust of the cycle, the energy available within the gas is still non negligible. A possible way of improvement will be given in the following section.
 
 The thermal efficiency of the cycle can be computed based on the knowledge of the different states \textbf{1} to \textbf{8}. By definition, the thermal efficiency $\eta_{th}$ corresponds to the ratio (\ref{eq:C5_etath}) between the net power output $\dot{W}_{net}$ and the heat transfer rate from coming from the injected fuel.
 
@@ -100,44 +100,57 @@ The thermal efficiency of the cycle can be computed based on the knowledge of th
 \end{equation}
 Where $HCV_{fuel}$ is the low heat calorific value (J/kg) of the fuel.
 
-Based on this definition, the efficiency of the gas turbine cycle is $\eta_{th,GT} =24.58$\%. This efficiency is obtained for an ideal cycle composed of ideal components. Therefore, this represents a upper bound for any real GT cycle playing with the same level of temperature and pressure.
+Based on this definition, the efficiency of the Gas Turbine cycle is $\eta_{th,GT} =24$\%. This efficiency is obtained for an ideal cycle composed of ideal components. Therefore, this represents a upper bound for any real GT cycle playing with the same level of temperature and pressure.
 
-\section{Regenerative gas turbine (RGT)}
+\section{Regenerative Gas Turbine (RGT)}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%                         %%%%%
 %%%%%    <<regenerative>>     %%%%% 
-%%%%%     <<Gas turbine>>     %%%%%
+%%%%%     <<Gas Turbine>>     %%%%%
 %%%%%                         %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\quad\, As seen in the previous section, the gas cycle does not have a really high efficiency. However, this efficiency can be nearly tripled by adding a regenerator to the cycle. The purpose of this heat-exchanger is to transfer part of the thermal energy from the hot gas exiting the turbine to the cold flow exiting the compressor. A schematic of the regenerative gas turbine (RGT) and the associated Ts and hp diagrams are given on Figures \ref{fig:C5_RGT} and \ref{fig:C5_thermo_diagram_RGT}. 
+\quad\, As seen in the previous section, the gas cycle does not have a really high efficiency. This is due to the huge amount of energy available in the exhaust gas that are wasted. However, this high level energy could be used to preheat the air before entering the combustion chamber. 
+
+This is done by using a heat exchanger called regenerator. By adding a regenerator, the amount of energy to be provided to the combustion chamber to reach the same target temperature will be smaller since the inlet temperature of the air will be higher.
+
+This variant of the Gas Turbine cycle is called Regenerative Gas Turbine (RGT) cycle. A schematic of this cycle is given in the Figure \ref{fig:C5_RGT}.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{RGT}
-\caption{Regenerative gas turbine(RGT)}
+\includegraphics[width=0.6\textwidth]{RGT}
+\caption{Regenerative Gas Turbine (RGT)}
 \label{fig:C5_RGT}
 \end{figure}
+
+Similarly to the GT cycle, to maximum thermal efficiency $\eta_{is,RGT}$ of the cycle is achieved by considering all the components as ideal. In addition to the turbomachines and the combustion chamber, the efficiency of the heat-exchanger will be set at 100\%. 
+
+The states from \textbf{1} to \textbf{12} can be represented using T-s and p-v diagrams. The two diagrams are included in the set of Figures \ref{fig:C5_thermo_diagram_RGT}.
+
 \begin{figure}[h]
      \centering
      \begin{subfigure}[b]{0.4\textwidth}
          \centering
          \includegraphics[width=\textwidth]{Ts_RGT}
-         \caption{Ts diagram - regenerative gas turbine}
+         \caption{T-s diagram - Regenerative Gas Turbine}
          \label{fig:C5_Ts_RGT}
      \end{subfigure}
      \begin{subfigure}[b]{0.4\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{hp_RGT}
-         \caption{hp diagram - regenerative gas turbine}
-         \label{fig:C5_hp_RGT}
+         \includegraphics[width=\textwidth]{pv_RGT}
+         \caption{p-v diagram - Regenerative Gas Turbine}
+         \label{fig:C5_pv_RGT}
      \end{subfigure}
-        \caption{Thermodynamic diagrams of a regenerative gas turbine}
+        \caption{Thermodynamic diagrams of a Regenerative Gas Turbine}
         \label{fig:C5_thermo_diagram_RGT}
 \end{figure}
-\newpage
-This has two advantages. The first one is to reduce the temperature of the gas at the exit of the cycle. The second is to reduce the fuel consumption of the system. Indeed, for an identical combustor outlet temperature (here, 950\degree C), the amount of energy that the combustion chamber has to provide to the air is lower than for the GT since the inlet temperature of the air is higher. Considering a mass flow rate of air of 180g/s, the fuel consumption goes from 3.41g/s to 1.18g/s for the RGT.
 
-After computation, the thermal efficiency of the RGT is evaluated at $\sim$ 63\%, which is more than twice the efficiency of the GT.
+As shown in the T-s diagram, there is as expected a heat transfer from the hot gas to the cold air. This heat transfer allows using the available energy from the hot gas to heat-up the air from the compressor. Thanks to this heat transfer, the combustion chamber only needs to raise the temperature of the air from 630\degree C to around 900\degree C. 
+
+The reduction of the difference of temperatures between the inlet and the outlet of the combustion chamber allows to reduce a lot the consumption of fuel. For the same mass flow rate of air of 180 g/s, the excess of air increased from 2 to 7.   
+
+Thanks to the regenerator, the thermal efficiency of the cycle is really improved. Indeed, from 24\% for the ideal GT cycle, the efficiency of the Regenerative Gas Turbine cycle is now 65\%.
+
+
 
 Aside the regerator, a water heat exchanger (WHX) can be used to absorb the remaining from the exhaust gas to utilize it for water heating. Considering the fact that components does not have an efficiency of 100\%, the temperature at the outlet of the regenerator (state \textbf{11}) is around 200\degree C. This temperature is enough to heat up water to a target temperature of 70-80\degree C.
 
