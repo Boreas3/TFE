@@ -19,7 +19,7 @@ The previous chapter \ref{C4} described individually these components by providi
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth] {GT}
+\includegraphics[width=0.6\textwidth] {GT}
 \caption{Gas turbine(GT)}
 \label{fig:C5_BraytonGT}
 \end{figure}
@@ -54,27 +54,21 @@ As it is illustrated in the Figure \ref{fig:C5_BraytonGT}, the cycle can be deco
 \textbf{7}              & $T^0_7<T^0_6$     & $p^0_7<p^0_6$     \\
 \textbf{8}              & $T_8=T^0_7$       & $p_8=p_1<p^0_7$   \\* \bottomrule
 \end{longtable} 
+Where the state \textbf{0} corresponds to the reference conditions. It is worth to note that for the compressor and the turbine, the stagnation quantities are used. The reason is that in this work, method to compute the Mach number haven't been considered. This is the reason why the pressure ratios and the isentropic efficiencies that will be considered for the compressor and the turbine are based on total quantities.
 
 For each of the mentioned states, 5 thermodynamic properties are evaluated. Namely the temperature, pressure, enthalpy, entropy and density. For the last variable, the ideal gas equation (\ref{eq:C2_GP}) from the chapter \ref{C2} is used. 
 
-The thermodynamic diagrams can be used to illustrate the states of the gas turbine cycle. Among those, t
-A graphical representation of these states can be performed by drawing some thermodynamic diagrams. Here, the T-s, p-T and p-v diagrams have been drawn in the Figures \ref{fig:C5_Ts_GT},  \ref{fig:C5_pT_GT} and \ref{fig:C5_pv_GT} respectively.
+A graphical representation of these states can be performed by drawing some thermodynamic diagrams. Here, the T-s and p-v diagrams have been drawn in the Figures \ref{fig:C5_Ts_GT} and \ref{fig:C5_pv_GT} respectively.
 
-\begin{figure}[h]
+\begin{figure}[H]
      \centering
-     \begin{subfigure}[b]{0.3\textwidth}
+     \begin{subfigure}[b]{0.4\textwidth}
          \centering
          \includegraphics[width=\textwidth]{Ts_GT}
          \caption{T-s diagram - gas turbine}
          \label{fig:C5_Ts_GT}
      \end{subfigure}
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{pT_GT}
-         \caption{p-T diagram - gas turbine}
-         \label{fig:C5_pT_GT}
-     \end{subfigure}
-     \begin{subfigure}[b]{0.3\textwidth}
+     \begin{subfigure}[b]{0.4\textwidth}
          \centering
          \includegraphics[width=\textwidth]{pv_GT}
          \caption{p-v diagram - gas turbine}
@@ -84,14 +78,29 @@ A graphical representation of these states can be performed by drawing some ther
         \label{fig:C5_thermo_diagram_GT}
 \end{figure}
 
-These diagrams have been obtained considering ideal component. This implies
-. In this chapter, all the components are supposed ideals, meaning that their corresponding efficiency are equal to 100\%.
+These twp diagrams have been obtained considering ideal components. An ideal components is characterized by an efficiency of 100\%. This means that the there aren't any pressure drops, the isentropic efficiency $\eta_{is}$ of the compressor and the turbine is equal to 100\%, and the combustion chamber efficiency $\eta_{cc}$ is also equal to 100\%.
 
+The p-v diagram gives an indication of the net work produced by the GT cycle. Indeed, it has been seen that the work is given by the integral (\ref{eq:C5_W}).
 
+\begin{equation}
+    \setstretch{1}
+    W_{net} = \oint_{cycle}pdv\label{eq:C5_W}
+\end{equation}
+where $p$ is the pressure and $v$ the specific volume of the fluid.
 
-As it can be noticed on the two diagrams, the cycle is not closed. Indeed, the state \textbf{1} of the cycle does not correspond to to the final state. For this configuration, the exhaust gas temperature is a little bit higher than 600\degree C. Thus, there is still compared to the ambient condition 580\degree C of "thermal energy" that could be used.
+The first diagram shows the effect of the isentropic efficiency regarding to the evolution of the entropy during the compression and the expansion. Here, since the isentropic efficiency have been set to 100\%, the entropy at the beginning and the end of the these transformations are equal.
 
-The efficiency of the cycle (or thermal efficiency), based on the definition given in the chapter \ref{C2}, is equal to $\sim 24$\%. Considering the loss of energy in the exhaust gas, this efficiency can be improved.
+Also, it can be noticed that at the exhaust of the cycle, the energy available within the gas is still non negligeable. A possible way of improvement will be given in the following section.
+
+The thermal efficiency of the cycle can be computed based on the knowledge of the different states \textbf{1} to \textbf{8}. By definition, the thermal efficiency $\eta_{th}$ corresponds to the ratio (\ref{eq:C5_etath}) between the net power output $\dot{W}_{net}$ and the heat transfer rate from coming from the injected fuel.
+
+\begin{equation}
+    \setstretch{1}
+    \eta_{th} = \frac{\dot{W}_{net}}{\dot{m}_{fuel}\cdot HCV_{fuel}} \label{eq:C5_etath}
+\end{equation}
+Where $HCV_{fuel}$ is the low heat calorific value (J/kg) of the fuel.
+
+Based on this definition, the efficiency of the gas turbine cycle is $\eta_{th,GT} =24.58$\%. This efficiency is obtained for an ideal cycle composed of ideal components. Therefore, this represents a upper bound for any real GT cycle playing with the same level of temperature and pressure.
 
 \section{Regenerative gas turbine (RGT)}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
