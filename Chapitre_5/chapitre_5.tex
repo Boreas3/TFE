@@ -65,16 +65,16 @@ A graphical representation of these states can be performed by drawing some ther
      \begin{subfigure}[b]{0.4\textwidth}
          \centering
          \includegraphics[width=\textwidth]{Ts_GT}
-         \caption{T-s diagram - Gas Turbine}
+         \caption{T-s diagram}
          \label{fig:C5_Ts_GT}
      \end{subfigure}
      \begin{subfigure}[b]{0.4\textwidth}
          \centering
          \includegraphics[width=\textwidth]{pv_GT}
-         \caption{p-v diagram - Gas Turbine}
+         \caption{p-v diagram}
          \label{fig:C5_pv_GT}
      \end{subfigure}
-        \caption{Thermodynamic diagrams of a Gas Turbine}
+        \caption{Thermodynamic diagrams - Gas Turbine}
         \label{fig:C5_thermo_diagram_GT}
 \end{figure}
 
@@ -91,6 +91,13 @@ where $p$ is the pressure and $v$ the specific volume of the fluid.
 The first diagram shows the effect of the isentropic efficiency regarding to the evolution of the entropy during the compression and the expansion. Here, since the isentropic efficiency have been set to 100\%, the entropy at the beginning and the end of the these transformations are equal.
 
 Also, it can be noticed that at the exhaust of the cycle, the energy available within the gas is still non negligible. A possible way of improvement will be given in the following section.
+
+The net work can also be computed based on the first diagram. If a fictitious transformation from states \textbf{8} to \textbf{1} is considered, The cycle becomes closed. Thus, the net work is obtained by calculating the integral (\ref{eq:C5_Ws}) corresponding to the area inscribed in the loop.
+
+\begin{equation}
+    \setstretch{1}
+    W_{net} = \oint_{cycle}Tds\label{eq:C5_Ws}
+\end{equation}
 
 The thermal efficiency of the cycle can be computed based on the knowledge of the different states \textbf{1} to \textbf{8}. By definition, the thermal efficiency $\eta_{th}$ corresponds to the ratio (\ref{eq:C5_etath}) between the net power output $\dot{W}_{net}$ and the heat transfer rate from coming from the injected fuel.
 
@@ -133,16 +140,16 @@ The states from \textbf{1} to \textbf{12} can be represented using T-s and p-v d
      \begin{subfigure}[b]{0.4\textwidth}
          \centering
          \includegraphics[width=\textwidth]{Ts_RGT}
-         \caption{T-s diagram - Regenerative Gas Turbine}
+         \caption{T-s diagram}
          \label{fig:C5_Ts_RGT}
      \end{subfigure}
      \begin{subfigure}[b]{0.4\textwidth}
          \centering
          \includegraphics[width=\textwidth]{pv_RGT}
-         \caption{p-v diagram - Regenerative Gas Turbine}
+         \caption{p-v diagram}
          \label{fig:C5_pv_RGT}
      \end{subfigure}
-        \caption{Thermodynamic diagrams of a Regenerative Gas Turbine}
+        \caption{Thermodynamic diagrams - Regenerative Gas Turbine}
         \label{fig:C5_thermo_diagram_RGT}
 \end{figure}
 
@@ -181,25 +188,27 @@ The IRHGT cycle is depicted in the Figure \ref{fig:C5_IRHGT}.
 \label{fig:C5_IRHGT}
 \end{figure}
 
-The T-s and p-v diagrams have been drawn for the case of an ideal IRHGT cycle. The two diagrams are in the Figures 
+The T-s and p-v diagrams have been drawn for the case of an ideal IRHGT cycle. The two diagrams are in the Figures \ref{fig:C5_Ts_IRHGT} and \ref{fig:C5_pv_IRHGT}.
 
 \begin{figure}[h]
      \centering
      \begin{subfigure}[b]{0.4\textwidth}
          \centering
          \includegraphics[width=\textwidth]{Ts_IRHGT}
-         \caption{T-s diagram - Regenerative Gas Turbine}
-         \label{fig:C5_Ts_RGT}
+         \caption{T-s diagram}
+         \label{fig:C5_Ts_IRHGT}
      \end{subfigure}
      \begin{subfigure}[b]{0.4\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{pv_RGT}
-         \caption{p-v diagram - Regenerative Gas Turbine}
-         \label{fig:C5_pv_RGT}
+         \includegraphics[width=\textwidth]{pv_IRHGT}
+         \caption{p-v diagram}
+         \label{fig:C5_pv_IRHGT}
      \end{subfigure}
-        \caption{Thermodynamic diagrams of a Regenerative Gas Turbine}
-        \label{fig:C5_thermo_diagram_RGT}
+        \caption{Thermodynamic diagrams - Intercooler-Regenerative-Reheat Gas Turbine}
+        \label{fig:C5_thermo_diagram_IRHGT}
 \end{figure}
+
+For this particular IRHGT cycle, the compressed air from the LP compressor is cooled down to 50\degree C and the 
 \section{Brayton cycle - variants}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%                         %%%%%
