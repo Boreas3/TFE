@@ -5,7 +5,9 @@
 %%%%% Introduction chapitre 4 %%%%%
 %%%%%                         %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\quad\, In the previous chapter, the different parts constituting the Brayton cycle have been well defined. This chapter will be devoted to the description and the performance analysis of the Brayton cycle considering various configurations.
+\quad\, In the introduction, the simplest configuration for the Brayton gas cycle have been defined has being a cycle successively composed of a compressor, a combustion chamber and a turbine. This simple configuration is called gas turbine or GT. 
+
+The previous chapter \ref{C4} described individually these components by providing the required theoretical notions to be able to analyze their performances. Now, the components will be considered together as a thermodynamic cycle to assess the performances of the gas turbine and of its existing variants.
 
 \section{Gas turbine (GT)}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -13,7 +15,7 @@
 %%%%%     <<Gas turbine>>     %%%%%
 %%%%%                         %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\quad\, The gas turbine (GT) is the most basic configuration of the Brayton where only four main elements are integrated within the cycle. First, there is the compressor (COMP) that will compress the ambient air. Then, the compressed air goes through the combustion chamber (CC) to increase its temperature. Finally, the exhaust gas from the combustion chamber are expanded through the turbine (TURB) to produce mechanical power. Part of this power is consumed by the compressor. The remaining is converted into electricity using an electrical generator (G). The gas cycle have been drawn on the following Figure \ref{fig:C5_BraytonGT}.
+\quad\, The gas turbine (GT) is the most basic configuration of the Brayton cycle. As it is illustrated in the Figure \ref{fig:C5_BraytonGT}, the three main component are the the compressor (COMP), the combustion chamber (CC) and the turbine (TURB).
 
 \begin{figure}[h]
 \centering
@@ -22,41 +24,41 @@
 \label{fig:C5_BraytonGT}
 \end{figure}
 
+The compressor and the turbine are both installed on the same shaft. Since there aren't any gearbox, the rotational speed of both component are the same. The generator (G) is also attached to the shaft to convert the generated mechanical power into electricity. 
+When the machine starts, the generator becomes a motor to provide the required energy to help the turbine. Indeed, at low rotational speed the power consumed by the compressor is usually greater than the power produced by the turbine alone. 
 
 
-As illustrated on Figure \ref{fig:C5_BraytonGT}, the cycle can be decomposed into 8 thermodynamic states. the piping between each odd and even state hasn't been illustrated for clarity. Also, it is assume that pipes only induce isotherm pressure drop.
 
-Table \ref{tab:C5_thermo_state_GT} contains a summary of the gas cycle states emphasized on Figure \ref{fig:C5_BraytonGT}.
-
-\begin{center}
-\begin{longtable}[c]{lll}
+As it is illustrated in the Figure \ref{fig:C5_BraytonGT}, the cycle can be decomposed into 8 thermodynamic states. For each connection between two elements, there are piping that will induce some pressure drops. For each of these states the temperature and pressure are measure in order to fully characterized the state. The Table \ref{tab:C5_thermo_state_GT} includes the different states emphasized on Figure \ref{fig:C5_BraytonGT}.
+\begin{longtable}[c]{@{}lcc@{}}
 \caption{Thermodynamic states - gas cycle (GT)}
 \label{tab:C5_thermo_state_GT}\\
-\hline
-State n\degree & $T^0$                   & $p^0$                 \\ \hline
+\toprule
+\textbf{State n\degree} & $\mathbf{T}$      & $\mathbf{p}$      \\* \midrule
 \endfirsthead
-\multicolumn{3}{c}%
-{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\ \hline
-State number & $T^0$                   & $p^0$                \\ \hline
+%
 \endhead
-\multicolumn{3}{r}{\textit{Continued on next page}} \\
+%
+\bottomrule
 \endfoot
+%
 \endlastfoot
-State \textbf{0}: Reference state                                                            & $T^0_0$ = $T_{ref}$ & $p^0_0$ = $p_{ref}$ \\
-State \textbf{1}: Ambient condition                                                          & $T^0_1$ = $T_{amb}$   & $p^0_1$ = $p_{amb}$ \\
-\begin{tabular}[c]{@{}l@{}}State \textbf{2}: Inlet of the \\ compressor\end{tabular}         & $T^0_2=T^0_1$           & $p^0_2\leq p^0_1$     \\
-\begin{tabular}[c]{@{}l@{}}State \textbf{3}: Outlet of the \\ compressor\end{tabular}        & $T^0_3>T^0_2$           & $p^0_3>p^0_2$         \\
-\begin{tabular}[c]{@{}l@{}}State \textbf{4}: Inlet of the \\ combustion chamber\end{tabular} & $T^0_4=T^0_3$           & $p^0_4\leq p^0_3$     \\
-\begin{tabular}[c]{@{}l@{}}State \textbf{5}: Outlet of the\\ combustion chamber\end{tabular} & $T^0_5>>T^0_4$          & $p^0_5\leq p^0_4$     \\
-\begin{tabular}[c]{@{}l@{}}State \textbf{6}: Inlet of the\\ turbine\end{tabular}             & $T^0_6=T^0_5$           & $p^0_6\leq p^0_5$     \\
-\begin{tabular}[c]{@{}l@{}}State \textbf{7}: Outlet of the \\ turbine\end{tabular}           & $T^0_7<T^0_6$           & $p^0_7<p^0_6$         \\
-State \textbf{8}: Exhaust                                                                    & $T^0_8=T^0_7$           & $p^0_8=p^0_1<p^0_7$    
-\end{longtable}
-\end{center}
+%
+\textbf{0}              & $T_0$ = $T_{ref}$ & $p_0$ = $p_{ref}$ \\
+\textbf{1}              & $T_1$ = $T_{amb}$ & $p_1$ = $p_{amb}$ \\
+\textbf{2}              & $T^0_2=T_1$       & $p^0_2\leq p_1$   \\
+\textbf{3}              & $T^0_3>T^0_2$     & $p^0_3>p^0_2$     \\
+\textbf{4}              & $T_4=T^0_3$       & $p_4\leq p^0_3$   \\
+\textbf{5}              & $T_5>>T_4$        & $p_5\leq p_4$     \\
+\textbf{6}              & $T^0_6=T_5$       & $p^0_6\leq p_5$   \\
+\textbf{7}              & $T^0_7<T^0_6$     & $p^0_7<p^0_6$     \\
+\textbf{8}              & $T_8=T^0_7$       & $p_8=p_1<p^0_7$   \\* \bottomrule
+\end{longtable} 
 
 For each of the mentioned states, 5 thermodynamic properties are evaluated. Namely the temperature, pressure, enthalpy, entropy and density. For the last variable, the ideal gas equation (\ref{eq:C2_GP}) from the chapter \ref{C2} is used. 
 
-A graphical representation of these states can be performed by drawing some thermodynamic diagrams. Here, the Ts and hp diagram have been drawn on Figures \ref{fig:C5_Ts_GT} and \ref{fig:C5_hp_GT}. In this chapter, all the components are supposed ideals, meaning that their corresponding efficiency are equal to 100\%.
+The thermodynamic diagrams can be used to illustrate the states of the gas turbine cycle. Among those, t
+A graphical representation of these states can be performed by drawing some thermodynamic diagrams. Here, the T-s and h-p diagram have been drawn on Figures \ref{fig:C5_Ts_GT} and \ref{fig:C5_hp_GT}. In this chapter, all the components are supposed ideals, meaning that their corresponding efficiency are equal to 100\%.
 
 \begin{figure}[h]
      \centering
