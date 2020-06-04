@@ -615,76 +615,76 @@ This method will be called the ''weight factor'' method.
 %%%%%   <<Heat-exchanger>>    %%%%%
 %%%%%                         %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\quad\ The last important component that has to be defined and characterized is the heat-exchanger (HX). As the name says, the purpose of this element is to transfer the heat from a \textbf{hot} fluid to a \textbf{cold} fluid. The heat-exchangers can be classified into several categories\cite{Ngendakumana2018}.
+\quad\ The last important component that has to be defined and characterized is the heat exchanger (HX). As the name says, the purpose of this element is to transfer the heat from a \textbf{hot} fluid to a \textbf{cold} fluid. The heat-exchangers can be classified into several categories\cite{Ngendakumana2018}.
 
 \begin{itemize}
     \setstretch{1}
     \item The recuperators: their purpose is to recover the heat from a hot fluid to heat up a cold fluid for direct usage. For instance, the exhaust gas from a boiler will go through a recuperator to exchange its energy with water. For this application and for many others, the two streams within the HX are separated by physical walls.
 
-    Alternatively, the heat exchange can be performance by direct contact between the two fluids. In this case, nothing prevents the hot flow to mix with the cold flow (and vice versa).
+    Alternatively, the heat exchange can be performed by direct contact between the two fluids. In this case, nothing prevents the hot flow from mixing with the cold flow (and vice versa).
     \item The regenerators: considering a cycle , the purpose of the regenerators is to use a hot flow from the cycle to heat up a cold flow from the same cycle.
 \end{itemize}
 
 By definition, the hot stream is the one that \textbf{provides} the heat, and the cold stream is the one \textbf{receiving} the heat.
 
-On the Figure \ref{fig:C4_HX} are illustrated some schematics of heat-exchanger owning at different families.
+In the Figure \ref{fig:C4_HX} are depicted some illustrations of heat exchanger owning at different families.
 \begin{figure}[h]
     \centering
     \subfloat[HX with fined plates\cite{Ngendakumana2018}.\label{fig:C4_HX_fin_plate}]
     {\includegraphics[width=0.4\textwidth]{HX_fin_plate}}\hfill
     \subfloat[HX with fined tubes \cite{Ngendakumana2018}.\label{fig:C4_HX_fin_tube}]
     {\includegraphics[width=0.4\textwidth]{HX_fin_tube}}\hfill
-    \subfloat[Plate heat-exchangers\cite{Ngendakumana2018}.\label{fig:C4_PHE}]
+    \subfloat[Plate heat exchangers\cite{Ngendakumana2018}.\label{fig:C4_PHE}]
     {\includegraphics[width=0.4\textwidth]{HX_brased_plate}}
     \caption{HX illustrations.} \label{fig:C4_HX}
 \end{figure}
 
-The selected family will highly depends on the type of application that is targeted. Plate heat-exchangers are one of the most compact type of heat-exchangers. This compactness is highly appreciated for any system where the foot print and volume has to be as minimal as possible. However, this is at the cost of more complicated maintenance due the brazing of the plates.
+The selected family will highly depends on the type of application that is targeted. Plate heat exchangers are one of the most compact types of heat exchangers. This compactness is highly appreciated for any system where the foot print and volume have to be as minimal as possible. However, this is at the cost of more complicated maintenance due to the brazing of the plates.
 
-This section will not cover the specificity of these different families. Instead, the main notions which are necessary to characterized the heat transfer between two fluids will be given.
+This section will not cover the specificity of these different families. Instead, the main notions which are necessary to characterize the heat transfer between two fluids will be given.
 
 \subsection{Stream configurations}
-\quad\ There isn't an unique configuration regarding about the interaction between the hot and cold streams. Indeed, here are the main categories based on flow configurations.
+\quad\ There isn't a unique configuration regarding about the interaction between the hot and cold streams. Indeed, here are the main categories based on flow configurations.
 
 \begin{itemize}
     \setstretch{1}
-    \item Parallel flow HX: The two streams go through the heat-exchanger in the same direction (Figure \ref{fig:C4_para_flow}).
+    \item Parallel flow HX: The two streams go through the heat exchanger in the same direction (Figure \ref{fig:C4_para_flow}).
 
-    \item Counter flow HX: The two streams go through the heat-exchanger in the opposite direction. This configuration is more frequent than the parallel flow HX due to higher efficiency. However, sometimes the network of piping doesn't permit to install such configuration (Figure \ref{fig:C4_counter_flow}).
+    \item Counter flow HX: The two streams go through the heat exchanger in the opposite direction. This configuration is more frequent than the parallel flow HX due to higher efficiency. However, sometimes the network of piping doesn't permit installing such configuration (Figure \ref{fig:C4_counter_flow}).
 
-    \item Cross flow HX, both fluids unmixed: The flow in the tube does not sees the property of cross flow varying along with the distance traveled. Both flow are unmixed (Figure \ref{fig:C4_cross_flow_unmixed}).
+    \item Cross flow HX, both fluids unmixed: The flow in the tube does not see the property of cross flow varying along with the distance traveled. Both flows are unmixed (Figure \ref{fig:C4_cross_flow_unmixed}).
   
-    \item Cross flow HX, one fluid mixed: The flow in the tube does not sees the property of cross flow varying along with the distance traveled. The cross flow does not travel inside isolated channels (Figure \ref{fig:C4_cross_flow_1mixed}).
+    \item Cross flow HX, one fluid mixed: The flow in the tube does not see the property of cross flow varying along with the distance traveled. The cross flow does not travel inside isolated channels (Figure \ref{fig:C4_cross_flow_1mixed}).
 \end{itemize}
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{parallele_flow}
-        \caption{Parallel flow heat-exchanger \cite{Ngendakumana2018}.}
+        \caption{Parallel flow heat exchanger \cite{Ngendakumana2018}.}
         \label{fig:C4_para_flow}
     \end{subfigure}
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{opposite_flow}
-        \caption{Counter flow heat-exchanger \cite{Ngendakumana2018}.}
+        \caption{Counter flow heat exchanger \cite{Ngendakumana2018}.}
         \label{fig:C4_counter_flow}
     \end{subfigure}
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{crossed_flow_non_mixed}
-        \caption{Cross flow heat-exchanger, both fluids unmixed \cite{Ngendakumana2018}.}
+        \caption{Cross flow heat exchanger, both fluids unmixed \cite{Ngendakumana2018}.}
         \label{fig:C4_cross_flow_unmixed}
     \end{subfigure}
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{crossed_flow_one_mixed}
-        \caption{Cross flow heat-exchanger, one fluid mixed \cite{Ngendakumana2018}.}
+        \caption{Cross flow heat exchanger, one fluid mixed \cite{Ngendakumana2018}.}
         \label{fig:C4_cross_flow_1mixed}
     \end{subfigure}
     \caption{Configuration Heat-exchangers.} \label{fig:C4_config}
 \end{figure}
-Considering the parallel and counter flow heat-exchanger, Two temperature differences can be defined based on the temperature profiles (Figure \ref{fig:C4_Tprof}) of both fluids inside the heat-exchanger.
+Considering the parallel and counter flow heat exchanger, two temperature differences can be defined based on the temperature profiles (Figure \ref{fig:C4_Tprof}) of both fluids inside the heat exchanger.
 
 \begin{figure}[h]
     \centering
@@ -704,9 +704,9 @@ Considering the parallel and counter flow heat-exchanger, Two temperature differ
     \label{fig:C4_Tprof}
 \end{figure}
 
-where the subscripts h and c indicate which flow is considered (h:hot; c:cold), and the subscripts i and o refer to the inlet and the outlet of the heat-exchanger.
+The subscripts $h$ and $c$ indicate which flow is considered (respectively the hot and the cold flow). The subscripts $i$ and $o$ refer to the inlet and the outlet of the heat exchanger.
 
-The first temperature difference \(\Delta T_0\) is defined as being the largest temperature difference between the two flows, regardless the position inside the HX. Thus,
+The first temperature difference \(\Delta T_0\) is defined as being the largest temperature difference between the two flows, regardless of the position inside the HX. Thus, depending on the flow configuration, the \(\Delta T_0\) is given by (\ref{eq:C4_DT0}).
 
 \begin{equation}
     \setstretch{1}
@@ -717,7 +717,7 @@ The first temperature difference \(\Delta T_0\) is defined as being the largest 
     \end{cases}\label{eq:C4_DT0}
 \end{equation}
 
-The second temperature difference \(\Delta T_L\) corresponds to the smallest temperature difference between the two flows. Thus,
+The second temperature difference \(\Delta T_L\) corresponds to the smallest temperature difference between the two flows. Similarly to \(\Delta T_0\), \(\Delta T_L\) is defined by the relation (\ref{eq:C4_DTL}).
 
 \begin{equation}
     \setstretch{1}
@@ -728,103 +728,123 @@ The second temperature difference \(\Delta T_L\) corresponds to the smallest tem
     \end{cases}\label{eq:C4_DTL}
 \end{equation}
 
-\subsection{Heat transfer within a heat-exchanger}
-\quad\ The heat transfer rate of a heat-exchanger is directly dependent on the nature of the fluids and the heat-exchanger itself. Let's consider the following relation (\ref{eq:C4_Qdot1})
+\subsection{Heat transfer within a heat exchanger}
+\quad\ The heat transfer rate of a heat exchanger is directly dependent on the nature of the fluids and the heat exchanger itself. Let's consider the following relation (\ref{eq:C4_Qdot1})
 \begin{equation}
     \dot{Q} = \frac{\Delta T_{LM}}{R}= A\cdot U\cdot \Delta T_{LM}\text{ ( in W)}\label{eq:C4_Qdot1}
 \end{equation}
-where \(A\) is the global surface area of the HX, and \(R\) and \(U\) are the global thermal resistance and transfer coefficient respectively. The \(\Delta T_{LM}\) is called the logarithmic mean temperature difference. It's definition is
+Where \(A\) is the global surface area of the HX, and \(R\) and \(U\) are the global thermal resistance and transfer coefficient respectively. The difference of temperature \(\Delta T_{LM}\) is called the logarithmic mean temperature difference. Its definition is (\ref{eq:C4_lmtd}).
+
+
 \begin{equation}
+    \setstretch{1}
     \Delta T_{LM} = \frac{\Delta T_0-\Delta T_L}{ln\left(\frac{\Delta T_0}{\Delta T_L}\right)}\label{eq:C4_lmtd}
 \end{equation}
-with \(ln\) being the neperian logarithm.
+With \(ln\) being the neperian logarithm.
 \subsubsection{Transfer coefficient}
-The general definition for the product \(A\cdot U\) is
+\quad\ The general definition of the product \(A\cdot U\) is written in the equation (\ref{eq:C4_AU}).
+ 
 \begin{equation}
-    \frac{1}{A\cdot U}  = \frac{1}{\eta_{0,c}\cdot h_{conv,c} \cdot A_c} + \frac{F_c}{\eta_{0,c}\cdot A_c} + R_w + \frac{F_h}{\eta_{0,h}\cdot A_h} + \frac{1}{\eta_{0,h}\cdot h_{conv,h} \cdot A_h}\label{eq:C4_AU}
+    \setstretch{1}
+    \frac{1}{A\cdot U}  = \frac{1}{\eta_{0,C}\cdot h_{conv,C} \cdot A_C} + \frac{F_C}{\eta_{0,C}\cdot A_C} + R_w + \frac{F_H}{\eta_{0,H}\cdot A_H} + \frac{1}{\eta_{0,H}\cdot h_{conv,H} \cdot A_H}\label{eq:C4_AU}
 \end{equation}
-where \(h_{conv}\) is the convective heat transfer coefficient (in W/m$^2$/K) of the fluid, \(F\) is a degradation factor due to the clogging, \(\eta_0\) is the global efficiency of the surface and \(R_w\) is the wall resistance.
+Where \(h_{conv}\) is the convective heat transfer coefficient (in W/m$^2$/K) of the fluid, \(F\) is a degradation factor due to the clogging, \(\eta_0\) is the global efficiency of the surface and \(R_w\) is the wall resistance.
 
 Making the assumption that all the ducts considered in this work are smooth and the flows are turbulent, the convective heat transfer coefficient \(h_{conv}\) is obtained using the formula (\ref{eq:C4_h}).
 \begin{equation}
-    h_{conv} = Nu \cdot \frac{\lambda_c}{D_t} = 0.023\cdot Re^{0.8}\cdot Pr^{1/3}\frac{\lambda_c}{D_t}\label{eq:C4_h}
+    h_{conv} = Nu \cdot \frac{\lambda_c}{D_t} = 0.023\cdot Re^{0.8}\cdot Pr^{1/3}\frac{\lambda_C}{D_t}\label{eq:C4_h}
 \end{equation}
-where \(Nu\), \(Re\) and \(Pr\) are the Nusselt, Reynolds and Prandtl number. \(\lambda_c\) is the thermal conductivity (in W/m/K) of the fluid and \(D_t\) is the diameter of the duct\cite{Ngendakumana2018}.
+Where \(Nu\), \(Re\) and \(Pr\) are respectively the Nusselt, Reynolds and Prandtl number. \(\lambda_c\) is the thermal conductivity (in W/(m·K) of the fluid and \(D_t\) is the diameter of the duct\cite{Ngendakumana2018}.
 
 By definition, the Reynolds and Prandtl numbers are defined as follows
 \begin{align}
     Re & = \frac{\rho\cdot v\cdot D_h}{\mu}\label{eq:C4_Re} \\
     Pr & = \frac{\mu\cdot c_p}{\lambda_c}\label{eq:C4_Pr}
 \end{align}
-where \(D_h\) is the hydraulic diameter, \(v\) is the velocity of the flow and \(\mu\) is the dynamic viscosity (in Pa$\cdot$s). The hydraulic diameter and the flow velocity are respectively obtained using the two following relations
-\begin{align}
-    D_h = \frac{4\cdot A_c}{P_c}\label{eq:C4_Dh}                      \\
+Where \(D_h\) is the hydraulic diameter, \(v\) is the velocity of the flow and \(\mu\) is the dynamic viscosity (in Pa$\cdot$s). The hydraulic diameter and the flow velocity are respectively obtained using the two following relations (\ref
+{eq:C4_Dh}) and (\ref{eq:C4_v}).
+
+ \begin{align}
+    D_h = \frac{4\cdot A_C}{P_C}\label{eq:C4_Dh}                      \\
     v=\frac{\dot{m}}{\rho\cdot\pi\cdot\frac{D_h^2}{4}}\label{eq:C4_v} \\
 \end{align}
-with \(A_c\) and \(P_c\) the cross area and perimeter of the duct\cite{Ngendakumana2018}.
+With \(A_c\) and \(P_c\) the cross area and perimeter of the duct\cite{Ngendakumana2018}.
 
-Making the assumption that both \(D_h\) and \(D_t\) are equal, let's pose \(D=D_h=D_t\). Therefore, the convective heat transfer coefficient \(h_{conv}\) can be expressed as follows
+Making the assumption that both \(D_h\) and \(D_t\) are equal, let's pose \(D=D_h=D_t\). Therefore, the convective heat transfer coefficient \(h_{conv}\) can be expressed as given in the relation (\ref{eq:C4_hconv}).
+
+
 \begin{equation}
-    h_{conv} = 0.0697\cdot \frac{\dot{m}^{4/5}\cdot c_p^{1/3}}{\pi^{4/5}\cdot D^{9/5}}\cdot \frac{\lambda_c^{2/3}}{\mu^{7/15}}
+    \setstretch{1}
+    h_{conv} = 0.0697\cdot \frac{\dot{m}^{4/5}\cdot c_p^{1/3}}{\pi^{4/5}\cdot D^{9/5}}\cdot \frac{\lambda_c^{2/3}}{\mu^{7/15}} \label{eq:C4_hconv}
 \end{equation}
 
-In the present work, the heat-exchanger that will be used are plate heat-exchangers. For this specific category, the surface dimensions \(A\) for the cold and the hot side are very closed from each others. Also, if the flow considered is only composed of one phase (i.e. only liquid or gaseous), the wall resistance \(R_w\) can be neglected.
+In the present work, the heat exchangers that will be used are plate heat exchangers with microchannel. The usage of ''microchannel systems allows the generation of local turbulences''\cite{Joseph2020}. These local turbulences enhance the heat transfer and thus, the efficiency of the heat exchanger.
 
-If the efficiency \(\eta_0\) are supposed equal for both the hot and the cold side and if the degradation factors \(F\) are neglected, then the heat transfer coefficient \(U\) can be approached by
-\begin{equation}
-    U \simeq \frac{h_{conv,h}\cdot h_{conv,c}}{h_{conv,h} + h_{conv,c}}\label{eq:C4_AU_prop}
+Since the channel are really small, the assumption that the exchange surface dimensions \(A\) for the cold and the hot side are equal will be made. Also, the wall resistance \(R_w\) will be neglected. This last assumption is acceptable when dealing with fluid for which the phase does not change during the heat transfer. For the gas turbine application, the fluid remains gaseous during all the process. 
+
+\(\eta_0\) corresponds to the global efficiency of the heat exchanger fins \cite{GregoryNellis2015}. Since the global fin efficiency depends on the wall temperature, the fluid temperature and the geometry of the heat exchanger, it will be assumed that both sides of the heat exchanger are characterized by the same $\eta_0$. Therefore, the equality $\eta_{0_H}=\eta_{0,C}$ is enforced.
+
+Finally, if the degradation factor $F$ is neglected, the heat transfer coefficient \(U\) can be approached by the simple formulation (\ref{eq:C4_AU_prop}).
+
+
+ \begin{equation}
+    \setstretch{1}
+    U \simeq \frac{h_{conv,H}\cdot h_{conv,C}}{h_{conv,H} + h_{conv,C}}\label{eq:C4_AU_prop}
 \end{equation}
 \subsubsection{LMTD method}
-\quad\ In the previous lines, a definition of the heat transfer rate based on the global transfer coefficient. This method is called the LMTD method and requires the knowledge of the geometry of the heat-exchanger.
-When the \(\dot{Q}\) has been calculated, the temperatures at the outlet of the heat-exchanger for the cold and hot stream can be computed using the two equations (\ref{eq:C4_ThQ}) and (\ref{eq:C4_TcQ}).
+\quad\ In the previous lines, a definition of the heat transfer rate based on the global transfer coefficient. This method is called the LMTD method and requires the knowledge of the geometry of the heat exchanger.
+When the heat transfer rate \(\dot{Q}\) has been calculated, the temperatures at the outlet of the heat exchanger for the cold and hot stream can be computed using the two equations (\ref{eq:C4_ThQ}) and (\ref{eq:C4_TcQ}).
 
 \begin{subequations}
     \setstretch{1}
     \begin{equation}
-        \dot{Q} = \dot{m}_h\cdot c_{p,h}\cdot(T_{h,in} - T_{h,out}) =\dot{C}_h\cdot(T_{h,in} - T_{h,out}) \label{eq:C4_ThQ}
+        \dot{Q} = \dot{m}_H\cdot c_{p,H}\cdot(T_{h,in} - T_{h,out}) =\dot{C}_H\cdot(T_{h,in} - T_{h,out}) \label{eq:C4_ThQ}
     \end{equation}
     \begin{equation}
-        \dot{Q} = \dot{m}_c\cdot c_{p,c}\cdot (T_{c,out} - T_{c,in}) =\dot{C}_c\cdot (T_{c,out} - T_{c,in}) \label{eq:C4_TcQ}
+        \dot{Q} = \dot{m}_C\cdot c_{p,C}\cdot (T_{c,out} - T_{c,in}) =\dot{C}_C\cdot (T_{c,out} - T_{c,in}) \label{eq:C4_TcQ}
     \end{equation}
 \end{subequations}
 
-This method requires the knowledge of the inlet and outlet temperatures of both fluids before initiating the computation of the heat transfer rate \(\dot{Q}\) using the relation (\ref{eq:C4_Qdot1}). Therefore, this method needs iteration in the event where these temperatures are not known a priori.
+This method requires the knowledge of the inlet and outlet temperatures of both fluids before initiating the computation of the heat transfer rate \(\dot{Q}\) using the relation (\ref{eq:C4_Qdot1}). Therefore, this method needs iterations in the event where these temperatures are not known a priori.
 
 \subsubsection{$\varepsilon$-NTU method}
-\quad\ There exists a second method for the evaluation of the heat transfer rate which does not need the outlet temperature of the fluids. First, the maximum heat transfer rate \(\dot{Q}_{max}\) is computed.
+\quad\ There exists a second method for the evaluation of the heat transfer rate which does not need the outlet temperature of the fluids. First, the maximum heat transfer rate \(\dot{Q}_{max}\) is computed base the formula (\ref{eq:C4_Qmax}).
+
+
+\begin{align}
+    \setstretch{1}
+    \dot{Q}_{max} = \dot{C}_{min}\cdot (T_{h,in} - T_{c,in})\label{eq:C4_Qmax}\\
+    \text{with }\dot{C}_{min}=min(\dot{C}_H,\dot{C}_C)\nonumber
+\end{align}
+
+
+Then, the actual heat transfer rate $\dot{Q}$ is obtained by multiplying the maximum heat transfer rate by the efficiency of the heat exchanger.
+
+
 \begin{equation}
-    \dot{Q}_{max} = \dot{C}_{min}\cdot (T_{h,in} - T_{c,in})
+    \setstretch{1}
+    \dot{Q} = \varepsilon\cdot\dot{Q}_{max} \label{eq:C4_Qdot}
 \end{equation}
-with \(\dot{C}_{min}=min(\dot{C}_h,\dot{C}_c)\)
-Then the heat transfer rate is equal to
+Where \(\varepsilon\) is the efficiency of the heat exchanger. This efficiency is a function of the ratio \(C_r = \frac{\dot{C}_{min}}{\dot{C}_{max}}\), the flow arrangement, and the number of transfer unit NTU defined as stated in the relation (\ref{eq:C4_NTU})
+
+
 \begin{equation}
-    \dot{Q} = \varepsilon\cdot\dot{Q}_{max}
-\end{equation}
-where \(\varepsilon\) is the efficiency of the heat-exchanger. This efficiency is a function of the ratio \(C_r = \frac{\dot{C}_{min}}{\dot{C}_{max}}\), the flow arrangement, and the number of transfer unit NTU defined as being the ratio
-\begin{equation}
+    \setstretch{1}
     \text{NTU} = \frac{A\cdot U}{\dot{C}_{min}}\label{eq:C4_NTU}
 \end{equation}
 
-As said, the relations \(\varepsilon(\text{NTU},C_r)\) and \(\text{NTU}(\varepsilon,C_r)\) depend on the heat-exchanger configurations  \cite{GregoryNellis2015}. Here, the type of heat-exchanger used for the modeled Brayton cycle are plate heat-exchanger. Since the flow configuration for this type of heat-exchanger is counter-flow, the associated relation linking the efficiency \(\varepsilon\) to the number of transfer units  NTU is
-\begin{equation}
+It can be noticed that the definition of the NTU involves the global exchange area $A$ and the global heat transfer coefficient $U$. This implies that both the NTU and the efficiency $\varepsilon$ depends on the flow configuration and geometry of the heat exchanger .  
+
+Here, the type of heat exchanger used for the modeled Brayton cycle is plate heat exchanger with microchannel. Since the flow configuration for this type of heat exchanger is counter flow, the associated relation linking the efficiency \(\varepsilon\) to the number of transfer units  NTU is
+\begin{equation*}
     \varepsilon = \frac{1 - e^{-NTU\cdot \left(1 - C_r\right)}}{1 - C_r\cdot e{-NTU\cdot \left(1 - C_r\right)}}\cite{GregoryNellis2015}
-\end{equation}
+\end{equation*}
 %%%%%%%%%%%%%%%
 %ECRIRE ANNEXE%
 %%%%%%%%%%%%%%%
 
 Once the coefficient \(\varepsilon\) computed, the outlet temperatures of the fluids can be obtained using the relations (\ref{eq:C4_ThQ}) and (\ref{eq:C4_TcQ}).
 
-\subsubsection{Rating and sizing problem}
-\quad\ The \(\varepsilon\)-NTU method is really useful for solving rating and sizing problems.
-
-On one hand, rating problem are problem that, based on the knowledge of the geometry of the heat-exchanger, evaluates its performance for given inlet temperature for both fluids. For this kind of problem, the NTU is first computed. Then, the efficiency \(\varepsilon\) is derived to allow the calculation of the heat transfer rate.
-
-On the other hand, sizing problems are used for the design of heat-exchanger to provide the wished outlet temperatures. There, the efficiency is first calculated and then the NTU is deduced. Finally, from the equation (\ref{eq:C4_NTU}) the heat transfer area \(A\) can be obtained\cite{Ngendakumana2018}.
-
-A mix of these two types of problems will be used during this work. Indeed, the efficiency \(\varepsilon\) of the heat-exchangers in the system are known for a certain nominal flow rate.    The knowledge of the nominal efficiency provides the required tools to compute the product \(A\cdot U_{nom}\) using the sizing problem methodology.
-
-Then, based on the approximation (\ref{eq:C4_AU_prop}), the \(U\) for the given condition can be obtained since the heat transfer area \(A\) remains unchanged. Finally, the non nominal \(U\) can be used to obtain the of design efficiency \(\varepsilon\). This last step is done through a rating problem.
 
 \section{Piping and pressure drop}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -832,15 +852,19 @@ Then, based on the approximation (\ref{eq:C4_AU_prop}), the \(U\) for the given 
 %%%%%       <<Piping>>        %%%%%
 %%%%%                         %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\quad\ From now, the loss of pressure inside the different elements has not be considered. However, for a system like a gas turbine, the pressure drops have to be as minimal as possible to guaranty that the expanded gas in the turbine is at a pressure as high as possible.
+\quad\ From now, the loss of pressure inside the different elements has not been considered. However, for a system like a gas turbine, the pressure drops have to be as minimal as possible to guarantee that the expanded gas in the turbine is at a pressure as high as possible.
 
-In this work, simple formula will be applied for the pressure drops computation. These one will be computed based on a pressure drop factor \(Dp\) varying from 0 to 1. Then the pressure at the outlet of the component is given by
+In this work, simple formula will be applied for the pressure drops computation. The pressure drops are computed based on a pressure drop factor \(Dp\) varying from 0 to 1. Then the pressure at the outlet of the component is given by the relation (\ref{eq:C4_Pdrop}).
+
 \begin{equation}
-    p_{o} = p_{i}\cdot (1 - Dp)
+    \setstretch{1}
+    p_{o} = p_{i}\cdot (1 - Dp)\label{eq:C4_Pdrop}
 \end{equation}
-where the factor \(Dp\) is different for each component of the system.
+Where the factor \(Dp\) is different for each component of the system. Indeed, the probability that the pressure drop through a combustion chamber and a heat exchanger are equal are really small.
 
-Before the present work, the pressure drop factors have been evaluated using computational fluid dynamics (CFD) for a nominal point of operation. Then, it can be demonstrated that the pressure difference \(\Delta p = p_{i} - p_{o}\) is a quadratic function of the mass flow rate \(\dot{m}\). Thus, the pressure losses for any non-nominal points of operation are given by
+It can be demonstrated that the pressure difference \(\Delta p = p_{i} - p_{o}\) is a quadratic function of the mass flow rate \(\dot{m}\). The simplest way to define the pressure drop is to measure difference for a nominal point of operation. Then, using the relation (\ref{eq:C4_DP}) allows computing the pressure drop for any non-nominal conditions.
+
 \begin{equation}
-    \Delta p \simeq \Delta p_{nom}\cdot \frac{\dot{m}^2}{\dot{m}^2_{nom}}
+    \setstretch{1}
+    \Delta p \simeq \Delta p_{nom}\cdot \frac{\dot{m}^2}{\dot{m}^2_{nom}}\label{eq:C4_DP}
 \end{equation}
