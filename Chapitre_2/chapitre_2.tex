@@ -11,17 +11,17 @@ Indeed, while the Brayton cycle engine first appears as a  piston engine where t
 
 However, the key notions to understand how theses components behave have not been introduced yet. This problematic will be covered by this chapter, which will introduce step-by-step those notions.
 \section{Open/closed system}\label{sect:C2_Sys}
-\quad\,  The thermodynamic is a science that "studies the exchange of energy between a system and its environment or surroundings" \cite{thermoApp_1}.
+\quad\,  The thermodynamic is a science that ''studies the exchange of energy between a system and its environment or surroundings'' \cite{thermoApp_1}.
 The system is defined as being the area of the space selected for the study. Between the system and the environment lies the boundary. This boundary can either be real or fictitious and can be static or mobile.
 
 When the system is characterized, it has to be defined if it is an open or a closed system.
 
-On one hand, closed systems do not exchange matter with the environment. Those systems are characterized by a control mass well delimited in the space of study. Therefore, only heat or work can be transfer from the system to the surroundings.
+On one hand, closed systems do not exchange matter with the environment. Those systems are characterized by a control mass well delimited in the space of study. Therefore, only heat or work can be transferred from the system to the surroundings.
 
-On the other hand, the open systems are ones where an arbitrary control volume well demarcated in the space is studied. In contrast to closed systems, open systems not only exchange work and heat with the environment, but also matter. Typical examples are the combustion chamber, heat exchanger, turbomachinery, piping,...
+On the other hand, the open systems are ones where an arbitrary control volume well demarcated in the space is studied. In contrast to closed systems, open systems not only exchange work and heat with the environment, but also matter. Typical examples are the combustion chamber, heat exchanger, turbomachines, piping,...
 
 \section{State Functions}\label{sect:C2_State}
-\quad\, Let considered a system as defined in the previous section. The state functions are defined as "a property of the system that only depends on its current state.” These functions are independent of the past of the system and describe the equilibrium state of the system.
+\quad\, Let considered a system as defined in the previous section. The state functions are defined as ''a property of the system that only depends on its current state.” These functions are independent of the past of the system and describe the equilibrium state of the system.
 
 When the state functions can be measured (directly or indirectly), these are called state variables. For example, the pressure $p$, the temperature $T$ or the volume $\mathrm{V}$ is state variables.
 
@@ -50,7 +50,7 @@ Where \textit{m} is the quantity of matter (in kg), $R$ is the universal gas con
 
 The density $\rho$ of the gas is given as being one over the specific volume $v$.
 \section{Energy}\label{sect:C2_Ener}
-\quad\, In the subsection \ref{sect:C2_Sys}, the notion of energy has been mentioned without characterizing it beforehand. From the first principle of the thermodynamic, it is stated that the energy cannot be created nor destroyed. Therefore, it can only be converted an can exist into multiple forms (thermal, mechanical, electrical,...)\cite{thermoApp_2}. 
+\quad\, In the subsection \ref{sect:C2_Sys}, the notion of energy has been mentioned without characterizing it beforehand. From the first principle of the thermodynamic, it is stated that the energy cannot be created nor destroyed. Therefore, it can only be converted, meaning that the energy exists into multiple forms (thermal, mechanical, electrical,...)\cite{thermoApp_2}. 
 
 The unit of the energy is the Joule (J), and the sum of all the energies in a system is called the total energy $E$. 1 Joule corresponds to the work required to move a body over 1 meter using a force of 1 N.
 
@@ -68,24 +68,24 @@ Thus, considering the variation of the total energy from a state \textbf{1} to a
                  \Delta KE &= \frac{1}{2}m\cdot(v^2_2 - v^2_1)\text{: Variation of the kinetic energy}\\
                  \Delta PE &= m\cdot g\cdot(z_2 - z_1)\text{: Variation of the potential energy}
 \end{align*} 
-Where $z$ is the altitude of the system position (m), $v$ is the velocity of the fluid (m/s) and $U$, the internal energy, is the sum of all the "microscopic" energy within the system (J). $u$ corresponds to the specific internal energy, and its unit is in J/kg.
+Where $z$ is the altitude of the system position (m), $v$ is the velocity of the fluid (m/s) and $U$, the internal energy, is the sum of all the ''microscopic'' energy within the system (J). $u$ corresponds to the specific internal energy, and its unit is in J/kg.
 
-As said in the subsection \ref{sect:C2_Sys}, any system will exchange energy with the surroundings as heat and work. The heat is defined as "the form of energy which is exchanged between the system and its environment when there is a gradient of temperature between these two entities". 
+As said in the subsection \ref{sect:C2_Sys}, any system will exchange energy with the surroundings as heat and work. The heat is defined as ''the form of energy which is exchanged between the system and its environment when there is a gradient of temperature between these two entities''. 
 
 As the heat is always referred as a flux between two bodies, the phenomenon is called heat transfer. The heat transfer can be realized by
 \begin{itemize}
 \setstretch{1}
-    \item Conduction: Heat transfer through a non-flowing material due to the interaction of "molecular scale energy carriers within the material"\cite{GregoryNellis2015}
+    \item Conduction: Heat transfer through a non-flowing material due to the interaction of ''molecular scale energy carriers within the material''\cite{GregoryNellis2015}
     \item Convection: More complex conduction when considering a flowing fluid.
     \item Radiation: The heat is transferred as electromagnetic waves.
 \end{itemize}
 The heat transfer is denoted $Q$. A system that does not exchange heat with the surroundings is called \textbf{adiabatic}.
 
-Aside the heat transfer, the system can also exchange energy by producing a work. The work $W$ is "the form of energy exchanged associated to a force applied over a certain distance". 
+Aside the heat transfer, the system can also exchange energy by producing a work. The work $W$ is ''the form of energy exchanged associated to a force applied over a certain distance''. 
 
 The work is exchanged if the force applied to the system creates a displacement of its boundary. The power is defined as the work per unit of time (in Watt or W).
 
-Both heat and work are called "path functions" because they are associated with the evolution of a system and not to the state of this system. Thus, these are not thermodynamic variables (like the temperature or the pressure).
+Both heat and work are called ''path functions'' because they are associated with the evolution of a system and not to the state of this system. Thus, these are not thermodynamic variables (like the temperature or the pressure).
 \subsection{Energy balance}
 \quad\, It has been previously mentioned several mechanisms to exchange energy from the system to its environment. Aside from the heat transfer and the work transfer, the energy can also be exchanged using mass transfer. 
 
@@ -96,7 +96,7 @@ Based on the statement, the energy balance of the system is given by the followi
 \setstretch{1}
     E_{in} - E_{out} = (Q_{in} - Q_{out}) + (W_{in} - W_{out}) + (E_{mass,in} - E_{mass,out}) = \Delta E_{system} \label{eq:C2_EB}
 \end{equation}
-With $E_{mass}$ the energy convey by the mass entering/exiting the system.
+With $E_{mass}$ the energy conveys by the mass entering/exiting the system.
 
 It is possible to write a temporal formulation (\ref{eq:C2_PB}) of the energy balance named \textbf{power balance}.  
 \begin{equation}
@@ -108,7 +108,7 @@ Where $\frac{dE_{system}}{dt}=0$ when considering a system for which the variati
 \quad\, When the system is transferring or converting energy, it is often interesting to quantify the quality of this transfer/conversion. The efficiency is defined to provide this quantification, and its definition is the
 $\frac{\text{Desired ouptut}}{\text{Required input}}$. 
 
-For example, a water electric heater with a efficiency of 90\% is a system such that 90\% of the electrical energy consumed is converted in thermal energy.  
+For example, a water electric heater with the efficiency of 90\% is a system such that 90\% of the electrical energy consumed is converted in thermal energy.  
 Considering the combustion of fuel, the combustion efficiency is defined as the ratio
 $$ \frac{\dot{Q}}{\dot{m}_{fuel}\cdot HV_{fuel}}$$
 Where $\dot{m}$  and $HV_{fuel}$ is the mass flow and the heating value of the fuel injected into the combustion chamber.
