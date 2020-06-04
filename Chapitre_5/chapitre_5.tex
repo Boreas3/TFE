@@ -9,7 +9,7 @@
 
 The previous chapter \ref{C4} described individually these components by providing the required theoretical notions to be able to analyze their performances. Now, the components will be considered together as a thermodynamic cycle to assess the performances of the Gas Turbine and of its existing variants.
 
-\section{Gas Turbine (GT)}
+\section{Gas Turbine}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%                         %%%%%
 %%%%%     <<Gas Turbine>>     %%%%%
@@ -102,7 +102,7 @@ Where $HCV_{fuel}$ is the low heat calorific value (J/kg) of the fuel.
 
 Based on this definition, the efficiency of the Gas Turbine cycle is $\eta_{th,GT} =24$\%. This efficiency is obtained for an ideal cycle composed of ideal components. Therefore, this represents a upper bound for any real GT cycle playing with the same level of temperature and pressure.
 
-\section{Regenerative Gas Turbine (RGT)}
+\section{Regenerative Gas Turbine}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%                         %%%%%
 %%%%%    <<regenerative>>     %%%%% 
@@ -118,7 +118,7 @@ This variant of the Gas Turbine cycle is called Regenerative Gas Turbine (RGT) c
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{RGT}
-\caption{Regenerative Gas Turbine (RGT)}
+\caption{Regenerative GT (RGT)}
 \label{fig:C5_RGT}
 \end{figure}
 
@@ -144,14 +144,33 @@ The states from \textbf{1} to \textbf{12} can be represented using T-s and p-v d
         \label{fig:C5_thermo_diagram_RGT}
 \end{figure}
 
-As shown in the T-s diagram, there is as expected a heat transfer from the hot gas to the cold air. This heat transfer allows using the available energy from the hot gas to heat-up the air from the compressor. Thanks to this heat transfer, the combustion chamber only needs to raise the temperature of the air from 630\degree C to around 900\degree C. 
+As shown in the T-s diagram, there is as expected a heat transfer from the hot gas to the cold air. This heat transfer allows using the available energy from the hot gas to heat-up the air from the compressor. Thanks to this heat transfer, the combustion chamber only needs to raise the temperature of the air from 630\degree C to 920\degree C. 
 
-The reduction of the difference of temperatures between the inlet and the outlet of the combustion chamber allows to reduce a lot the consumption of fuel. For the same mass flow rate of air of 180 g/s, the excess of air increased from 2 to 7.   
+The reduction of the difference of temperatures between the inlet and the outlet of the combustion chamber allows to reduce a lot the consumption of fuel. For the same mass flow rate of air, the excess of air increased from 2 to 7.   
 
 Thanks to the regenerator, the thermal efficiency of the cycle is really improved. Indeed, from 24\% for the ideal GT cycle, the efficiency of the Regenerative Gas Turbine cycle is now 65\%.
 
+The addition of regenerator is only interesting when the pressure ratio involved are quite small. Indeed, it can be demonstrated that the the thermal efficiency of the RGT cycle varies as the inverse of the pressure ratio. On the other hand, the efficiency of the Gas Turbine cycle without regenerator increases with the pressure ratio. 
 
+The Figure \ref{fig:C5_eff_RGT-GT} shows that, for a pressure ratio beyond 12.5, the cycle with regenerator has a thermal efficiency lower than the cycle without regenerator. 
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Chapitre_5/Images/Efficiency_ideal_Brayton_regen.png}
+    \caption{Thermal efficiency of GT vs RGT}
+    \label{fig:C5_eff_RGT-GT}
+\end{figure}
+
+\section{Intercooler-Regenerative-Reheat GT}
+\quad\ The two cycles described previously are characterized by the usage of one compressor and one turbine. However, it happens that for some applications, the pressure ratio between the high and the ambient pressures is too large to be handle by one stage of turbomachines.
+
+A type of Gas Turbine that is often considered to response to this problem is the Intercooler-Regenerative-Reheat Gas Turbine (IRHGT). For the IRHGT, the compression and the expansion are split between a low pressure (LP) and high pressure (HP) compressor and turbine (respectively). 
+
+Between the two compression stages, a water heat exchanger called intercooler is installed to cooled down the compressed air from the LP compressor before going into the HP compressor. This water heat exchanger is called intercooler. The addition of an intercooler will allow to increase the \textbf{density} of the compressed thanks to the cooling. Indeed, when the air is compressed, its temperature is increased. However, at the same pressure, a hot gas will have a smaller density than cold gas. 
+
+The opposite reasoning stands for the two stages of expansion. After the first stage, the expanded gas enters a second combustion chamber to be reheated. The reheat is performed to increase the \textbf{specific volume} of the gas before entering the low pressure turbine. 
+
+The IRHGT cycle is depicted in the Figure \ref{}
 Aside the regerator, a water heat exchanger (WHX) can be used to absorb the remaining from the exhaust gas to utilize it for water heating. Considering the fact that components does not have an efficiency of 100\%, the temperature at the outlet of the regenerator (state \textbf{11}) is around 200\degree C. This temperature is enough to heat up water to a target temperature of 70-80\degree C.
 
 Even if it is beyond the scope of this master thesis, the integration of an organic rankine cycle (ORC) in place of the WHX to convert the remaining heat into electricity can also be considered\citep{Quoilin2008}.
