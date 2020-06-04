@@ -100,7 +100,9 @@ The thermal efficiency of the cycle can be computed based on the knowledge of th
 \end{equation}
 Where $HCV_{fuel}$ is the low heat calorific value (J/kg) of the fuel.
 
-Based on this definition, the efficiency of the Gas Turbine cycle is $\eta_{th,GT} =24$\%. This efficiency is obtained for an ideal cycle composed of ideal components. Therefore, this represents a upper bound for any real GT cycle playing with the same level of temperature and pressure.
+Based on this definition, the efficiency of the Gas Turbine cycle is $\eta_{th,GT} =24$\%. This efficiency is obtained for an ideal cycle composed of ideal components. The associated net power output is equal to 42.05 kW. 
+
+The computed efficiency represents an upper bound for any real GT cycle playing with the same level of temperature and pressure.
 
 \section{Regenerative Gas Turbine}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -148,7 +150,7 @@ As shown in the T-s diagram, there is as expected a heat transfer from the hot g
 
 The reduction of the difference of temperatures between the inlet and the outlet of the combustion chamber allows to reduce a lot the consumption of fuel. For the same mass flow rate of air, the excess of air increased from 2 to 7.   
 
-Thanks to the regenerator, the thermal efficiency of the cycle is really improved. Indeed, from 24\% for the ideal GT cycle, the efficiency of the Regenerative Gas Turbine cycle is now 65\%.
+Thanks to the regenerator, the thermal efficiency of the cycle is really improved. Indeed, from 24\% for the ideal GT cycle, the efficiency of the Regenerative Gas Turbine cycle is now 65\%. The net power output is here equal to 41.35 kW.
 
 The addition of regenerator is only interesting when the pressure ratio involved are quite small. Indeed, it can be demonstrated that the the thermal efficiency of the RGT cycle varies as the inverse of the pressure ratio. On the other hand, the efficiency of the Gas Turbine cycle without regenerator increases with the pressure ratio. 
 
@@ -179,8 +181,25 @@ The IRHGT cycle is depicted in the Figure \ref{fig:C5_IRHGT}.
 \label{fig:C5_IRHGT}
 \end{figure}
 
-The 
+The T-s and p-v diagrams have been drawn for the case of an ideal IRHGT cycle. The two diagrams are in the Figures 
 
+\begin{figure}[h]
+     \centering
+     \begin{subfigure}[b]{0.4\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{Ts_IRHGT}
+         \caption{T-s diagram - Regenerative Gas Turbine}
+         \label{fig:C5_Ts_RGT}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.4\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{pv_RGT}
+         \caption{p-v diagram - Regenerative Gas Turbine}
+         \label{fig:C5_pv_RGT}
+     \end{subfigure}
+        \caption{Thermodynamic diagrams of a Regenerative Gas Turbine}
+        \label{fig:C5_thermo_diagram_RGT}
+\end{figure}
 \section{Brayton cycle - variants}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%                         %%%%%
