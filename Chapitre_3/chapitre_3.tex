@@ -43,7 +43,7 @@ The Figure \ref{fig:C3_VC} depicts an open system with an inlet and outlet area 
 \setstretch{1}
 W = p_2\cdot A_2\cdot v_2\cdot \Delta t - p_1\cdot A_1\cdot v_1\cdot \Delta t + W_s \label{eq:C3_work}
 \end{equation}      
-Where $P$ and $v$ are the pressure and the velocity.
+Where $p$ and $v$ are the pressure and the velocity.
 
 By neglecting the variation of the kinetic and potential energy, the energy balance is after some mathematical operations as given in the relation \ref{eq:C3_EBH}
 \begin{equation}
@@ -85,7 +85,7 @@ These two relations, with the equality (\ref{eq:C3_h}), provide the required too
 r = c_p - c_v \label{eq:C3_r}
 \end{equation}
 
-Aside the gas constant, the specific heat ratio $k$ (\ref{eq:C3_k}) is also a useful variable to be computed.
+Aside the gas constant, the specific heat capacity ratio $k$ (\ref{eq:C3_k}) is also a useful variable to be computed.
 \begin{equation}
 \setstretch{1}
 k = \frac{c_p}{c_v} \label{eq:C3_k}
@@ -141,11 +141,11 @@ It has been demonstrated in 1865 by the German physicist R. J. E. Clausius that 
 \oint\frac{\delta Q}{T} = \frac{Q_H}{T_H} - \frac{Q_L}{T_L}\leq 0\label{eq:C3_cyc}
 \end{equation}
 For the Carnot cycle, the integral is equal to zeros because the two ratios $\frac{Q_H}{Q_L}$ and $\frac{T_H}{T_L}$ are equal.
-From the definition \ref{eq:C3_cyc} can be defined a new state variable named \textbf{entropy}. The entropy S is always measured based on a reference point and, its expression is given in the relation (\ref{eq:C3_S}).
+From the definition \ref{eq:C3_cyc} can be defined a new state variable named \textbf{entropy}. The entropy $s$ is always measured based on a reference point and, its expression is given in the relation (\ref{eq:C3_S}).
 
 \begin{equation}
 \setstretch{1}
-dS \triangleq \frac{\delta Q_{rev}}{T}\label{eq:C3_S}
+ds \triangleq \frac{\delta Q_{rev}}{T}\label{eq:C3_S}
 \end{equation}
 Where $\delta Q_{rev}$ is the "infinitesimal quantity of heat exchanged in a reversible way between the system and the environment at the temperature T."\cite{Dewallef2019} 
 
@@ -161,7 +161,7 @@ For a reversible adiabatic transformation, the $\delta Q_{rev}=0$. This implies 
 
 Based on this definition, one formulation of the second principle of the thermodynamic is that for every transformation, the entropy of the final state of any isolated system is greater or equal to the one of the initial state.
 
-Considering the system defined in the previous lines, it can be said that the increase of entropy $\Delta S_L$ of the cold sink has to be at least greater than the diminution of entropy $\Delta S_H$ of the hot source.
+Considering the system defined in the previous lines, it can be said that the increase of entropy $\Delta s_L$ of the cold sink has to be at least greater than the diminution of entropy $\Delta s_H$ of the hot source.
 
 In the case of the Carnot cycle, both variations are equal. This is illustrated on the T-s diagram \ref{fig:C3_CarnotTS} where the entropy of states \textbf{1} and \textbf{2} are respectively equal to the entropy of states \textbf{4} and \textbf{3}.
 \section{Type of transformations}
@@ -364,10 +364,10 @@ As can be noticed, the real transformation leads to a final state temperature bi
 \end{itemize}
 Where the temperature and the enthalpy variation provide the same output result due to the ideal gas hypothesis. 
 
-For real fluid, the only valid definition of the isentropic efficiency is the one based on the enthalpy variation. 
+For a real fluid, the only valid definition of the isentropic efficiency is the one based on the enthalpy variation. 
 
-%\subsection{Exergy}
-%\quad\, From now, it has not been clearly established a tool to establish the waste of energy when performing a transformation. It has been stated earlier that the "work done during a process depends on the initial state, the final state, and the process path. In the exergy analysis, the \textit{initial state} is specified [...], the process between the two states is executed in a \textit{reversible manner} [...], and the system must be in the \textit{dead state} at the end of the process"\cite{2015}. 
-%
-%The dead state is defined as being the state where the system is thermodynamic equilibrium with its immediate surrounding. This means that both will be at the same pressure and temperature and there is no unbalance (of any types) between the system and its surrounding. At this state, the system has zero exergy\citep{2015}.
-%When the system arrived to such state, it cannot deliver any extra Joule of work. Indeed, supposing that there is a temperature gradient between the system and the immediate surrounding, it's possible to produce a work by "running a heat engine between these two temperature levels\citep{2015}.
+% \section{Exergy}
+% \quad\ A transformatioFrom now, it has not been clearly established a tool to establish the waste of energy when performing a transformation. It has been stated earlier that the "work done during a process depends on the initial state, the final state, and the process path. In the exergy analysis, the \textit{initial state} is specified [...], the process between the two states is executed in a \textit{reversible manner} [...], and the system must be in the \textit{dead state} at the end of the process"\cite{2015}. 
+
+% The dead state is defined as being the state where the system is thermodynamic equilibrium with its immediate surrounding. This means that both will be at the same pressure and temperature and there is no unbalance (of any types) between the system and its surrounding. At this state, the system has zero exergy\citep{2015}.
+% When the system arrived to such state, it cannot deliver any extra Joule of work. Indeed, supposing that there is a temperature gradient between the system and the immediate surrounding, it's possible to produce a work by "running a heat engine between these two temperature levels\citep{2015}.
