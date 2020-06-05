@@ -32,7 +32,7 @@ Turbomachines that are encompassed in this second category are compressors and g
 
 \begin{itemize}
     \item Absolute velocity \(\mathbf{v}\): velocity of the fluid in the absolute frame (\(\mathbf{x},\mathbf{y}\)).
-    \item Rotating speed of the rotor \(\mathbf{u_r}\): rotating speed of the rotor in the absolute frame (\(\mathbf{x},\mathbf{y}\)).
+    \item Tip blade velocity of the rotor \(\mathbf{u_r}\): Velocity of the tip of the rotor blades in the absolute frame (\(\mathbf{x},\mathbf{y}\)).
     \item Relative velocity \(\mathbf{w_r}\): velocity of the fluid in the relative frame  (\(\mathbf{x'},\mathbf{y'}\)).
 \end{itemize}
 
@@ -74,7 +74,7 @@ For instance, the total enthalpy is given by
 
 Now, considering an adiabatic transformation without viscous work, the total enthalpy is conserved between the initial state and the final state.
 \begin{equation}
-    \dot{m}_1\cdot h_1^0 = \dot{m}_2 h_2^0 \label{eq:C4_hcons}
+    \dot{m}_1\cdot h_1^0 = \dot{m}_2\cdot  h_2^0 \label{eq:C4_hcons}
 \end{equation}
 Which can be reduced to \(h_1^0 = h_2^0\) if we supposed that the transformation is performed without any leakages (\(\dot{m}_1=\dot{m}_2\)). The states \(1\) and \(2\) are associated to the orthogonal boundaries to the flow of the selected control volume delimiting the studied system.
 
@@ -141,15 +141,15 @@ If the consumed power of the pump is \(\dot{W}_{e,a-b}\), its global efficiency 
 \subsubsection{Characteristic maps}
 \quad\ It has been shown that the power output and the global efficiency of the pump are functions of the height variation and the flow rate of the fluid. When operating a pump, it can be useful to know how this height variation will vary with respect to the flow rate and the rotational speed of the pump shaft. The knowledge of these two parameters allows to fully characterized the pump.
 
-Considering the volumetric flow rate \(Q_p\) (m$^3$/s) and the rotational speed \(N\), the two following relations (\ref{eq:C4_DHp}) and (\ref{eq:C4_Pe}) can be derived.
+Considering the volumetric flow rate \(\dot{\mathrm{V}}\) (m$^3$/s) and the rotational speed \(N\), the two following relations (\ref{eq:C4_DHp}) and (\ref{eq:C4_Pe}) can be derived.
 
 \begin{subequations}
     \setstretch{1}
     \begin{equation}
-        \Delta h_p = \Delta h_p(Q_p, N)\label{eq:C4_DHp}\\
+        \Delta h_p(\dot{\mathrm{V}}_p, N)\label{eq:C4_DHp}\\
     \end{equation}
     \begin{equation}
-        \dot{W}_e = \dot{W}_ef(Q_p, N)\label{eq:C4_Pe}
+        \dot{W}_{elec}(\dot{\mathrm{V}}_p, N)\label{eq:C4_Pe}
     \end{equation}
 \end{subequations}
 Those relations will be called characteristic or performance map and has to be determined \textbf{experimentally}. An example of such map is given on Figure \ref{fig:C4_MapPump}.
@@ -164,7 +164,7 @@ However, not all the operating points constituting the performance map has to be
 
 \begin{subequations}
     \begin{equation}
-        \phi = \frac{Q}{N\cdot r_2^3}\label{eq:C4_phipump}
+        \phi = \frac{\dot{\mathrm{V}}}{N\cdot r_2^3}\label{eq:C4_phipump}
     \end{equation}
     \begin{equation}
         \psi = \frac{4\cdot g\cdot \Delta h_p}{N^2\cdot r_2^2}\label{eq:C4_psipump}
@@ -173,14 +173,14 @@ However, not all the operating points constituting the performance map has to be
 
 For the pump, the head and flow non-dimensional coefficients \(\phi\) and \(\psi\) are defined based on the outlet condition \textbf{2} of the pump. Those coefficients are respectively defined by the relations (\ref{eq:C4_phipump}) and (\ref{eq:C4_psipump}), \(r_2\) being the outlet radius of the pump. 
 
-From the definitions of these two non-dimensional quantities, the height variation \(\Delta h_p\) and the volumetric flow rate $Q$ can be obtained for any rotational speed. 
+From the definitions of these two non-dimensional quantities, the height variation \(\Delta h_p\) and the volumetric flow rate $\dot{\mathrm{V}}$ can be obtained for any rotational speed. 
 
-Considering that the operating point (\(Q_1, \Delta h_{p,1},N_1\)) is known, the similar operating point\linebreak (\(Q_2, \Delta h_{p,2},N_2\)) for any rotational speed \(N_2\) can be obtained using the relations (\ref{eq:C4_Qsim}) and (\ref{eq:C4_DHsim}).
+Considering that the operating point (\(\dot{\mathrm{V}}_1, \Delta h_{p,1},N_1\)) is known, the similar operating point\linebreak (\(\dot{\mathrm{V}}_2, \Delta h_{p,2},N_2\)) for any rotational speed \(N_2\) can be obtained using the relations (\ref{eq:C4_Qsim}) and (\ref{eq:C4_DHsim}).
 
 \begin{subequations}
     \setstretch{1}
     \begin{equation}
-        Q_2 = Q_1\cdot\frac{N_2}{N_1} \label{eq:C4_Qsim}
+        \dot{\mathrm{V}}_2 = \dot{\mathrm{V}}_1\cdot\frac{N_2}{N_1} \label{eq:C4_Qsim}
     \end{equation}
     \begin{equation}
         \Delta h_2 = \Delta h_1\cdot\left(\frac{N_2}{N_1}\right)^2 \label{eq:C4_DHsim}
@@ -224,9 +224,9 @@ The behavior of the compressible flow is more complex to describe compared to in
 \quad\ With the relation (\ref{eq:C4_Euler}), the notion of absolute and relative velocity of the flow has been introduced. A graphic representation of these three vectors can be done using the \textbf{velocity triangle}. This triangle is drawn on Figure \ref{fig:C4_vtriang}.
 
 \subsubsection{Mach number}
-The Mach number \(M\) is defined as being the ratio between the velocity \(v\) and the sound speed \(a\).
+The Mach number \(M\) is defined as being the ratio between the velocity \(v\) and the sound speed \(c\).
 \begin{equation}
-    M = \frac{v}{a} \label{eq:C4_Mach}
+    M = \frac{v}{c} \label{eq:C4_Mach}
 \end{equation}
 The Mach number \(M\) is a dimensionless variable that gives an image of the compressible effects of the flow. Thus, one criterion for the determination of similar operational points is to keep the Mach number constant.
 
@@ -236,20 +236,20 @@ Using the Mach number allows obtaining formulas to compute the total quantities 
 \end{equation}
 For an isentropic process, it can be demonstrated that the speed of sound \(a=k\cdot r\cdot T\). Thus, the equation (\ref{eq:C4_TT0_1}) becomes (\ref{eq:C4_TT0})
 \begin{equation}
-    T^0 = T\cdot\left(1 + \frac{k-1}{2}\cdot M^2\right) = T\cdot f(M) \label{eq:C4_TT0}
+    T^0 = T\cdot\left(1 + \frac{k-1}{2}\cdot M^2\right) = T\cdot f_M(M) \label{eq:C4_TT0}
 \end{equation}
-Using the equations (\ref{eq:C3_isrelPT}), (\ref{eq:C3_isrelrhoT}) and the definition of the function \(f(M)\), the relations linking the static to the total pressure, density and speed of sound can be obtained as well.
+Using the equations (\ref{eq:C3_isrelPT}), (\ref{eq:C3_isrelrhoT}) and the definition of the function \(f_M(M)\), the relations linking the static to the total pressure, density and speed of sound can be obtained as well.
 
 \begin{subequations}
     \setstretch{1}
     \begin{equation}
-        p^0 = p\cdot f(M)^\frac{k}{k-1}\label{eq:C4_PP0}
+        p^0 = p\cdot f_M(M)^\frac{k}{k-1}\label{eq:C4_PP0}
     \end{equation}
     \begin{equation}
-        \rho^0 = \rho\cdot f(M)^\frac{1}{k-1}\label{eq:C4_rhorho0}
+        \rho^0 = \rho\cdot f_M(M)^\frac{1}{k-1}\label{eq:C4_rhorho0}
     \end{equation}
     \begin{equation}
-        a^0 = a\sqrt{f(M)} \label{eq:C4_aa0}
+        c^0 = c\sqrt{f_M(M)} \label{eq:C4_aa0}
     \end{equation}
 \end{subequations}
 
@@ -258,34 +258,44 @@ Using the equations (\ref{eq:C3_isrelPT}), (\ref{eq:C3_isrelrhoT}) and the defin
 
 \begin{itemize}
     \setstretch{1}
-    \item \(\dot{m}_c\) (kg/s or lbs/min): It is the corrected mass flow rate.
+    \item \(\dot{m}_{corr}\) (kg/s or lbs/min): It is the corrected mass flow rate.
 
-    \item \(N\) (RPM): It is the rotational speed of the turbomachine shaft.
+    \item \(N_{corr}\) (RPM): It is the corrected rotational speed of the turbomachine.
 
-    \item \(\Pi_{tt}\) (-): It is the total to total pressure ratio between the inlet and the outlet of the turbomachines. If the turbomachine is compressing the flow, the ratio is reverse to keep it greater than one.
+    \item \(\Pi_{tt}\) (-): It is the total to total pressure ratio between the inlet and the outlet of the turbomachine. If the turbomachine is compressing the flow, the ratio is reverse to keep it greater than one.
 
-    \item \(\eta_{tt}\) (-): It is the total to total isentropic efficiency of the machine.
+    \item \(\eta_{is}\) (-): It is the total to total isentropic efficiency of the turbomachine.
 \end{itemize}
-The corrected mass flow rate is defined as being the flow that would observe at the prescribed \textbf{static} reference conditions ($T_{ref},P_{ref}$). Using the similarity, the relation (\ref{eq:C4_mc}) allows deriving the corrected mass flow rate.
+The corrected mass flow rate is defined as being the mass flow that would observe at the prescribed reference conditions ($T_{ref},P_{ref}$). Using the similarity, the relation (\ref{eq:C4_mc}) allows deriving the corrected mass flow rate.
 
 \begin{equation}
-    \dot{m}_c = \dot{m}\cdot \sqrt{\frac{T}{T_{ref}}}\cdot\left(\frac{p_{ref}}{p}\right)\label{eq:C4_mc}
+\setstretch{1}
+    \dot{m}_{corr} = \dot{m}\cdot \frac{\sqrt{\theta_T}}{\theta_p}\label{eq:C4_mc}
 \end{equation}
+with $\theta_T = \frac{T^0}{T_{ref}}$ and $\theta_p = \frac{p^0}{p_{ref}}$. $T^0$ and $p^0$ are respectively the stagnation temperature and pressure observed at the inlet of the turbomachine.
 
-Alternatively, the reduced mass flow rate \(\dot{m}_r\)can also be used to assess the performance of the turbomachines. This non-dimensional quantity is as follows:
+Alternatively, the reduced mass flow rate \(\dot{m}_{r}\)can also be used to assess the performance of the turbomachines. This non-dimensional quantity is as follows:
+
 \begin{equation}
-    \dot{m}_r = \dot{m}\cdot \frac{\sqrt{T}}{p}
+    \setstretch{1}
+    \dot{m}_r = \dot{m}\cdot \frac{\sqrt{T^0}}{p^0}
 \end{equation}
 
-Let's supposed now that the rotational speed and the corrected mass flow are known. Then, the two other quantities ($\Pi$) and ($\eta$) can be calculated by evaluating the relationships (\ref{eq:C4_Pimap}) and (\ref{eq:C4_etamap}).
+Similarly, the corrected rotational speed is the rotational speed that would be observed for a total temperature $T_{ref}$. If the rotational speed of the machine is $N$, the corrected rotational speed is given by the formula (\ref{eq:C4_Nc}).
+
+\begin{equation}
+    \setstretch{1}
+    N_{corr} = \frac{N}{\sqrt{\theta_T}}\label{eq:C4_Nc}
+\end{equation}
+Now, if the rotational speed $N$ and the mass flow rate $\dot{m}$ are assumed to be known, the two other quantities ($\Pi_{tt}$) and ($\eta_{is}$) can be calculated using the relations (\ref{eq:C4_Pimap}) and (\ref{eq:C4_etamap}).
 
 \begin{subequations}
     \setstretch{1}
     \begin{equation}
-        \Pi_{tt} = \Pi_{tt}(N, \dot{m}_c)\label{eq:C4_Pimap}
+        \Pi_{tt}(N_{corr}, \dot{m}_{corr})\label{eq:C4_Pimap}
     \end{equation}
     \begin{equation}
-        \eta_{tt} = \eta_{tt}(N, \dot{m}_c)\label{eq:C4_etamap}
+        \eta_{is}(N_{corr}, \dot{m}_{corr})\label{eq:C4_etamap}
     \end{equation}
 \end{subequations}
 These relations can be established by the means of experimental measurements.
@@ -327,7 +337,7 @@ The diagram, for which the velocity triangles are given on Figure \ref{fig:C4_co
 \end{itemize}
 As a reminder, the enthalpy at the end of the process is higher than the one considering an isentropic transformation.
 \subsubsection{Performance maps}
-\quad\ As for any turbomachines, the compressor can be characterized by its performance map. The map is composed of the performance plot often completed with the efficiency hill. The performance plot provides the total to total (TT) pressure ratio \(\Pi_{tt,c}\) as a function of the rotational speed \(N\) and the corrected flow rate \(\dot{m}_c\).
+\quad\ As for any turbomachines, the compressor can be characterized by its performance map. The map is composed of the performance plot often completed with the efficiency hill. The performance plot provides the total to total (TT) pressure ratio \(\Pi_{tt,c}\) as a function of the corrected rotational speed \(N\) and mass flow rate \(\dot{m}_c\).
 
 An illustration of a compressor performance map is given in the Figure \ref{fig:C4_compmap}.
 \begin{figure}[h]
@@ -524,7 +534,7 @@ where coefficients ''a'' and ''b'' satisfies the system (\ref{eq:C4_sysab})
 
 Where both equations have been obtained based on the conservation of the atomic species. It can be calculated that there exists a lower bound for the air factor below which the combustion will be impossible. The condition is that the coefficient ''a'' cannot be smaller than zero. For this case, the minimal air factor \(\lambda_{min} =-\frac{3}{4}\).
 
-To provide some definitions, the mixture \ce{O2}-fuel is said poor when \(\lambda>0\), rich when \(\lambda<0\) and at the stoichiometry for an air factor \(\lambda=1\). Typically, for a gas turbine the mixture is very poor with a $\lambda$ often greater than 4-5.
+To provide some definitions, the mixture \ce{O2}-fuel is said poor when \(\lambda>1\), rich when \(\lambda<1\) and at the stoichiometry for an air factor \(\lambda=1\). Typically, for a gas turbine the mixture is very poor with a $\lambda$ often greater than 4-5.
 
 \subsection{Fuel characteristic}
 \quad\ From now, the amount of heat provided during the combustion has not been quantified. This quantification is really important because this amount of heat is linked to quality and the nature of the fuel.
@@ -738,9 +748,9 @@ The second temperature difference \(\Delta T_L\) corresponds to the smallest tem
 \subsection{Heat transfer within a heat exchanger}
 \quad\ The heat transfer rate of a heat exchanger is directly dependent on the nature of the fluids and the heat exchanger itself. Let's consider the following relation (\ref{eq:C4_Qdot1})
 \begin{equation}
-    \dot{Q} = \frac{\Delta T_{LM}}{R}= A\cdot U\cdot \Delta T_{LM}\text{ ( in W)}\label{eq:C4_Qdot1}
+    \dot{Q} = \frac{\Delta T_{LM}}{R}= \mathrm{A}\cdot \mathrm{U}\cdot \Delta T_{LM}\label{eq:C4_Qdot1}
 \end{equation}
-Where \(A\) is the global surface area of the HX, and \(R\) and \(U\) are the global thermal resistance and transfer coefficient respectively. The difference of temperature \(\Delta T_{LM}\) is called the logarithmic mean temperature difference. Its definition is (\ref{eq:C4_lmtd}).
+Where \(\mathrm{A}\) is the global heat transfer area of the HX, and \(R\) and \(\mathrm{U}\) are the global thermal resistance and heat transfer coefficient respectively. The difference of temperature \(\Delta T_{LM}\) is called the logarithmic mean temperature difference. Its definition is (\ref{eq:C4_lmtd}).
 
 
 \begin{equation}
@@ -749,13 +759,13 @@ Where \(A\) is the global surface area of the HX, and \(R\) and \(U\) are the gl
 \end{equation}
 With \(ln\) being the neperian logarithm.
 \subsubsection{Transfer coefficient}
-\quad\ The general definition of the product \(A\cdot U\) is written in the equation (\ref{eq:C4_AU}).
+\quad\ The general definition of the product \(\mathrm{A}\cdot \mathrm{U}\) is written in the equation (\ref{eq:C4_AU}).
  
 \begin{equation}
     \setstretch{1}
-    \frac{1}{A\cdot U}  = \frac{1}{\eta_{0,C}\cdot h_{conv,C} \cdot A_C} + \frac{F_C}{\eta_{0,C}\cdot A_C} + R_w + \frac{F_H}{\eta_{0,H}\cdot A_H} + \frac{1}{\eta_{0,H}\cdot h_{conv,H} \cdot A_H}\label{eq:C4_AU}
+    \frac{1}{\mathrm{A}\cdot \mathrm{U}}  = \frac{1}{\eta_{0,C}\cdot h_{conv,C} \cdot A_C} + \frac{F_C}{\eta_{0,C}\cdot A_C} + R_w + \frac{F_H}{\eta_{0,H}\cdot A_H} + \frac{1}{\eta_{0,H}\cdot h_{conv,H} \cdot A_H}\label{eq:C4_AU}
 \end{equation}
-Where \(h_{conv}\) is the convective heat transfer coefficient (in W/m$^2$/K) of the fluid, \(F\) is a degradation factor due to the clogging, \(\eta_0\) is the global efficiency of the surface and \(R_w\) is the wall resistance.
+Where \(h_{conv}\) is the convective heat transfer coefficient (W/m$^2\cdot$K) of the fluid, \(F\) is a degradation factor due to the clogging, \(\eta_0\) is the global efficiency of the surface and \(R_w\) is the wall resistance.
 
 Making the assumption that all the ducts considered in this work are smooth and the flows are turbulent, the convective heat transfer coefficient \(h_{conv}\) is obtained using the formula (\ref{eq:C4_h}).
 \begin{equation}
@@ -787,16 +797,16 @@ Making the assumption that both \(D_h\) and \(D_t\) are equal, let's pose \(D=D_
 
 In the present work, the heat exchangers that will be used are plate heat exchangers with microchannel. The usage of ''microchannel systems allows the generation of local turbulences''\cite{Joseph2020}. These local turbulences enhance the heat transfer and thus, the efficiency of the heat exchanger.
 
-Since the channel are really small, the assumption that the exchange surface dimensions \(A\) for the cold and the hot side are equal will be made. Also, the wall resistance \(R_w\) will be neglected. This last assumption is acceptable when dealing with fluid for which the phase does not change during the heat transfer. For the gas turbine application, the fluid remains gaseous during all the process. 
+Since the channel are really small, the assumption that the exchange surface dimensions \(\mathrm{A}\) for the cold and the hot side are equal will be made. Also, the wall resistance \(R_w\) will be neglected. This last assumption is acceptable when dealing with fluid for which the phase does not change during the heat transfer. For the gas turbine application, the fluid remains gaseous during all the process. 
 
 \(\eta_0\) corresponds to the global efficiency of the heat exchanger fins \cite{GregoryNellis2015}. Since the global fin efficiency depends on the wall temperature, the fluid temperature and the geometry of the heat exchanger, it will be assumed that both sides of the heat exchanger are characterized by the same $\eta_0$. Therefore, the equality $\eta_{0_H}=\eta_{0,C}$ is enforced.
 
-Finally, if the degradation factor $F$ is neglected, the heat transfer coefficient \(U\) can be approached by the simple formulation (\ref{eq:C4_AU_prop}).
+Finally, if the degradation factor $F$ is neglected, the heat transfer coefficient \(\mathrm{U}\) can be approached by the simple formulation (\ref{eq:C4_AU_prop}).
 
 
  \begin{equation}
     \setstretch{1}
-    U \simeq \frac{h_{conv,H}\cdot h_{conv,C}}{h_{conv,H} + h_{conv,C}}\label{eq:C4_AU_prop}
+    \mathrm{U} \simeq \frac{h_{conv,H}\cdot h_{conv,C}}{h_{conv,H} + h_{conv,C}}\label{eq:C4_AU_prop}
 \end{equation}
 \subsubsection{LMTD method}
 \quad\ In the previous lines, a definition of the heat transfer rate based on the global transfer coefficient. This method is called the LMTD method and requires the knowledge of the geometry of the heat exchanger.
@@ -837,10 +847,10 @@ Where \(\varepsilon\) is the efficiency of the heat exchanger. This efficiency i
 
 \begin{equation}
     \setstretch{1}
-    \text{NTU} = \frac{A\cdot U}{\dot{C}_{min}}\label{eq:C4_NTU}
+    \text{NTU} = \frac{\mathrm{A}\cdot \mathrm{U}}{\dot{C}_{min}}\label{eq:C4_NTU}
 \end{equation}
 
-It can be noticed that the definition of the NTU involves the global exchange area $A$ and the global heat transfer coefficient $U$. This implies that both the NTU and the efficiency $\varepsilon$ depends on the flow configuration and geometry of the heat exchanger .  
+It can be noticed that the definition of the NTU involves the global exchange area $\mathrm{A}$ and the global heat transfer coefficient $\mathrm{U}$. This implies that both the NTU and the efficiency $\varepsilon$ depends on the flow configuration and geometry of the heat exchanger .  
 
 Here, the type of heat exchanger used for the modeled Brayton cycle is plate heat exchanger with microchannel. Since the flow configuration for this type of heat exchanger is counter flow, the associated relation linking the efficiency \(\varepsilon\) to the number of transfer units  NTU is
 \begin{equation*}

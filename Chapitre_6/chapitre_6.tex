@@ -36,34 +36,10 @@ Also, Python is a programming language that allows the object oriented programmi
 The focus of this section is the description of the structure of the computer code itself. As it can be expect from what have been previously said, the program will be composed of multiple blocks that will interact together.
 
 \subsection{Inputs}
-\quad\, To start the program, the user has to provide an input file that will contain the required data for the program. The input file is structured as a dictionary\footnote{see \url{https://www.w3schools.com/python/python_dictionaries.asp} for further information} and is composed of three main fields. 
+\quad\, To start the program, the user has to provide an input file that will contain the required data for the program. The input file is structured as a dictionary\footnote{see \url{https://www.w3schools.com/python/python_dictionaries.asp} for further information} and is stored within a .yaml file. 
+YAML is a language that allows to store data in a structure and readable ways for the human. Many tools exist to read and write within a .yaml file.
 
-The first field named "Type" says to the computer code which configuration of the Brayton cycle has to be assess. The possible configurations are listed in Table \ref{tab:C6_inputconfig}.
-
-\begin{longtable}[c]{ll}
-\caption{Program input - "Type" field}
-\label{tab:C6_inputconfig}\\
-\toprule
-\textbf{Type - Acronym} & \textbf{Type - Name}                   \\* \midrule
-\endfirsthead
-%
-\endhead
-%
-\bottomrule
-\endfoot
-%
-\endlastfoot
-%
-GT                           & Gas Turbine                                 \\
-RGT                          & Regenerative Gas Turbine                    \\
-IRGT                         & Intercooler-Regenerative Gas Turbine        \\
-RHGT                         & Regenerative-Reheat Gas Turbine             \\
-IHGT                         & Intercooler-Reheat Gas Turbine              \\
-IRHGT                        & Intercooler-Regenerative-Reheat Gas Turbine \\
-EFGT                         & Externally-Fired Gas Turbine                \\* \bottomrule
-\end{longtable}
-
-These different configurations are described in the annex \ref{annex:Brayton_variant}. 
+The input is composed of three main field. The first one is named ''Type'' and is composed of one variable which is the acronym of the Gas Turbine cycle variant considered. The list of acronym is given in the Table \ref{tab:C5_inputconfig} from the previous chapter.
 
 The second field list all the input data required to initialized the model. The number of variables to be specified at the start of the program depends on the selected configuration. For instance, considering the gas turbine (GT), the inputs required are listed in Table \ref{tab:C6_inputGT}.
 \begin{longtable}[c]{ll|ll}

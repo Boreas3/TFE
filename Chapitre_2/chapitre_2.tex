@@ -35,9 +35,9 @@ The pressure is also often expressed in bar, unit corresponding to 1e5 Pa.
 \subsection{Volume}
 \quad\, The volume unit is the meter cube (m$^3$).
 \section{Ideal gas equation}
-\quad\, It can be shown that the equilibrium state of a system can be described by those three variables. Also, among $P$, $T$ and $\mathrm{V}$, only two of them are independent. 
+\quad\, It can be shown that the equilibrium state of a system can be described by those three variables. Also, among $p$,  $T$ and $\mathrm{V}$, only two of them are independent. 
 
-This means that a state relation defined as \textbf{F}($P$, $T$, $\mathrm{V}$)= 0.
+This means that a state relation defined as \textbf{F}($p$, $T$, $\mathrm{V}$)= 0.
 
 For the ideal gas, the most well known state relation is the relation of perfect gases defined in (\ref{eq:C2_GP}).
 
@@ -46,9 +46,9 @@ For the ideal gas, the most well known state relation is the relation of perfect
 p\cdot \mathrm{V} &= m\cdot\frac{R}{MM}\cdot T\nonumber\\
 p\cdot \mathrm{v} &= r\cdot T\label{eq:C2_GP}    
 \end{align}
-Where \textit{m} is the quantity of matter (in kg), $R$ is the universal gas constant (8.314 J/mole/K), $\mathrm{v}$ the specific volume (in m$^3$/kg) and $MM$ is the molar mass (in kg/mole\footnote{Where one mole corresponds to $\sim 6\cdot 10^{23}$ elementary entities (atoms, molecules,...)}) of the system. 
+Where \textit{m} is the quantity of matter (kg), $R=8.314$ J/mole$\cdot$K is the universal gas constant, $\mathrm{v}$ the specific volume (m$^3$/kg) and $MM$ is the molar mass (kg/mole\footnote{Where one mole corresponds to $\sim 6\cdot 10^{23}$ elementary entities (atoms, molecules,...)}) of the system. 
 
-The density $\rho$ of the gas is given as being one over the specific volume $v$.
+The density $\rho$ of the gas is given as being one over the specific volume $\mathrm{v}$.
 \section{Energy}\label{sect:C2_Ener}
 \quad\, In the subsection \ref{sect:C2_Sys}, the notion of energy has been mentioned without characterizing it beforehand. From the first principle of the thermodynamic, it is stated that the energy cannot be created nor destroyed. Therefore, it can only be converted, meaning that the energy exists into multiple forms (thermal, mechanical, electrical,...)\cite{thermoApp_2}. 
 
@@ -56,7 +56,9 @@ The unit of the energy is the Joule (J), and the sum of all the energies in a sy
 
 The energy is a state variable. This means that this quantity allows characterizing the state of the system. When considering the energy, its absolute value is not something that is defined. Instead, the energy is always computed as compared with a reference point.
 
-Thus, considering the variation of the total energy from a state \textbf{1} to a state \textbf{2}, it is obtained that (\ref{eq:C2_E}) expressed the total energy variation.
+Thus, considering the variation of the total energy from a state \textbf{1} to a state \textbf{2}, it is obtained that the total energy variation is equal to the sum of the variation of the internal, kinetic and potential energy $U$, $KE$ and $PE$ (respectively). The internal energy is defined as being the  sum of all the ''microscopic'' energy within the system (J).  
+
+The definition of the total energy variation is given in the relation (\ref{eq:C2_E}).
 
 \begin{equation}
 \setstretch{1}
@@ -66,9 +68,10 @@ Thus, considering the variation of the total energy from a state \textbf{1} to a
 \setstretch{1}
     \text{with } \Delta U  &= U_2 - U_1 =  m\cdot(u_2 - u_1) \text{: Variation of the internal energy}\\
                  \Delta KE &= \frac{1}{2}m\cdot(v^2_2 - v^2_1)\text{: Variation of the kinetic energy}\\
-                 \Delta PE &= m\cdot g\cdot(z_2 - z_1)\text{: Variation of the potential energy}
+                 \Delta PE &= m\cdot \text{g}\cdot(z_2 - z_1)\text{: Variation of the potential energy}
 \end{align*} 
-Where $z$ is the altitude of the system position (m), $v$ is the velocity of the fluid (m/s) and $U$, the internal energy, is the sum of all the ''microscopic'' energy within the system (J). $u$ corresponds to the specific internal energy, and its unit is in J/kg.
+Where $\text{g}=9.81$ m/s$^2$ is the acceleration on a body induced by the gravity, $z$ is the altitude of the system position (m), $v$ is the velocity of the fluid (m/s) and $u$ is the specific internal energy.
+
 
 As said in the subsection \ref{sect:C2_Sys}, any system will exchange energy with the surroundings as heat and work. The heat is defined as ''the form of energy which is exchanged between the system and its environment when there is a gradient of temperature between these two entities''. 
 
@@ -83,7 +86,7 @@ The heat transfer is denoted $Q$. A system that does not exchange heat with the 
 
 Aside the heat transfer, the system can also exchange energy by producing a work. The work $W$ is ''the form of energy exchanged associated to a force applied over a certain distance''. 
 
-The work is exchanged if the force applied to the system creates a displacement of its boundary. The power is defined as the work per unit of time (in Watt or W).
+The work is exchanged if the force applied to the system creates a displacement of its boundary. The power is defined as the work per unit of time and is expressed in Watt (or W).
 
 Both heat and work are called ''path functions'' because they are associated with the evolution of a system and not to the state of this system. Thus, these are not thermodynamic variables (like the temperature or the pressure).
 \subsection{Energy balance}
@@ -110,8 +113,8 @@ $\frac{\text{Desired ouptut}}{\text{Required input}}$.
 
 For example, a water electric heater with the efficiency of 90\% is a system such that 90\% of the electrical energy consumed is converted in thermal energy.  
 Considering the combustion of fuel, the combustion efficiency is defined as the ratio
-$$ \frac{\dot{Q}}{\dot{m}_{fuel}\cdot HV_{fuel}}$$
-Where $\dot{m}_{fuel}$  and $HV_{fuel}$ is the mass flow and the heating value of the fuel injected into the combustion chamber.
+$$ \frac{\dot{Q}}{\dot{m}_{fuel}\cdot CV_{fuel}}$$
+Where $\dot{m}_{fuel}$  and $HCV_{fuel}$ is the mass flow and the heating calorific value of the fuel injected into the combustion chamber.
 
 \section{Phases}
 \quad\ When a system is considered, the transformations that the system will see are usually applied on a fluid or a solid material. These elements are characterized by its level internal of energy and the surrounding conditions.
