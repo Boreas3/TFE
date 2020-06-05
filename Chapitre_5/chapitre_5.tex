@@ -58,21 +58,25 @@ Where the state \textbf{0} corresponds to the reference conditions. It is worth 
 
 For each of the mentioned states, 5 thermodynamic properties are evaluated. Namely the temperature, pressure, enthalpy, entropy and density. For the last variable, the ideal gas equation (\ref{eq:C2_GP}) from the chapter \ref{C2} is used. 
 
-A graphical representation of these states can be performed by drawing thermodynamic diagram. Here, the T-s and p-v diagrams have been drawn in the Figures \ref{fig:C5_Ts_GT} and \ref{fig:C5_pv_GT} respectively. The diagrams have been obtained using the computer code that will be described in the next chapters. For now, let's just assume that the program is just a black box.
+A graphical representation of these states can be performed by drawing some thermodynamic diagrams. Here, the p-v and T-s diagrams have been drawn in the Figures \ref{fig:C5_pv_GT} and \ref{fig:C5_Ts_GT} respectively. 
+
+The choice of the T-s diagram instead of the h-s diagram is motivated by the fact that temperatures are quantities that have an easier interpretation. Since only ideal gases are considered, the enthalpy variation is equivalent to the temperature variation multiplied by the heat capacity at constant pressure.
+
+The diagrams have been obtained using the computer code that will be described in the next chapters. For now, let's just assume that the program is just a black box.
 
 \begin{figure}[H]
      \centering
      \begin{subfigure}[b]{0.4\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{Ts_GT}
-         \caption{T-s diagram}
-         \label{fig:C5_Ts_GT}
-     \end{subfigure}
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
          \includegraphics[width=\textwidth]{pv_GT}
          \caption{p-v diagram}
          \label{fig:C5_pv_GT}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.4\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{Ts_GT}
+         \caption{T-s diagram}
+         \label{fig:C5_Ts_GT}
      \end{subfigure}
         \caption{Thermodynamic diagrams - Gas Turbine}
         \label{fig:C5_thermo_diagram_GT}
@@ -80,24 +84,21 @@ A graphical representation of these states can be performed by drawing thermodyn
 
 These two diagrams have been obtained considering ideal components. An ideal component is characterized by an efficiency of 100\%. This means that there aren't any pressure drops, the isentropic efficiency $\eta_{is}$ of the compressor and the turbine is equal to 100\%, and the combustion chamber efficiency $\eta_{cc}$ is also equal to 100\%.
 
-The p-v diagram gives an indication of the net work produced by the GT cycle. Indeed, it has been seen that the work is given by the integral (\ref{eq:C5_W}).
+As it can be noticed, the graphs are open. Indeed, the exhaust gas from the outlet of the turbine is returned to the environment with all its energy. The transformation from the state \textbf{8} to the state \textbf{1} would corresponds to the return at the ambient conditions of the exhaust gas. 
 
-\begin{equation}
-    \setstretch{1}
-    W_{net} = \oint_{cycle}pdv\label{eq:C5_W}
-\end{equation}
-Where $p$ is the pressure and $v$ the specific volume of the fluid.
+The net work provided by the Brayton cycle corresponds to the area inscribed in the loop \textbf{1}$\rightarrow$\textbf{8}$\rightarrow$\textbf{1}. Mathematically, it is obtained by computing one of the two integrals (\ref{eq:C5_W}) and (\ref{eq:C5_Ws}). These two integrals are respectively associated to the p-v and T-s diagrams.
 
-The first diagram shows the effect of the isentropic efficiency regarding to the evolution of the entropy during the compression and the expansion. Here, since the isentropic efficiency have been set to 100\%, the entropy at the beginning and the end of these transformations are equal.
-
-Also, it can be noticed that at the exhaust of the cycle, the energy available within the gas is still non-negligible. A possible way of improvement will be given in the following section.
-
-The net work can also be computed based on the first diagram. If a fictitious transformation from states \textbf{8} to \textbf{1} is considered, the cycle becomes closed. Thus, the net work is obtained by calculating the integral (\ref{eq:C5_Ws}) corresponding to the area inscribed in the loop.
-
-\begin{equation}
-    \setstretch{1}
+\begin{subequations}  
+\setstretch{1}
+\begin{align}
+    W_{net} = \oint_{cycle}pdv\label{eq:C5_W}\\
     W_{net} = \oint_{cycle}Tds\label{eq:C5_Ws}
-\end{equation}
+\end{align}
+\end{subequations}
+
+Now considering the first diagram, it shows the effect of the isentropic efficiency regarding to the evolution of the entropy during the compression and the expansion. Here, since the isentropic efficiency have been set to 100\%, the entropy at the beginning and the end of these transformations are equal. If real components were considered, the entropy would increase during the compression and the expansion.
+
+Also, it can be noticed that at the exhaust of the cycle, the thermal energy available within the gas is still non-negligible. This energy at high temperature has a great potential and could be utilized to improve the cycle. A possible way of improvement will be given in the following section.
 
 The thermal efficiency of the cycle can be computed based on the knowledge of the different states \textbf{1} to \textbf{8}. By definition, the thermal efficiency $\eta_{th}$ corresponds to the ratio (\ref{eq:C5_etath}) between the net power output $\dot{W}_{net}$ and the heat transfer rate from coming from the injected fuel.
 
