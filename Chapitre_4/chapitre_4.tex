@@ -63,7 +63,7 @@ Where $v_m$ is the projection of the vector $\mathbf{v}$ on the meridional axis.
 
 Here, two angles $\alpha$ and $\beta$, respectively the absolute and relative flow angles, can be defined. Those angles will allow designing the shape of the rotating blade based on the desired applications. 
 
-\subsubsection{Enthalpy and rhothalpy conservation}
+\subsubsection{Enthalpy and rothalpy conservation}
 \quad\ It has been mentioned before that, for a compressible flow, the velocity can vary along the path. The notion of static and total (or stagnation) quantities have been established to take into account this variation of velocity. Stagnation quantities will be identified by the superscript ''0''.
 
 For instance, the total enthalpy is given by
@@ -98,20 +98,6 @@ The rhotalpy conservation is then expressed as stated in the equality (\ref{eq:C
     \dot{m}_1\cdot i_1^0 = \dot{m}_2\cdot i_2^0 \label{eq:C4_icons}
 \end{equation} 
 
-It can be noticed that if the flow considered is incompressible, the equality (\ref{eq:C4_vinc}) and (\ref{eq:C4_winc}) are enforced:
-\begin{subequations}
-    \setstretch{1}
-    \begin{equation}
-        v_2 = v_1 \label{eq:C4_vinc}
-    \end{equation}
-    \begin{equation}
-        u_{r,2} = u_{r,1} \label{eq:C4_uinc}
-    \end{equation}
-    \begin{equation}
-        w_{r,2} = w_{r,1} \label{eq:C4_winc}
-    \end{equation}
-\end{subequations}
-Therefore, there is not distinction between the variation of the total quantities and static quantities.
 \subsubsection{Similarity}
 \quad\ The design of the turbomachines often required validations through experimental testing.  
 
@@ -191,29 +177,6 @@ These relations stand since for any similar point of operation, the non-dimensio
 
 Similar reasoning can be performed for the hydraulic turbines. For hydraulic turbines, the head and flow coefficients are defined based on the inlet condition \textbf{1} of the turbines.
 
-
-% \subsubsection{Types of pumps and hydraulic turbines}
-% \quad\ Now that the exterior characteristics of the turbomachines  have been defined, it is interesting to have at least a brief idea about how the pump is constructed. Without entering into detailed\footnote{see the section 4.3 and 4.4 of the course \cite{Hillewaert2019}}, there are two types of pumps.
-
-% The first type to be considered is the centrifugal pumps designed to provide a high heat for a low flow rate. Those pumps are characterized by an axial inflow and a radial outflow. The Figure \ref{fig:C4_centri_pump} shows a schematic of a centrifugal pumps.
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=0.4\textwidth]{centri_pump.png}
-%     \caption{Centrifugal pump \cite{Hillewaert2019}.}
-%     \label{fig:C4_centri_pump}
-% \end{figure}
-
-% Basically, the centrifugal pump can be decomposed into two parts (for the simplest machine). The first  part is the rotating impeller that will convert and transfer the mechanical energy to the fluid. Behind the impeller will be placed the volute (right picture of Figure \ref{fig:C4_centri_pump}) that collects the flow to bring it to the outlet of the pump.\newpage
-
-% The second type of pump are the axial pumps which are, in opposition with the centrifugal pumps, designed to deliver low head for high flow rates. Such pumps are illustrated on Figure \ref{fig:C4_axial_pump}.
-% \begin{figure}[h!]
-%     \centering
-%     \includegraphics[width=0.25\textwidth]{axial_pump.png}
-%     \caption{Axial pump \cite{Hillewaert2019}.}
-%     \label{fig:C4_axial_pump}
-% \end{figure}
-
-% The main two parts of an axial pump are the rotor (the rotating part) that will increase the height of the fluid followed by a diffusor which “recuperates the kinetic energy at the exit of the rotor”\cite{Hillewaert2019}.
 \subsection{Compressible flow}
 \quad\ The previous subsection introduced the pump which is a turbomachine design to increase the energy of the incompressible fluid passing through it. However, this type of machine cannot deal with compressible flow for which the density can vary over the distance. For instance, the air is a compressible fluid.
 
@@ -260,19 +223,35 @@ Using the equations (\ref{eq:C3_isrelPT}), (\ref{eq:C3_isrelrhoT}) and the defin
     \setstretch{1}
     \item \(\dot{m}_{corr}\) (kg/s or lbs/min): It is the corrected mass flow rate.
 
-    \item \(N_{corr}\) (RPM): It is the corrected rotational speed of the turbomachine.
+    \item \(N_{corr}\) (RPM): It is the corrected rotational speed of the turbomachine. 
 
     \item \(\Pi_{tt}\) (-): It is the total to total pressure ratio between the inlet and the outlet of the turbomachine. If the turbomachine is compressing the flow, the ratio is reverse to keep it greater than one.
 
     \item \(\eta_{is}\) (-): It is the total to total isentropic efficiency of the turbomachine.
 \end{itemize}
-The corrected mass flow rate is defined as being the mass flow that would observe at the prescribed reference conditions ($T_{ref},P_{ref}$). Using the similarity, the relation (\ref{eq:C4_mc}) allows deriving the corrected mass flow rate.
+It can be demonstrated that the performance map of a turbomachine is ''determined by the relation between 3 non-dimensional groups.''\cite{Hillewaert2019}. 
 
-\begin{equation}
+Considering an operating point $a$ characterized by the mass flow rate $\dot{m}_a$, the rotational speed $N_a$, and the inlet stagnation temperature and pressure $T^0_{1,a}$ and $p^0_{1,a}$, it is possible to derive any similar operating points. By applying the formula (\ref{eq:C4_mab}) and (\ref{eq:C4_Nab}), the mass flow rate $\dot{m}_b$ and rotational speed $N_b$ at the similar operating point $b$ characterized by the stagnation inlet state ($T^0_{1,b}$, $p^0_{1,b}$) can be computed.
+\begin{subequations}
+\begin{align}
 \setstretch{1}
-    \dot{m}_{corr} = \dot{m}\cdot \frac{\sqrt{\theta_T}}{\theta_p}\label{eq:C4_mc}
-\end{equation}
-with $\theta_T = \frac{T^0}{T_{ref}}$ and $\theta_p = \frac{p^0}{p_{ref}}$. $T^0$ and $p^0$ are respectively the stagnation temperature and pressure observed at the inlet of the turbomachine.
+    \dot{m}_{b} &= \dot{m}_{a}\cdot\sqrt{\frac{T^0_{1,a}}{T^0_{1,b}}}\cdot\frac{p^0_{1,b}}{p^0_{1,a}}\label{eq:C4_mab}\\
+    N_b &= N_a\cdot \sqrt{\frac{T^0_{1,b}}{T^0_{1,a}}}\label{eq:C4_Nab}
+\end{align}    
+\end{subequations}
+
+These two relations allow to goes from one operating point to the other without modifying the value of the non-dimensional quantities. 
+
+In particular, if the operating point $b$ considered is defined at the reference conditions ($T_{ref},P_{ref}$), the associated mass flow rate and rotational speed are called \textbf{corrected} mass flow rate $\dot{m}_{corr}$ and \textbf{corrected} rotational speed $N_{corr}$. Thus, from a measured operating point, these two corrected quantities are obtained by applying the relation (\ref{eq:C4_mc}) and (\ref{eq:C4_Nc}).
+
+\begin{subequations}
+\setstretch{1}
+\begin{align}
+    \dot{m}_{corr} &= \dot{m}\cdot \frac{\sqrt{\theta_T}}{\theta_p}\label{eq:C4_mc}\\
+    N_{corr} &= \frac{N}{\sqrt{\theta_T}}\label{eq:C4_Nc}
+\end{align}    
+\end{subequations}
+Where $\theta_T = \frac{T^0}{T_{ref}}$ and $\theta_p = \frac{p^0}{p_{ref}}$. $T^0$ and $p^0$ are respectively the stagnation temperature and pressure observed at the inlet of the turbomachine.
 
 Alternatively, the reduced mass flow rate \(\dot{m}_{r}\)can also be used to assess the performance of the turbomachines. This non-dimensional quantity is as follows:
 
@@ -281,12 +260,6 @@ Alternatively, the reduced mass flow rate \(\dot{m}_{r}\)can also be used to ass
     \dot{m}_r = \dot{m}\cdot \frac{\sqrt{T^0}}{p^0}
 \end{equation}
 
-Similarly, the corrected rotational speed is the rotational speed that would be observed for a total temperature $T_{ref}$. If the rotational speed of the machine is $N$, the corrected rotational speed is given by the formula (\ref{eq:C4_Nc}).
-
-\begin{equation}
-    \setstretch{1}
-    N_{corr} = \frac{N}{\sqrt{\theta_T}}\label{eq:C4_Nc}
-\end{equation}
 Now, if the rotational speed $N$ and the mass flow rate $\dot{m}$ are assumed to be known, the two other quantities ($\Pi_{tt}$) and ($\eta_{is}$) can be calculated using the relations (\ref{eq:C4_Pimap}) and (\ref{eq:C4_etamap}).
 
 \begin{subequations}
@@ -343,11 +316,13 @@ An illustration of a compressor performance map is given in the Figure \ref{fig:
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{Comp_Map.png}
-    \caption{Illustration of a compressor performance map \cite{Ghorbanian2009}.}
+    \caption{Illustration of a compressor performance map \cite{Dixon2013}.}
     \label{fig:C4_compmap}
 \end{figure}
 
-On the map, the solid and the dash curves represent respectively the iso-rotational speed and the iso-efficiency.
+On the map, each doted line represent one isentropic efficiency contour. 
+
+
 
 Two remarkable lines are emphasized on the plot. For each rotational speed \(N_c\), these lines provide minimal and maximal bound for the compressor pressure ratio \(\Pi_{tt,c}\).
 
