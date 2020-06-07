@@ -17,12 +17,13 @@
 \usepackage{float}
 \usepackage{longtable}
 \usepackage{multirow}
-\usepackage[dvipsnames]{xcolor}
-\usepackage{tikz}
 \usepackage{wrapfig}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=3.5cm]{geometry}
 \usepackage{fancyhdr}
-
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+\usepackage{markdown}
+\usepackage[toc,page]{appendix}
+\usepackage[table,xcdraw]{xcolor}
 \newcommand{\citep}[1]{\cite{#1}}
 \newcommand{\vect}[1]{\boldsymbol{#1}}
 \makeatletter
@@ -31,6 +32,19 @@
 \newcommand{\abbrlabel}[1]{\makebox[3cm][l]{\textbf{#1}\ \tocfill}}
 \newenvironment{abbreviations}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}%
                                               \setlength{\itemsep}{0pt}}}{\end{list}}
+
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{}{}{}% Removes space above \chapter head
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{}{}{}% Removes space above \chapter* head
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO]{\textsc{\nouppercase{{\leftmark}}\quad\thepage}}
+\fancypagestyle{plain}{%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyhf{}%
+}
+\setlength{\headheight}{52pt}    
 
 \begin{document}
 \begin{titlepage}
@@ -67,15 +81,24 @@ Academic year: 2019-2020
 
 
 \setstretch{1.5}
+\pagestyle{empty}
 \tableofcontents
 \listoffigures
 \listoftables
 \newpage
 \chapter*{List of Acronyms}
 \begin{abbreviations}
-\item[US] United States
-\item[EU] European Union
-\item[Gvmt] Government
+\item[NTU] \textbf{N}umber of \textbf{T}ransfer \textbf{U}nit
+\item[TIT]  \textbf{T}urbine \textbf{I}nlet \textbf{T}emperature
+\item[LP] \textbf{L}ow \textbf{P}ressure
+\item[MP] \textbf{M}ow \textbf{P}ressure
+\item[GT] \textbf{G}as \textbf{T}urbine
+\item[RGT] \textbf{R}egenerative \textbf{G}as \textbf{T}urbine
+\item[IGT] \textbf{I}ntercooler \textbf{G}as \textbf{T}urbine
+\item[IHGT] \textbf{I}ntercooler-Re\textbf{h}eat \textbf{G}as \textbf{T}urbine
+\item[IRGT] \textbf{I}ntercooler-\textbf{R}egenerative \textbf{G}as \textbf{T}urbine
+\item[IRHGT] \textbf{I}ntercooler-\textbf{R}egenerative-Re\textbf{h}eat \textbf{G}as \textbf{T}urbine
+\item[EFGT] \textbf{E}xternally-\textbf{F}ired \textbf{G}as \textbf{T}urbine
 \end{abbreviations}
 
 \chapter*{Units (SI \cite{Nist})}
@@ -110,12 +133,16 @@ $T$          & Temperature                                 & \degree C or K \\
 \endhead
 %
 $p$          & Pressure                                    & Pa             \\
-$\Pi$        & Pressure ratio                              & -              \\
+$Dp$         & Pressure drop factor                        & Pa             \\
+$\mu$        & Dynamic viscosity                           & Pa$\cdot$s     \\
 $t$          & time                                        & s              \\
 $z$          & Altitude                                    & m              \\
+$D$          & Diameter                                    & m              \\
+$P$          & Perimeter                                   & m              \\
 $A$          & Area                                        & m$^2$          \\
 $\mathrm{A}$ & Global heat transfer area                   & m$^2$          \\
-$\mathrm{U}$ & Global heat transfer coefficient            & W/m$^2\cdot$K \\
+$\mathrm{U}$ & Global heat transfer coefficient            & W/m$^2\cdot$K  \\
+$\mathrm{R}$ & Global thermal resistance                   & K/W            \\
 $\mathrm{V}$ & Volume                                      & m$^3$          \\
 $\mathrm{v}$ & Specific volume                             & m$^3$/kg       \\
 $\dot{\mathrm{V}}$ &  Volumetric flow rate                 & m$^3$/s        \\
@@ -128,6 +155,8 @@ g            & Acceleration from gravity                   & m/s$^2$        \\
 $\rho$       & Density                                     & kg/m$^3$       \\
 $m$          & Mass                                        & kg             \\
 $\dot{m}$    & Mass flow rate                              & kg/s           \\
+$n$          & Number of mole                              & mole           \\
+$w$          & Molar flow rate                             & mole/s         \\
 $MM$         & Molar mass                                  & kg/mole        \\
 $E$          & Total energy                                & J              \\
 $U$          & Internal energy                             & J              \\
@@ -147,19 +176,53 @@ $R$          & Universal gas constant                      & J/mole$\cdot$K \\
 $r$          & Specific gas constant                       & J/kg$\cdot$K   \\
 $\dot{Q}$    & Heat transfer rate                          & W              \\
 $\dot{W}$    & Power                                       & W              \\
+$\lambda_c$  & Thermal conductivity                        & W/m$\cdot$K    \\
 $h_{conv}$   & Convective heat transfer coefficient        &  W/m$^2\cdot$K \\
+$\Pi$        & Pressure ratio                              & \multicolumn{1}{c}{-} \\
 $k$          & Heat capacity ratio                         & \multicolumn{1}{c}{-} \\
 $\eta$, $\varepsilon$       & Efficiency                   & \multicolumn{1}{c}{-} \\
 $\phi$ & Head coefficient                                  & \multicolumn{1}{c}{-} \\
 $\psi$ & Flow coefficient                                  & \multicolumn{1}{c}{-} \\
 $M$ & Mach number                                          & \multicolumn{1}{c}{-} \\ 
-$F$ & degradation factor                                   & \multicolumn{1}{c}{-} \\  
+$F$ & degradation factor                                   & \multicolumn{1}{c}{-} \\
+$x$ & molar fraction                                       & \multicolumn{1}{c}{-} \\
+$y$ & mass fraction                                        & \multicolumn{1}{c}{-} \\
+
 \end{longtable}
 \endgroup
-  
-\pagestyle{fancy}
-\setlength{\headheight}{52pt}      
-
+\chapter*{Subscripts}
+\begingroup
+\setlength{\tabcolsep}{40pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.5} % Default value: 1
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ll}
+        $is$ & isentropic\\ 
+        $i$ & inlet\\
+        $o$ & outlet\\
+        $tt$ & total to total\\
+        $t$ & turbine\\
+        $c$ & compressor\\
+        $p$ & pump\\
+        $cc$ & combustion chamber\\
+        $shaft$ & shaft\\
+        $gen$ & generator\\
+        $whx$ & water heat exchanger\\
+        $re$ & regenerator\\
+        $duct$ & duct\\
+        $chimney$ & chimney\\
+        $ref$ & reference\\
+        $amb$ & ambient\\
+        $nom$ & nominal\\
+        $air$ & air\\
+        $fuel$ & fuel\\
+        $gas$ & gas\\
+        $water$ & water\\
+        $comp$ & composition\\
+    \end{tabular}
+\end{table}
+\endgroup
+ \pagestyle{fancy}
 \setstretch{1.5}
 %%%%%%%%%%%%%%%%%%
 %% Chapter 1:   %%
@@ -167,7 +230,6 @@ $F$ & degradation factor                                   & \multicolumn{1}{c}{
 %%%%%%%%%%%%%%%%%%
 
 \input{Chapitre_1/chapitre_1}
-
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Chapitre 2:                 %%
@@ -180,7 +242,6 @@ $F$ & degradation factor                                   & \multicolumn{1}{c}{
 %% Principles of thermodynamics%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{Chapitre_3/chapitre_3}
-
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Chapitre 4:                 %%
@@ -205,8 +266,14 @@ $F$ & degradation factor                                   & \multicolumn{1}{c}{
 %% Brayton cycle modeling      %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{Chapitre_7/chapitre_7}
+\newpage
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Chapitre 8:                 %%
+%% Conclusion     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Chapitre_8/chapitre_8}
+\newpage
 \input{Annexes}
 
 

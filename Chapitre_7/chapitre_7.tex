@@ -1,6 +1,6 @@
 \graphicspath{{Chapitre_7/Images/}}
 \chapter{Brayton cycle modeling}\label{C7}
-\quad\, This chapter is about the description of the different part constituting the Brayton cycle model. The previous chapter described the main structure of the program. Also, it showed that the programming have been performed in such manner that all the object can individually be called by the main function of the model without too much difficulties.
+\quad\, This chapter is about the description of the different part constituting the Brayton cycle model. The previous chapter described the main structure of the program. 
 
 When the objects have been built, two categories started to be drawn. The first category represents the object called \textbf{core objects}, are ones for which the ''position'' within the program does not change once the type of Brayton cycle configuration have been chosen. Those are, for instance, the compressor, the turbine, the combustion chamber,etc\dots
 
@@ -42,20 +42,23 @@ Algeria                  & 87.0       & 12.6                             & -    
 \end{longtable}
 with CIS being the ''Commonwealth of Independent States'' \cite{EncyclopaediaBritannica2018}.
 
-As it can be noticed, the location of the fuel sink have a strong influence on the gas composition. Therefore, to assure the consumer that the sold gas always has the same heating calorific value, a mixture is made at the factory. 
+As it can be noticed, the source of the fuel have a strong influence on the gas composition. Therefore, to assure the consumer that the sold gas always has the same heating calorific value, a mixture is made at the factory. 
 
 The different components of the fuel can all be considered as ideal gases. 
 
 Finally, there is the exhaust gas for which the composition depends on the one of the two previously mentioned gases. Indeed, the theoretical part in chapter \ref{C4} about the combustion shows that the exhaust gas composition can be obtained through one of the reactions (\ref{eq:C7_chemgeng01}).
 
-\begin{equation}
+\begin{subequations}
     \setstretch{1}
-    \begin{cases}
-        \ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}} +}\kappa\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> mCO2 +} \kappa(\lambda-1)\ce{O2 + \frac{n}{2}H2O +} (\kappa\lambda\frac{79}{21} + \frac{\text{y}}{2})\ce{N2} & \text{ for \(\lambda\geq 1\)} \\
-        \ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}} +}\kappa\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> aCO2 + bCO + \frac{n}{2}H2O} + (\kappa\lambda\frac{79}{21} + \frac{\text{y}}{2})\ce{N2}                      & \text{ for \(\lambda< 1\)}
-    \end{cases}\label{eq:C7_chemgeng01}
-\end{equation}
-where the coefficients ''m'', ''n'', ''x'', and ''y'' have to be determined. As a reminder, $\kappa=\frac{\text{n}}{4}$-$\frac{\text{x}}{2}$. 
+ \begin{align}
+     \ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}} +}\kappa\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) &\ce{-> mCO2 +} \kappa(\lambda-1)\ce{O2 + \frac{n}{2}H2O +} (\kappa\lambda\frac{79}{21} + \frac{\text{y}}{2})\ce{N2}\\
+     \text{ for \(\lambda\geq 1\)}\nonumber\\
+     \ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}} +}\kappa\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) &\ce{-> aCO2 + bCO + \frac{n}{2}H2O} + (\kappa\lambda\frac{79}{21} + \frac{\text{y}}{2})\ce{N2}\\
+     \text{ for \(\lambda< 1\)}\nonumber
+ \end{align}
+        \label{eq:C7_chemgeng01}
+\end{subequations}
+Where the coefficients ''m'', ''n'', ''x'', and ''y'' have to be determined. As a reminder, $\kappa=\frac{\text{n}}{4}$-$\frac{\text{x}}{2}$. 
 
 \subsubsection{Computation of the fuel coefficients}
 \quad\ In the equations, the used fictitious fuel is $\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}}}$. The coefficients ''m'', ''n'', ''x'' and ''y'' are obtained by analyzing the composition of the real fuel.
@@ -96,14 +99,14 @@ Indeed, by performing a quick analysis of the first reaction of (\ref{eq:C7_chem
 \begin{subequations}
 \setstretch{1}
 \begin{align}
-    w_{\left.\ce{O2}\right|{fumes}} &= w_{\left.\ce{O2}\right|{air}} - \kappa\cdot w_{\left.\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}}}\right|{fuel}}\label{eq:C7_O2}\\
-    \rightarrow & y_{\left.\ce{O2}\right|{fumes}} =  w_{\left.\ce{O2}\right|{fumes}}\cdot \frac{MM_{\ce{O2}}}{\dot{m}_{gas}}\label{eq:C7_O2y}\\
-    w_{\left.\ce{N2}\right|{fumes}} &= w_{\left.\ce{N2}\right|{air}} + w_{\left.\ce{N2}\right|{fuel}} + \frac{\text{y}}{2}\cdot w_{\left.\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}}}\right|{fuel}}\label{eq:C7_N2}\\
-    \rightarrow & y_{\left.\ce{N2}\right|{fumes}} =  w_{\left.\ce{N2}\right|{fumes}}\cdot \frac{MM_{\ce{N2}}}{\dot{m}_{gas}}\label{eq:C7_N2y}\\
-    w_{\left.\ce{H2O}\right|{fumes}} &= w_{\left.\ce{H2O}\right|{air}} + w_{\left.\ce{H2O}\right|{fuel}} + \frac{\text{n}}{2}\cdot w_{\left.\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}}}\right|{fuel}}\label{eq:C7_H2O}\\
-    \rightarrow & y_{\left.\ce{H2O}\right|{fumes}} =  w_{\left.\ce{H2O}\right|{fumes}}\cdot \frac{MM_{\ce{H2O}}}{\dot{m}_{gas}}\label{eq:C7_H2Oy}\\
+    w_{\ce{O2}\left.\right|{fumes}} &= w_{\left.\ce{O2}\right|{air}} - \kappa\cdot w_{\left.\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}}}\right|{fuel}}\label{eq:C7_O2}\\
+    \rightarrow & y_{\ce{O2}\left.\right|{fumes}} =  w_{\ce{O2}\left.\right|{fumes}}\cdot \frac{MM_{\ce{O2}}}{\dot{m}_{gas}}\label{eq:C7_O2y}\\
+    w_{\ce{N2}\left.\right|{fumes}} &= w_{\left.\ce{N2}\right|{air}} + w_{\left.\ce{N2}\right|{fuel}} + \frac{\text{y}}{2}\cdot w_{\left.\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}}}\right|{fuel}}\label{eq:C7_N2}\\
+    \rightarrow & y_{\ce{N2}\left.\right|{fumes}} =  w_{\ce{N2}\left.\right|{fumes}}\cdot \frac{MM_{\ce{N2}}}{\dot{m}_{gas}}\label{eq:C7_N2y}\\
+    w_{\ce{H2O}_{\left.\right|{fumes}}} &= w_{\left.\ce{H2O}\right|{air}} + w_{\left.\ce{H2O}\right|{fuel}} + \frac{\text{n}}{2}\cdot w_{\left.\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}}}\right|{fuel}}\label{eq:C7_H2O}\\
+    \rightarrow & y_{\ce{H2O}\left.\right|{fumes}} =  w_{\ce{H2O}\left.\right|{fumes}}\cdot \frac{MM_{\ce{H2O}}}{\dot{m}_{gas}}\label{eq:C7_H2Oy}\\
     w_{\left.\ce{CO2}\right|{fumes}} &= w_{\left.\ce{CO2}\right|{air}} + w_{\left.\ce{CO2}\right|{fuel}} + \text{m}\cdot w_{\left.\ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}}}\right|{fuel}}\label{eq:C7_CO2}\\
-    \rightarrow & y_{\left.\ce{CO2}\right|{fumes}} =  w_{\left.\ce{CO2}\right|{fumes}}\cdot \frac{MM_{\ce{CO2}}}{\dot{m}_{gas}}\label{eq:C7_CO2y}
+    \rightarrow & y_{\ce{CO2}\left.\right|{fumes}} =  w_{ce{CO2}\left.\right|{fumes}}\cdot \frac{MM_{\ce{CO2}}}{\dot{m}_{gas}}\label{eq:C7_CO2y}
 \end{align}\label{eq:C7_compfumes}
 \end{subequations}
 where $w_{\left.i\right|fluid}$ corresponds to the molar flow rate of the element $i$ within the $fluid$. The mass flow rate $\dot{m}_{gas}$ is obtained as being the sum $\dot{m}_{air}+\dot{m}_{fuel}$.
@@ -224,7 +227,7 @@ As it is illustrated in the results from the Table \ref{tab:C7_acc_table}, incre
 \quad\ When considering a mixture, its compositions has to be taken into account when evaluation its thermodynamic state. This involves the usage of the molar and mass fraction to take into account the contribution of the different components within the mixture. In this work, liquids will be considered as pure. Also, depending on the selected state variable, the method to compute it will differ.
 
 \subsubsection{Enthalpy, heat capacity, and entropy}
-\quad\ First will be considered the assessment of the enthalpy, heat capacity, and entropy of a given gas mixture. The method is relatively simple since it only involves the usage of the formulas (\ref{eq:C7_mixture1}.
+\quad\ First will be considered the assessment of the enthalpy, heat capacity, and entropy of a given gas mixture. The method is relatively simple since it only involves the usage of the formulas (\ref{eq:C7_mixture1}).
 
 \begin{subequations}
 \setstretch{1}
@@ -244,12 +247,12 @@ As it is illustrated in the results from the Table \ref{tab:C7_acc_table}, incre
 where $MM$ is the molar mass of the mixture. The division by the molar mass $MM$ allows to goes from quantities per unit of mole to quantities per unit of mass.
 
 \subsubsection{Conductivity and dynamic viscosity}
-\quad\ Now considering the conductivity $\rho$ and the dynamic viscosity $\mu$, the relation linking the state variable of the individual component and the mixture is more complex. Here, the Wilke's method and Mason\& Saxena method\cite{reid1977properties} are used for respectively the viscosity and the conductivity, Equations (\ref{eq:C7_mixtureWilke}) and (\ref{eq:C7_mixtureMason}) provide theses correlations.
+\quad\ Now considering the conductivity $\lambda_c$ and the dynamic viscosity $\mu$, the relation linking the state variable of the individual component and the mixture is more complex. Here, the Wilke's method and Mason\& Saxena method\cite{reid1977properties} are used for respectively the viscosity and the conductivity, Equations (\ref{eq:C7_mixtureWilke}) and (\ref{eq:C7_mixtureMason}) provide theses correlations.
 
 \begin{subequations}
 \setstretch{1}
 \begin{equation}
-    \rho = \sum_i y_i\cdot \frac{\rho_i}{\sum_j y_j\cdot \phi_{i,j}}\label{eq:C7_mixtureMason}
+    \lambda_c = \sum_i y_i\cdot \frac{\lambda_{c,i}}{\sum_j y_j\cdot \phi_{i,j}}\label{eq:C7_mixtureMason}
 \end{equation}
 \begin{equation}
     \mu = \sum_i y_i\cdot \frac{\mu_i}{\sum_j y_j\cdot \phi_{i,j}}\label{eq:C7_mixtureWilke}
@@ -262,7 +265,7 @@ The relation (\ref{eq:C7_phi}) is used to computed these coefficients.
     \phi_{i,j} = \frac{\left(1+\sqrt{\frac{\mu_i}{\mu_j}}\cdot \left(\frac{MM_j}{MM_i}\right) ^{0.25}\right)^2}{\sqrt{8\cdot\left(1+\frac{MM_i}{MM_j}\right)}}\label{eq:C7_phi}
 \end{equation}
 
-These methods will be used for the evaluation of the heat transfer coefficient $U$ defined in chapter \ref{C5}.
+These methods will be used for the evaluation of the heat transfer coefficient $\mathrm{U}$ defined in chapter \ref{C5}.
 \section{Turbomachines}
 The previous section described the modeling of the flow objects and the method to evaluate the thermodynamic state of the different fluids used in the Brayton cycle.
 
@@ -273,39 +276,40 @@ Now, the remaining of the chapter will describe the modeling of the different co
 
 \begin{equation}
 \setstretch{1}
-s_2 - s_1  = \int_1^2\frac{c_p}{T}dT - r\cdot ln\frac{p_2}{p_1}\label{eq:C7_entropyvar}
+s_2 - s_1  = \int_1^2\frac{c_p}{T^0}dT^0 - r\cdot ln\frac{p^0_2}{p^0_1}\label{eq:C7_entropyvar}
 \end{equation}
 where $r$ is the specific gas constant (J/kg*K). 
 If the transformation considered is isentropic, the relation (\ref{eq:C7_istrans}) can be deduced.
 
 \begin{equation}
 \setstretch{1}
-\int_1^{2_{is}}\frac{c_p}{T}dT = r\cdot ln\frac{p_2}{p_1}\label{eq:C7_istrans}
+\int_1^{2_{is}}\frac{c_p}{T^0}dT^0 = r\cdot ln\frac{p^0_2}{p^0_1}\label{eq:C7_istrans}
 \end{equation}
-This relation can be used to obtain the state $\mathbf{2_{is}}$ and the end of an expansion or compression. Indeed, by considering the total temperature $T_1^0$ at the inlet, and the total to total pressure ratio $\Pi_{tt} = \frac{P_{HP}^0}{P_{LP}^0}$, the relation allows to compute the total temperature $T_{2,is}^0$ at the end of the isentropic transformation.
+This relation can be used to obtain the state $\mathbf{2_{is}}$ and the end of an expansion or compression. Indeed, by considering the total temperature $T_1^0$ at the inlet, and the total to total pressure ratio $\Pi_{tt} = \frac{p_{HP}^0}{p_{LP}^0}$, the relation allows to compute the total temperature $T_{2,is}^0$ at the end of the isentropic transformation.
 
-The integral $\int_1^{2_{is}}\frac{c_p}{T}dT$ is performed using the function ''integrate'' include within the package \textit{integrate} from the library scipy\cite{2020SciPy-NMeth}. However, the temperature $T_{2,is}^0$ has to be such that the equality in (\ref{eq:C7_entropyvar}) is satisfied. To solve this problem, the function ''fsolve'' provided with the library scipy is used. The algorithm used by the solver is the MINPACK's hybrd algorithm \cite{More:minpack}. 
+The integral $\int_1^{2_{is}}$ is performed using the function ''integrate'' include within the package \textit{integrate} from the library scipy\cite{2020SciPy-NMeth}. However, the temperature $T_{2,is}^0$ has to be such that the equality in (\ref{eq:C7_entropyvar}) is satisfied. To solve this problem, the function ''fsolve'' provided with the library scipy is used. The algorithm used by the solver is the MINPACK's hybrd algorithm \cite{More:minpack}. 
 
-Once the total temperature at the end of the isentropic transformation is known, the total temperature $T_2^0$ at the end of the real transformation can be obtained based on the knowledge of the total to toal isentropic efficiency $\eta_{is,tt}$ of the turbomachine. From the equation (\ref{eq:C7_compeff}) or (\ref{eq:C7_turbeff}), the temperature $T_2^0$ at the end of the compression or expansion (respectively) can be computed.
+Once the total temperature at the end of the isentropic transformation is known, the total temperature $T_2^0$ at the end of the real transformation can be obtained based on the knowledge of the total to total isentropic efficiency $\eta_{is}$ of the turbomachine. From the equation (\ref{eq:C7_compeff}) or (\ref{eq:C7_turbeff}), the temperature $T_2^0$ at the end of the compression or expansion (respectively) can be computed.
 
 \begin{subequations}
 \setstretch{1}
 \begin{equation} 
-    h_2^0 = h_1^0 + \frac{h_{2,is}^0-h_1^0}{\eta_{is,tt}}\label{eq:C7_compeff}
+    h_2^0 = h_1^0 + \frac{h_{2,is}^0-h_1^0}{\eta_{is}}\label{eq:C7_compeff}
 \end{equation}
 \begin{equation}
-    h_2^0 = h_1^0 + \left(h_{2,is}^0-h_1^0\right)\cdot\eta_{is,tt}\label{eq:C7_turbeff}
+    h_2^0 = h_1^0 + \left(h_{2,is}^0-h_1^0\right)\cdot\eta_{is}\label{eq:C7_turbeff}
 \end{equation}
 \end{subequations}
 
 \subsection{Integration of the performance maps}
-\quad\ During the previous calculations, it was implicitly assumed that the TT pressure ratio $\Pi_{tt}$ and isentropic efficiency $\eta_{is,tt}$ were known. The first possibility is to set, by hand, the value of these parameters. However, in practice their values vary with the operating point of the compressor and turbine within the cycle. 
+\quad\ During the previous calculations, it was implicitly assumed that the total to total pressure ratio $\Pi_{tt}$ and isentropic efficiency $\eta_{is}$ were known. The first possibility is to set, by hand, the value of these parameters. However, in practice their values vary with the operating point of the compressor and turbine within the cycle. 
 
 One of the main parts of this work was about the integration of turbomachine performance maps to the Brayton cycle model. The integration of these maps, for both the compressor and the turbine, will allow to determine the pressure ratio and isentropic efficiency of the two machines only based on the knowledge of the rotational speed and the mass flow rate of air.
 
 The method of implementation of the performance maps is quite similar to the usage of thermodynamic tables. From operating points obtained through experimental campaigns or CFD computation, a fitting function is built to fit those points. As explained in the chapter \ref{C7}, an operating point is fully determined by two of the four parameters characterizing it. Here, the four operating parameters are the corrected mass flow rate $m_c$, the rotational speed $N$, the total to total pressure ratio $\Pi_{tt}$, and the total to total isentropic efficiency $\eta_{is,tt}$. 
 
-Since four parameters are involved, at least two function of the type f(x,y), where x and y are the known parameters, have to be built. The ''y'' variable will systematically be the rotational speed. Then, after having decided what quantity to compute, the choice of the ''x'' variable will be such that the curve fitting is well conditioned.
+Since four parameters are involved, at least two function of the type $f(x,y)$, where $x$ and $y$ are the known parameters, have to be built. The variable $y$ will systematically be the rotational speed. Then, after having decided what quantity to compute, the choice of the variable $x$ depends on the available known parameters.
+
 \subsubsection{Least-squares regression algorithm}
 \quad\ To create the interpolation through the different operating point, the least-square regression (LS-R) algorithm is used. Let's consider the simple polynomial function $z$ of degree 1
 
@@ -324,17 +328,17 @@ where the coefficients $a_{i,j}$ are the unknowns. Those coefficients are comput
 & & f(x, y) = a_{0,0} + a_{1,0}\cdot x + a_{0,1}\cdot y
 \end{aligned}\label{eq:C7_leastsquare}
 \end{equation}
-minimizing $\textbf{F}$ is similar to enforce all the partial derivatives with respect to the $a_[{i,j}$ coefficient to be equal to zeros. therefore, (\ref{eq:C7_lqcond}) becomes the new condition.
+\textsc{P} is the subset of the given points. Minimizing the objective function $\textbf{F}$ is equivalent to enforce all the partial derivatives with respect to the $a_{i,j}$ coefficient to be equal to zeros. therefore, (\ref{eq:C7_lqcond}) becomes the new condition.
 
 \begin{subequations}
 \setstretch{1}
 \begin{align}
     \frac{\partial \textbf{F}}{\partial a_{0,0}} &=\sum_{k\in\textsc{P}}\left[z_k - f(x_k, y_k)\right] = 0\\
     \frac{\partial \textbf{F}}{\partial a_{1,0}} &=\sum_{k\in\textsc{P}}\left[z_k - f(x_k, y_k)\right]\cdot x = 0\\
-    \frac{\partial \textbf{F}}{\partial a_{1,0}} &=\sum_{k\in\textsc{P}}\left[z_k - f(x_k, y_k)\right]\cdot y = 0
+    \frac{\partial \textbf{F}}{\partial a_{0,1}} &=\sum_{k\in\textsc{P}}\left[z_k - f(x_k, y_k)\right]\cdot y = 0
 \end{align}\label{eq:C7_lqcond}
 \end{subequations}
-Satisfying those relations will ensure that the value of the function \textbf{F} corresponds to a stationary point. In theory, this point could be either a maximum or a minimum but, the function \textbf{F} is composed of the positive sum of square. Therefore, the value cannot be a maximum. 
+Satisfying those relations will ensure that the value of the function \textbf{F} corresponds to a stationary point.
 
 Then, the quality of the curve fitting can be assessed by computing the square of the residual function $\chi^2$. The definition of this function is given in the expression (\ref{eq:C7_R2}).
 \begin{equation}
@@ -1192,7 +1196,7 @@ To illustrate the improvement, the Figures \ref{fig:C7_mturb3} and \ref{fig:C7_m
         \caption{$[\dot{m}_{corr,t}\cdot \Pi_{tt,t}](\Pi_{tt,t}\cdot N_t,N_t)$}
         \label{fig:C7_mturbevo}
     \end{subfigure}
-    \caption{Polynomial regression ($d=3$)} \label{fig:C7_polycomp_m}
+    \caption{Polynomial regression ($d=3$)} \label{fig:C7_polycomp_m_turb}
 \end{figure}
 
 Comparing the two figures shows that multiply the mass flow rate by the pressure ratio straighten the different iso-rotational speed curves. This is a extremely valuable result since it will make the polynomial smoother and more \textit{regular}.
@@ -1298,8 +1302,6 @@ $[\dot{m}_{corr,t}\cdot \Pi_{tt,t}](\Pi_{tt,t}\cdot N_t,N_t)$           & \textb
 $[\Pi_{tt,t}\cdot \dot{m}_{corr,t}\cdot\eta_{is,t}](\Pi_{tt,t}\cdot N_t,N_t)$           & \textbf{3}   & 3.79E-04                    & 0.999        \\* \bottomrule
 \end{longtable}
 
-\subsubsection{N-1 study}
-
 \section{Combustion chamber}
 \quad\ The previous section was dedicated to the integration of the turbomachinery in the program. The main part was focused on the implementation of the relations required to fully characterized the compressor and turbine states.
 
@@ -1317,7 +1319,7 @@ Considering the combustion equation \ref{eq:C7_comb}, The HCV is defined as bein
 
 \begin{equation}
     \setstretch{1}
-    \dot{m}_{Fumes}\cdot HCV = \dot{m}_{Fuel}\cdot \left.h_{Fuel}\right|_{T=T_{ref}} + \dot{m}_{Air}\cdot \left.h_{Air}\right|_{T=T_{ref}} - \dot{m}_{Fumes}\cdot \left.h_{Fumes}\right|_{T=T_{ref}}\label{eq:C7_HCV}
+    \dot{m}_{Fumes}\cdot HCV = \dot{m}_{Fuel}\cdot h_{Fuel\left.\right|_{T=T_{ref}}} + \dot{m}_{Air}\cdot h_{Air\left.\right|_{T=T_{ref}}} - \dot{m}_{Fumes}\cdot h_{Fumes\left.\right|_{T=T_{ref}}}\label{eq:C7_HCV}
 \end{equation}
 Where $\dot{m}_{Fumes} = \dot{m}_{Fuel} + \dot{m}_{Air}$.
 

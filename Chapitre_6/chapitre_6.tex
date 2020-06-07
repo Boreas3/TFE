@@ -31,22 +31,54 @@ Also, Python is a programming language that allows the object oriented programmi
 %%%%%      <<model>>          %%%%%
 %%%%%                         %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\quad\, the previous section shows that Python was a great language due to its huge community and the ability to do oriented object programming. Combined with the fact that Python is free and open source, it has been chosen to program the model developed during this master thesis under the Python language.
+\quad\, The focus of this section is the description of the structure of the computer code itself. The program is separated into multiple blocks which can interact between each other. Before explaining the role of each of these blocks, the global structure of the program will be given.
 
-The focus of this section is the description of the structure of the computer code itself. As it can be expect from what have been previously said, the program will be composed of multiple blocks that will interact together.
+\subsection{Input file}
+\quad\, To start the program, the user has to provide an input file that will contain all the required information to execute the program. The structure of the inputs follows the YAML\footnote{YAML stands for \textbf{Y}AML \textbf{A}in't \textbf{M}arkup \textbf{L}anguage.} scheme which is a language that allows to store data in a structure and readable ways for the human. The strength of such language is that any data can be expressed under an arbitrary name. 
 
-\subsection{Inputs}
-\quad\, To start the program, the user has to provide an input file that will contain the required data for the program. The input file is structured as a dictionary\footnote{see \url{https://www.w3schools.com/python/python_dictionaries.asp} for further information} and is stored within a .yaml file. 
-YAML is a language that allows to store data in a structure and readable ways for the human. Many tools exist to read and write within a .yaml file.
+When the python code read the file, the file will be interpreted as a nested dictionary. A dictionary in Python can be considered as table that can contain element of different type. In a nested dictionary, some of these elements are also dictionary.
 
-The input is composed of three main field. The first one is named ''Type'' and is composed of one variable which is the acronym of the Gas Turbine cycle variant considered. The list of acronym is given in the Table \ref{tab:C5_inputconfig} from the previous chapter.
+Here the YAML file that is given to the program is composed of four dictionaries respectively identified by the names "Type", "Selection", "Input" and "Extra". An example of an input files is given in the appendix \ref{annex:yaml}. 
 
-The second field list all the input data required to initialized the model. The number of variables to be specified at the start of the program depends on the selected configuration. For instance, considering the gas turbine (GT), the inputs required are listed in Table \ref{tab:C6_inputGT}.
-\begin{longtable}[c]{ll|ll}
-\caption{Input - gas turbine (GT)}
-\label{tab:C6_inputGT}\\
+\subsubsection{Type}
+\quad\ The dictionary "Type" is composed of only one field that specified which variant of the Brayton cycle is going to be study. By specifying one of the name from the Table \ref{tab:C5_inputconfig}, the program will now the variant to load in the memory.
+
+\subsubsection{Selection}
+\quad\ Then, the second dictionary "Selection" is used to specialize the variant and is composed of boolean element. The reading of this dictionary will tell to program what are the extra data that are expected to be found in the dictionary "Input".
+\newpage
+The first element "WHX" of this dictionary is about the choice to add a water heat exchanger to recover part of the temperature in the fumes. If the field is set to \textit{true}, the following inputs will be required:
+\begin{itemize}
+    \setstretch{1}
+    \item $\varepsilon_{whx}$: Efficiency of the water heat exchanger (\%)
+    \item $T_{whx,water,i}$, $T_{whx,water,o}$: Inlet and outlet temperature of the water (\degree C)
+    \item $P_{whx,water, i}$: Inlet pressure of the water (\degree C)
+    \item $Dp_{whx,water}$, $Dp_{whx,gas}$: Water and gas nominal pressure drops (\%)
+\end{itemize}
+
+Then, the field "MAP" gives the choice to use performance maps (provided by the user) for the compressor and the turbine. If set to \textit{true}, the absolute path to the performance maps and the rotational speed of the turbomachines have to be specified. The performance maps are given as Excel sheets where each row corresponds to an operating point characterized by \(\dot{m}_{corr}\), \(\Pi_{tt}\), \(N_{corr}\) and \(\eta_{is}\).
+
+By default, the maps are not used. Instead, the following inputs are asked to be able to characterized the compressor and the turbine:
+
+\begin{itemize}
+\setstretch{1}
+    \item $\eta_{is,c}$ and $\eta_{is,t}$: Isentropic efficiency of the compressor and the turbine (\%)
+    \item $\Pi_{tt,c}$: Total to total compression ratio (-)
+    \item $TIT$: Turbine Inlet Temperature (\degree C)
+\end{itemize}
+
+The parameter "VAR\_DP" included in the dictionary "Selection" is used to take into account the variation of the pressure drops with the mass flow rate. If the this feature is desired, the nominal mass flow rate associated to the nominal pressure drop has to be specified.  
+
+Similarly, the last parameter "Var\_EFF" in the dictionary allows to take into account the heat exchanger efficiency dependency to the temperature and mass flow rate of both flows. If this option is chosen, the nominal mass flow rate and the nominal inlet/outlet temperatures for which the heat exchanger has the specified efficiency are required.
+
+\subsubsection{Input}
+\quad\ This third dictionary contains all the default parameters that are required to assess the performance of the selected variant of the Brayton gas cycle. As an example, the Table \ref{tab:C6_inputRGT} includes the inputs that has to be specified.
+
+\begin{longtable}[c]{@{}llc@{}}
+
+\caption{Input - Regenerative Gas Turbine (RGT)}
+\label{tab:C6_inputRGT}\\
 \toprule
-\textbf{Inputs - Name}                                                                          & \textbf{Inputs - Abbreviation} & \textbf{Inputs - Name}                                                                                          & \textbf{Inputs - Abbreviation} \\* \midrule
+\textbf{Input}                        & \textbf{Abbreviation} & \textbf{Unit} \\* \midrule
 \endfirsthead
 %
 \endhead
@@ -56,72 +88,87 @@ The second field list all the input data required to initialized the model. The 
 %
 \endlastfoot
 %
-\begin{tabular}[c]{@{}l@{}}Reference \\ temperature (°C)\end{tabular}                  & $T_{ref}$             & \begin{tabular}[c]{@{}l@{}}Combustion chamber \\ efficiency (\%)\end{tabular}                          & $\eta_{cc}$           \\
-\begin{tabular}[c]{@{}l@{}}Ambient \\ temperature (°C)\end{tabular}                    & $T_{amb}$             & \begin{tabular}[c]{@{}l@{}}Shaft mechanical \\ efficiency (\%)\end{tabular}                            & $\eta_{shaft}$        \\
-\begin{tabular}[c]{@{}l@{}}Fuel \\ temperature (°C)\end{tabular}                       & $T_{fuel}$            & \begin{tabular}[c]{@{}l@{}}Generator \\ efficiency (\%)\end{tabular}                                   & $\eta_{gen}$          \\
-\begin{tabular}[c]{@{}l@{}}Combustion chamber \\ exhaust temperature (°C)\end{tabular} & $T_{cc,ex}$           & \begin{tabular}[c]{@{}l@{}}Compressor isentropic \\ efficiency (\%)\end{tabular}                       & $\eta_{comp}$         \\
-\begin{tabular}[c]{@{}l@{}}Reference \\ pressure (Pa)\end{tabular}                     & $p_{ref}$             & \begin{tabular}[c]{@{}l@{}}Turbine isentropic \\ efficiency (\%)\end{tabular}                          & $\eta_{t}$            \\
-\begin{tabular}[c]{@{}l@{}}Ambient \\ pressure (Pa)\end{tabular}                       & $p_{amb}$             & \begin{tabular}[c]{@{}l@{}}Compressor \\ pressure ratio (-)\end{tabular}                               & $P_{comp,ratio}$      \\
-\begin{tabular}[c]{@{}l@{}}Duct \\ pressure drop (\%)\end{tabular}                     & $Dp_{duct}$           & \begin{tabular}[c]{@{}l@{}}Air mass \\ flow rate (kg/s)\end{tabular}                                   & $\dot{m}_{air}$       \\
-\begin{tabular}[c]{@{}l@{}}Combustion chamber \\ pressure drop (\%)\end{tabular}       & $Dp_{cc}$             & \begin{tabular}[c]{@{}l@{}}Nominal mass \\ flow rate (kg/s)\end{tabular}                               & $\dot{m}_{nom}$       \\
-Chimney suction (Pa)                                                                   & $Dp_{chimney}$        & Air factor (-)                                                                                         & $\lambda$             \\
-Fuel composition (\%)                                                                  & $Fuel_{char}$         & \begin{tabular}[c]{@{}l@{}}{\color{PineGreen}{Compressor}} \\ {\color{PineGreen}{performance map}} (.xls/.xlsx)\end{tabular} & $Comp_{excel}$        \\
-Air composition (\%)                                                                   & $Air_{char}$          & \begin{tabular}[c]{@{}l@{}}{\color{PineGreen}{Turbine}} \\ {\color{PineGreen}{performance map}} (.xls/.xlsx)\end{tabular}    & $Turb_{excel}$        \\
-{\color{Gray} Rotational speed} (rpm)                                                  & $N$                   &                                                                                                        &                       \\* \bottomrule
+Reference temperature                 & $T_{ref}$                                 & \degree C     \\
+Reference pressure                    & $P_{ref}$                                 & Pa            \\
+Ambiant temperature                   & $T_{amb}$                                 & \degree C     \\
+Ambiant pressure                      & $P_{amb}$                                 & Pa            \\
+Fuel temperature                      & $T_{fuel}$                                & \degree C     \\
+Mass flow rate of air                 & $\dot{m}_{air}$                           & kg/s          \\
+Air factor                            & $\lambda$                                 & -             \\
+\rowcolor[HTML]{FFFFC7} 
+Compression ratio                     & $\Pi_{tt,c}$                              & -             \\
+\rowcolor[HTML]{FFFFC7} 
+Turbine Inlet Temperature             & $TIT$                                     & \degree C     \\
+\rowcolor[HTML]{FFFFC7} 
+Compressor isentropic efficiency      & $\eta_{is,c}$                             & \%            \\
+\rowcolor[HTML]{FFFFC7} 
+Turbine isentropic efficiency         & $\eta_{is,t}$                             & \%            \\
+Combustion efficiency                 & $\eta_{cc}$                               & \%            \\
+Shaft mechanical efficiency           & $\eta_{shaft}$                            & \%            \\
+Generator efficiency                  & $\eta_{gen}$                              & \%            \\
+Regenerator efficiency                & $\varepsilon_{re}$                        & \%            \\
+Combustion chamber pressure drop      & $Dp_{cc}$                                 & \%            \\
+Regenerator pressure drop (hot side)  & $Dp_{re,H}$                               & \%            \\
+Regenerator pressure drop (cold side) & $Dp_{re,C}$                               & \%            \\
+Duct pressure drop                    & $Dp_{duct}$                               & \%            \\
+Chimney pressure losses               & $\Delta p_{chimney}$                      & Pa            \\
+Fuel composition                      & $Fuel_{comp}$                             & -             \\
+Air composition                       & $Air_{comp}$                              & -             \\* \bottomrule
 \end{longtable}
 
-The last field named "Selection" is composed of two boolean variables. The first one gives the choice to add a water heat exchanger between the \textit{end} of the cycle and the exhaust. When this variable, named "WHX", is set to \textit{true}, the following inputs as to be added.
+The inputs emphasized in yellow in the Table \ref{tab:C6_inputRGT} are ones that are not used if the map of the compressor and the turbine are used. The air factor $\lambda$ is used to initiate the iterative search of the mass flow rate of fuel in the program. Any value greater than 1 are acceptable. Further explanations are given in the following section.
+
+\subsubsection{Extra}
+\quad\ The last part of the YAML file is dedicated to the extra inputs that have to be provided based on the choices made in the "Selection" part. 
+
+\subsection{Flow chart of the model}
+\quad\,  The previous section detailed the the structure of the input file to be provided at the start of the program.  
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.2\textwidth]{Chapitre_6/Images/GeneralFlowChart.png}
+\caption{General flow chart of the program}
+\label{fig:C6_flowchart}
+\end{figure}
+
+Once provided, the program will first read the "Type" field to select the desired configuration. This is done by the function \textit{CycleCreate} that will create the model associated to the configuration selected. This function, for which the scheme is given in the Figure \ref{fig:C6_cyclecreate}, first parses the inputs file to extract the four dictionaries "Type", "Selection", "Input" and "Extra". 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Chapitre_6/Images/CycleCreate.png}
+    \caption{Scheme of the function \textit{CycleCreate}}
+    \label{fig:C6_cyclecreate}
+\end{figure}
+Then, all the data are read and stored. Based on the choice made in the "Selection" section, the function will search information in the dictionary named "Extra". 
+Finally, the function validates the inputs read to ensure that the program will run without leading to error induced by missing or wrong data. After this step of verification, the model for the selected configuration is created.
+
+Once the model created, it is provided to the \textit{Calculate} function. The scheme of this function is provided in the Figure \ref{fig:C6_calculate}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Chapitre_6/Images/Calculate.png}
+    \caption{Scheme of the function \textit{Calculate}}
+    \label{fig:C6_calculate}
+\end{figure}
+
+Here, an initial guess for the mass flow rate of fuel injected into the combustion chamber is required. This guess value is obtained using the mass flow rate of air and the air factor $\lambda$. Then, the function \textit{CycleCalculate} is called. The structure of this function varies from one configuration to the other. Nevertheless, \textit{CycleCalculate} is a function that follows the path taken by the actual flow in the cycle. this function is composed of blocks (or objects) representing the elements constituting the cycle. Based the variant chosen, the order of these blocks will be different.  
+
+Once the Brayton cycle completed, the value of the mass flow rate of fuel has been updated. If its value is different from the initial guess, the later is updated and the function \textit{CycleCalculate} is called again. If the two values are really closed from one to the other, the program exits the loop and provides some outputs.
+
+The outputs of the program are:
 
 \begin{itemize}
 \setstretch{1}
-\item Water inlet temperature (\degree C): $T_{whx,su,w}$
-\item Water outlet temperature (\degree C): $T_{whx,ex,w}$
-\item Water inlet pressure (Pa): $p_{whx,su,w}$
+    \item The temperature, pressure, enthalpy, entropy and density for the defined states.
+    \item The mass flow rate of fuel and the air factor.
+    \item The power produced or consumed by the different elements.
+    \item The efficiency of the different elements.
+    \item The efficiency of the cycle.
+    \item The corrected and reduced quantities associated to the turbomachines.
 \end{itemize}
 
-"MAP" is the second variable. It used to choose whether or not the performance map for the turbomachines (defined as in chapter \ref{C4}). If the variable is set to \textit{true}, the {\color{Gray} gray} field in Table \ref{tab:C6_inputGT} is at least required. Then, depending on the validity of the {\color{PineGreen} pinegreen} fields, the compressor and/or the turbine map(s) will be used in the code. 
+The interest of these outputs is to be able to quantify the performance of the cycle and to adapt some of the input in order to reach the desired results. For instance, for a gas turbine the target value for air factor is often in the neighboring of 8-10. Also, the TIT is in practice limited by the material constituting the turbine blades. Indeed, a too high temperature would destroy the turbine by reaching the melting temperature of the material.
 
-When a valid compressor map is given, the variables $\eta_{comp}$ and $P_{comp,ratio}$ are not required to be filled. Indeed, as seen in chapter \ref{C4}, the knowledge of two independent operating variables are sufficient to derived the other variables. In particular, the rotational speed $N$, the air mass flow rate and the inlet state of the compressor are known. Thus, using the relation (\ref{eq:C4_mc}) to obtain the corrected mass flow rate $\dot{m}_{c,comp}$ through the compressor, the compression ratio and the compressor efficiency can be derived.  
-
-Similarly, if a valid turbine map is provided in the inputs, the turbine isentropic efficiency $\eta_{t}$ and the combustion chamber exhaust temperature $T_{cc,ex}$ specified in the inputs will not be used. From the knowledge of the compression ratio, the expansion ratio $P_{turb,ratio}$ can be obtained by computing the pressure drops within the cycle. Then, the efficiency and the corrected mass flow rate $\dot{m}_{c,turb}$ can be derived since two independent variables are known.
-
-The knowledge of both the corrected and \textit{not} corrected mass flow rate through the turbine are sufficient to compute the turbine inlet temperature (TIT). Indeed, the relation (\ref{eq:C4_mc}) from chapter \ref{C4} can be rewritten as followed
-
-\begin{equation}
-    \setstretch{1}
-TIT =\left(\frac{\dot{m}_c}{\dot{m}}\cdot\frac{p}{p_{ref}}\right)^2\cdot T_{ref}
-\end{equation} 
-
-which allows the computation of the turbine inlet temperature.
-\newpage
-\subsection{Flow chart of the model}
-\quad\,  The previous section detailed the the structure of the input file to be provided at the start of the program. Once provided, the program will first read the "Type" field to select the desired configuration. If the configuration is contained in the database of the program, the associated model will be created.
-\begin{wrapfigure}{l}{0.42\linewidth}
-\centering
-\includegraphics{Flow_chart.png}
-\caption{Flow chart of the Brayton cycle model}
-\label{fig:C6_flowchart}
-\end{wrapfigure}
-The second step consists in the reading and storage of the input data from the input file. Then, a restructuring of the input is performed to be understood by the model. This extraction of data is performed regarding to value of the variables within the field "Selection".
-
-When all the required inputs are loaded, the program starts the model. To initiate the assessment of the performance of the selected cycle, a initial guess on the mass flow rate of fuel $\dot{m}_{fuel}$ is realized. Then, the model \textit{travels} along the cycle by calling the objects associated to the real components. 
-After having gone through the combustion chamber(s), the mass flow rate of fuel is re-evaluated to update the initial guess. If the change is smaller than $\varepsilon$, the model escapes the loop. Otherwise, new passages are performed until no noticeable change of the mass flow rate value.
-   
-Finally, outputs are generated based on the assessed cycle. Among these, the temperature, pressure, enthalpy, and density at each state of the cycle are specified. The fuel mass flow rate is also provided to the user along with the thermal efficiency of the cycle and the power consumed and produced. 
-
-This structure is followed for every selected configurations. The flow chart on Figure \ref{fig:C6_flowchart} graphically illustrates the structure of the model from the reading of the inputs to the generation of the outputs.\clearpage
-
-As it has been presented, the main structure of the program is relatively linear without many branches. This linear scheme allows a rapid comprehension of how the program works from the outside. However, when considering the calls of the objects in the ''Calculate\_cycle'' function, the structure becomes more complex. 
-
-Thus, this main function relies on objects to live within the program.  Among these objects, two categories, namely the \textbf{static} and \textbf{non-static} object, can be defined.
-
-The first category called \textbf{static} objects are the objects associated to the thermodynamic components (compressor, turbine,etc...). These objects are called statics because each of the components will not change of position in the cycle once the latter is defined. \\
-
-Then, there are the objects representing the fluids involved in cycle. These \textbf{non static} objects will live the thermodynamic cycle by going through the different components.
-
-For a Brayton cycle, the modeled fluids are typically air, fuel, exhaust gas, and sometimes water (if there is any water heat exchanger). This explicit definition for each of these fluids is useful. Indeed, it allows to create a more flexible model since the modification of one fluid composition has only to be performed while defining the associated object. 
-
-The next chapter will present the implementation method of each thermodynamic components. For each of those, the functions involved will be defined and explained. Also, some links with the theoretical notions seen in chapters \ref{C2}, \ref{C3} and \ref{C4} will be created.
+The next chapter will present the implementation method of each element constituting the cycle. For each of those, the functions involved will be defined and explained. Also, some links with the theoretical notions seen in chapters \ref{C2}, \ref{C3} and \ref{C4} will be created.
 
 
 

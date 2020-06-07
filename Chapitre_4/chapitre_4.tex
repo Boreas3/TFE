@@ -108,7 +108,7 @@ minimize the number of experimental campaign that has to be conducted. By defini
 
 This is a really powerful tool which allows to significantly decrease the time and the cost related to the design of a new turbomachines. Indeed, it allows to do the testing on smaller turbomachines, and then the performance of the desired machine are extrapolated. Since the machines and the associated test benches are smaller, the cost of the experimental campaign is significantly smaller, and the experimental results can be reused for future designed machines.
 
-This concludes the introductory section about the basis notions to study the turbomachines. 
+This concludes the introductory section about the basis notions to study the turbomachines. \newpage
 \subsection{Pumps and hydraulic turbines}
 \quad\, Now that the base principles have been introduced, those can be specified for the analysis of turbomachines performing transformation on incompressible flow. 
 
@@ -132,16 +132,16 @@ Considering the volumetric flow rate \(\dot{\mathrm{V}}\) (m$^3$/s) and the rota
 \begin{subequations}
     \setstretch{1}
     \begin{equation}
-        \Delta h_p(\dot{\mathrm{V}}_p, N)\label{eq:C4_DHp}\\
+        \Delta h_p(\dot{\mathrm{V}}_p, N_p)\label{eq:C4_DHp}\\
     \end{equation}
     \begin{equation}
-        \dot{W}_{elec}(\dot{\mathrm{V}}_p, N)\label{eq:C4_Pe}
+        \dot{W}_{elec}(\dot{\mathrm{V}}_p, N_p)\label{eq:C4_Pe}
     \end{equation}
 \end{subequations}
-Those relations will be called characteristic or performance map and has to be determined \textbf{experimentally}. An example of such map is given on Figure \ref{fig:C4_MapPump}.
+Those relations will be called characteristic or performance map and has to be determined \textbf{experimentally}. An example of such map is given in the Figure \ref{fig:C4_MapPump}.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{char_map_pump.png}
+    \includegraphics[width=0.8\textwidth]{Pump_map.png}
     \caption{Characteristic maps of a pump \cite{Hillewaert2019}.}
     \label{fig:C4_MapPump}
 \end{figure}
@@ -150,10 +150,10 @@ However, not all the operating points constituting the performance map has to be
 
 \begin{subequations}
     \begin{equation}
-        \phi = \frac{\dot{\mathrm{V}}}{N\cdot r_2^3}\label{eq:C4_phipump}
+        \phi = \frac{\dot{\mathrm{V}_p}}{N_p\cdot r_2^3}\label{eq:C4_phipump}
     \end{equation}
     \begin{equation}
-        \psi = \frac{4\cdot g\cdot \Delta h_p}{N^2\cdot r_2^2}\label{eq:C4_psipump}
+        \psi = \frac{4\cdot g\cdot \Delta h_p}{N_p^2\cdot r_2^2}\label{eq:C4_psipump}
     \end{equation}
 \end{subequations}
 
@@ -166,10 +166,10 @@ Considering that the operating point (\(\dot{\mathrm{V}}_1, \Delta h_{p,1},N_1\)
 \begin{subequations}
     \setstretch{1}
     \begin{equation}
-        \dot{\mathrm{V}}_2 = \dot{\mathrm{V}}_1\cdot\frac{N_2}{N_1} \label{eq:C4_Qsim}
+        \dot{\mathrm{V}}_{p,2} = \dot{\mathrm{V}}_{p,1}\cdot\frac{N_{p,2}}{N_{p,1}} \label{eq:C4_Qsim}
     \end{equation}
     \begin{equation}
-        \Delta h_2 = \Delta h_1\cdot\left(\frac{N_2}{N_1}\right)^2 \label{eq:C4_DHsim}
+        \Delta h_{p,2} = \Delta h_{p,1}\cdot\left(\frac{N_{p,2}}{N_{p,1}}\right)^2 \label{eq:C4_DHsim}
     \end{equation}\label{eq:C4_sim}
 \end{subequations}
 
@@ -184,7 +184,7 @@ The behavior of the compressible flow is more complex to describe compared to in
 
 
 \subsubsection{Velocity triangle}
-\quad\ With the relation (\ref{eq:C4_Euler}), the notion of absolute and relative velocity of the flow has been introduced. A graphic representation of these three vectors can be done using the \textbf{velocity triangle}. This triangle is drawn on Figure \ref{fig:C4_vtriang}.
+\quad\ With the relation (\ref{eq:C4_Euler}), the notion of absolute and relative velocity of the flow has been introduced. A graphic representation of these three vectors can be done using the \textbf{velocity triangle}. This triangle is drawn in the Figure \ref{fig:C4_vtriang}.
 
 \subsubsection{Mach number}
 The Mach number \(M\) is defined as being the ratio between the velocity \(v\) and the sound speed \(c\).
@@ -201,7 +201,7 @@ For an isentropic process, it can be demonstrated that the speed of sound \(a=k\
 \begin{equation}
     T^0 = T\cdot\left(1 + \frac{k-1}{2}\cdot M^2\right) = T\cdot f_M(M) \label{eq:C4_TT0}
 \end{equation}
-Using the equations (\ref{eq:C3_isrelPT}), (\ref{eq:C3_isrelrhoT}) and the definition of the function \(f_M(M)\), the relations linking the static to the total pressure, density and speed of sound can be obtained as well.
+Using the equations (\ref{eq:C3_isrelPT}), (\ref{eq:C3_isrelrhoT}) from chapter \ref{C3} and the definition of the function \(f_M(M)\), the relations linking the static to the total pressure, density and speed of sound can be obtained as well.
 
 \begin{subequations}
     \setstretch{1}
@@ -212,7 +212,7 @@ Using the equations (\ref{eq:C3_isrelPT}), (\ref{eq:C3_isrelrhoT}) and the defin
         \rho^0 = \rho\cdot f_M(M)^\frac{1}{k-1}\label{eq:C4_rhorho0}
     \end{equation}
     \begin{equation}
-        c^0 = c\sqrt{f_M(M)} \label{eq:C4_aa0}
+        c^0 = c\cdot\sqrt{f_M(M)} \label{eq:C4_aa0}
     \end{equation}
 \end{subequations}
 
@@ -221,12 +221,9 @@ Using the equations (\ref{eq:C3_isrelPT}), (\ref{eq:C3_isrelrhoT}) and the defin
 
 \begin{itemize}
     \setstretch{1}
-    \item \(\dot{m}_{corr}\) (kg/s or lbs/min): It is the corrected mass flow rate.
-
-    \item \(N_{corr}\) (RPM): It is the corrected rotational speed of the turbomachine. 
-
+    \item \(\dot{m}_{corr}\) (kg/s): It is the corrected mass flow rate.
     \item \(\Pi_{tt}\) (-): It is the total to total pressure ratio between the inlet and the outlet of the turbomachine. If the turbomachine is compressing the flow, the ratio is reverse to keep it greater than one.
-
+    \item \(N_{corr}\) (RPM): It is the corrected rotational speed of the turbomachine. 
     \item \(\eta_{is}\) (-): It is the total to total isentropic efficiency of the turbomachine.
 \end{itemize}
 It can be demonstrated that the performance map of a turbomachine is ''determined by the relation between 3 non-dimensional groups.''\cite{Hillewaert2019}. 
@@ -240,7 +237,7 @@ Considering an operating point $a$ characterized by the mass flow rate $\dot{m}_
 \end{align}    
 \end{subequations}
 
-These two relations allow to goes from one operating point to the other without modifying the value of the non-dimensional quantities. Therefore, going from $a$ to $b$ will not modify the pressure ratio $\Pi_{tt}$ and the isentropic efficiency $\eta_{is}$.
+These two relations allow to goes from one operating point to the other without modifying the value of the non-dimensional quantities. Therefore, going from $a$ to $b$ will not modify the pressure ratio $\Pi_{tt}$, the isentropic efficiency $\eta_{is}$ and the Mach number $M$.
 
 In particular, if the operating point $b$ considered is defined at the reference conditions ($T_{ref},P_{ref}$), the associated mass flow rate and rotational speed are called \textbf{corrected} mass flow rate $\dot{m}_{corr}$ and \textbf{corrected} rotational speed $N_{corr}$. Thus, from a measured operating point, these two corrected quantities are obtained by applying the relation (\ref{eq:C4_mc}) and (\ref{eq:C4_Nc}).
 
@@ -287,7 +284,7 @@ The first category of machines to be considered is the compressor. As for the pu
 The entities between each velocity triangles are the blades of the rotor (emphasized by an arrow) or of the stator. It can be observed that the rotor blades increase the value of the flow velocity \(v\). As explained earlier this augmentation of kinetic energy is then recovered by the stator blades.
 
 \subsubsection{Mollier diagram}
-\quad\ The transformation induced by the compressor can be represented into a h-s diagram also named the Mollier diagram. The Mollier diagram for one compressor stage has been drawn on Figure \ref{fig:C4_Molliercomp}.
+\quad\ The transformation induced by the compressor can be represented into a h-s diagram also named the Mollier diagram. The Mollier diagram for one compressor stage has been drawn in the Figure \ref{fig:C4_Molliercomp}.
 
 \begin{figure}[h]
     \centering
@@ -296,7 +293,7 @@ The entities between each velocity triangles are the blades of the rotor (emphas
     \label{fig:C4_Molliercomp}
 \end{figure}
 
-The diagram, for which the velocity triangles are given on Figure \ref{fig:C4_compstage}, has to be read as follows.
+The diagram, for which the velocity triangles are given in the Figure \ref{fig:C4_compstage}, has to be read as follows.
 \begin{itemize}
     \setstretch{1}
     \item State \textbf{1}: Starting from the static enthalpy and pressure \(h_1\) and \(p_1\), the relations (\ref{eq:C4_i0}), (\ref{eq:C4_h0}) and (\ref{eq:C4_PP0}) are used to calculate the total enthalpy, rothalpy and pressure.
@@ -336,7 +333,7 @@ In the Figure \ref{fig:C4_compmap},  the iso-rotational speed curves start from 
 
 Typically, an axial gas turbine is composed of a stator followed by a rotor. The stator is designed to create a deflection of the flow in the sense of rotation of the rotor. This will accelerate the flow before entering the rotor.
 
-The schematic of an axial turbine stage is drawn on Figure \ref{fig:C4_turbstage}.
+The schematic of an axial turbine stage is drawn in the Figure \ref{fig:C4_turbstage}.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{Turb_stage.png}
@@ -346,15 +343,6 @@ The schematic of an axial turbine stage is drawn on Figure \ref{fig:C4_turbstage
 \subsubsection{Mollier diagram}
 As for the compressor, the real expansion induced by the turbine can be represented into a Mollier diagram. The diagram is depicted in the Figure \ref{fig:C4_Mollierturb}. The methodology to read the diagram is the same as before.
 
-
-\begin{itemize}
-    \setstretch{1}
-    \item State \textbf{1}: Starting from the static enthalpy and pressure, the total quantities can be deduced.
-    \item State \textbf{2}: The transformation \textbf{1}-\textbf{2} takes place within the stator of the turbine stage. Therefore, the total enthalpy is conserved over the transformation ($h_2^0=h_1^0$).
-
-    Knowing the total enthalpy of the state \textbf{2} allows to compute the static enthalpy and by extension the total rothalpy. Plus, since the flow is accelerated by the stator blades, the static and total pressure falls from state \textbf{1} to state \textbf{2} (\(p_2^{(0)}<p_1^{(0)}\)).
-\end{itemize}
-
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{Turb_mollier.png}
@@ -363,12 +351,19 @@ As for the compressor, the real expansion induced by the turbine can be represen
 \end{figure}
 
 \begin{itemize}
+    \setstretch{1}
+    \item State \textbf{1}: Starting from the static enthalpy and pressure, the total quantities can be deduced.
+    \item State \textbf{2}: The transformation \textbf{1}-\textbf{2} takes place within the stator of the turbine stage. Therefore, the total enthalpy is conserved over the transformation ($h_2^0=h_1^0$).
+
+    Knowing the total enthalpy of the state \textbf{2} allows to compute the static enthalpy and by extension the total rothalpy. Plus, since the flow is accelerated by the stator blades, the static and total pressure falls from state \textbf{1} to state \textbf{2} (\(p_2^{(0)}<p_1^{(0)}\)).
     \item State \textbf{3}: The transformation \textbf{2}-\textbf{3} takes place within the rotor of the turbine stage. Therefore, the total rothalpy is conserved over the transformation (\(i_3^0=i_2^0\)).
 
     Then, the relation (\ref{eq:C4_i0}) allows retrieving the static enthalpy of state \textbf{3}. As shown on the schematic \ref{fig:C4_turbstage} of the turbine stage, the relative speed of the flow is augmented when going through the rotor passage. This generates a second drop of the static and total enthalpy and pressure (\(p_3^{(0)}<p_2^{(0)}\)).
 
     However, there exists a special stage for which “the relative velocity of the flow to the blade row” of the rotor\cite{Hillewaert2019} remains unchanged, but the flow is inverted. Neglecting the very small variation of the rotor velocity, the static enthalpy and pressure remains unchanged when passing through the rotor.
 \end{itemize}
+
+
 
 
 \subsubsection{Degree of reaction}
@@ -387,7 +382,7 @@ From this definition, the two categories can be defined as follows:
 \end{itemize}
 
 \subsubsection{Performance maps}
-\quad\ The turbines can be also be characterized by a performance map determined from experimental results. The map is often composed of two performance plots as shown on Figure \ref{fig:C4_turbmap}.
+\quad\ The turbines can be also be characterized by a performance map determined from experimental results. The map is often composed of two performance plots as shown in the Figure \ref{fig:C4_turbmap}.
 
 \begin{figure}[h]
     \centering
@@ -463,19 +458,20 @@ The air factor is then defined as being the ratio between
 
 \begin{equation}
     \setstretch{1}
-    \lambda = \frac{\frac{\text{mole of \ce{O2} consumed}}{\text{mole of fuel consumed}}}{\frac{\text{mole of \ce{O2} consumed at stoichiometry}}{\text{mole of fuel consumed at stoichiometry}}} \label{eq:C4_lbd}
+    \lambda = \frac{\varkappa}{\varkappa_{\left.\right|stoichiometry}} \label{eq:C4_lbd}
 \end{equation}
-
+Where $\varkappa \doteq \frac{\text{mole of \ce{O2} consumed}}{\text{mole of fuel consumed}}$
 Let's note that every other combustive can replaced the oxygen in the relation. However, \ce{O2} is the most common one. Thus, the following development will not consider this possibility.
-For the following, the notation \(w_{\ce{\text{<molecule>}}}\) will be used in replacement for ''mole of <molecules> consumed''.
-
-For the case of the \ce{CH4} being the fuel, it has been shown in the previous section that the value of the denominator of relation (\ref{eq:C4_lbd}) is equal to 2. Therefore, for this particular combustion, the air factor relation is (\ref{eq:C4_lbdCH4}).
-
+For the following, the notation \(w_{\ce{\text{<molecules>}}}\) will be used in replacement for ''mole of <molecules> consumed''.
 
 \begin{equation}
     \setstretch{1}
     \lambda = \frac{w_{\ce{O2}}}{2\cdot w_{\ce{CH4}}}\label{eq:C4_lbdCH4}
 \end{equation}
+
+For the case of the \ce{CH4} being the fuel, it has been shown in the previous section that the value of the denominator of relation (\ref{eq:C4_lbd}) is equal to 2. Therefore, for this particular combustion, the relation (\ref{eq:C4_lbdCH4}) defines the air factor.
+
+
 
 \subsubsection{Generalized combustion equation}
 \quad\ As explained, the chemical reaction (\ref{eq:C4_chem}) represents the ideal case with an air factor of 1. Also, it is considered that the combustive is pure \ce{O2}. In reality, the used reagent for the combustion is ambient air which is composed of 21\% of \ce{O2} and 79\% of \ce{N2} (nitrogen).
@@ -525,7 +521,7 @@ The \(HCV\) is determined at a given reference temperature \(T_0\). Considering 
 
 \begin{equation}
     \setstretch{1}
-    HCV = \left.h_{reagent}\right|_{T=T_0} - \left.h_{product}\right|_{T=T_0}\label{eq:C4_HCV2}
+    HCV = h_{reagent\left.\right|T=T_0} - h_{product\left.\right|T=T_0}\label{eq:C4_HCV2}
 \end{equation}
 
 Distinction between the lower and higher heating calorific value (respectively $HCV_l$ and $HCV_h$) have to be made. Basically, when considering the combustion of a given fuel, the amount of energy released corresponds to the lower heating calorific value if the water remains gaseous within the exhaust gas. 
@@ -553,15 +549,18 @@ The evaluation of the temperature \(T_f\) is quite similar to the one of the \(H
 \end{equation}
 \subsection{Fumes composition}
 \quad\ Previously has been presented in the equations (\ref{eq:C4_chemgeng0}) and (\ref{eq:C4_chemgeng1}) the generalized chemical reaction for the combustion of the methane.
-In a more general case, if the fuel is essentially composed of carbon \ce{C}, hydrogen \ce{H}, oxygen \ce{O} and nitrogen \ce{N}, the reactions (\ref{eq:C4_chemgeng0}) and (\ref{eq:C4_chemgeng1}) are then given in (\ref{eq:C4_chemgeng01}).
+In a more general case, if the fuel is essentially composed of carbon \ce{C}, hydrogen \ce{H}, oxygen \ce{O} and nitrogen \ce{N}, the reactions (\ref{eq:C4_chemgeng0}) and (\ref{eq:C4_chemgeng1}) can be reformulated taking into account a general composition for the fuel.
 
-\begin{equation}
+\begin{subequations}
     \setstretch{1}
-    \begin{cases}
-        \ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}} +}\kappa\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> mCO2 +} \kappa(\lambda-1)\ce{O2 + \frac{n}{2}H2O +} (\kappa\lambda\frac{79}{21} + \frac{\text{y}}{2})\ce{N2} & \text{ for \(\lambda\geq 1\)} \\
-        \ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}} +}\kappa\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) \ce{-> aCO2 + bCO + \frac{n}{2}H2O} + (\kappa\lambda\frac{79}{21} + \frac{\text{y}}{2})\ce{N2}                      & \text{ for \(\lambda< 1\)}
-    \end{cases}\label{eq:C4_chemgeng01}
-\end{equation}
+ \begin{align}
+     \ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}} +}\kappa\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) &\ce{-> mCO2 +} \kappa(\lambda-1)\ce{O2 + \frac{n}{2}H2O +} (\kappa\lambda\frac{79}{21} + \frac{\text{y}}{2})\ce{N2}\\
+     \text{ for \(\lambda\geq 1\)}\nonumber\\
+     \ce{C_{\text{m}}H_{\text{n}}O_{\text{x}}N_{\text{y}} +}\kappa\lambda \left(\ce{O2}+\frac{79}{21}\ce{N2}\right) &\ce{-> aCO2 + bCO + \frac{n}{2}H2O} + (\kappa\lambda\frac{79}{21} + \frac{\text{y}}{2})\ce{N2}\\
+     \text{ for \(\lambda< 1\)}\nonumber
+ \end{align}
+        \label{eq:C4_chemgeng01}
+\end{subequations}
 
 where coefficients ''a'' and ''b'' satisfies the system (\ref{eq:C4_sysab2})
 
@@ -677,13 +676,13 @@ Considering the parallel and counter flow heat exchanger, two temperature differ
 
 \begin{figure}[h]
     \centering
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{parallele_flow_T}
         \caption{Temperature profile for parallel flow HX \cite{Ngendakumana2018}.}
         \label{fig:C4_HX_par_flow_T}
     \end{subfigure}
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{opposite_flow_T}
         \caption{Temperature profile for counter flow HX \cite{Ngendakumana2018}.}
@@ -720,9 +719,9 @@ The second temperature difference \(\Delta T_L\) corresponds to the smallest tem
 \subsection{Heat transfer within a heat exchanger}
 \quad\ The heat transfer rate of a heat exchanger is directly dependent on the nature of the fluids and the heat exchanger itself. Let's consider the following relation (\ref{eq:C4_Qdot1})
 \begin{equation}
-    \dot{Q} = \frac{\Delta T_{LM}}{R}= \mathrm{A}\cdot \mathrm{U}\cdot \Delta T_{LM}\label{eq:C4_Qdot1}
+    \dot{Q} = \frac{\Delta T_{LM}}{\mathrm{R}}= \mathrm{A}\cdot \mathrm{U}\cdot \Delta T_{LM}\label{eq:C4_Qdot1}
 \end{equation}
-Where \(\mathrm{A}\) is the global heat transfer area of the HX, and \(R\) and \(\mathrm{U}\) are the global thermal resistance and heat transfer coefficient respectively. The difference of temperature \(\Delta T_{LM}\) is called the logarithmic mean temperature difference. Its definition is (\ref{eq:C4_lmtd}).
+Where \(\mathrm{A}\) is the global heat transfer area of the HX, and \(\mathrm{R}\) and \(\mathrm{U}\) are the global thermal resistance and heat transfer coefficient respectively. The difference of temperature \(\Delta T_{LM}\) is called the logarithmic mean temperature difference. Its definition is (\ref{eq:C4_lmtd}).
 
 
 \begin{equation}
@@ -743,14 +742,14 @@ Making the assumption that all the ducts considered in this work are smooth and 
 \begin{equation}
     h_{conv} = Nu \cdot \frac{\lambda_c}{D_t} = 0.023\cdot Re^{0.8}\cdot Pr^{1/3}\frac{\lambda_C}{D_t}\label{eq:C4_h}
 \end{equation}
-Where \(Nu\), \(Re\) and \(Pr\) are respectively the Nusselt, Reynolds and Prandtl number. \(\lambda_c\) is the thermal conductivity (in W/(m·K) of the fluid and \(D_t\) is the diameter of the duct\cite{Ngendakumana2018}.
+Where \(Nu\), \(Re\) and \(Pr\) are respectively the Nusselt, Reynolds and Prandtl number. \(\lambda_c\) is the thermal conductivity (W/m$\cdot$K) of the fluid and \(D_t\) is the diameter of the duct\cite{Ngendakumana2018}.
 
 By definition, the Reynolds and Prandtl numbers are defined as follows
 \begin{align}
     Re & = \frac{\rho\cdot v\cdot D_h}{\mu}\label{eq:C4_Re} \\
     Pr & = \frac{\mu\cdot c_p}{\lambda_c}\label{eq:C4_Pr}
 \end{align}
-Where \(D_h\) is the hydraulic diameter, \(v\) is the velocity of the flow and \(\mu\) is the dynamic viscosity (in Pa$\cdot$s). The hydraulic diameter and the flow velocity are respectively obtained using the two following relations (\ref
+Where \(D_h\) is the hydraulic diameter, \(v\) is the velocity of the flow and \(\mu\) is the dynamic viscosity (Pa$\cdot$s). The hydraulic diameter and the flow velocity are respectively obtained using the two following relations (\ref
 {eq:C4_Dh}) and (\ref{eq:C4_v}).
 
  \begin{align}
@@ -787,13 +786,13 @@ When the heat transfer rate \(\dot{Q}\) has been calculated, the temperatures at
 \begin{subequations}
     \setstretch{1}
     \begin{equation}
-        \dot{Q} = \dot{m}_H\cdot c_{p,H}\cdot(T_{h,in} - T_{h,out}) =\dot{C}_H\cdot(T_{h,in} - T_{h,out}) \label{eq:C4_ThQ}
+        \dot{Q} = \dot{m}_H\cdot c_{p,H}\cdot(T_{H,in} - T_{H,out}) =\dot{C}_H\cdot(T_{H,in} - T_{H,out}) \label{eq:C4_ThQ}
     \end{equation}
     \begin{equation}
-        \dot{Q} = \dot{m}_C\cdot c_{p,C}\cdot (T_{c,out} - T_{c,in}) =\dot{C}_C\cdot (T_{c,out} - T_{c,in}) \label{eq:C4_TcQ}
+        \dot{Q} = \dot{m}_C\cdot c_{p,C}\cdot (T_{C,out} - T_{C,in}) =\dot{C}_C\cdot (T_{C,out} - T_{C,in}) \label{eq:C4_TcQ}
     \end{equation}
 \end{subequations}
-
+Where $\dot{C}$ corresponds to the heat capacity rate (W/K).
 This method requires the knowledge of the inlet and outlet temperatures of both fluids before initiating the computation of the heat transfer rate \(\dot{Q}\) using the relation (\ref{eq:C4_Qdot1}). Therefore, this method needs iterations in the event where these temperatures are not known a priori.
 
 \subsubsection{$\varepsilon$-NTU method}

@@ -1,12 +1,13 @@
 \graphicspath{{Chapitre_2/Images/}}
 \chapter{Introduction}\label{introduction}
+\setlength{\headheight}{52pt}    
 \quad\, Since the end of the 17th century, people have started to study the conversion of the energy into a useful form. The purpose was to utilize the available raw energy to produce works.
 
 Denis Papin, a French person borned in 1647 in the region of Chitenay, developed one of the first conversion machines in 1690. The machine, a steam piston engine, was powered by steam which produced a back and forth movement of the piston head generating power. 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\textwidth]{Chapitre_1/Images/Maquina_vapor_Watt_ETSIIM.jpg}
+    \includegraphics[width=0.5\textwidth]{Chapitre_1/Images/Maquina_vapor_Watt_ETSIIM.jpg}
     \caption{Watt steam machine\cite{Watt}}
     \label{fig:Watt}
 \end{figure}
@@ -25,7 +26,7 @@ First the compressor that will compress the ambient air to some pressure level. 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\textwidth]{Chapitre_1/Images/GT.png}
+    \includegraphics[scale = 0.15]{Chapitre_1/Images/GT.png}
     \caption{Brayton gas cycle}
     \label{fig:C1_GT}
 \end{figure}
@@ -35,6 +36,7 @@ Variants are Brayton cycle where heat exchangers are used to recover heat when i
 
 All these variants have been thought to solve problems encounter and to enlarge the range of possible applications where the Brayton gas cycle can be used. For instance, Brayton cycle is used in aircraft for the propulsion, or are integrated within a power plant to produce electricity.\\
 
-This work is focused on the improvement of a computer code that is programmed to assess the performance of a given configuration of the Brayton cycle. While some additions to the program were done to increase its modularity, the main improvements are ones that will allow the computer code to utilize experimental results to increase its accuracy. \\
+This work is focused on the improvement of a computer code made by the company MITIS SA which aims to to assess the performance of a multiple configurations of the Brayton cycle. While some additions to the program are done to increase its modularity, the main improvements are ones that will allow the computer code to utilize experimental results to increase its accuracy. \\
 
 Not all the possible improvements will be considered for this master thesis. The main concern will be on the turbomachine and how to simulate the influence of the operating conditions on their performances based on performance maps. These maps can be considered as the footprint of each turbomachine.  The purpose will be to be able to easily modify the program by switching from one map to another one. Also, the integration of performance maps will give the ability to see the impact of the rotational speed of the compressor and turbine on their respective behaviors.
+
